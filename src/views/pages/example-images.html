@@ -1,0 +1,166 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>{{ title }}</h1>
+
+    <h2>Captions</h2>
+
+    <figure class="w-[400px] mb-6">
+        <img class="tu-border-radius" src="https://picsum.photos/id/1068/1920/1080"
+             alt="Example image">
+        <figcaption>Example image with caption</figcaption>
+    </figure>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.</p>
+
+    <figure class="w-[400px] mb-6 p-2 tu-bg-default tu-border-default tu-border-radius tu-border-width">
+        <img class="mb-2" src="https://picsum.photos/id/1068/1920/1080"
+             alt="Example image">
+        <figcaption>Example framed image with caption</figcaption>
+    </figure>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.</p>
+
+    <h2>Aspect ratio</h2>
+
+    <div class="w-[200px] mb-6">
+
+        <figure class="aspect-square">
+
+            <img class="w-full h-full object-center object-cover" src="https://picsum.photos/id/1068/1920/1080"
+                 alt="Example image">
+
+        </figure>
+
+    </div>
+
+    <div class="w-[200px] mb-6">
+
+        <figure class="aspect-[21/9]">
+
+            <img class="w-full h-full object-center object-cover" src="https://picsum.photos/id/1068/1920/1080"
+                 alt="Example image">
+
+        </figure>
+
+    </div>
+
+    <h2>Parallax</h2>
+
+    <div class="flex flex-col justify-center items-center bg-fixed bg-cover bg-center h-[300px] mb-6" style="background-image:url('https://picsum.photos/id/1068/1920/1080');">
+
+        <h2 class="text-white tu-text-shadow">Hello</h2>
+
+        <p class="text-xl text-white">This is a parallax effect example</p>
+
+    </div>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </p>
+
+    <h2>Overlay</h2>
+
+    <div class="flex flex-col justify-center items-center bg-red-300 bg-blend-multiply bg-cover bg-center h-[300px] mb-6" style="background-image:url('https://picsum.photos/id/1068/1920/1080');">
+
+        <h2 class="text-white tu-text-shadow">Overlay</h2>
+
+        <p class="text-xl text-white">The image is blended with the background color</p>
+
+    </div>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+    </p>
+
+    <h2>Round</h2>
+
+    <p>With this example, the image is fit proportionally to the center of the container using the
+        <code>object-center</code> and <code>object-cover</code> classes.
+        This works well for images that are not square.</p>
+
+    <p>If the image is already square, there is no need for a container.</p>
+
+    <figure class="mb-6 flex items-center justify-center rounded-full h-40 w-40 overflow-hidden">
+        <img class="object-center object-cover w-full h-full" src="https://picsum.photos/id/1074/600/400" alt="Image" />
+    </figure>
+
+    <img class="block mb-6 h-40 w-40 rounded-full" src="https://picsum.photos/id/1074/360/360" alt="Image" />
+
+    <h2>Hover zoom</h2>
+
+    <figure class="mb-6 w-80 h-40 flex items-center justify-center tu-border-radius overflow-hidden tu-bg-default">
+        <img class="object-center object-cover w-full h-full hover:scale-110 duration-200" src="https://picsum.photos/id/1068/1920/1080"
+             alt="Example image">
+    </figure>
+
+    <h2>Lazy load</h2>
+
+    <p>
+        Images can be used with the <a href="start-javascript.html#config-loadsrc" title="JavaScript">data-load-src</a>
+        attribute to lazy load.
+    </p>
+
+    <figure class="mb-6">
+        <img class="w-[400px] h-[245px] object-center object-cover tu-border-radius"
+             src="../assets/img/placeholder-landscape-image.svg"
+             data-load-src="https://picsum.photos/id/1068/1920/1080"
+             width="400px"
+             height="245px"
+             alt="Example image"
+             loading="lazy">
+        <figcaption>Load and replace src using data-load-src attribute</figcaption>
+    </figure>
+
+</div>
+{% endblock %}

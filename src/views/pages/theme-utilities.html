@@ -1,0 +1,83 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>Utilities</h1>
+
+    <h2>Theme utilities</h2>
+
+    <ul class="tc-list mb-6">
+        <li><code>tu-border-radius</code></li>
+        <li><code>tu-border-width</code></li>
+        <li><code>tu-box-shadow</code></li>
+    </ul>
+
+    <h2>Theme colors</h2>
+
+    <ul class="tc-list mb-6">
+        <li><code>tu-bg-default</code></li>
+        <li><code>tu-bg-inverse</code></li>
+        <li><code>tu-bg-content</code></li>
+        <li><code>tu-border-default</code></li>
+        <li><code>tu-border-inverse</code></li>
+        <li><code>tu-text-default</code></li>
+        <li><code>tu-text-inverse</code></li>
+        <li><code>tu-text-light</code></li>
+        <li><code>tu-text-code</code></li>
+    </ul>
+
+    <h2>Status colors</h2>
+
+    <ul class="tc-list mb-6">
+        <li><code>tu-bg-info</code></li>
+        <li><code>tu-border-info</code></li>
+        <li><code>tu-text-info</code></li>
+        <li><code>tu-bg-info-light</code></li>
+        <li><code>tu-border-info-light</code></li>
+        <li><code>tu-text-info-light</code></li>
+        <li><code>tu-bg-warning</code></li>
+        <li><code>tu-border-warning</code></li>
+        <li><code>tu-text-warning</code></li>
+        <li><code>tu-bg-warning-light</code></li>
+        <li><code>tu-border-earning-light</code></li>
+        <li><code>tu-text-warning-light</code></li>
+        <li><code>tu-bg-error</code></li>
+        <li><code>tu-border-error</code></li>
+        <li><code>tu-text-error</code></li>
+        <li><code>tu-bg-error-light</code></li>
+        <li><code>tu-border-error-light</code></li>
+        <li><code>tu-text-error-light</code></li>
+        <li><code>tu-bg-success</code></li>
+        <li><code>tu-border-success</code></li>
+        <li><code>tu-text-success</code></li>
+        <li><code>tu-bg-success-light</code></li>
+        <li><code>tu-border-success-light</code></li>
+        <li><code>tu-text-success-light</code></li>
+    </ul>
+
+    <h2>Typography</h2>
+
+    <p>The <code>tu-typo</code> utility class is used to give default typography styling to some base elements.</p>
+
+    <p>Any child elements inside <code>tu-typo</code> will inherit these styles.
+        To prevent a specific element from inheriting the typography styling,
+        assign it the <code>tu-typo-omit</code> class. To apply the typography styling to a specific element
+        not inside a <code>tu-typo</code> element, assign it the <code>tu-typo-apply</code> class.</p>
+
+    <h3>Typography examples</h3>
+
+    <p>Here are some examples. <small>This is small</small> and also <sup>this is sup</sup>
+        and finally <sub>this is sub</sub> for reference.</p>
+
+    <p>Other typography include <a href="#" title="Hyperlink">hyperlinks</a> and <mark>marked text</mark>,
+        along with <strong>bold text</strong> and <em>italic text</em>.</p>
+
+    <p>Inline quotations <q>look like this</q>, and inline code <code>looks like this</code>.</p>
+
+    <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy to the clipboard.</p>
+
+    <p>When I tried to open the file, I received the message: <samp>File not found!</samp></p>
+
+</div>
+{% endblock %}

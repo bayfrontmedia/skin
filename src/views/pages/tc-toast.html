@@ -1,0 +1,298 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>{{ title }}</h1>
+
+    <p>Toasts are completely unstyled, so they work well with theme styles.</p>
+
+    <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+        <thead>
+        <tr class="text-left">
+            <th>Class name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><code>tc-toast-container</code></td>
+            <td>Component</td>
+            <td>Toast container (optional- must use a position utility)</td>
+        </tr>
+        <tr>
+            <td><code>tc-toast-container-tl</code></td>
+            <td>Utility</td>
+            <td>Position toast container to top left of window</td>
+        </tr>
+        <tr>
+            <td><code>tc-toast-container-tr</code></td>
+            <td>Utility</td>
+            <td>Position toast container to top right of window</td>
+        </tr>
+        <tr>
+            <td><code>tc-toast-container-bl</code></td>
+            <td>Utility</td>
+            <td>Position toast container to bottom left of window</td>
+        </tr>
+        <tr>
+            <td><code>tc-toast-container-br</code></td>
+            <td>Utility</td>
+            <td>Position toast container to bottom right of window</td>
+        </tr>
+        <tr>
+            <td><code>tc-toast</code></td>
+            <td>Component</td>
+            <td>Toast</td>
+        </tr>
+        <tr>
+            <td><code>tc-toast-alt</code></td>
+            <td>Utility</td>
+            <td>Alternate styled toast</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Examples</h2>
+
+    <h3 id="tc-toast">tc-toast</h3>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-toast-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-toast-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-toast-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-toast.html" %}
+        </div>
+
+    </div> <!-- /#tc-toast-panel-1 -->
+
+    <div id="tc-toast-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+            <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-toast.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-toast-panel-2 -->
+
+</div> <!-- / tab container -->
+
+<h3 id="tc-toast-alt" class="tu-typo-apply">tc-toast-alt</h3>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-alt-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-toast-alt-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-alt-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-toast-alt-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-toast-alt-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-alt-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-toast-alt.html" %}
+        </div>
+
+    </div> <!-- /#tc-toast-alt-panel-1 -->
+
+    <div id="tc-toast-alt-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-alt-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+            <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-toast-alt.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-toast-alt-panel-2 -->
+
+</div> <!-- / tab container -->
+
+<div class="tu-typo">
+
+    <h3 id="tc-toast-container">tc-toast-container</h3>
+
+    <p>This example utilizes the <a href="start-javascript.html#config-show" title="data-show attribute">data-show attribute</a>
+        to show for a predefined duration.</p>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-container-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-toast-container-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-container-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-toast-container-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-toast-container-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-container-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-toast-container.html" %}
+        </div>
+
+    </div> <!-- /#tc-toast-container-panel-1 -->
+
+    <div id="tc-toast-container-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-container-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+            <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-toast-container.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-toast-container-panel-2 -->
+
+</div> <!-- / tab container -->
+
+<div class="tu-typo">
+
+    <h3 id="dismissible-toast">Dismissible toast</h3>
+
+    <p>This example utilizes the <a href="start-javascript.html#config-hide" title="data-hide attribute">data-hide attribute</a>
+        to hide when clicked.</p>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-dismiss-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-toast-dismiss-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-toast-dismiss-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-toast-dismiss-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-toast-dismiss-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-dismiss-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-toast-dismiss.html" %}
+        </div>
+
+    </div> <!-- /#tc-toast-dismiss-panel-1 -->
+
+    <div id="tc-toast-dismiss-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-toast-dismiss-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+            <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-toast-dismiss.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-toast-dismiss-panel-2 -->
+
+</div> <!-- / tab container -->
+
+<div class="tu-typo">
+
+    <h3 id="programmatic-toast">Programmatic toast</h3>
+
+    <p>
+        Toasts can be created programmatically using the
+        <a href="start-javascript.html#skin.toast.create" title="Skin.Toast.create">Skin.Toast.create</a> function.
+    </p>
+
+</div>
+
+<div class="tc-code tc-code-terminal">
+    <pre><code class="language-html">
+        {% filter escape %}
+        {% include "src/views/snippets/tc-toast-js.html" %}
+        {% endfilter %}
+    </code></pre>
+</div>
+{% endblock %}

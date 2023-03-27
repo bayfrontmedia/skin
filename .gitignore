@@ -1,0 +1,32 @@
+# Project-specific
+
+*.log
+
+# Local files
+
+_local
+
+# Dotenv
+
+.env
+.env.*
+!.env.example
+
+# Dependencies
+
+/node_modules
+/vendor
+composer.lock
+
+# IDE's
+
+.idea
+.vscode
+
+# OS
+
+.DS_Store
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

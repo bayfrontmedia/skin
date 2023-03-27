@@ -1,0 +1,25 @@
+<div id="example-toast-container" class="tc-toast-container tc-toast-container-br"></div>
+
+<button
+        type="button"
+        id="toast-btn"
+        class="tc-btn tc-style-default">Create toast
+</button>
+
+<script src="./path/to/skin.js"></script>
+
+<script>
+
+    let toastBtn = document.getElementById("toast-btn");
+
+    toastBtn.addEventListener('click', () => {
+
+        Skin.Toast.create({
+            containerId: "example-toast-container",
+            classes: "tc-style-success",
+            innerHTML: "This is an example toast"
+        });
+
+    });
+
+</script>

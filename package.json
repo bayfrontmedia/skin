@@ -1,0 +1,44 @@
+{
+  "name": "@bayfrontmedia/skin",
+  "version": "0.1.0",
+  "description": "A free open source library of Tailwind CSS components.",
+  "author": "Bayfront Media",
+  "license": "MIT",
+  "homepage": "https://github.com/bayfrontmedia/skin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bayfrontmedia/skin.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "component",
+    "ui"
+  ],
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "watch:styles": "npx tailwindcss -i src/css/styles.css -o public/assets/css/styles.css --watch",
+    "build:styles": "npx tailwindcss -i src/css/styles.css -o public/assets/css/styles.css",
+    "build:styles:prod": "npx tailwindcss -i src/css/styles.css -o public/assets/css/styles.css --minify",
+    "build:webpack": "webpack --mode development",
+    "build:webpack:prod": "webpack --mode production",
+    "build:prod": "npm run build:styles:prod && npm run build:webpack:prod"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "html-bundler-webpack-plugin": "^1.9.0",
+    "nunjucks": "^3.2.3",
+    "tailwindcss": "^3.2.6",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6"
+  },
+  "bugs": {
+    "url": "https://github.com/bayfrontmedia/skin/issues"
+  }
+}

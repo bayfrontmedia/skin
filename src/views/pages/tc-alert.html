@@ -1,0 +1,194 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1 id="alert">Alert</h1>
+
+    <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+        <thead>
+        <tr class="text-left">
+            <th>Class name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><code>tc-alert</code></td>
+            <td>Component</td>
+            <td>Alert</td>
+        </tr>
+        <tr>
+            <td><code>tc-alert-alt</code></td>
+            <td>Utility</td>
+            <td>Alternate styled alert</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 id="examples">Examples</h2>
+
+    <h3 id="tc-alert">tc-alert</h3>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-alert-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-alert-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-alert-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-alert-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-alert-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-alert-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-alert.html" %}
+        </div>
+
+    </div> <!-- /#tc-alert-panel-1 -->
+
+    <div id="tc-alert-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-alert-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-alert.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-alert-panel-2 -->
+
+</div> <!-- / tab container -->
+
+<h3 class="tu-typo-apply" id="tc-alert-alt">tc-alert-alt</h3>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-alert-alt-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-alert-alt-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-alert-alt-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-alert-alt-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-alert-alt-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-alert-alt-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-alert-alt.html" %}
+        </div>
+
+    </div> <!-- /#tc-alert-alt-panel-1 -->
+
+    <div id="tc-alert-alt-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-alert-alt-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-alert-alt.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-alert-alt-panel-4 -->
+
+</div> <!-- / tab container -->
+
+<div class="tu-typo">
+
+    <h3 id="dismissible-alert">Dismissible alert</h3>
+
+    <p>This example utilizes the <a href="start-javascript.html#config-hide" title="data-hide attribute">data-hide attribute</a>
+        to hide when clicked.</p>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-alert-dismiss-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-alert-dismiss-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-alert-dismiss-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-alert-dismiss-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-alert-dismiss-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-alert-dismiss-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-alert-dismiss.html" %}
+        </div>
+
+    </div> <!-- /#tc-alert-dismiss-panel-1 -->
+
+    <div id="tc-alert-dismiss-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-alert-dismiss-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-alert-dismiss.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-alert-dismiss-panel-2 -->
+
+</div> <!-- / tab container -->
+{% endblock %}

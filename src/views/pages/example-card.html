@@ -1,0 +1,60 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>{{ title }}</h1>
+
+    <h2 id="hover-zoom">Hover zoom</h2>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="hover-zoom-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="hover-zoom-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="hover-zoom-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="hover-zoom-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="hover-zoom-panel-1" role="tabpanel" tabindex="0" aria-labelledby="hover-zoom-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/example-card-hover-zoom.html" %}
+        </div>
+
+    </div> <!-- /#hover-zoom-panel-1 -->
+
+    <div id="hover-zoom-panel-2" role="tabpanel" tabindex="0" aria-labelledby="hover-zoom-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+            <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/example-card-hover-zoom.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#hover-zoom-panel-2 -->
+
+</div> <!-- / tab container -->
+{% endblock %}

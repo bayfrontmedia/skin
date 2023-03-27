@@ -1,0 +1,416 @@
+<!-- Triggers -->
+
+<div class="space-y-2">
+
+    <button class="tc-btn tc-style-default"
+            data-modal-open="modal-0"
+            data-modal-strict="false">Modal container
+    </button>
+
+    <button class="tc-btn tc-style-default"
+            data-modal-open="modal-1"
+            data-modal-strict="false">Modal container
+    </button>
+
+    <button class="tc-btn tc-style-default"
+            data-modal-open="modal-2"
+            data-modal-strict="false">Left drawer
+    </button>
+
+    <button class="tc-btn tc-style-default"
+            data-modal-open="modal-3"
+            data-modal-strict="false">Right drawer
+    </button>
+
+    <button class="tc-btn tc-style-default"
+            data-modal-open="modal-4"
+            data-modal-strict="false">Top drawer
+    </button>
+
+    <button class="tc-btn tc-style-default"
+            data-modal-open="modal-5"
+            data-modal-strict="false">Bottom drawer
+    </button>
+
+    <button class="tc-btn tc-style-default"
+            data-modal-open="modal-6"
+            data-modal-strict="false">Full screen
+    </button>
+
+</div>
+
+<!-- Modals -->
+
+<div id="modal-0" class="tc-modal"
+     data-hidden="true"
+     tabindex="-1" aria-labelledby="modal-0-title" aria-modal="true" role="dialog">
+
+    <div class="tc-modal-content tc-modal-box tu-bg-content">
+
+        <!-- Modal body -->
+        <div class="p-4">
+
+            <div class="flex gap-4">
+
+                <div>
+
+                    <div class="w-10 h-10 inline-flex justify-center items-center rounded-full tu-bg-error-light tu-text-error-light">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke-width="1.5"
+                             stroke="currentColor"
+                             class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+
+                    </div>
+
+                </div>
+
+                <div class="grow">
+
+                    <h3 class="text-xl font-semibold mb-4">Deactivate account</h3>
+
+                    <p class="mb-4 tu-text-light">Are you sure you want to deactivate your account?<br />
+                        This action cannot be undone.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="flex items-center justify-end px-4 py-2 tu-bg-default">
+
+            <button type="button"
+                    class="mr-2 tc-btn tc-style-content"
+                    data-modal-close="modal-0">
+                Cancel
+            </button>
+
+            <button type="button"
+                    class="tc-btn tc-style-error"
+                    data-modal-close="modal-0">
+                Deactivate
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="tc-modal-overlay"></div>
+
+</div>
+
+<div id="modal-1" class="tc-modal"
+     data-hidden="true"
+     tabindex="-1" aria-labelledby="modal-1-title" aria-modal="true" role="dialog">
+
+    <div class="tc-modal-content tc-modal-box tu-bg-content">
+
+        <!-- Modal header -->
+        <div class="flex items-center justify-between px-4 py-2 border-b tu-border-default">
+
+            <h3 id="modal-1-title" class="text-xl font-semibold">
+                Modal title
+            </h3>
+
+            <button type="button"
+                    class="bg-transparent hover:tu-bg-default inline-flex justify-center items-center w-10 h-10 rounded-full transition-all duration-200 hover:rotate-90"
+                    aria-label="Close"
+                    data-modal-close="modal-1">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="p-4">
+
+            <p class="mb-6">Contents of the modal appear here.</p>
+
+            <div class="flex justify-end">
+                <button type="button"
+                        class="tc-btn tc-style-error"
+                        data-modal-close="modal-1">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tc-modal-overlay"></div>
+
+</div>
+
+<div id="modal-2" class="tc-modal"
+     data-hidden="true"
+     tabindex="-1" aria-labelledby="modal-2-title" aria-modal="true" role="dialog">
+
+    <div class="tc-modal-content tc-modal-drawer-l tu-bg-content">
+
+        <!-- Modal header -->
+        <div class="flex items-center justify-between px-4 py-2 border-b tu-border-default">
+
+            <h3 id="modal-2-title" class="text-xl font-semibold">
+                Modal title
+            </h3>
+
+            <button type="button"
+                    class="bg-transparent hover:tu-bg-default inline-flex justify-center items-center w-10 h-10 rounded-full transition-all duration-200 hover:rotate-90"
+                    aria-label="Close"
+                    data-modal-close="modal-2">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="p-4">
+
+            <p class="mb-6">Contents of the modal appear here.</p>
+
+            <div class="flex justify-end">
+                <button type="button"
+                        class="tc-btn tc-style-error"
+                        data-modal-close="modal-2">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tc-modal-overlay"></div>
+
+</div>
+
+<div id="modal-3" class="tc-modal"
+     data-hidden="true"
+     tabindex="-1" aria-labelledby="modal-3-title" aria-modal="true" role="dialog">
+
+    <div class="tc-modal-content tc-modal-drawer-r tu-bg-content">
+
+        <!-- Modal header -->
+        <div class="flex items-center justify-between px-4 py-2 border-b tu-border-default">
+
+            <h3 id="modal-3-title" class="text-xl font-semibold">
+                Modal title
+            </h3>
+
+            <button type="button"
+                    class="bg-transparent hover:tu-bg-default inline-flex justify-center items-center w-10 h-10 rounded-full transition-all duration-200 hover:rotate-90"
+                    aria-label="Close"
+                    data-modal-close="modal-3">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="p-4">
+
+            <p class="mb-6">Contents of the modal appear here.</p>
+
+            <div class="flex justify-end">
+                <button type="button"
+                        class="tc-btn tc-style-error"
+                        data-modal-close="modal-3">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tc-modal-overlay"></div>
+
+</div>
+
+<div id="modal-4" class="tc-modal"
+     data-hidden="true"
+     tabindex="-1" aria-labelledby="modal-4-title" aria-modal="true" role="dialog">
+
+    <div class="tc-modal-content tc-modal-drawer-t tu-bg-content">
+
+        <!-- Modal header -->
+        <div class="flex items-center justify-between px-4 py-2 border-b tu-border-default">
+
+            <h3 id="modal-4-title" class="text-xl font-semibold">
+                Modal title
+            </h3>
+
+            <button type="button"
+                    class="bg-transparent hover:tu-bg-default inline-flex justify-center items-center w-10 h-10 rounded-full transition-all duration-200 hover:rotate-90"
+                    aria-label="Close"
+                    data-modal-close="modal-4">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="p-4">
+
+            <p class="mb-6">Contents of the modal appear here.</p>
+
+            <div class="flex justify-end">
+                <button type="button"
+                        class="tc-btn tc-style-error"
+                        data-modal-close="modal-4">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tc-modal-overlay"></div>
+
+</div>
+
+<div id="modal-5" class="tc-modal"
+     data-hidden="true"
+     tabindex="-1" aria-labelledby="modal-5-title" aria-modal="true" role="dialog">
+
+    <div class="tc-modal-content tc-modal-drawer-b tu-bg-content">
+
+        <!-- Modal header -->
+        <div class="flex items-center justify-between px-4 py-2 border-b tu-border-default">
+
+            <h3 id="modal-5-title" class="text-xl font-semibold">
+                Modal title
+            </h3>
+
+            <button type="button"
+                    class="bg-transparent hover:tu-bg-default inline-flex justify-center items-center w-10 h-10 rounded-full transition-all duration-200 hover:rotate-90"
+                    aria-label="Close"
+                    data-modal-close="modal-5">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="p-4">
+
+            <p class="mb-6">Contents of the modal appear here.</p>
+
+            <div class="flex justify-end">
+                <button type="button"
+                        class="tc-btn tc-style-error"
+                        data-modal-close="modal-5">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tc-modal-overlay"></div>
+
+</div>
+
+<div id="modal-6" class="tc-modal"
+     data-hidden="true"
+     tabindex="-1" aria-labelledby="modal-6-title" aria-modal="true" role="dialog">
+
+    <div class="tc-modal-content tc-modal-screen tu-bg-content">
+
+        <!-- Modal header -->
+        <div class="flex items-center justify-between px-4 py-2 border-b tu-border-default">
+
+            <h3 id="modal-6-title" class="text-xl font-semibold">
+                Modal title
+            </h3>
+
+            <button type="button"
+                    class="bg-transparent hover:tu-bg-default inline-flex justify-center items-center w-10 h-10 rounded-full transition-all duration-200 hover:rotate-90"
+                    aria-label="Close"
+                    data-modal-close="modal-6">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="p-4">
+
+            <p class="mb-6">Contents of the modal appear here.</p>
+
+            <div class="flex justify-end">
+                <button type="button"
+                        class="tc-btn tc-style-error"
+                        data-modal-close="modal-6">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="tc-modal-overlay"></div>
+
+</div>

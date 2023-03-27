@@ -1,0 +1,146 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>Blockquote</h1>
+
+    <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+        <thead>
+        <tr class="text-left">
+            <th>Class name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><code>tc-blockquote</code></td>
+            <td>Component</td>
+            <td>Blockquote</td>
+        </tr>
+        <tr>
+            <td><code>tc-blockquote-alt</code></td>
+            <td>Component</td>
+            <td>Alternate styled blockquote</td>
+        </tr>
+        <tr>
+            <td><code>tc-blockquote-l</code></td>
+            <td>Utility</td>
+            <td>Float left</td>
+        </tr>
+        <tr>
+            <td><code>tc-blockquote-r</code></td>
+            <td>Utility</td>
+            <td>Float right</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Examples</h2>
+
+    <h3>tc-blockquote</h3>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-blockquote-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-blockquote-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-blockquote-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-blockquote-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-blockquote-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-blockquote-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-blockquote.html" %}
+        </div>
+
+    </div> <!-- /#tc-blockquote-panel-1 -->
+
+    <div id="tc-blockquote-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-blockquote-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-blockquote.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-blockquote-panel-2 -->
+
+</div> <!-- / tab container -->
+
+<h3 class="tu-typo-apply">tc-blockquote-alt</h3>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-blockquote-alt-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-blockquote-alt-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-blockquote-alt-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-blockquote-alt-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-blockquote-alt-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-blockquote-alt-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-blockquote-alt.html" %}
+        </div>
+
+    </div> <!-- /#tc-blockquote-alt-panel-1 -->
+
+    <div id="tc-blockquote-alt-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-blockquote-alt-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-blockquote-alt.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-blockquote-alt-panel-2 -->
+
+</div> <!-- / tab container -->
+{% endblock %}

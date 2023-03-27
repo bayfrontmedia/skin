@@ -1,0 +1,136 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>{{ title }}</h1>
+
+    <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+        <thead>
+        <tr class="text-left">
+            <th>Class name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><code>tc-modal</code></td>
+            <td>Component</td>
+            <td>Modal component</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-content</code></td>
+            <td>Component</td>
+            <td>Modal contents</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-box</code></td>
+            <td>Utility</td>
+            <td>Content style: box</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-drawer-l</code></td>
+            <td>Utility</td>
+            <td>Content style: left drawer</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-drawer-r</code></td>
+            <td>Utility</td>
+            <td>Content style: right drawer</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-drawer-t</code></td>
+            <td>Utility</td>
+            <td>Content style: top drawer</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-drawer-b</code></td>
+            <td>Utility</td>
+            <td>Content style: bottom drawer</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-drawer-screen</code></td>
+            <td>Utility</td>
+            <td>Content style: fullscreen</td>
+        </tr>
+        <tr>
+            <td><code>tc-modal-overlay</code></td>
+            <td>Component</td>
+            <td>Modal overlay</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 id="create">Creating a modal</h2>
+
+    <p>
+        Modals must contain each of the three modal components: <code>tc-modal</code>,
+        <code>tc-modal-content</code>, and <code>tc-modal-overlay</code>.
+        A modal utility class can be added to the <code>tc-modal-content</code>
+        component to stylize the modal content.
+    </p>
+
+    <h2 id="usage">Usage</h2>
+
+    <p>
+        Modals are controlled with JavaScript using
+        <a href="start-javascript.html#config-modal" title="data attributes">data attributes</a>,
+        or with the <a href="start-javascript.html#skin.modal.show" title="Skin.Modal.show">Skin.Modal.show</a> and
+        <a href="start-javascript.html#skin.modal.hide" title="Skin.Modal.hide">Skin.Modal.hide</a> functions.
+    </p>
+
+    <h2>Examples</h2>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-modal-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-modal-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-modal-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-modal-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-modal-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-modal-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-modal.html" %}
+        </div>
+
+    </div> <!-- /#tc-modal-panel-1 -->
+
+    <div id="tc-modal-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-modal-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-modal.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-modal-panel-2 -->
+
+</div> <!-- / tab container -->
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1 id="installation">Installation</h1>
+
+    <p>Install Skin via npm:</p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+            <pre class="language-bash">
+                <code>npm i @bayfrontmedia/skin</code>
+            </pre>
+
+    </div>
+
+    <p>Add Skin as a Tailwind plugin and add the required <code>theme-primary</code> and <code>theme-secondary</code>
+        colors in the <code>tailwind.config.js</code> file. It is also recommended to use the
+        <a href="https://github.com/tailwindlabs/tailwindcss-forms"
+           title="@tailwindcss/forms"
+           target="_blank">@tailwindcss/forms</a> plugin to ensure proper styling of form elements:</p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+         <pre><code class="language-js">
+                {% filter escape %}
+                {% include "src/views/snippets/installation-tailwind.config.js" %}
+                {% endfilter %}
+            </code></pre>
+    </div>
+
+    <p>To support toggling dark mode manually instead of relying on the operating system preference,
+        use the <code>class</code> strategy:</p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+        <pre><code class="language-js">
+                {% filter escape %}
+                {% include "src/views/snippets/installation-dark-mode.js" %}
+                {% endfilter %}
+            </code></pre>
+    </div>
+
+    <p>To utilize the JavaScript features, include the <code>skin.min.js</code> file and initialize Skin:</p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+        <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/installation-skin.html" %}
+                {% endfilter %}
+            </code></pre>
+    </div>
+
+    <p>For more information, see <a href="start-javascript.html" title="JavaScript">JavaScript</a>.</p>
+
+    <div class="tc-alert tc-style-warning-light mb-6">
+        TODO: Add cdnjs, jsdelivr, unpkg
+    </div>
+
+</div>
+{% endblock %}

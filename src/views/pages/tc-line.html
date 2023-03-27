@@ -1,0 +1,80 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>{{ title }}</h1>
+
+    <p>The line color can be modified with any background color utility.</p>
+
+    <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+        <thead>
+        <tr class="text-left">
+            <th>Class name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><code>tc-line</code></td>
+            <td>Component</td>
+            <td>Line with the default border color</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Examples</h2>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-line-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tc-line-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="tc-line-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tc-line-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="tc-line-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-line-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/tc-line.html" %}
+        </div>
+
+    </div> <!-- /#tc-line-panel-1 -->
+
+    <div id="tc-line-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-line-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+            <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/tc-line.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#tc-line-panel-2 -->
+
+</div> <!-- / tab container -->
+{% endblock %}
