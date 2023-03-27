@@ -5,7 +5,7 @@ const Nunjucks = require('nunjucks');
 const fileDocs = { // JS for Skin documentation
     entry: path.resolve(__dirname, 'src/js/build-scripts.js'),
     output: {
-        path: path.resolve(__dirname, 'public/assets/js'),
+        path: path.resolve(__dirname, 'docs/assets/js'),
         filename: 'scripts.js'
     }
 }
@@ -177,12 +177,12 @@ const sidebarItems = [
 // noinspection JSUnusedGlobalSymbols
 const fileTemplates = {
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, 'docs'),
     },
     plugins: [
         new HtmlBundlerPlugin({
             entry: { // Define templates here
-                'index': { // public/index.html
+                'index': { // docs/index.html
                     import: 'src/views/pages/index.html',
                     data: {
                         title: "Introduction",

@@ -20,9 +20,9 @@
     "lib": "lib"
   },
   "scripts": {
-    "watch:styles": "npx tailwindcss -i src/css/styles.css -o public/assets/css/styles.css --watch",
-    "build:styles": "npx tailwindcss -i src/css/styles.css -o public/assets/css/styles.css",
-    "build:styles:prod": "npx tailwindcss -i src/css/styles.css -o public/assets/css/styles.css --minify",
+    "watch:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --watch",
+    "build:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css",
+    "build:styles:prod": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --minify",
     "build:webpack": "webpack --mode development",
     "build:webpack:prod": "webpack --mode production",
     "build:prod": "npm run build:styles:prod && npm run build:webpack:prod"

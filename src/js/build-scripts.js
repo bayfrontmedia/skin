@@ -1,5 +1,5 @@
 /*
-Used to build the public/assets/js/scripts.js file for use by Skin documentation.
+Used to build the docs/assets/js/scripts.js file for use by Skin documentation.
  */
 
 import * as App from "./modules/App";

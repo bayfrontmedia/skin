@@ -1,10 +1,9 @@
 const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./public/**/*.{html,js}", "./src/js/**/*.js"],
+    content: ["./docs/**/*.{html,js}"],
     darkMode: 'class',
     theme: {
         extend: {
