@@ -21,15 +21,6 @@ module.exports = {
     skin: {
         borderRadius: '.25rem',
         borderWidth: '1px',
-        boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);',
-        themes: { //  Valid themes: light/dark
-            light: { // Default theme values can be overwritten
-                //textDefault: colors.red["500"]
-            },
-            dark: {
-                //bgDefault: colors.gray["900"]
-            }
-        }
     },
     plugins: [
         require('@tailwindcss/forms'),
