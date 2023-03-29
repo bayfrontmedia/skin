@@ -126,6 +126,10 @@ const sidebarItems = [
                 href: 'example-dark-mode.html'
             },
             {
+                title: 'Forms',
+                href: 'example-forms.html'
+            },
+            {
                 title: 'Images',
                 href: 'example-images.html'
             },
@@ -200,6 +204,13 @@ const fileTemplates = {
                     import: 'src/views/pages/example-dark-mode.html',
                     data: {
                         title: "Dark mode",
+                        sidebarItems: sidebarItems
+                    },
+                },
+                'example-forms': {
+                    import: 'src/views/pages/example-forms.html',
+                    data: {
+                        title: "Forms",
                         sidebarItems: sidebarItems
                     },
                 },

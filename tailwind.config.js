@@ -14,7 +14,7 @@ module.exports = {
             fontFamily: {
                 'sans': ['Inter', ...defaultTheme.fontFamily.sans],
                 'serif': ["'Roboto Slab'", ...defaultTheme.fontFamily.serif],
-                'mono': ["'Noto Sans Mono'", ...defaultTheme.fontFamily.mono]
+                'mono': ["'Menlo'", ...defaultTheme.fontFamily.mono]
             },
         },
     },

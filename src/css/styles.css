@@ -209,102 +209,14 @@
     /* Monospace */
 
     @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 100;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-Thin.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-Thin.woff') format("woff"),
-        url('./fonts/NotoSansMono-Thin.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 200;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-ExtraLight.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-ExtraLight.woff') format("woff"),
-        url('./fonts/NotoSansMono-ExtraLight.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 300;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-Light.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-Light.woff') format("woff"),
-        url('./fonts/NotoSansMono-Light.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
+        font-family: 'Menlo';
         font-weight: 400;
         font-style: normal;
         font-display: swap;
         /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-Regular.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-Regular.woff') format("woff"),
-        url('./fonts/NotoSansMono-Regular.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-Medium.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-Medium.woff') format("woff"),
-        url('./fonts/NotoSansMono-Medium.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-SemiBold.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-SemiBold.woff') format("woff"),
-        url('./fonts/NotoSansMono-SemiBold.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-Bold.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-Bold.woff') format("woff"),
-        url('./fonts/NotoSansMono-Bold.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 800;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-ExtraBold.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-ExtraBold.woff') format("woff"),
-        url('./fonts/NotoSansMono-ExtraBold.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Noto Sans Mono';
-        font-weight: 900;
-        font-style: normal;
-        font-display: swap;
-        /*noinspection CssUnknownTarget*/
-        src: url('./fonts/NotoSansMono-Black.woff2') format("woff2"),
-        url('./fonts/NotoSansMono-Black.woff') format("woff"),
-        url('./fonts/NotoSansMono-Black.ttf') format('truetype');
+        src: url('./fonts/Menlo-Regular.woff2') format("woff2"),
+        url('./fonts/Menlo-Regular.woff') format("woff"),
+        url('./fonts/Menlo-Regular.ttf') format('truetype');
     }
 
 }
