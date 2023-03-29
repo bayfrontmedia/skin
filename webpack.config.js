@@ -422,7 +422,9 @@ const fileTemplates = {
                 preprocessor: (template, { data }) => Nunjucks.renderString(template, data),
                 sources: false, // Ignore js/css source references in the templates
             },
-            minify: 'auto' // Minify when mode = production
+            minify: {
+                removeRedundantAttributes: false, // Prevents styling bug when input "type=text" is removed
+            }
         }),
     ]
 }
