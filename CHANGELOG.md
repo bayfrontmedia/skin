@@ -13,13 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
-## [0.1.0] - 2023.03.27
+## [0.3.0] - Upcoming
 
-### Added
 
-- Initial release.
 
-## [0.2.0] - Upcoming
+## [0.2.0] - 2023.03.30
 
 ### Added
 
@@ -38,3 +36,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed some CSS bugs.
 - Fixed JavaScript bug in modal not allowing any keydown events.
+
+## [0.1.0] - 2023.03.27
+
+### Added
+
+- Initial release.
