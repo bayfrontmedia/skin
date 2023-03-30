@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated to support Tailwind CSS v3.3.
 - Updated documentation.
+- Updated vendor dependencies.
 
 ### Fixed
 
