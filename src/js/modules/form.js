@@ -1,5 +1,5 @@
 /**
- * Return a Promise object for an expected JSON response from fetch() using the form action, method and data.
+ * Return a Promise object for an expected JSON response from fetch() using the action, method and data of a form.
  *
  * @param formEl
  * @param config
@@ -33,12 +33,12 @@ export function getPromise(formEl, config = {}) {
     }).then(response => {
 
         if (!response.ok) {
-            throw new Error("Network response was not OK");
+            throw new Error("Network response was not OK (" + response.status + ")");
         }
 
         return response.json();
 
-    }).then(json => (json)).catch(err => {
+    }).catch(err => {
         console.error("Fetch error in getPromise function:", err);
     });
 
