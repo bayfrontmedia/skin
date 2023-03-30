@@ -179,6 +179,7 @@ const sidebarItems = [
 
 // noinspection JSUnusedGlobalSymbols
 const fileTemplates = {
+    //watch: process.env.NODE_ENV === 'development', // See: https://webpack.js.org/configuration/watch/#watch. Currently set using --watch flag
     output: {
         path: path.resolve(__dirname, 'docs'),
     },
@@ -395,7 +396,7 @@ const fileTemplates = {
             minifyOptions: {
                 removeRedundantAttributes: false, // Prevents styling bug when input "type=text" is removed
             }
-        }),
+        })
     ]
 }
 

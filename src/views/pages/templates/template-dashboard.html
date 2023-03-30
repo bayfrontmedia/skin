@@ -81,42 +81,6 @@
 
                         </div>
 
-                        <!-- Full screen -->
-                        <div>
-
-                            <button id="header-fullscreen-toggle" class="inline-flex justify-center items-center hover:tu-bg-default w-10 h-10 rounded-full cursor-pointer"
-                                    data-popper="popper-header-fullscreen"
-                                    data-popper-placement="bottom-start"
-                                    data-popper-trigger="hover" data-popper-offset="0,10">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke-width="1.5"
-                                     stroke="currentColor"
-                                     class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-                                </svg>
-                            </button>
-
-                        </div>
-
-                        <!-- Add -->
-                        <div>
-
-                            <button class="inline-flex justify-center items-center hover:tu-bg-default w-10 h-10 rounded-full cursor-pointer"
-                                    data-popper="popper-header-add"
-                                    data-popper-placement="bottom-start"
-                                    data-popper-trigger="click"
-                                    data-popper-offset="0,10">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke-width="1.5"
-                                     stroke="currentColor"
-                                     class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-
-                            </button>
-
-                        </div>
-
                         <!-- Notifications -->
                         <div>
 
@@ -145,6 +109,25 @@
                                 </button>
 
                             </div>
+
+                        </div>
+
+                        <!-- Add -->
+                        <div class="hidden md:block">
+
+                            <button class="inline-flex justify-center items-center hover:tu-bg-default w-10 h-10 rounded-full cursor-pointer"
+                                    data-popper="popper-header-add"
+                                    data-popper-placement="bottom-start"
+                                    data-popper-trigger="click"
+                                    data-popper-offset="0,10">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5"
+                                     stroke="currentColor"
+                                     class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+
+                            </button>
 
                         </div>
 
@@ -889,14 +872,7 @@
 
                     <div class="col-span-4 md:col-span-2 p-4 tu-border-radius border tc-style-content">
 
-                        <span data-popper="popper-box-2" data-popper-placement="top" data-popper-trigger="hover" data-popper-offset="0,10">Hover for tooltip</span>
-
-                        <div id="popper-box-2"
-                             class="px-2 py-1 text-sm max-w-sm tc-popper tc-style-inverse tu-border-radius tu-border-width tu-box-shadow"
-                             role="tooltip">
-                            This is a tooltip that will be shown when needed. It hides and shows automatically.
-                            <div data-popper-arrow></div>
-                        </div>
+                        Box 2
 
                     </div>
 
@@ -1369,7 +1345,7 @@
                         </div>
 
                         <!-- Close -->
-                        <button class="flex-none p-0.5 tu-border-radius hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75"
+                        <button class="flex-none p-0.5 tu-border-radius hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 focus:tu-ring-success"
                                 data-hide="sidebar-cta"
                                 data-hide-transition="250"
                                 data-hide-duration="0"
@@ -1430,42 +1406,6 @@
         Skin.App.init({
             debug: true
         });
-
-    });
-
-    // Toggle fullscreen
-
-    document.getElementById("header-fullscreen-toggle").addEventListener("click", function() {
-
-        const el = document.documentElement;
-
-        function openFullscreen(el) {
-            if (el.requestFullscreen) {
-                el.requestFullscreen();
-            } else if (el.webkitRequestFullscreen) { /* Safari */
-                el.webkitRequestFullscreen();
-            } else if (el.msRequestFullscreen) { /* IE11 */
-                el.msRequestFullscreen();
-            }
-            el.dataset.fullscreen = "true";
-        }
-
-        function closeFullscreen(el) {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) { /* Safari */
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) { /* IE11 */
-                document.msExitFullscreen();
-            }
-            el.removeAttribute("fullscreen");
-        }
-
-        if (el.dataset.fullscreen === "true") {
-            closeFullscreen(el);
-        } else {
-            openFullscreen(el);
-        }
 
     });
 

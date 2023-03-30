@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/bayfrontmedia/skin.git"
   },
+  "bugs": {
+    "url": "https://github.com/bayfrontmedia/skin/issues"
+  },
   "keywords": [
     "tailwind",
     "tailwindcss",
@@ -23,6 +26,7 @@
     "watch:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --watch",
     "build:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css",
     "build:styles:prod": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --minify",
+    "watch:webpack": "webpack --mode development --watch",
     "build:webpack": "webpack --mode development",
     "build:webpack:prod": "webpack --mode production",
     "build:prod": "npm run build:styles:prod && npm run build:webpack:prod"
@@ -37,8 +41,5 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6"
-  },
-  "bugs": {
-    "url": "https://github.com/bayfrontmedia/skin/issues"
   }
 }
