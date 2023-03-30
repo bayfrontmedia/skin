@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `Skin.Form.getPromise()` function.
 - Added form example.
 - Added `tu-ring-*` utility classes.
+- Added a focus trap to the modal element when shown.
 
 ### Changed
 

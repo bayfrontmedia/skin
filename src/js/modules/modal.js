@@ -1,4 +1,13 @@
 import {show as VisShow, hide as VisHide} from "./Visibility";
+import * as focusTrap from 'focus-trap';
+
+/**
+ * Focus traps.
+ *
+ * @type {{}}
+ */
+
+let traps = {};
 
 /**
  * Show a modal component.
@@ -42,6 +51,14 @@ export function show(id, config = {}) {
         body.dataset.modalId = id;
         body.dataset.modalStrict = String(config.strict);
 
+        traps[id] = focusTrap.createFocusTrap(modal, {
+            escapeDeactivates: false,
+            clickOutsideDeactivates: false,
+            allowOutsideClick: false
+        });
+
+        traps[id].activate();
+
     }
     // ...else logDebug
 
@@ -73,6 +90,10 @@ export function hide(id) {
 
         delete body.dataset.modalId;
         delete body.dataset.modalStrict;
+
+        if (traps[id]) {
+            traps[id].deactivate();
+        }
 
     }
     // ...else logDebug
