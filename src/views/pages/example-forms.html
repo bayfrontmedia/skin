@@ -1,0 +1,67 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1>{{ title }}</h1>
+
+    <p>
+        The example below utilizes the <a href="start-javascript.html#skin.form.getpromise"
+                                          title="Skin.Form.getPromise">Skin.Form.getPromise</a> function.
+        In addition, <a href="https://pristine.js.org/" title="PristineJS">PristineJS</a> is also used.
+    </p>
+
+    <p>Examples are given for utilizing <a href="tc-alert.html" title="alerts">alerts</a> and
+        <a href="tc-toast.html" title="toasts">toasts</a> to display messages.</p>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="example-form-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="example-form-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="example-form-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="example-form-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="example-form-panel-1" role="tabpanel" tabindex="0" aria-labelledby="example-form-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/example-form.html" %}
+        </div>
+
+    </div> <!-- /#example-form-panel-1 -->
+
+    <div id="example-form-panel-2" role="tabpanel" tabindex="0" aria-labelledby="example-form-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+            <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/example-form.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#example-form-panel-2 -->
+
+</div> <!-- / tab container -->
+{% endblock %}

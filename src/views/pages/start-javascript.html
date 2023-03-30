@@ -21,6 +21,7 @@
         <li><a href="#skin.app.init" title="Skin.App.init">Skin.App.init</a></li>
         <li><a href="#skin.app.gettheme" title="Skin.App.getTheme">Skin.App.getTheme</a></li>
         <li><a href="#skin.app.settheme" title="Skin.App.setTheme">Skin.App.setTheme</a></li>
+        <li><a href="#skin.form.getpromise" title="Skin.Form.getPromise">Skin.Form.getPromise</a></li>
         <li><a href="#skin.modal.show" title="Skin.Modal.show">Skin.Modal.show</a></li>
         <li><a href="#skin.modal.hide" title="Skin.Modal.hide">Skin.Modal.hide</a></li>
         <li><a href="#skin.toast.create" title="Skin.Toast.create">Skin.Toast.create</a></li>
@@ -262,6 +263,26 @@
         <li><code>theme</code></li>
         <li><code>save = false</code></li>
     </ul>
+
+    <h3 id="skin.form.getpromise">Skin.Form.getPromise</h3>
+
+    <p>Return a <code>Promise</code> object for an expected JSON response from <code>fetch()</code>
+        using the action, method and data of a form.</p>
+
+    <p><strong>Parameters:</strong></p>
+
+    <ul class="tc-list mb-6">
+        <li><code>formEl</code> - Form element</li>
+        <li><code>config = {}</code> - Object</li>
+    </ul>
+
+    <p>Valid <code>config</code> object properties are <code>data</code> and <code>headers</code>.
+    The <code>data</code> property can be an object whose key/value pairs will be added to the form data.
+    The <code>headers</code> property can be an object whose key/value pairs will be added to the request headers.</p>
+
+    <p>The <code>fetch</code> request will be sent with the header <code>Accept: application/json</code> by default.</p>
+
+    <p>For an example, see <a href="example-forms.html" title="example forms">example forms</a>.</p>
 
     <h3 id="skin.modal.show">Skin.Modal.show</h3>
 

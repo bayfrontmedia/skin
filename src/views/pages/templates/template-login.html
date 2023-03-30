@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../assets/css/styles.css" rel="stylesheet">
+
+    <link rel="icon" href="../assets/img/favicon/favicon.ico" type="image/x-icon" sizes="any">
+    <link rel="icon" href="../assets/img/favicon/favicon.svg" type="image/svg+xml">
+
     <title>Skin :: Login</title>
 </head>
 
@@ -19,17 +23,17 @@
 
         <h1 class="text-2xl font-bold mb-6">Sign in to your account</h1>
 
-        <label class="tc-form-label font-semibold" for="input-email">Your email</label>
-        <input type="email" id="input-email" name="input-email" class="tc-form-input tu-bg-default mb-6" placeholder="name@company.com" autofocus>
+        <label class="tc-form-label mb-1 text-sm font-medium" for="input-email">Your email</label>
+        <input type="email" id="input-email" name="input-email" class="tc-form-input mb-6" placeholder="name@company.com" autofocus>
 
-        <label class="tc-form-label font-semibold" for="input-password">Password</label>
-        <input type="password" id="input-password" name="input-password" class="tc-form-input tu-bg-default mb-6" placeholder="••••••••">
+        <label class="tc-form-label mb-1 text-sm font-medium" for="input-password">Password</label>
+        <input type="password" id="input-password" name="input-password" class="tc-form-input mb-6" placeholder="••••••••">
 
         <div class="flex items-center justify-between mb-6">
 
-            <div>
-                <input type="checkbox" id="checkbox-1" name="checkbox-a" class="tc-form-checkbox tu-bg-default">
-                <label class="tc-form-label ml-2" for="checkbox-1">Remember me</label>
+            <div class="flex items-center">
+                <input type="checkbox" id="input-remember" name="remember" class="tc-form-checkbox">
+                <label class="tc-form-label ml-2" for="input-remember">Remember me</label>
             </div>
 
             <div>
@@ -38,7 +42,7 @@
 
         </div>
 
-        <div class="block font-semibold mb-6 tc-btn tc-style-primary">Sign in</div>
+        <button class="block font-semibold mb-6 tc-btn tc-style-primary focus:tu-ring-info">Sign in</button>
 
         <p class="tu-text-light">Don't have an account yet? <a href="#" title="Sign up" class="font-semibold text-theme-primary hover:underline">Sign up</a></p>
 

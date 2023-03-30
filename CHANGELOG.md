@@ -18,3 +18,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial release.
+
+## [0.2.0] - Upcoming
+
+### Added
+
+- Added `Skin.Form.getPromise()` function.
+- Added form example.
+- Added `tu-ring-*` utility classes.
+- Added a focus trap to the modal element when shown.
+
+### Changed
+
+- Updated to support Tailwind CSS v3.3.
+- Updated documentation.
+- Updated vendor dependencies.
+
+### Fixed
+
+- Fixed some CSS bugs.
+- Fixed JavaScript bug in modal not allowing any keydown events.

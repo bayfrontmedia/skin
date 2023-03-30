@@ -1,11 +1,10 @@
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
-const Nunjucks = require('nunjucks');
 
 const fileDocs = { // JS for Skin documentation
     entry: path.resolve(__dirname, 'src/js/build-scripts.js'),
     output: {
-        path: path.resolve(__dirname, 'public/assets/js'),
+        path: path.resolve(__dirname, 'docs/assets/js'),
         filename: 'scripts.js'
     }
 }
@@ -126,6 +125,10 @@ const sidebarItems = [
                 href: 'example-dark-mode.html'
             },
             {
+                title: 'Forms',
+                href: 'example-forms.html'
+            },
+            {
                 title: 'Images',
                 href: 'example-images.html'
             },
@@ -176,243 +179,224 @@ const sidebarItems = [
 
 // noinspection JSUnusedGlobalSymbols
 const fileTemplates = {
+    //watch: process.env.NODE_ENV === 'development', // See: https://webpack.js.org/configuration/watch/#watch. Currently set using --watch flag
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, 'docs'),
     },
     plugins: [
         new HtmlBundlerPlugin({
             entry: { // Define templates here
-                'index': { // public/index.html
+                'index': { // docs/index.html
                     import: 'src/views/pages/index.html',
                     data: {
                         title: "Introduction",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'example-card': {
                     import: 'src/views/pages/example-card.html',
                     data: {
                         title: "Card",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'example-dark-mode': {
                     import: 'src/views/pages/example-dark-mode.html',
                     data: {
                         title: "Dark mode",
-                        sidebarItems: sidebarItems
+                    },
+                },
+                'example-forms': {
+                    import: 'src/views/pages/example-forms.html',
+                    data: {
+                        title: "Forms",
                     },
                 },
                 'example-images': {
                     import: 'src/views/pages/example-images.html',
                     data: {
                         title: "Images",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'example-tabs': {
                     import: 'src/views/pages/example-tabs.html',
                     data: {
                         title: "Tabs",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'example-toggle': {
                     import: 'src/views/pages/example-toggle.html',
                     data: {
                         title: "Toggle",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'start-configuration': {
                     import: 'src/views/pages/start-configuration.html',
                     data: {
                         title: "Configuration",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'start-installation': {
                     import: 'src/views/pages/start-installation.html',
                     data: {
                         title: "Installation",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'start-javascript': {
                     import: 'src/views/pages/start-javascript.html',
                     data: {
                         title: "JavaScript",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-alert': {
                     import: 'src/views/pages/tc-alert.html',
                     data: {
                         title: "Alert",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-badge': {
                     import: 'src/views/pages/tc-badge.html',
                     data: {
                         title: "Badge",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-blockquote': {
                     import: 'src/views/pages/tc-blockquote.html',
                     data: {
                         title: "Blockquote",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-btn': {
                     import: 'src/views/pages/tc-btn.html',
                     data: {
                         title: "Button",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-code': {
                     import: 'src/views/pages/tc-code.html',
                     data: {
                         title: "Code",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-form': {
                     import: 'src/views/pages/tc-form.html',
                     data: {
                         title: "Form",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-line': {
                     import: 'src/views/pages/tc-line.html',
                     data: {
                         title: "Line",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-list': {
                     import: 'src/views/pages/tc-list.html',
                     data: {
                         title: "List",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-modal': {
                     import: 'src/views/pages/tc-modal.html',
                     data: {
                         title: "Modal",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-popper': {
                     import: 'src/views/pages/tc-popper.html',
                     data: {
                         title: "Popper",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-progress': {
                     import: 'src/views/pages/tc-progress.html',
                     data: {
                         title: "Progress",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-style': {
                     import: 'src/views/pages/tc-style.html',
                     data: {
                         title: "Style",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-table': {
                     import: 'src/views/pages/tc-table.html',
                     data: {
                         title: "Table",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'tc-toast': {
                     import: 'src/views/pages/tc-toast.html',
                     data: {
                         title: "Toast",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'theme-utilities': {
                     import: 'src/views/pages/theme-utilities.html',
                     data: {
                         title: "Utilities",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'theme-variables': {
                     import: 'src/views/pages/theme-variables.html',
                     data: {
                         title: "Variables",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'templates/template-2col': {
                     import: 'src/views/pages/templates/template-2col.html',
                     data: {
                         title: "Two column",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'templates/template-3col': {
                     import: 'src/views/pages/templates/template-3col.html',
                     data: {
                         title: "Three column",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'templates/template-container': {
                     import: 'src/views/pages/templates/template-container.html',
                     data: {
                         title: "Container",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'templates/template-dashboard': {
                     import: 'src/views/pages/templates/template-dashboard.html',
                     data: {
                         title: "Dashboard",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'templates/template-full': {
                     import: 'src/views/pages/templates/template-full.html',
                     data: {
                         title: "Full width",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'templates/template-login': {
                     import: 'src/views/pages/templates/template-login.html',
                     data: {
                         title: "Login",
-                        sidebarItems: sidebarItems
                     },
                 },
                 'templates/template-login-alt': {
                     import: 'src/views/pages/templates/template-login-alt.html',
                     data: {
                         title: "Login alt",
-                        sidebarItems: sidebarItems
                     },
                 },
             },
             loaderOptions: {
-                preprocessor: (template, { data }) => Nunjucks.renderString(template, data),
+                preprocessor: 'nunjucks',
+                data: {
+                    sidebarItems
+                },
                 sources: false, // Ignore js/css source references in the templates
             },
-            minify: 'auto' // Minify when mode = production
-        }),
+            minify: 'auto',
+            minifyOptions: {
+                removeRedundantAttributes: false, // Prevents styling bug when input "type=text" is removed
+            }
+        })
     ]
 }
 

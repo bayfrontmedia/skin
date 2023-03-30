@@ -372,28 +372,27 @@ export function init(config = {}) {
 
     document.onkeydown = (event) => {
 
-        if (document.body.hasAttribute('data-modal-id')
-            && document.body.getAttribute('data-modal-strict') !== 'true') {
-            event.preventDefault(); // Disable key events behind modal overlay
-        }
-
         let isEscape = false;
 
         if ("key" in event && (event.key === "Escape" || event.key === "Esc")) {
             isEscape = true;
         }
 
-        if (isEscape && document.body.hasAttribute('data-modal-id')
-            && document.body.getAttribute('data-modal-strict') !== 'true') {
+        if (isEscape && document.body.hasAttribute('data-modal-id')) {
 
-            if (document.getElementById(document.body.getAttribute('data-modal-id'))) {
-
-                Modal.hide(document.body.getAttribute('data-modal-id'));
+            if (document.body.getAttribute('data-modal-strict') === 'true') {
+                event.preventDefault();
 
             } else {
-                if (config.debug === true) {
-                    console.log('Modal ID does not exist: ' + document.body.getAttribute('data-modal-id'));
+
+                if (document.getElementById(document.body.getAttribute('data-modal-id'))) {
+                    Modal.hide(document.body.getAttribute('data-modal-id'));
+                } else {
+                    if (config.debug === true) {
+                        console.log('Modal ID does not exist: ' + document.body.getAttribute('data-modal-id'));
+                    }
                 }
+
             }
 
         }
