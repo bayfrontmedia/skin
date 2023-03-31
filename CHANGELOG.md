@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated styling of come utility classes.
 - Updated documentation relating to the `tailwind.config.js` file.
+- Updated dashboard and login templates.
 
 ### Fixed
 
