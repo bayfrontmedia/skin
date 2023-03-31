@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.0] - Upcoming
 
+### Changed
+
+- Updated styling of come utility classes.
+
 ### Fixed
 
 - Fixed bug in example form POST URL.
