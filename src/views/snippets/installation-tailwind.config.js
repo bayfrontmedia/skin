@@ -3,6 +3,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+    content: ['./node_modules/@bayfrontmedia/skin/dist/skin.min.js'],
     theme: {
         extend: {
             colors: {

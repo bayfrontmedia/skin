@@ -15,10 +15,13 @@
     </div>
 
     <p>Add Skin as a Tailwind plugin and add the required <code>theme-primary</code> and <code>theme-secondary</code>
-        colors in the <code>tailwind.config.js</code> file. It is also recommended to use the
+        colors in the <code>tailwind.config.js</code> file. In addition, add Skin's JavaScript file to your <code>content</code> data to ensure any Tailwind classes used
+        by Skin are not purged from your stylesheet.</p>
+
+    <p>It is also recommended to use the
         <a href="https://github.com/tailwindlabs/tailwindcss-forms"
            title="@tailwindcss/forms"
-           target="_blank">@tailwindcss/forms</a> plugin to ensure proper styling of form elements:</p>
+           target="_blank">@tailwindcss/forms</a> plugin to ensure proper styling of form elements.</p>
 
     <div class="tc-code tc-code-terminal mb-6">
          <pre><code class="language-js">
@@ -40,7 +43,7 @@
     </div>
 
     <p>To utilize the JavaScript features, include the <code>skin.min.js</code> file from your preferred source
-        and initialize Skin:</p>
+        and initialize Skin before the closing <code>body</code> tag:</p>
 
     <div class="tc-code tc-code-terminal mb-6">
         <pre><code class="language-html">
