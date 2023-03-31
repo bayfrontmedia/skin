@@ -1,6 +1,6 @@
 {
   "name": "@bayfrontmedia/skin",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A free open source library of Tailwind CSS components.",
   "author": "Bayfront Media",
   "license": "MIT",
@@ -15,8 +15,12 @@
   "keywords": [
     "tailwind",
     "tailwindcss",
+    "tailwind css",
+    "tailwind library",
     "component",
-    "ui"
+    "ui",
+    "skin",
+    "css"
   ],
   "main": "lib/index.js",
   "directories": {
@@ -29,7 +33,7 @@
     "watch:webpack": "webpack --mode development --watch",
     "build:webpack": "webpack --mode development",
     "build:webpack:prod": "webpack --mode production",
-    "build:prod": "npm run build:styles:prod && npm run build:webpack:prod"
+    "build:prod": "npm run build:webpack:prod && npm run build:styles:prod"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

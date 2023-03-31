@@ -13,13 +13,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
-## [0.1.0] - 2023.03.27
+## [0.3.0] - 2023.03.31
 
-### Added
+### Changed
 
-- Initial release.
+- Updated styling of come utility classes.
+- Updated documentation relating to the `tailwind.config.js` file.
+- Updated dashboard and login templates.
 
-## [0.2.0] - Upcoming
+### Fixed
+
+- Fixed bug in example form POST URL.
+
+## [0.2.0] - 2023.03.30
 
 ### Added
 
@@ -38,3 +44,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed some CSS bugs.
 - Fixed JavaScript bug in modal not allowing any keydown events.
+
+## [0.1.0] - 2023.03.27
+
+### Added
+
+- Initial release.
