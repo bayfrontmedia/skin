@@ -29,7 +29,7 @@
     "watch:webpack": "webpack --mode development --watch",
     "build:webpack": "webpack --mode development",
     "build:webpack:prod": "webpack --mode production",
-    "build:prod": "npm run build:styles:prod && npm run build:webpack:prod"
+    "build:prod": "npm run build:webpack:prod && npm run build:styles:prod"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
