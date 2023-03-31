@@ -15,8 +15,12 @@
   "keywords": [
     "tailwind",
     "tailwindcss",
+    "tailwind css",
+    "tailwind library",
     "component",
-    "ui"
+    "ui",
+    "skin",
+    "css"
   ],
   "main": "lib/index.js",
   "directories": {
