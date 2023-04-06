@@ -41,6 +41,10 @@ module.exports = {
 &lt;!-- jsDelivr --&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@bayfrontmedia/skin@0.3.0/dist/skin.min.js&quot;&gt;&lt;/script&gt;
 
+&lt;!-- Using a bundler such as Webpack --&gt;
+import &#39;@bayfrontmedia/skin/dist/skin.min&#39;;
+
+&lt;!-- Once the JavaScript is included, initialize Skin&#39;s features: --&gt;
 &lt;script&gt;
     window.addEventListener(&quot;load&quot;, () =&gt; {
         Skin.App.init();

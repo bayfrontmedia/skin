@@ -7,6 +7,10 @@
 <!-- jsDelivr -->
 <script src="https://cdn.jsdelivr.net/npm/@bayfrontmedia/skin@0.3.0/dist/skin.min.js"></script>
 
+<!-- Using a bundler such as Webpack -->
+import '@bayfrontmedia/skin/dist/skin.min';
+
+<!-- Once the JavaScript is included, initialize Skin's features: -->
 <script>
     window.addEventListener("load", () => {
         Skin.App.init();
