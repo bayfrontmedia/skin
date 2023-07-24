@@ -13,6 +13,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [1.1.0] - 2023.07.24
+
+### Added
+
+- Added `getMinimumBorderRadius` function in `index.js` and applied to `.tc-form-checkbox`
+- Added `.tc-btn-sm` component
+
+### Changed
+
+- `tc-btn-row` bugfix
+- Dark mode flicker bugfix
+
 ## [1.0.0] - 2023.04.06
 
 ### Changed
