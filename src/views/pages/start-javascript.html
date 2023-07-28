@@ -66,7 +66,7 @@
     <h4 id="config-urltheme">urlTheme</h4>
 
     <p>
-        When <code>urlTheme</code> is set to <code>true</code>, the theme can be changed using a
+        When <code>urlTheme.enabled</code> is set to <code>true</code>, the theme can be changed using a
         URL query parameter.
     </p>
 
@@ -77,13 +77,13 @@
     </p>
 
     <p>
-        The <code>paramName</code> member defines the URL query parameter used to change the theme.
+        The <code>urlTheme.paramName</code> member defines the URL query parameter used to change the theme.
     </p>
 
     <h4 id="config-theme">theme</h4>
 
     <p>
-        When <code>theme</code> is set to <code>true</code>, elements with a <code>data-theme-toggle</code>
+        When <code>theme.enabled</code> is set to <code>true</code>, elements with a <code>data-theme-toggle</code>
         attribute will set the theme to its value when clicked.
     </p>
 
@@ -94,7 +94,7 @@
     <h4 id="config-hide">hide</h4>
 
     <p>
-        When <code>hide</code> is set to <code>true</code>, elements with a <code>data-hide</code> attribute
+        When <code>hide.enabled</code> is set to <code>true</code>, elements with a <code>data-hide</code> attribute
         will hide the element with that ID when clicked.
     </p>
 
@@ -119,7 +119,7 @@
     <h4 id="config-show">show</h4>
 
     <p>
-        When <code>show</code> is set to <code>true</code>, elements with a <code>data-show</code> attribute
+        When <code>show.enabled</code> is set to <code>true</code>, elements with a <code>data-show</code> attribute
         will show the element with that ID when clicked.
     </p>
 
@@ -143,7 +143,7 @@
     <h4 id="config-toggle">toggle</h4>
 
     <p>
-        When <code>toggle</code> is set to <code>true</code>, elements with a <code>data-toggle</code>
+        When <code>toggle.enabled</code> is set to <code>true</code>, elements with a <code>data-toggle</code>
         attribute will toggle visibility of the element with that ID when clicked.
         An optional <code>data-toggle-transition</code> attribute sets the animation duration in milliseconds
         (250 by default).
@@ -157,7 +157,7 @@
     <h4 id="config-loadsrc">loadSrc</h4>
 
     <p>
-        When <code>loadSrc</code> is set to <code>true</code>, all images with a <code>data-load-src</code>
+        When <code>loadSrc.enabled</code> is set to <code>true</code>, all images with a <code>data-load-src</code>
         attribute will have their <code>src</code> replaced by its value.
         This is useful for "lazy loading" larger images to speed up the page load time.
     </p>
@@ -169,7 +169,7 @@
     <h4 id="config-modal">modal</h4>
 
     <p>
-        When <code>modal</code> is set to <code>true</code>, elements with a <code>data-modal-open</code>
+        When <code>modal.enabled</code> is set to <code>true</code>, elements with a <code>data-modal-open</code>
         attribute will open the modal with that ID when clicked.
         An optional <code>data-modal-strict</code> attribute specifies whether to open the modal in
         <a href="#skin.modal.show" title="strict mode">strict mode</a>.
@@ -187,7 +187,7 @@
     <h4 id="config-popper">popper</h4>
 
     <p>
-        When <code>popper</code> is set to <code>true</code>, elements with a <code>data-popper</code>
+        When <code>popper.enabled</code> is set to <code>true</code>, elements with a <code>data-popper</code>
         attribute will be used to show a <a href="https://popper.js.org/docs/v2/" title="Popper" target="_blank">Popper</a>
         element with that ID.
     </p>
@@ -216,7 +216,7 @@
     <h4 id="config-tabs">tabs</h4>
 
     <p>
-        When <code>tabs</code> is set to <code>true</code>, Skin will use elements with
+        When <code>tabs.enabled</code> is set to <code>true</code>, Skin will use elements with
         <code>role=tab</code>, <code>role=tablist</code> and <code>role=tabpanel</code>
         to build interactive tabs.
     </p>
@@ -246,6 +246,9 @@
 
         </tbody>
     </table>
+
+    <p>When <code>tabs.updateHash</code> is set to true, the URL hash will update as tabs are shown.
+        In addition, tabs can be shown by the URL hash.</p>
 
     <p>
         For an example, see <a href="example-tabs.html" title="example tabs">example tabs</a>.

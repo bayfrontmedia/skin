@@ -27,5 +27,6 @@
     },
     tabs: {
         enabled: true,
+        updateHash: true
     },
 }

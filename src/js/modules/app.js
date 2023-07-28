@@ -35,6 +35,7 @@ export function init(config = {}) {
         },
         tabs: {
             enabled: true,
+            updateHash: true
         },
     };
 
@@ -615,6 +616,16 @@ export function init(config = {}) {
                         .querySelector(`#${this.getAttribute("aria-controls")}`)
                         .removeAttribute("hidden");
 
+                    if (config.tabs.updateHash === true) {
+
+                        let tabLink = tab.getAttribute('aria-controls');
+
+                        if (tabLink !== null) {
+                            window.location.hash = tabLink;
+                        }
+
+                    }
+
                 });
 
                 // Enable arrow navigation between tabs in the tab list
@@ -658,6 +669,40 @@ export function init(config = {}) {
             });
 
         });
+
+        if (config.tabs.updateHash === true) {
+
+            // Show tab panel based on hash
+
+            const urlHash = window.location.hash.substring(1);
+
+            if (urlHash !== "") {
+
+                const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+                tabPanels.forEach(panel => {
+
+                    if (panel.id === urlHash) {
+
+                        let labelledBy = panel.getAttribute('aria-labelledby');
+
+                        if (labelledBy !== null) {
+
+                            setTimeout(function() {
+                                document.getElementById(labelledBy).click();
+                                panel.blur();
+                            }, 100); // Give time to load completely
+
+
+                        }
+
+                    }
+
+                });
+
+            }
+
+        }
 
     }
 
