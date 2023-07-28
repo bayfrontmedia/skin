@@ -20,6 +20,7 @@ module.exports = {
     },
     skin: {
         borderRadius: '0.25rem',
+        borderRadiusSm: '0.25rem',
         borderWidth: '1px',
     },
     plugins: [

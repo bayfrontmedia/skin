@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [1.2.0] - 2023.07.28
+
+### Added
+
+- Added the `.tu-border-radius-sm` class based on the `skin.borderRadiusSm` config value
+- Added the `tabs.updateHash` member to the `Skin.App.init` config object
+
 ## [1.1.0] - 2023.07.24
 
 ### Added
