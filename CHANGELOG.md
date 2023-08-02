@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [1.2.1] - 2023.08.02
+
+### Fixed
+
+- Fixed `data-hide` bug in `app.js`
+
 ## [1.2.0] - 2023.07.28
 
 ### Added

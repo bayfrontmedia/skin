@@ -115,7 +115,7 @@ export function init(config = {}) {
                 return;
             }
 
-            let storage = localStorage.getItem("dismiss-" + el.getAttribute("data-hide"));
+            let storage = localStorage.getItem("hide-" + el.getAttribute("data-hide"));
 
             if (storage !== null) { // Already dismissed
 
