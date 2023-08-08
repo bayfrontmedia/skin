@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [1.2.2] - Upcoming
+
+### Added
+
+- Added `removeExisting` property on the toast config object to remove any existing toasts in the container
+
+### Changed
+
+- Updated documentation
+
 ## [1.2.1] - 2023.08.02
 
 ### Fixed
