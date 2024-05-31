@@ -13,10 +13,11 @@ import * as Visibility from "./modules/Visibility";
 // Components
 
 import {SkinAlert} from "./components/skin-alert";
+import {SkinBadge} from "./components/skin-badge";
 import {SkinIcon} from "./components/skin-icon";
 import {SkinToast} from "./components/skin-toast";
 
-export {App, Form, Modal, Toast, Visibility, SkinAlert, SkinIcon, SkinToast};
+export {App, Form, Modal, Toast, Visibility, SkinAlert, SkinBadge, SkinIcon, SkinToast};
 
 window.Skin = {
     App,

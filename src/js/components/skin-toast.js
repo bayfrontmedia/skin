@@ -29,7 +29,7 @@ export class SkinToast extends HTMLElement {
             this.dataset.hidden = "true";
         }
 
-        let toastHtml = '<div class="w-full flex items-center gap-4">';
+        let toastHtml = '<div class="w-full flex items-center gap-3">';
 
         if (typeof this.dataset.icon != "undefined") {
             toastHtml += '<div class="flex-none"><skin-icon name="' + this.dataset.icon + '" data-class="w-6 h-6"></skin-icon></div>';

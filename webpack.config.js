@@ -80,6 +80,10 @@ const sidebarItems = [
                 href: 'tc-form.html'
             },
             {
+                title: 'Icon',
+                href: 'icon.html'
+            },
+            {
                 title: 'Line',
                 href: 'tc-line.html'
             },
@@ -280,6 +284,12 @@ const fileTemplates = {
                     import: 'src/views/pages/tc-form.html',
                     data: {
                         title: "Form",
+                    },
+                },
+                'icon': {
+                    import: 'src/views/pages/icon.html',
+                    data: {
+                        title: "Icon",
                     },
                 },
                 'tc-line': {

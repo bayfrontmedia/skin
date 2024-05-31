@@ -138,4 +138,67 @@
     </div> <!-- /#tc-badge-pill-panel-2 -->
 
 </div> <!-- / tab container -->
+
+<div class="tu-typo">
+
+    <h3 id="web-component">Web component</h3>
+
+    <p>Badges are available to be used as a web component. Any <code>tc-badge-*</code> utility class can be applied.</p>
+
+    <p>Attributes:</p>
+
+    <ul class="tc-list mb-6">
+        <li><code>data-icon</code>: Any valid <a href="icon.html" title="skin-icon">skin-icon</a> name (optional)</li>
+    </ul>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="web-component-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="web-component-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="web-component-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="web-component-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="web-component-panel-1" role="tabpanel" tabindex="0" aria-labelledby="web-component-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/skin-badge.html" %}
+        </div>
+
+    </div> <!-- /#web-component-panel-1 -->
+
+    <div id="web-component-panel-2" role="tabpanel" tabindex="0" aria-labelledby="web-component-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/skin-badge.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#web-component-panel-2 -->
+
+</div> <!-- / tab container -->
 {% endblock %}
