@@ -1,5 +1,6 @@
 {
     containerId: "tc-toast-container", // ID of toast container (parent element)
+    removeExisting: false, // Remove any existing toasts which exist inside the container
     toastId: "", // ID of toast (blank for none)
     classes: "tc-style-default", // Class(es) to add in addition to "tc-toast"
     duration: 250, // Animation duration in milliseconds
