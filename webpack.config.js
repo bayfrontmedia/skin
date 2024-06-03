@@ -85,7 +85,7 @@ const sidebarItems = [
             },
             {
                 title: 'Line',
-                href: 'tc-line.html'
+                href: 'skin-line.html'
             },
             {
                 title: 'List',
@@ -292,8 +292,8 @@ const fileTemplates = {
                         title: "Icon",
                     },
                 },
-                'tc-line': {
-                    import: 'src/views/pages/tc-line.html',
+                'skin-line': {
+                    import: 'src/views/pages/skin-line.html',
                     data: {
                         title: "Line",
                     },
