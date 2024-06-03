@@ -97,7 +97,7 @@ const sidebarItems = [
             },
             {
                 title: 'Progress',
-                href: 'tc-progress.html'
+                href: 'skin-progress.html'
             },
             {
                 title: 'Quote',
@@ -316,8 +316,8 @@ const fileTemplates = {
                         title: "Popper",
                     },
                 },
-                'tc-progress': {
-                    import: 'src/views/pages/tc-progress.html',
+                'skin-progress': {
+                    import: 'src/views/pages/skin-progress.html',
                     data: {
                         title: "Progress",
                     },
