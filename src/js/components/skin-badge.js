@@ -20,8 +20,6 @@ export class SkinBadge extends HTMLElement {
 
         const contents = this.innerHTML;
 
-        this.classList.add("inline-flex", "items-center", "px-2", "py-0.5", "me-2", "tu-border-radius", "tu-border-width");
-
         let innerHtml = '';
 
         if (typeof this.dataset.icon != "undefined") {

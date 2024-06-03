@@ -21,12 +21,6 @@ export class SkinCode extends HTMLElement {
 
         const contents = this.innerHTML;
 
-        this.classList.add("block", "p-4", "text-sm", "tc-style-default", "tu-border-radius", "tu-border-width", "tu-box-shadow", "overflow-x-scroll");
-
-        if (typeof this.dataset.style != "undefined") {
-            this.classList.add(this.dataset.style);
-        }
-
         let innerHtml = '';
 
         if (typeof this.dataset.circles != "undefined" && this.dataset.circles === "true") {
