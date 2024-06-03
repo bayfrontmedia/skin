@@ -57,11 +57,11 @@ const sidebarItems = [
         items: [
             {
                 title: 'Alert',
-                href: 'tc-alert.html'
+                href: 'skin-alert.html'
             },
             {
                 title: 'Badge',
-                href: 'tc-badge.html'
+                href: 'skin-badge.html'
             },
             {
                 title: 'Blockquote',
@@ -250,14 +250,14 @@ const fileTemplates = {
                         title: "JavaScript",
                     },
                 },
-                'tc-alert': {
-                    import: 'src/views/pages/tc-alert.html',
+                'skin-alert': {
+                    import: 'src/views/pages/skin-alert.html',
                     data: {
                         title: "Alert",
                     },
                 },
-                'tc-badge': {
-                    import: 'src/views/pages/tc-badge.html',
+                'skin-badge': {
+                    import: 'src/views/pages/skin-badge.html',
                     data: {
                         title: "Badge",
                     },
