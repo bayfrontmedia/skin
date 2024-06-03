@@ -81,7 +81,7 @@ const sidebarItems = [
             },
             {
                 title: 'Line',
-                href: 'skin-line.html'
+                href: 'tc-line.html'
             },
             {
                 title: 'List',
@@ -97,7 +97,7 @@ const sidebarItems = [
             },
             {
                 title: 'Progress',
-                href: 'skin-progress.html'
+                href: 'tc-progress.html'
             },
             {
                 title: 'Quote',
@@ -292,8 +292,8 @@ const fileTemplates = {
                         title: "Icon",
                     },
                 },
-                'skin-line': {
-                    import: 'src/views/pages/skin-line.html',
+                'tc-line': {
+                    import: 'src/views/pages/tc-line.html',
                     data: {
                         title: "Line",
                     },
@@ -316,8 +316,8 @@ const fileTemplates = {
                         title: "Popper",
                     },
                 },
-                'skin-progress': {
-                    import: 'src/views/pages/skin-progress.html',
+                'tc-progress': {
+                    import: 'src/views/pages/tc-progress.html',
                     data: {
                         title: "Progress",
                     },
