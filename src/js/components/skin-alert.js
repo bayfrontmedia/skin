@@ -23,10 +23,6 @@ export class SkinAlert extends HTMLElement {
 
         this.classList.add("flex", "items-center", "px-3", "py-2", "border-t-4", "tu-border-radius", "tu-border-width", "tu-box-shadow");
 
-        if (typeof this.dataset.style != "undefined") {
-            this.classList.add(this.dataset.style);
-        }
-
         this.setAttribute("role", "alert");
 
         if (typeof this.dataset.dismissDuration != "undefined") {

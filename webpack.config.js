@@ -64,16 +64,12 @@ const sidebarItems = [
                 href: 'skin-badge.html'
             },
             {
-                title: 'Blockquote',
-                href: 'tc-blockquote.html'
-            },
-            {
                 title: 'Button',
                 href: 'tc-btn.html'
             },
             {
                 title: 'Code',
-                href: 'tc-code.html'
+                href: 'skin-code.html'
             },
             {
                 title: 'Form',
@@ -81,7 +77,7 @@ const sidebarItems = [
             },
             {
                 title: 'Icon',
-                href: 'icon.html'
+                href: 'skin-icon.html'
             },
             {
                 title: 'Line',
@@ -102,6 +98,10 @@ const sidebarItems = [
             {
                 title: 'Progress',
                 href: 'tc-progress.html'
+            },
+            {
+                title: 'Quote',
+                href: 'skin-quote.html'
             },
             {
                 title: 'Style',
@@ -262,10 +262,10 @@ const fileTemplates = {
                         title: "Badge",
                     },
                 },
-                'tc-blockquote': {
-                    import: 'src/views/pages/tc-blockquote.html',
+                'skin-quote': {
+                    import: 'src/views/pages/skin-quote.html',
                     data: {
-                        title: "Blockquote",
+                        title: "Quote",
                     },
                 },
                 'tc-btn': {
@@ -274,8 +274,8 @@ const fileTemplates = {
                         title: "Button",
                     },
                 },
-                'tc-code': {
-                    import: 'src/views/pages/tc-code.html',
+                'skin-code': {
+                    import: 'src/views/pages/skin-code.html',
                     data: {
                         title: "Code",
                     },
@@ -286,8 +286,8 @@ const fileTemplates = {
                         title: "Form",
                     },
                 },
-                'icon': {
-                    import: 'src/views/pages/icon.html',
+                'skin-icon': {
+                    import: 'src/views/pages/skin-icon.html',
                     data: {
                         title: "Icon",
                     },

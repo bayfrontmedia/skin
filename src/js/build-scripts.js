@@ -14,11 +14,13 @@ import * as Visibility from "./modules/Visibility";
 
 import {SkinAlert} from "./components/skin-alert";
 import {SkinBadge} from "./components/skin-badge";
+import {SkinCode} from "./components/skin-code";
 import {SkinIcon} from "./components/skin-icon";
 import {SkinLine} from "./components/skin-line";
+import {SkinQuote} from "./components/skin-quote";
 import {SkinToast} from "./components/skin-toast";
 
-export {App, Form, Modal, Toast, Visibility, SkinAlert, SkinBadge, SkinIcon, SkinLine, SkinToast};
+export {App, Form, Modal, Toast, Visibility, SkinAlert, SkinBadge, SkinCode, SkinIcon, SkinLine, SkinQuote, SkinToast};
 
 window.Skin = {
     App,
