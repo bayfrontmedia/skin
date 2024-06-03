@@ -1,14 +1,68 @@
+<!-- Unstyled -->
+<skin-toast
+        class="mb-6"
+        data-icon="megaphone">
+    This is an unstyled toast
+</skin-toast>
+
 <!-- Default -->
-<skin-toast id="skin-toast-default" class="tc-style-default mb-6" data-icon="megaphone" data-dismiss-duration="0">This is a toast</skin-toast>
+<skin-toast
+        id="skin-toast-default"
+        class="tc-style-default mb-6"
+        data-dismiss-duration="0"
+        data-icon="megaphone"
+        data-style="bl">
+    This is a toast with <code>bl</code> style applied
+</skin-toast>
+
+<!-- Custom -->
+<skin-toast
+        class="tu-bg-default border-0 border-theme-primary mb-6"
+        data-icon="megaphone"
+        data-style="bl">
+    This is a custom toast with a <code>bl</code> style applied
+</skin-toast>
 
 <!-- Info -->
-<skin-toast class="tc-style-info-light mb-6" data-icon="information-circle">This is an informational toast</skin-toast>
+<skin-toast
+        class="tc-style-info-light mb-6"
+        data-icon="information-circle"
+        data-style="bt">
+    This is an informational toast with <code>bt</code> style applied
+</skin-toast>
 
 <!-- Warning -->
-<skin-toast class="tc-style-warning-light mb-6" data-icon="exclamation-triangle">This is a warning toast</skin-toast>
+<skin-toast
+        class="tc-style-warning-light mb-6"
+        data-icon="exclamation-triangle">
+    This is a warning toast
+</skin-toast>
 
 <!-- Error -->
-<skin-toast class="tc-style-error-light mb-6" data-icon="x-circle">This is an error toast</skin-toast>
+<skin-toast
+        class="tc-style-error-light mb-6"
+        data-icon="x-circle">
+    This is an error toast
+</skin-toast>
 
 <!-- Success -->
-<skin-toast class="tc-style-success-light mb-6" data-icon="check-circle">This is a success toast</skin-toast>
+<skin-toast
+        class="tc-style-success-light mb-6"
+        data-icon="check-circle">
+    This is a success toast
+</skin-toast>
+
+<button class="tc-btn tc-style-default"
+        data-show="toast-show"
+        data-show-duration="3000">Show toast</button>
+
+<skin-toast-container id="toast-show" data-style="br" data-hidden="true">
+
+    <skin-toast
+            class="tc-style-primary"
+            data-icon="megaphone"
+            data-style="bl">
+        Example toast shown by button click
+    </skin-toast>
+
+</skin-toast-container>

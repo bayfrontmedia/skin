@@ -8,8 +8,9 @@
  *   - id (If dismissible)
  *
  * Optional attributes:
- *   - data-icon (Any valid skin-icon name)
  *   - data-dismiss-duration (Minutes to keep toast hidden after dismissed)
+ *   - data-icon (Any valid skin-icon name)
+ *   - data-style (Alternate style: bt, br, bb, bl)
  */
 export class SkinToast extends HTMLElement {
     constructor() {
@@ -20,7 +21,6 @@ export class SkinToast extends HTMLElement {
 
         const contents = this.innerHTML;
 
-        this.classList.add("tc-toast", "tc-toast-alt");
         this.setAttribute("role", "alert");
         this.setAttribute("aria-live", "assertive");
         this.setAttribute("aria-atomic", "true");
@@ -50,6 +50,4 @@ export class SkinToast extends HTMLElement {
     }
 }
 
-window.addEventListener('load', () => { // Ensure this.innerHTML is available to gather
-    customElements.define('skin-toast', SkinToast);
-});
+customElements.define('skin-toast', SkinToast);

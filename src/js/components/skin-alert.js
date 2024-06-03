@@ -8,8 +8,8 @@
  *   - id (If dismissible)
  *
  * Optional attributes:
- *   - data-icon (Any valid skin-icon name)
  *   - data-dismiss-duration (Minutes to keep alert hidden after dismissed)
+ *   - data-icon (Any valid skin-icon name)
  *   - data-style (Alternate style: bt, br, bb, bl)
  */
 export class SkinAlert extends HTMLElement {
@@ -30,7 +30,7 @@ export class SkinAlert extends HTMLElement {
         let innerHtml = '<div class="w-full flex items-center gap-3">';
 
         if (typeof this.dataset.icon != "undefined") {
-            innerHtml += '<div class="flex-none"><skin-icon name="' + this.dataset.icon + '" class="flex-none pt-0.5" data-class="w-6 h-6"></skin-icon></div>';
+            innerHtml += '<div class="flex-none"><skin-icon name="' + this.dataset.icon + '" data-class="w-6 h-6"></skin-icon></div>';
         }
 
         innerHtml += '<div class="grow">' + contents + '</div>';

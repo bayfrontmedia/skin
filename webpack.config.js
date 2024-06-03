@@ -113,7 +113,7 @@ const sidebarItems = [
             },
             {
                 title: 'Toast',
-                href: 'tc-toast.html'
+                href: 'skin-toast.html'
             },
         ]
     },
@@ -334,8 +334,8 @@ const fileTemplates = {
                         title: "Table",
                     },
                 },
-                'tc-toast': {
-                    import: 'src/views/pages/tc-toast.html',
+                'skin-toast': {
+                    import: 'src/views/pages/skin-toast.html',
                     data: {
                         title: "Toast",
                     },
