@@ -11,9 +11,21 @@
 
     <ul class="tc-list mb-6">
         <li><code>id</code>: Unique ID (required if dismissible)</li>
-        <li><code>data-dismiss-duration</code>: Minutes to keep toast hidden after dismissed (optional)</li>
+        <li><code>data-hide-duration</code>: Duration (in minutes) to keep the toast hidden after dismissed (optional)</li>
+        <li><code>data-hide-transition</code>: Duration (in milliseconds) of the dismissal transition, <code>250</code> by default (optional)</li>
         <li><code>data-icon</code>: Any valid <a href="icon.html" title="skin-icon">skin-icon</a> name (optional)</li>
+        <li><code>data-location</code>: Location of the toast appearance in the window (optional)</li>
+        <li><code>data-location-id</code>: Unique ID for the generated toast container (can be used to programmatically show toast, optional)</li>
         <li><code>data-style</code>: Alternate style (optional)</li>
+    </ul>
+
+    <p>Valid locations include:</p>
+
+    <ul class="tc-list mb-6">
+        <li><code>tl</code>: Top left</li>
+        <li><code>tr</code>: Top right</li>
+        <li><code>bl</code>: Bottom left</li>
+        <li><code>br</code>: Bottom right</li>
     </ul>
 
     <p>Valid styles include:</p>
@@ -23,18 +35,6 @@
         <li><code>br</code>: 4px right border</li>
         <li><code>bb</code>: 4px bottom border</li>
         <li><code>bl</code>: 4px left border</li>
-    </ul>
-
-    <p>In addition, toasts can be placed inside a <code>skin-toast-container</code>
-        element to position its appearance in the window.</p>
-
-    <p>Valid <code>skin-toast-container</code> styles include:</p>
-
-    <ul class="tc-list mb-6">
-        <li><code>tl</code>: Top left</li>
-        <li><code>tr</code>: Top right</li>
-        <li><code>bl</code>: Bottom left</li>
-        <li><code>br</code>: Bottom right</li>
     </ul>
 
     <h2 id="examples">Examples</h2>

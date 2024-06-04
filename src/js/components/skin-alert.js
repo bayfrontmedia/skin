@@ -8,9 +8,10 @@
  *   - id (If dismissible)
  *
  * Optional attributes:
- *   - data-dismiss-duration (Minutes to keep alert hidden after dismissed)
- *   - data-icon (Any valid skin-icon name)
- *   - data-style (Alternate style: bt, br, bb, bl)
+ *   - data-hide-duration: Duration (in minutes) to keep the alert hidden after dismissed
+ *   - data-hide-transition: Duration (in milliseconds) of the dismissal transition, 250 by default
+ *   - data-icon: Any valid skin-icon name
+ *   - data-style: Alternate style (bt, br, bb, bl)
  */
 export class SkinAlert extends HTMLElement {
     constructor() {
@@ -23,7 +24,8 @@ export class SkinAlert extends HTMLElement {
 
         this.setAttribute("role", "alert");
 
-        if (typeof this.dataset.dismissDuration != "undefined") {
+        // noinspection DuplicatedCode
+        if (typeof this.dataset.hideDuration != "undefined") {
             this.dataset.hidden = "true";
         }
 
@@ -35,8 +37,14 @@ export class SkinAlert extends HTMLElement {
 
         innerHtml += '<div class="grow">' + contents + '</div>';
 
-        if (typeof this.dataset.dismissDuration != "undefined") {
-            innerHtml += '<button class="flex-none p-0.5 rounded-full hover:backdrop-brightness-95 dark:hover:backdrop-brightness-50" data-hide="' + this.id + '" data-hide-transition="250" data-hide-duration="' + this.dataset.dismissDuration + '" aria-label="Close">';
+        if (typeof this.dataset.hideDuration != "undefined") {
+
+            let transition = '250';
+            if (typeof this.dataset.hideTransition != "undefined") {
+                transition = this.dataset.hideTransition;
+            }
+
+            innerHtml += '<button class="flex-none p-0.5 rounded-full hover:backdrop-brightness-95 dark:hover:backdrop-brightness-50" data-hide="' + this.id + '" data-hide-transition="' + transition + '" data-hide-duration="' + this.dataset.hideDuration + '" aria-label="Close">';
             innerHtml += '<skin-icon name="x-mark" class="inline" data-class="w-5 h-5"></skin-icon>';
             innerHtml += '</button>';
         }
