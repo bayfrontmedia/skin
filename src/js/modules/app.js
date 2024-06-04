@@ -404,38 +404,38 @@ export function init(config = {}) {
 
     if (config.popup.enabled === true) {
 
-        function hideVisiblePopper(event) {
+        function hideVisiblePopup(event) {
 
-            const visiblePoppers = document.querySelectorAll("[data-popper-visible]");
+            const visiblePopups = document.querySelectorAll("[data-popup-visible]");
 
-            const closestTrigger = event.target.closest("[data-popper]");
+            const closestTrigger = event.target.closest("[data-popup]");
 
-            let insideVisiblePopper = false;
+            let insideVisiblePopup = false;
 
-            if (event.target.closest("[data-popper-visible]") !== null) {
-                insideVisiblePopper = true;
+            if (event.target.closest("[data-popup-visible]") !== null) {
+                insideVisiblePopup = true;
             }
 
-            visiblePoppers.forEach(visiblePopper => {
+            visiblePopups.forEach(visiblePopup => {
 
                 /*
-                If click not from visible trigger (let Popper handle it)
-                and if click not from inside visible popper
+                If click not from visible trigger (let Floating UI handle it)
+                and if click not from inside visible popup
                  */
 
                 if ((closestTrigger === null
-                        || closestTrigger.getAttribute("data-popper") !== visiblePopper.id)
-                    && insideVisiblePopper === false) {
+                        || closestTrigger.getAttribute("data-popup") !== visiblePopup.id)
+                    && insideVisiblePopup === false) {
 
                     // Mimic hidePopper()
-                    visiblePopper.removeAttribute("data-popper-visible");
-                    visiblePopper.style.opacity = "0";
+                    visiblePopup.removeAttribute("data-popup-visible");
+                    visiblePopup.style.opacity = "0";
 
                     window.setTimeout(() => {
-                        visiblePopper.style.display = "none";
+                        visiblePopup.style.display = "none";
                     }, 150);
 
-                    document.removeEventListener("click", hideVisiblePopper);
+                    document.removeEventListener("click", hideVisiblePopup);
 
                 }
 
@@ -443,25 +443,25 @@ export function init(config = {}) {
 
         }
 
-        const popperButtons = document.querySelectorAll("[data-popper]");
+        const popupButtons = document.querySelectorAll("[data-popup]");
 
-        popperButtons.forEach((btn) => {
+        popupButtons.forEach((btn) => {
 
-            const tooltip = document.getElementById(btn.getAttribute("data-popper"));
+            const tooltip = document.getElementById(btn.getAttribute("data-popup"));
 
             if (tooltip) {
 
-                // See: https://popper.js.org/docs/v2/constructors/#placement
+                // See: https://floating-ui.com/docs/computePosition#placement
 
                 let placement = "top";
 
-                if (btn.hasAttribute("data-popper-placement")) {
-                    placement = btn.getAttribute("data-popper-placement");
+                if (btn.hasAttribute("data-popup-placement")) {
+                    placement = btn.getAttribute("data-popup-placement");
                 }
 
-                // See: https://popper.js.org/docs/v2/modifiers/offset/
+                // See: https://floating-ui.com/docs/offset
 
-                let offset = btn.getAttribute("data-popper-offset");
+                let offset = btn.getAttribute("data-popup-offset");
 
                 if (!offset) {
                     offset = "0,0";
@@ -473,7 +473,7 @@ export function init(config = {}) {
                     return parseInt(x, 10);
                 });
 
-                const popperInstance = createPopper(btn, tooltip, {
+                const popupInstance = createPopper(btn, tooltip, {
                     placement: placement,
                     modifiers: [
                         {
@@ -493,24 +493,24 @@ export function init(config = {}) {
                     ],
                 });
 
-                function showPopper() {
+                function showPopup() {
 
-                    tooltip.setAttribute("data-popper-visible", "true");
+                    tooltip.setAttribute("data-popup-visible", "true");
                     tooltip.style.display = "block";
 
                     window.setTimeout(async () => {
                         tooltip.style.opacity = "1";
                         //popperInstance.update();
-                        await popperInstance.update(); // This seems to be working fine
+                        await popupInstance.update(); // This seems to be working fine
 
 
                     }, 5);
 
                 }
 
-                function hidePopper() {
+                function hidePopup() {
 
-                    tooltip.removeAttribute("data-popper-visible");
+                    tooltip.removeAttribute("data-popup-visible");
                     tooltip.style.opacity = "0";
 
                     window.setTimeout(() => {
@@ -520,26 +520,26 @@ export function init(config = {}) {
 
                 }
 
-                let trigger = btn.getAttribute("data-popper-trigger");
+                let trigger = btn.getAttribute("data-popup-trigger");
 
                 if (trigger === "click") { // Click
 
                     btn.addEventListener("click", function() {
 
-                        if (tooltip.getAttribute("data-popper-visible") !== "true") {
+                        if (tooltip.getAttribute("data-popup-visible") !== "true") {
 
-                            showPopper();
+                            showPopup();
 
                             window.setTimeout(() => {
-                                document.addEventListener("click", hideVisiblePopper);
+                                document.addEventListener("click", hideVisiblePopup);
                             }, 5);
 
                         } else {
 
-                            hidePopper();
+                            hidePopup();
 
                             window.setTimeout(() => {
-                                document.removeEventListener("click", hideVisiblePopper);
+                                document.removeEventListener("click", hideVisiblePopup);
                             }, 5);
 
                         }
@@ -552,11 +552,11 @@ export function init(config = {}) {
                     const hideEvents = ['mouseleave', 'blur'];
 
                     showEvents.forEach((event) => {
-                        btn.addEventListener(event, showPopper);
+                        btn.addEventListener(event, showPopup);
                     });
 
                     hideEvents.forEach((event) => {
-                        btn.addEventListener(event, hidePopper);
+                        btn.addEventListener(event, hidePopup);
                     });
 
                 }

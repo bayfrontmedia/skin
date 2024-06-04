@@ -18,12 +18,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `removeExisting` property on the toast config object to remove any existing toasts in the container
-- Added web components for icons, alerts, badges and toasts
+- Added web components
 
 ### Changed
 
+- Added Floating UI library
 - Updated documentation
 - Updated dependencies
+
+### Removed
+
+- Removed depreciated PopperJS library
 
 ## [1.2.1] - 2023.08.02
 
