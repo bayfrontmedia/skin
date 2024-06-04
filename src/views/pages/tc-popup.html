@@ -16,23 +16,23 @@
 
         <tbody>
         <tr>
-            <td><code>tc-popper</code></td>
+            <td><code>tc-popup</code></td>
             <td>Component</td>
-            <td>Popper component</td>
+            <td>Popup component</td>
         </tr>
         <tr>
-            <td><code>[data-popper-arrow]</code></td>
+            <td><code>[data-popup-arrow]</code></td>
             <td>Component</td>
-            <td>Popper arrow component</td>
+            <td>Popup arrow component</td>
         </tr>
         </tbody>
     </table>
 
-    <h2 id="create">Creating a Popper</h2>
+    <h2 id="create">Creating a popup</h2>
 
     <p>
-        Use the <a href="start-javascript.html#config-popper">data-popper</a> attributes to create a trigger to
-        hide/show the Popper component. Then, style the component using the class names listed above.
+        Use the <a href="start-javascript.html#config-popup">data-popup</a> attributes to create a trigger to
+        hide/show the popup component. Then, style the component using the class names listed above.
     </p>
 
     <h2>Examples</h2>
@@ -47,44 +47,44 @@
 
         <button
                 class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
-                id="tc-popper-tab-1"
+                id="tc-popup-tab-1"
                 role="tab"
                 aria-selected="true"
-                aria-controls="tc-popper-panel-1"
+                aria-controls="tc-popup-panel-1"
                 tabindex="0">
             Example
         </button>
         <button
                 class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
-                id="tc-popper-tab-2"
+                id="tc-popup-tab-2"
                 role="tab"
                 aria-selected="false"
-                aria-controls="tc-popper-panel-2"
+                aria-controls="tc-popup-panel-2"
                 tabindex="-1">
             HTML
         </button>
 
     </div>
 
-    <div id="tc-popper-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-popper-tab-1">
+    <div id="tc-popup-panel-1" role="tabpanel" tabindex="0" aria-labelledby="tc-popup-tab-1">
 
         <div class="p-4 border tu-border-default tu-border-radius">
-            {% include "src/views/snippets/tc-popper.html" %}
+            {% include "src/views/snippets/tc-popup.html" %}
         </div>
 
-    </div> <!-- /#tc-popper-panel-1 -->
+    </div> <!-- /#tc-popup-panel-1 -->
 
-    <div id="tc-popper-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-popper-tab-2" hidden>
+    <div id="tc-popup-panel-2" role="tabpanel" tabindex="0" aria-labelledby="tc-popup-tab-2" hidden>
 
         <div class="tc-code tc-code-terminal">
             <pre><code class="language-html">
                 {% filter escape %}
-                {% include "src/views/snippets/tc-popper.html" %}
+                {% include "src/views/snippets/tc-popup.html" %}
                 {% endfilter %}
             </code></pre>
         </div>
 
-    </div> <!-- /#tc-popper-panel-2 -->
+    </div> <!-- /#tc-popup-panel-2 -->
 
 </div> <!-- / tab container -->
 {% endblock %}

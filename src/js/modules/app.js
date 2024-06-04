@@ -30,7 +30,7 @@ export function init(config = {}) {
         modal: {
             enabled: true,
         },
-        popper: {
+        popup: {
             enabled: true
         },
         tabs: {
@@ -400,9 +400,9 @@ export function init(config = {}) {
 
     };
 
-    // Popper
+    // Popup
 
-    if (config.popper.enabled === true) {
+    if (config.popup.enabled === true) {
 
         function hideVisiblePopper(event) {
 

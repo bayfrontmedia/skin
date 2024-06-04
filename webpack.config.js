@@ -92,8 +92,8 @@ const sidebarItems = [
                 href: 'tc-modal.html'
             },
             {
-                title: 'Popper',
-                href: 'tc-popper.html'
+                title: 'Popup',
+                href: 'tc-popup.html'
             },
             {
                 title: 'Progress',
@@ -310,10 +310,10 @@ const fileTemplates = {
                         title: "Modal",
                     },
                 },
-                'tc-popper': {
-                    import: 'src/views/pages/tc-popper.html',
+                'tc-popup': {
+                    import: 'src/views/pages/tc-popup.html',
                     data: {
-                        title: "Popper",
+                        title: "Popup",
                     },
                 },
                 'tc-progress': {
