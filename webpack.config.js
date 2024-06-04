@@ -100,8 +100,8 @@ const sidebarItems = [
                 href: 'tc-progress.html'
             },
             {
-                title: 'Quote',
-                href: 'skin-quote.html'
+                title: 'Blockquote',
+                href: 'tc-blockquote.html'
             },
             {
                 title: 'Style',
@@ -262,10 +262,10 @@ const fileTemplates = {
                         title: "Badge",
                     },
                 },
-                'skin-quote': {
-                    import: 'src/views/pages/skin-quote.html',
+                'tc-blockquote': {
+                    import: 'src/views/pages/tc-blockquote.html',
                     data: {
-                        title: "Quote",
+                        title: "Blockquote",
                     },
                 },
                 'tc-btn': {
