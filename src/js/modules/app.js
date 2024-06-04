@@ -1,9 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 
 import * as Modal from "./Modal";
+import * as Popup from "./Popup";
 import * as Visibility from "./Visibility";
-import {createPopper} from "@popperjs/core";
-import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating-ui/dom";
+//import {createPopper} from "@popperjs/core";
 
 export function init(config = {}) {
 
@@ -568,52 +568,135 @@ export function init(config = {}) {
 
          */
 
+        const popupReferences = document.querySelectorAll("[data-popup]");
 
-        function showPopup(referenceEl, floatingEl) {
+        popupReferences.forEach((ref) => {
 
-            computePosition(referenceEl, floatingEl, {
-                middleware: [
-                    shift({
-                        padding: 5
-                    }),
-                    offset({
-                        mainAxis: 5, // top
-                        crossAxis: 0 // left
-                    }),
-                    flip()
-                ],
-                placement: 'bottom'
-            }).then(({x, y}) => {
+            let floatingId = ref.getAttribute("data-popup");
 
-                Object.assign(floatingEl.style, {
-                    left: `${x}px`,
-                    top: `${y}px`,
-                });
+            let floatingEl = document.getElementById(floatingId);
 
-                floatingEl.setAttribute("data-popup-visible", "true");
-                floatingEl.style.display = "block";
-                floatingEl.style.opacity = "1";
+            if (!floatingEl) {
+                if (config.debug === true) {
+                    console.log("Popup ID does not exist (" + floatingId + ")");
+                }
+                return; // Continue to next iteration
+            }
 
-                // TODO: autoUpdate?
-                // See: https://floating-ui.com/docs/computePosition#anchoring
+            // Placement
 
-            });
+            let placement = ref.getAttribute("data-popup-placement");
 
-            /*
-            const cleanup = autoUpdate(
-                referenceEl,
-                floatingEl,
-                updatePosition,
-            );
+            if (!placement) {
+                placement = "bottom";
+            }
 
-             */
+            // Offset
 
-        }
+            let offset = ref.getAttribute("data-popup-offset");
 
-        const referenceEl = document.querySelector('#test-popup-btn');
-        const floatingEl = document.querySelector('#popup-menu');
+            if (!offset) {
+                offset = "0,0";
+            }
 
-        showPopup(referenceEl, floatingEl);
+            offset = offset.split(",", 2);
+
+            // Unique
+
+            let unique = false;
+
+            if (ref.hasAttribute("data-popup-unique")) {
+                if (ref.getAttribute("data-popup-unique") === "true") {
+                    unique = true;
+                }
+            }
+
+            // Trigger
+
+            if (ref.hasAttribute("data-popup-trigger")) {
+
+                let trigger = ref.getAttribute("data-popup-trigger");
+
+                if (trigger === "click") {
+
+                    ref.addEventListener("click", function() {
+
+                        if (Popup.isVisible(floatingEl)) { // TODO: Hide on document click?
+
+                            Popup.hide(floatingEl);
+
+                        } else {
+
+                            Popup.show(ref, floatingEl, {
+                                unique: unique,
+                                placement: placement,
+                                offset: {
+                                    mainAxis: offset[0],
+                                    crossAxis: offset[1]
+                                },
+                                shift: {
+                                    padding: 5
+                                }
+                            });
+
+                        }
+
+                    });
+
+                } else if (trigger === "hover") {
+
+                    const showEvents = ['mouseenter', 'focus'];
+                    const hideEvents = ['mouseleave', 'blur'];
+
+                    showEvents.forEach((event) => {
+
+                        ref.addEventListener(event, function() {
+
+                            Popup.show(ref, floatingEl, {
+                                unique: unique,
+                                placement: placement,
+                                offset: {
+                                    mainAxis: offset[0],
+                                    crossAxis: offset[1]
+                                },
+                                shift: {
+                                    padding: 5
+                                }
+                            });
+
+                        });
+
+                    });
+
+                    hideEvents.forEach((event) => {
+                        ref.addEventListener(event, function() {
+                            Popup.hide(floatingEl);
+                        });
+                    });
+
+                } else { // Always
+
+                    Popup.show(ref, floatingEl, {
+                        unique: unique,
+                        placement: placement,
+                        offset: {
+                            mainAxis: offset[0],
+                            crossAxis: offset[1]
+                        },
+                        shift: {
+                            padding: 5
+                        }
+                    });
+
+                }
+
+            }
+
+        });
+
+        //const referenceEl = document.querySelector('#test-popup-btn');
+        //const floatingEl = document.querySelector('#popup-menu');
+        //showPopup(referenceEl, floatingEl);
 
     }
 
