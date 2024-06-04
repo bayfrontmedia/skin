@@ -3,6 +3,7 @@
 import * as Modal from "./Modal";
 import * as Visibility from "./Visibility";
 import {createPopper} from "@popperjs/core";
+import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating-ui/dom";
 
 export function init(config = {}) {
 
@@ -404,6 +405,8 @@ export function init(config = {}) {
 
     if (config.popup.enabled === true) {
 
+        /*
+
         function hideVisiblePopup(event) {
 
             const visiblePopups = document.querySelectorAll("[data-popup-visible]");
@@ -418,10 +421,8 @@ export function init(config = {}) {
 
             visiblePopups.forEach(visiblePopup => {
 
-                /*
-                If click not from visible trigger (let Floating UI handle it)
-                and if click not from inside visible popup
-                 */
+                // If click not from visible trigger (let Floating UI handle it)
+                // and if click not from inside visible popup
 
                 if ((closestTrigger === null
                         || closestTrigger.getAttribute("data-popup") !== visiblePopup.id)
@@ -564,6 +565,55 @@ export function init(config = {}) {
             }
 
         });
+
+         */
+
+
+        function showPopup(referenceEl, floatingEl) {
+
+            computePosition(referenceEl, floatingEl, {
+                middleware: [
+                    shift({
+                        padding: 5
+                    }),
+                    offset({
+                        mainAxis: 5, // top
+                        crossAxis: 0 // left
+                    }),
+                    flip()
+                ],
+                placement: 'bottom'
+            }).then(({x, y}) => {
+
+                Object.assign(floatingEl.style, {
+                    left: `${x}px`,
+                    top: `${y}px`,
+                });
+
+                floatingEl.setAttribute("data-popup-visible", "true");
+                floatingEl.style.display = "block";
+                floatingEl.style.opacity = "1";
+
+                // TODO: autoUpdate?
+                // See: https://floating-ui.com/docs/computePosition#anchoring
+
+            });
+
+            /*
+            const cleanup = autoUpdate(
+                referenceEl,
+                floatingEl,
+                updatePosition,
+            );
+
+             */
+
+        }
+
+        const referenceEl = document.querySelector('#test-popup-btn');
+        const floatingEl = document.querySelector('#popup-menu');
+
+        showPopup(referenceEl, floatingEl);
 
     }
 
