@@ -53,11 +53,10 @@ export function show(referenceEl, floatingEl, config = {}) {
 
         floatingEl.setAttribute("data-popup-visible", "true");
 
-        //floatingEl.style.display = "block";
-        //floatingEl.style.opacity = "1";
-
     });
 
+    floatingEl.style.display = 'block';
+    //floatingEl.style.opacity = "1";
 }
 
 /**
@@ -79,13 +78,11 @@ export function hide(el) {
 
     el.removeAttribute("data-popup-visible");
 
-    //el.style.opacity = "0";
-    //el.style.display = "none";
+    window.setTimeout(() => { // Match CSS duration
+        el.style.display = '';
+    }, 200);
 
-    //el.style.removeProperty("opacity");
-    //el.style.removeProperty("display");
-
-    //el.classList.remove("visible");
+    //el.style.display = '';
 
 }
 
