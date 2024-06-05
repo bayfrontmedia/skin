@@ -2,6 +2,92 @@ import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating
 
 let autoUpdated = {};
 
+function renderWithoutArrow(referenceEl, floatingEl, config) {
+
+    computePosition(referenceEl, floatingEl, {
+        placement: config.placement,
+        middleware: [
+            shift(config.shift),
+            offset(config.offset),
+            flip(config.flip),
+        ]
+    }).then(({x, y}) => {
+
+        Object.assign(floatingEl.style, {
+            left: `${x}px`,
+            top: `${y}px`,
+        });
+
+    });
+
+}
+
+/**
+ * See: https://codesandbox.io/s/mystifying-kare-ee3hmh?file=/src/index.js
+ *
+ * @param referenceEl
+ * @param floatingEl
+ * @param config
+ */
+function renderWithArrow(referenceEl, floatingEl, config) {
+
+    const arrowEl = floatingEl.querySelector('skin-popup-arrow');
+
+    if (!arrowEl) {
+        renderWithoutArrow(referenceEl, floatingEl, config);
+        return;
+    }
+
+    const arrowLen = arrowEl.offsetWidth;
+    const floatingOffset = Math.sqrt(2 * arrowLen ** 2) / 2;
+    const mainAxisOffset = parseInt(String(floatingOffset + config.offset.mainAxis));
+
+    computePosition(referenceEl, floatingEl, {
+        placement: config.placement,
+        middleware: [
+            shift(config.shift),
+            offset(mainAxisOffset), // Only the main axis is offset when an arrow is used
+            flip(config.flip),
+            arrow({
+                element: arrowEl,
+                padding: 5
+            })
+        ]
+    }).then(({x, y, middlewareData, placement}) => {
+
+        Object.assign(floatingEl.style, {
+            left: `${x}px`,
+            top: `${y}px`,
+        });
+
+        if (middlewareData.arrow) {
+
+            const side = placement.split("-")[0];
+
+            const staticSide = {
+                top: "bottom",
+                right: "left",
+                bottom: "top",
+                left: "right"
+            }[side];
+
+            const {x, y} = middlewareData.arrow;
+
+            Object.assign(arrowEl.style, {
+                left: x != null ? `${x}px` : "",
+                top: y != null ? `${y}px` : "",
+                // Ensure the static side gets unset when flipping to other placements' axes
+                right: "",
+                bottom: "",
+                [staticSide]: `${-arrowLen / 2}px`
+            });
+
+        }
+
+    });
+
+}
+
 /**
  * Show popup.
  *
@@ -26,192 +112,96 @@ export function show(referenceEl, floatingEl, config = {}) {
 
     config = {...defaultConfig, ...config}
 
-    /**
-     * See: https://codesandbox.io/s/mystifying-kare-ee3hmh?file=/src/index.js
-     */
-    function renderPopup() {
+    // Ensure integer
+    config.offset.mainAxis = parseInt(String(config.offset.mainAxis));
+    config.offset.crossAxis = parseInt(String(config.offset.crossAxis));
 
-
-        const arrowEl = floatingEl.querySelector('.tc-popup-arrow');
-        const arrowLen = arrowEl.offsetWidth;
-        const floatingOffset = Math.sqrt(2 * arrowLen ** 2) / 2;
-
-        const mainAxisOffset = floatingOffset + parseInt(String(config.offset.mainAxis));
-
-        // Ensure integer
-        config.offset.mainAxis = parseInt(String(mainAxisOffset));
-        config.offset.crossAxis = parseInt(String(config.offset.crossAxis));
-
-        computePosition(referenceEl, floatingEl, {
-            middleware: [
-                shift(config.shift),
-                //offset(mainAxisOffset),
-                offset(config.offset.mainAxis),
-                flip(config.flip),
-                arrow({
-                    element: arrowEl,
-                    padding: 5
-                })
-            ],
-            placement: config.placement
-        }).then(({x, y, middlewareData, placement}) => {
-
-            Object.assign(floatingEl.style, {
-                left: `${x}px`,
-                top: `${y}px`,
-            });
-
-            if (middlewareData.arrow) {
-
-                /*
-                const {x, y} = middlewareData.arrow;
-
-                Object.assign(arrowEl.style, {
-                    left: x != null ? `${x}px` : '',
-                    top: y != null ? `${y}px` : '',
-                });
-
-                 */
-
-                const side = placement.split("-")[0];
-
-                const staticSide = {
-                    top: "bottom",
-                    right: "left",
-                    bottom: "top",
-                    left: "right"
-                }[side];
-
-                if (middlewareData.arrow) {
-
-                    const { x, y } = middlewareData.arrow;
-
-                    Object.assign(arrowEl.style, {
-                        left: x != null ? `${x}px` : "",
-                        top: y != null ? `${y}px` : "",
-                        // Ensure the static side gets unset when
-                        // flipping to other placements' axes.
-                        right: "",
-                        bottom: "",
-                        [staticSide]: `${-arrowLen / 2}px`
-                    });
-
-                }
-
-            }
-
-
-
-            floatingEl.setAttribute("data-popup-visible", "true");
-
-        });
-
-
-        /*
-        computePosition(referenceEl, floatingEl, {
-            middleware: [
-                shift(config.shift),
-                offset(config.offset),
-                flip(config.flip),
-            ],
-            placement: config.placement
-        }).then(({x, y}) => {
-
-            Object.assign(floatingEl.style, {
-                left: `${x}px`,
-                top: `${y}px`,
-            });
-
-            floatingEl.setAttribute("data-popup-visible", "true");
-
-        });
-
-         */
-
+    if (config.unique === true) {
+        hideAllVisible();
     }
 
+    if (floatingEl.dataset.type === "menu") {
         floatingEl.style.display = 'block';
-        //floatingEl.style.opacity = "1";
+        renderWithoutArrow(referenceEl, floatingEl, config);
+    } else if (floatingEl.dataset.type === "tooltip") {
+        floatingEl.style.display = 'block';
+        renderWithArrow(referenceEl, floatingEl, config);
+    } else {
+        console.log('Unable to render popup: Unknown type'); // TODO: Check for debug
+        return;
+    }
 
-        if (config.unique === true) {
-            hideAllVisible();
-        }
+    floatingEl.setAttribute("data-popup-visible", "true");
 
-        renderPopup();
 
-        /*
-        if (floatingEl.hasAttribute('id')) {
+    // TODO: How to cleanup
+    /*
+    if (floatingEl.hasAttribute('id')) {
 
-            autoUpdated[floatingEl.getAttribute("id")] = autoUpdate(referenceEl, floatingEl, () => {
-                renderPopup();
-            });
-
-        } else {
+        autoUpdated[floatingEl.getAttribute("id")] = autoUpdate(referenceEl, floatingEl, () => {
             renderPopup();
-        }
-
-         */
-
-
-        // TODO: How to cleanup
-        /*
-        const cleanup = autoUpdate(referenceEl, floatingEl, () => {
-
         });
 
-         */
-
-
+    } else {
+        renderPopup();
     }
 
-    /**
-     * Is popup visible?
-     *
-     * @param el
-     * @returns {boolean}
+    const cleanup = autoUpdate(referenceEl, floatingEl, () => {
+
+    });
+
      */
-    export function isVisible(el) {
-        return el.getAttribute("data-popup-visible") === "true";
+
+}
+
+/**
+ * Is popup visible?
+ *
+ * @param el
+ * @returns {boolean}
+ */
+export function isVisible(el) {
+    return el.getAttribute("data-popup-visible") === "true";
+}
+
+/**
+ * Hide popup.
+ *
+ * @param el
+ */
+export function hide(el) {
+
+    /*
+    if (el.hasAttribute('id') && typeof autoUpdated[el.getAttribute("id")] === "undefined") {
+        autoUpdated[el.getAttribute("id")]();
+        delete autoUpdated[el.getAttribute("id")];
     }
 
-    /**
-     * Hide popup.
-     *
-     * @param el
      */
-    export function hide(el) {
 
-        /*
-        if (el.hasAttribute('id') && typeof autoUpdated[el.getAttribute("id")] === "undefined") {
-            autoUpdated[el.getAttribute("id")]();
-            delete autoUpdated[el.getAttribute("id")];
+    el.removeAttribute("data-popup-visible");
+
+    window.setTimeout(() => { // Match CSS duration
+
+        el.style.display = '';
+
+    }, 200);
+
+}
+
+/**
+ * Hide all visible popups.
+ */
+export function hideAllVisible() {
+
+    const visiblePopups = document.querySelectorAll("[data-popup-visible]");
+
+    visiblePopups.forEach(popup => {
+
+        if (isVisible(popup)) {
+            hide(popup);
         }
 
-         */
+    });
 
-        el.removeAttribute("data-popup-visible");
-
-        window.setTimeout(() => { // Match CSS duration
-
-            el.style.display = '';
-
-        }, 200);
-
-    }
-
-    /**
-     * Hide all visible popups.
-     */
-    export function hideAllVisible() {
-
-        const visiblePopups = document.querySelectorAll("[data-popup-visible]");
-
-        visiblePopups.forEach(popup => {
-
-            if (isVisible(popup)) {
-                hide(popup);
-            }
-
-        });
-
-    }
+}

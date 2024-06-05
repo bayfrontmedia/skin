@@ -419,6 +419,10 @@ export function init(config = {}) {
                 return; // Continue to next iteration
             }
 
+            // Set aria-describedby
+
+            ref.setAttribute("aria-describedby", floatingId);
+
             // Placement
 
             let placement = ref.getAttribute("data-popup-placement");

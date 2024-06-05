@@ -17,9 +17,10 @@ import {SkinAlert} from "./components/skin-alert";
 import {SkinBadge} from "./components/skin-badge";
 import {SkinCode} from "./components/skin-code";
 import {SkinIcon} from "./components/skin-icon";
+import {SkinPopup} from "./components/skin-popup";
 import {SkinToast} from "./components/skin-toast";
 
-export {App, Form, Modal, Popup, Toast, Visibility, SkinAlert, SkinBadge, SkinCode, SkinIcon, SkinToast};
+export {App, Form, Modal, Popup, Toast, Visibility, SkinAlert, SkinBadge, SkinCode, SkinIcon, SkinPopup, SkinToast};
 
 window.Skin = {
     App,

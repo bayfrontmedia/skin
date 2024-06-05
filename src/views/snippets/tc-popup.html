@@ -4,19 +4,20 @@
     Popups can be shown in the form of a
     <span class="underline decoration-dotted cursor-pointer"
           data-popup="popup-tooltip"
-          data-popup-placement="bottom"
+          data-popup-placement="top"
           data-popup-offset="5"
           data-popup-trigger="hover"
-          data-popup-unique="true"
-          aria-describedby="popup-tooltip">tooltip</span>.
+          data-popup-unique="true">
+        tooltip
+    </span>.
 </p>
 
-<div id="popup-tooltip"
-     class="px-2 py-1 text-sm max-w-sm tc-popup tc-style-inverse tu-border-radius tu-border-width tu-box-shadow"
-     role="tooltip">
+<skin-popup
+        id="popup-tooltip"
+        data-type="tooltip"
+        class="tc-tooltip">
     This is a tooltip example. It hides and shows automatically.
-    <div class="tc-popup-arrow"></div>
-</div>
+</skin-popup>
 
 <!-- Menu -->
 
@@ -27,8 +28,10 @@
     <skin-icon class="ml-2 h-5 w-5" name="chevron-down"></skin-icon>
 </button>
 
-<div id="popup-menu" class="p-4 w-[225px] tc-popup tc-style-content tu-border-radius tu-border-width tu-box-shadow"
-     role="menu" tabindex="0">
+<skin-popup
+        id="popup-menu"
+        data-type="menu"
+        class="p-4 w-[225px] tc-popup tc-style-content tu-border-radius tu-border-width tu-box-shadow">
 
     <h3 class="uppercase tracking-wide font-semibold text-sm mb-2 tu-text-light">Menu</h3>
 
@@ -39,4 +42,4 @@
         <li><a href="#" title="Fourth item" class="flex items-center p-2 hover:text-theme-primary hover:tu-bg-default tu-border-radius">Fourth item</a></li>
     </ul>
 
-</div>
+</skin-popup>
