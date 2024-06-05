@@ -1,19 +1,6 @@
 import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating-ui/dom";
 
 /**
- * Hide popup.
- *
- * @param el
- */
-export function hide(el) {
-
-    el.removeAttribute("data-popup-visible");
-    el.style.display = "hidden";
-    el.style.opacity = "0";
-
-}
-
-/**
  * Show popup.
  *
  * @param referenceEl
@@ -42,37 +29,64 @@ export function show(referenceEl, floatingEl, config = {}) {
         this.hideAllVisible();
     }
 
+    // TODO: How to cleanup
+    /*
     const cleanup = autoUpdate(referenceEl, floatingEl, () => {
 
-        computePosition(referenceEl, floatingEl, {
-            middleware: [
-                shift(config.shift),
-                offset(config.offset),
-                flip(config.flip),
-            ],
-            placement: config.placement
-        }).then(({x, y}) => {
+    });
 
-            Object.assign(floatingEl.style, {
-                left: `${x}px`,
-                top: `${y}px`,
-            });
+     */
 
-            floatingEl.setAttribute("data-popup-visible", "true");
-            floatingEl.style.display = "block";
-            floatingEl.style.opacity = "1";
+    computePosition(referenceEl, floatingEl, {
+        middleware: [
+            shift(config.shift),
+            offset(config.offset),
+            flip(config.flip),
+        ],
+        placement: config.placement
+    }).then(({x, y}) => {
 
-            // TODO: autoUpdate?
-            // See: https://floating-ui.com/docs/computePosition#anchoring
-
+        Object.assign(floatingEl.style, {
+            left: `${x}px`,
+            top: `${y}px`,
         });
+
+        floatingEl.setAttribute("data-popup-visible", "true");
+
+        //floatingEl.style.display = "block";
+        //floatingEl.style.opacity = "1";
 
     });
 
 }
 
+/**
+ * Is popup visible?
+ *
+ * @param el
+ * @returns {boolean}
+ */
 export function isVisible(el) {
     return el.getAttribute("data-popup-visible") === "true";
+}
+
+/**
+ * Hide popup.
+ *
+ * @param el
+ */
+export function hide(el) {
+
+    el.removeAttribute("data-popup-visible");
+
+    //el.style.opacity = "0";
+    //el.style.display = "none";
+
+    //el.style.removeProperty("opacity");
+    //el.style.removeProperty("display");
+
+    //el.classList.remove("visible");
+
 }
 
 /**

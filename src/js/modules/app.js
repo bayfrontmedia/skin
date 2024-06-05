@@ -405,169 +405,6 @@ export function init(config = {}) {
 
     if (config.popup.enabled === true) {
 
-        /*
-
-        function hideVisiblePopup(event) {
-
-            const visiblePopups = document.querySelectorAll("[data-popup-visible]");
-
-            const closestTrigger = event.target.closest("[data-popup]");
-
-            let insideVisiblePopup = false;
-
-            if (event.target.closest("[data-popup-visible]") !== null) {
-                insideVisiblePopup = true;
-            }
-
-            visiblePopups.forEach(visiblePopup => {
-
-                // If click not from visible trigger (let Floating UI handle it)
-                // and if click not from inside visible popup
-
-                if ((closestTrigger === null
-                        || closestTrigger.getAttribute("data-popup") !== visiblePopup.id)
-                    && insideVisiblePopup === false) {
-
-                    // Mimic hidePopper()
-                    visiblePopup.removeAttribute("data-popup-visible");
-                    visiblePopup.style.opacity = "0";
-
-                    window.setTimeout(() => {
-                        visiblePopup.style.display = "none";
-                    }, 150);
-
-                    document.removeEventListener("click", hideVisiblePopup);
-
-                }
-
-            });
-
-        }
-
-        const popupButtons = document.querySelectorAll("[data-popup]");
-
-        popupButtons.forEach((btn) => {
-
-            const tooltip = document.getElementById(btn.getAttribute("data-popup"));
-
-            if (tooltip) {
-
-                // See: https://floating-ui.com/docs/computePosition#placement
-
-                let placement = "top";
-
-                if (btn.hasAttribute("data-popup-placement")) {
-                    placement = btn.getAttribute("data-popup-placement");
-                }
-
-                // See: https://floating-ui.com/docs/offset
-
-                let offset = btn.getAttribute("data-popup-offset");
-
-                if (!offset) {
-                    offset = "0,0";
-                }
-
-                offset = offset.split(",");
-
-                offset = offset.map(function (x) {
-                    return parseInt(x, 10);
-                });
-
-                const popupInstance = createPopper(btn, tooltip, {
-                    placement: placement,
-                    modifiers: [
-                        {
-                            name: 'offset',
-                            options: {
-                                offset: offset,
-                            },
-                        },
-                        {
-                            name: "flip",
-                            options: {
-                                allowedAutoPlacements: ["right", "left", "top", "bottom"],
-                                rootBoundary: "viewport"
-                            }
-                        },
-
-                    ],
-                });
-
-                function showPopup() {
-
-                    tooltip.setAttribute("data-popup-visible", "true");
-                    tooltip.style.display = "block";
-
-                    window.setTimeout(async () => {
-                        tooltip.style.opacity = "1";
-                        //popperInstance.update();
-                        await popupInstance.update(); // This seems to be working fine
-
-
-                    }, 5);
-
-                }
-
-                function hidePopup() {
-
-                    tooltip.removeAttribute("data-popup-visible");
-                    tooltip.style.opacity = "0";
-
-                    window.setTimeout(() => {
-                        tooltip.style.display = "none";
-
-                    }, 150);
-
-                }
-
-                let trigger = btn.getAttribute("data-popup-trigger");
-
-                if (trigger === "click") { // Click
-
-                    btn.addEventListener("click", function() {
-
-                        if (tooltip.getAttribute("data-popup-visible") !== "true") {
-
-                            showPopup();
-
-                            window.setTimeout(() => {
-                                document.addEventListener("click", hideVisiblePopup);
-                            }, 5);
-
-                        } else {
-
-                            hidePopup();
-
-                            window.setTimeout(() => {
-                                document.removeEventListener("click", hideVisiblePopup);
-                            }, 5);
-
-                        }
-
-                    });
-
-                } else { // Hover
-
-                    const showEvents = ['mouseenter', 'focus'];
-                    const hideEvents = ['mouseleave', 'blur'];
-
-                    showEvents.forEach((event) => {
-                        btn.addEventListener(event, showPopup);
-                    });
-
-                    hideEvents.forEach((event) => {
-                        btn.addEventListener(event, hidePopup);
-                    });
-
-                }
-
-            }
-
-        });
-
-         */
-
         const popupReferences = document.querySelectorAll("[data-popup]");
 
         popupReferences.forEach((ref) => {
@@ -620,6 +457,8 @@ export function init(config = {}) {
                 if (trigger === "click") {
 
                     ref.addEventListener("click", function() {
+
+                        console.log(Popup.isVisible(floatingEl));
 
                         if (Popup.isVisible(floatingEl)) { // TODO: Hide on document click?
 
@@ -693,10 +532,6 @@ export function init(config = {}) {
             }
 
         });
-
-        //const referenceEl = document.querySelector('#test-popup-btn');
-        //const floatingEl = document.querySelector('#popup-menu');
-        //showPopup(referenceEl, floatingEl);
 
     }
 
