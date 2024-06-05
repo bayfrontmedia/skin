@@ -457,8 +457,6 @@ export function init(config = {}) {
 
                     ref.addEventListener("click", function() {
 
-                        console.log(Popup.isVisible(floatingEl));
-
                         if (Popup.isVisible(floatingEl)) { // TODO: Hide on document click?
 
                             Popup.hide(floatingEl);

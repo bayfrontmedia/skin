@@ -23,10 +23,10 @@ export function show(referenceEl, floatingEl, config = {}) {
         flip: {}
     };
 
-    config = {...defaultConfig, ...config};
+    config = {...defaultConfig, ...config}
 
     if (config.unique === true) {
-        this.hideAllVisible();
+        hideAllVisible();
     }
 
     // TODO: How to cleanup
@@ -95,8 +95,8 @@ export function hideAllVisible() {
 
     visiblePopups.forEach(popup => {
 
-        if (this.isVisible(popup)) {
-            this.hide(popup);
+        if (isVisible(popup)) {
+            hide(popup);
         }
 
     });
