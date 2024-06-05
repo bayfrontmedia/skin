@@ -3,7 +3,6 @@
 import * as Modal from "./Modal";
 import * as Popup from "./Popup";
 import * as Visibility from "./Visibility";
-//import {createPopper} from "@popperjs/core";
 
 export function init(config = {}) {
 

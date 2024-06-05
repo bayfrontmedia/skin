@@ -45,7 +45,6 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.5",
-    "@popperjs/core": "^2.11.6",
     "focus-trap": "^7.4.0"
   }
 }
