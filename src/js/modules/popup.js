@@ -1,5 +1,7 @@
 import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating-ui/dom";
 
+let autoUpdated = {};
+
 /**
  * Show popup.
  *
@@ -7,8 +9,7 @@ import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating
  * @param floatingEl
  * @param config
  *
- * For valid placements, see:
- * https://floating-ui.com/docs/computePosition#placement
+ * If the floatingEl has an ID, the popup will be autoUpdated.
  */
 export function show(referenceEl, floatingEl, config = {}) {
 
@@ -25,80 +26,146 @@ export function show(referenceEl, floatingEl, config = {}) {
 
     config = {...defaultConfig, ...config}
 
-    if (config.unique === true) {
-        hideAllVisible();
-    }
+    function renderPopup() {
 
-    // TODO: How to cleanup
-    /*
-    const cleanup = autoUpdate(referenceEl, floatingEl, () => {
+        /*
+        const arrowEl = floatingEl.querySelector('.tc-popup-arrow');
 
-    });
+        computePosition(referenceEl, floatingEl, {
+            middleware: [
+                shift(config.shift),
+                offset(config.offset),
+                flip(config.flip),
+                arrow({
+                    element: arrowEl
+                })
+            ],
+            placement: config.placement
+        }).then(({x, y, middlewareData}) => {
 
-     */
+            if (middlewareData.arrow) {
+                const {x, y} = middlewareData.arrow;
 
-    computePosition(referenceEl, floatingEl, {
-        middleware: [
-            shift(config.shift),
-            offset(config.offset),
-            flip(config.flip),
-        ],
-        placement: config.placement
-    }).then(({x, y}) => {
+                Object.assign(arrowEl.style, {
+                    left: x != null ? `${x}px` : '',
+                    top: y != null ? `${y}px` : '',
+                });
+            }
 
-        Object.assign(floatingEl.style, {
-            left: `${x}px`,
-            top: `${y}px`,
+            Object.assign(floatingEl.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            });
+
+            floatingEl.setAttribute("data-popup-visible", "true");
+
         });
 
-        floatingEl.setAttribute("data-popup-visible", "true");
+         */
 
-    });
 
-    floatingEl.style.display = 'block';
-    //floatingEl.style.opacity = "1";
-}
+        computePosition(referenceEl, floatingEl, {
+            middleware: [
+                shift(config.shift),
+                offset(config.offset),
+                flip(config.flip),
+            ],
+            placement: config.placement
+        }).then(({x, y}) => {
 
-/**
- * Is popup visible?
- *
- * @param el
- * @returns {boolean}
- */
-export function isVisible(el) {
-    return el.getAttribute("data-popup-visible") === "true";
-}
+            Object.assign(floatingEl.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            });
 
-/**
- * Hide popup.
- *
- * @param el
- */
-export function hide(el) {
+            floatingEl.setAttribute("data-popup-visible", "true");
 
-    el.removeAttribute("data-popup-visible");
+        });
 
-    window.setTimeout(() => { // Match CSS duration
-        el.style.display = '';
-    }, 200);
+    }
 
-    //el.style.display = '';
+        floatingEl.style.display = 'block';
+        //floatingEl.style.opacity = "1";
 
-}
-
-/**
- * Hide all visible popups.
- */
-export function hideAllVisible() {
-
-    const visiblePopups = document.querySelectorAll("[data-popup-visible]");
-
-    visiblePopups.forEach(popup => {
-
-        if (isVisible(popup)) {
-            hide(popup);
+        if (config.unique === true) {
+            hideAllVisible();
         }
 
-    });
+        renderPopup();
 
-}
+        /*
+        if (floatingEl.hasAttribute('id')) {
+
+            autoUpdated[floatingEl.getAttribute("id")] = autoUpdate(referenceEl, floatingEl, () => {
+                renderPopup();
+            });
+
+        } else {
+            renderPopup();
+        }
+
+         */
+
+
+        // TODO: How to cleanup
+        /*
+        const cleanup = autoUpdate(referenceEl, floatingEl, () => {
+
+        });
+
+         */
+
+
+    }
+
+    /**
+     * Is popup visible?
+     *
+     * @param el
+     * @returns {boolean}
+     */
+    export function isVisible(el) {
+        return el.getAttribute("data-popup-visible") === "true";
+    }
+
+    /**
+     * Hide popup.
+     *
+     * @param el
+     */
+    export function hide(el) {
+
+        /*
+        if (el.hasAttribute('id') && typeof autoUpdated[el.getAttribute("id")] === "undefined") {
+            autoUpdated[el.getAttribute("id")]();
+            delete autoUpdated[el.getAttribute("id")];
+        }
+
+         */
+
+        el.removeAttribute("data-popup-visible");
+
+        window.setTimeout(() => { // Match CSS duration
+
+            el.style.display = '';
+
+        }, 200);
+
+    }
+
+    /**
+     * Hide all visible popups.
+     */
+    export function hideAllVisible() {
+
+        const visiblePopups = document.querySelectorAll("[data-popup-visible]");
+
+        visiblePopups.forEach(popup => {
+
+            if (isVisible(popup)) {
+                hide(popup);
+            }
+
+        });
+
+    }
