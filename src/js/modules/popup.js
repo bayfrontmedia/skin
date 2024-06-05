@@ -26,25 +26,31 @@ export function show(referenceEl, floatingEl, config = {}) {
 
     config = {...defaultConfig, ...config}
 
+    /**
+     * See: https://codesandbox.io/s/mystifying-kare-ee3hmh?file=/src/index.js
+     */
     function renderPopup() {
 
 
         const arrowEl = floatingEl.querySelector('.tc-popup-arrow');
         const arrowLen = arrowEl.offsetWidth;
-        const floatingOffset = Math.sqrt(2 * arrowLen ** 2) / 2; // TODO: Add config.offset
+        const floatingOffset = Math.sqrt(2 * arrowLen ** 2) / 2;
 
+        const mainAxisOffset = floatingOffset + parseInt(String(config.offset.mainAxis));
 
-
-        console.log(floatingOffset);
+        // Ensure integer
+        config.offset.mainAxis = parseInt(String(mainAxisOffset));
+        config.offset.crossAxis = parseInt(String(config.offset.crossAxis));
 
         computePosition(referenceEl, floatingEl, {
             middleware: [
                 shift(config.shift),
-                //offset(config.offset),
-                offset(floatingOffset),
+                //offset(mainAxisOffset),
+                offset(config.offset.mainAxis),
                 flip(config.flip),
                 arrow({
-                    element: arrowEl
+                    element: arrowEl,
+                    padding: 5
                 })
             ],
             placement: config.placement
@@ -79,6 +85,7 @@ export function show(referenceEl, floatingEl, config = {}) {
                 if (middlewareData.arrow) {
 
                     const { x, y } = middlewareData.arrow;
+
                     Object.assign(arrowEl.style, {
                         left: x != null ? `${x}px` : "",
                         top: y != null ? `${y}px` : "",
@@ -86,9 +93,7 @@ export function show(referenceEl, floatingEl, config = {}) {
                         // flipping to other placements' axes.
                         right: "",
                         bottom: "",
-                        [staticSide]: `${-arrowLen / 2}px`,
-                        //transform: "rotate(45deg)",
-                        //background: "black"
+                        [staticSide]: `${-arrowLen / 2}px`
                     });
 
                 }
