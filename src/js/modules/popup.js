@@ -28,42 +28,81 @@ export function show(referenceEl, floatingEl, config = {}) {
 
     function renderPopup() {
 
-        /*
+
         const arrowEl = floatingEl.querySelector('.tc-popup-arrow');
+        const arrowLen = arrowEl.offsetWidth;
+        const floatingOffset = Math.sqrt(2 * arrowLen ** 2) / 2; // TODO: Add config.offset
+
+
+
+        console.log(floatingOffset);
 
         computePosition(referenceEl, floatingEl, {
             middleware: [
                 shift(config.shift),
-                offset(config.offset),
+                //offset(config.offset),
+                offset(floatingOffset),
                 flip(config.flip),
                 arrow({
                     element: arrowEl
                 })
             ],
             placement: config.placement
-        }).then(({x, y, middlewareData}) => {
-
-            if (middlewareData.arrow) {
-                const {x, y} = middlewareData.arrow;
-
-                Object.assign(arrowEl.style, {
-                    left: x != null ? `${x}px` : '',
-                    top: y != null ? `${y}px` : '',
-                });
-            }
+        }).then(({x, y, middlewareData, placement}) => {
 
             Object.assign(floatingEl.style, {
                 left: `${x}px`,
                 top: `${y}px`,
             });
 
+            if (middlewareData.arrow) {
+
+                /*
+                const {x, y} = middlewareData.arrow;
+
+                Object.assign(arrowEl.style, {
+                    left: x != null ? `${x}px` : '',
+                    top: y != null ? `${y}px` : '',
+                });
+
+                 */
+
+                const side = placement.split("-")[0];
+
+                const staticSide = {
+                    top: "bottom",
+                    right: "left",
+                    bottom: "top",
+                    left: "right"
+                }[side];
+
+                if (middlewareData.arrow) {
+
+                    const { x, y } = middlewareData.arrow;
+                    Object.assign(arrowEl.style, {
+                        left: x != null ? `${x}px` : "",
+                        top: y != null ? `${y}px` : "",
+                        // Ensure the static side gets unset when
+                        // flipping to other placements' axes.
+                        right: "",
+                        bottom: "",
+                        [staticSide]: `${-arrowLen / 2}px`,
+                        //transform: "rotate(45deg)",
+                        //background: "black"
+                    });
+
+                }
+
+            }
+
+
+
             floatingEl.setAttribute("data-popup-visible", "true");
 
         });
 
-         */
 
-
+        /*
         computePosition(referenceEl, floatingEl, {
             middleware: [
                 shift(config.shift),
@@ -81,6 +120,8 @@ export function show(referenceEl, floatingEl, config = {}) {
             floatingEl.setAttribute("data-popup-visible", "true");
 
         });
+
+         */
 
     }
 
