@@ -2,6 +2,13 @@ import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating
 
 let autoUpdated = {};
 
+/**
+ * Render popup without arrow (menu).
+ *
+ * @param referenceEl
+ * @param floatingEl
+ * @param config
+ */
 function renderWithoutArrow(referenceEl, floatingEl, config) {
 
     computePosition(referenceEl, floatingEl, {
@@ -23,6 +30,7 @@ function renderWithoutArrow(referenceEl, floatingEl, config) {
 }
 
 /**
+ * Render popup with menu (tooltip).
  * See: https://codesandbox.io/s/mystifying-kare-ee3hmh?file=/src/index.js
  *
  * @param referenceEl
@@ -34,6 +42,7 @@ function renderWithArrow(referenceEl, floatingEl, config) {
     const arrowEl = floatingEl.querySelector('skin-popup-arrow');
 
     if (!arrowEl) {
+        config.offset = config.offset.mainAxis; // Tooltips only use main axis
         renderWithoutArrow(referenceEl, floatingEl, config);
         return;
     }

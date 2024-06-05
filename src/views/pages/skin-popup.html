@@ -1,0 +1,102 @@
+{% extends "src/views/layouts/documentation.html" %}
+
+{% block content %}
+<div class="tu-typo">
+
+    <h1 id="{{ title }}">{{ title }}</h1>
+
+    <p>Popups are available as a web component using the <code>skin-popup</code> tag.</p>
+
+    <p>Attributes:</p>
+
+    <ul class="tc-list mb-6">
+        <li><code>id</code>: Unique ID (required)</li>
+        <li><code>data-type</code>: Popup type (optional)</li>
+        <li><code>data-arrow</code>: Render an arrow for <code>tooltip</code> type (optional)</li>
+    </ul>
+
+    <p>Valid types include:</p>
+
+    <ul class="tc-list mb-6">
+        <li><code>menu</code> (default)</li>
+        <li><code>tooltip</code></li>
+    </ul>
+
+    <p>The <code>data-arrow</code> value can be either <code>true</code> (default) or <code>false</code>.</p>
+
+    <p><strong>Note:</strong> When a popup is used to render a tooltip with an arrow,
+        it is best not to use transparency as the arrow is simply a rotated square which could be visible.</p>
+
+    <p>In addition, the following class-based components can be applied to a <code>skin-popup</code>:</p>
+
+    <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+        <thead>
+        <tr class="text-left">
+            <th>Class name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><code>tc-tooltip</code></td>
+            <td>Component</td>
+            <td>Tooltip component</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Examples</h2>
+
+</div>
+
+<div class="mb-6">
+
+    <div class="inline-block text-xs font-semibold p-1 mb-6 tu-border-width tu-border-radius tu-border-default tu-bg-default"
+         role="tablist"
+         aria-label="Tabs">
+
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="web-component-tab-1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="web-component-panel-1"
+                tabindex="0">
+            Example
+        </button>
+        <button
+                class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
+                id="web-component-tab-2"
+                role="tab"
+                aria-selected="false"
+                aria-controls="web-component-panel-2"
+                tabindex="-1">
+            HTML
+        </button>
+
+    </div>
+
+    <div id="web-component-panel-1" role="tabpanel" tabindex="0" aria-labelledby="web-component-tab-1">
+
+        <div class="p-4 border tu-border-default tu-border-radius">
+            {% include "src/views/snippets/skin-popup.html" %}
+        </div>
+
+    </div> <!-- /#web-component-panel-1 -->
+
+    <div id="web-component-panel-2" role="tabpanel" tabindex="0" aria-labelledby="web-component-tab-2" hidden>
+
+        <div class="tc-code tc-code-terminal">
+             <pre><code class="language-html">
+                {% filter escape %}
+                {% include "src/views/snippets/skin-popup.html" %}
+                {% endfilter %}
+            </code></pre>
+        </div>
+
+    </div> <!-- /#web-component-panel-2 -->
+
+</div> <!-- / tab container -->
+{% endblock %}

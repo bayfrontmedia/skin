@@ -93,7 +93,7 @@ const sidebarItems = [
             },
             {
                 title: 'Popup',
-                href: 'tc-popup.html'
+                href: 'skin-popup.html'
             },
             {
                 title: 'Progress',
@@ -310,8 +310,8 @@ const fileTemplates = {
                         title: "Modal",
                     },
                 },
-                'tc-popup': {
-                    import: 'src/views/pages/tc-popup.html',
+                'skin-popup': {
+                    import: 'src/views/pages/skin-popup.html',
                     data: {
                         title: "Popup",
                     },

@@ -8,7 +8,8 @@
  *   - id
  *
  * Optional attributes:
- *   - data-type: tooltip, menu (default)
+ *   - data-type: menu (default), tooltip
+ *   - data-arrow: Render an arrow for tooltip type - true (default), false
  */
 export class SkinPopup extends HTMLElement {
     constructor() {
@@ -33,7 +34,10 @@ export class SkinPopup extends HTMLElement {
         if (this.dataset.type === "tooltip") {
 
             this.setAttribute("role", "tooltip");
-            innerHtml += '<skin-popup-arrow></skin-popup-arrow>';
+
+            if (this.dataset.arrow !== "false") {
+                innerHtml += '<skin-popup-arrow></skin-popup-arrow>';
+            }
 
         } else { // "menu", default
             this.setAttribute("role", "menu");

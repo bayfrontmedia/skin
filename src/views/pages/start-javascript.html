@@ -26,6 +26,10 @@
         <li><a href="#skin.form.getpromise" title="Skin.Form.getPromise">Skin.Form.getPromise</a></li>
         <li><a href="#skin.modal.show" title="Skin.Modal.show">Skin.Modal.show</a></li>
         <li><a href="#skin.modal.hide" title="Skin.Modal.hide">Skin.Modal.hide</a></li>
+        <li><a href="#skin.popup.show" title="Skin.Popup.show">Skin.Popup.show</a></li>
+        <li><a href="#skin.popup.isvisible" title="Skin.Popup.isVisible">Skin.Popup.isVisible</a></li>
+        <li><a href="#skin.popup.hide" title="Skin.Popup.hide">Skin.Popup.hide</a></li>
+        <li><a href="#skin.popup.hideallvisible" title="Skin.Popup.hideAllVisible">Skin.Popup.hideAllVisible</a></li>
         <li><a href="#skin.toast.create" title="Skin.Toast.create">Skin.Toast.create</a></li>
         <li><a href="#skin.visibility.hide" title="Skin.Visibility.hide">Skin.Visibility.hide</a></li>
         <li><a href="#skin.visibility.show" title="Skin.Visibility.show">Skin.Visibility.show</a></li>
@@ -189,8 +193,7 @@
     <p>
         When <code>popup.enabled</code> is set to <code>true</code>, elements with a <code>data-popup</code>
         attribute will be used to show a
-        <a href="https://floating-ui.com/docs/tutorial" title="Floating UI" target="_blank">Floating UI</a> element with that ID.
-    </p>
+        <a href="#skin.popup.show" title="popup">popup</a> with that ID.</p>
 
     <p>
         An optional <code>data-popup-placement</code> attribute allows customization of the
@@ -201,11 +204,12 @@
     <p>
         An optional <code>data-popup-offset</code> attribute allows customization of the <code>mainAxis</code>
         and <code>crossAxis</code> <a href="https://floating-ui.com/docs/offset" title="offset" target="_blank">offset</a>
-        (default of <code>0,0</code>). <strong>Note:</strong> When the popup contains an arrow, only the <code>mainAxis</code> value will be used.
+        (default of <code>0,0</code>).
+        <strong>Note:</strong> When the popup is a tooltip, only the <code>mainAxis</code> value will be used.
     </p>
 
     <p>
-        An optional <code>data-popup-unique</code> attribute will force all other popups to hide when triggered
+        An optional <code>data-popup-unique</code> attribute will force all other popups to hide before showing
         when value equals <code>true</code>.
     </p>
 
@@ -215,7 +219,7 @@
     </p>
 
     <p>
-        For an example, see <a href="tc-popup.html" title="tc-popup component">tc-popup component</a>.
+        For an example, see <a href="skin-popup.html" title="skin-popup component">skin-popup component</a>.
     </p>
 
     <h4 id="config-tabs">tabs</h4>
@@ -330,6 +334,56 @@
     <ul class="tc-list mb-6">
         <li><code>id</code> - ID of modal to hide</li>
     </ul>
+
+    <h3 id="skin.popup.show">Skin.Popup.show</h3>
+
+    <p>Show a <a href="skin-popup.html" title="popup component">popup component</a>. Under the hood,
+        the <a href="https://floating-ui.com/docs/tutorial" title="Floating UI" target="_blank">Floating UI</a>
+        library is used.</p>
+
+    <p><strong>Parameters:</strong></p>
+
+    <ul class="tc-list mb-6">
+        <li><code>referenceEl</code> - Reference element (trigger)</li>
+        <li><code>floatingEl</code> - Floating element (popup)</li>
+        <li><code>config = {}</code> - Configuration object</li>
+    </ul>
+
+    <p>
+        Any configuration values passed in the <code>config</code> object will override the default values.
+        The default configuration is as follows:
+    </p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+        <pre><code class="language-js">
+                {% filter escape %}
+                {% include "src/views/snippets/javascript-popup.js" %}
+                {% endfilter %}
+            </code></pre>
+    </div>
+
+    <p><strong>Note:</strong> When the popup is a tooltip, only the <code>mainAxis</code> offset will be used.</p>
+
+    <p>For more information on these configuration values, see
+        <a href="https://floating-ui.com/docs/tutorial" title="Floating UI" target="_blank">Floating UI</a>.</p>
+
+    <h3 id="skin.popup.isvisible">Skin.Popup.isVisible</h3>
+
+    <p>Is popup visible? Returns <code>boolean</code> value (true/false).</p>
+
+    <p><strong>Parameters:</strong></p>
+
+    <ul class="tc-list mb-6">
+        <li><code>el</code> - Floating element (popup)</li>
+    </ul>
+
+    <h3 id="skin.popup.hide">Skin.Popup.hide</h3>
+
+    <p>Hide a <a href="skin-popup.html" title="popup component">popup component</a>.</p>
+
+    <h3 id="skin.popup.hideallvisible">Skin.Popup.hideAllVisible</h3>
+
+    <p>Hide all visible <a href="skin-popup.html" title="popup components">popup components</a>.</p>
 
     <h3 id="skin.toast.create">Skin.Toast.create</h3>
 
