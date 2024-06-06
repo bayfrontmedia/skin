@@ -19,7 +19,7 @@ export class SkinPopup extends HTMLElement {
     connectedCallback() {
 
         if (!this.hasAttribute('id')) {
-            console.log('Unable to create skin-popup: ID does not exist'); // TODO: Check if debug
+            console.log('Unable to create skin-popup: ID does not exist');
             return;
         }
 

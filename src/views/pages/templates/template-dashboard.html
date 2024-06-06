@@ -93,7 +93,8 @@
                                         data-popup="popup-header-notifications"
                                         data-popup-placement="bottom-start"
                                         data-popup-trigger="click"
-                                        data-popup-offset="0,10">
+                                        data-popup-offset="0,10"
+                                        data-popup-unique="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke-width="1.5"
                                          width="24"
@@ -122,7 +123,8 @@
                                     data-popup="popup-header-add"
                                     data-popup-placement="bottom-start"
                                     data-popup-trigger="click"
-                                    data-popup-offset="0,10">
+                                    data-popup-offset="0,10"
+                                    data-popup-unique="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke-width="1.5"
                                      stroke="currentColor"
@@ -165,7 +167,8 @@
                                     data-popup="popup-header-user"
                                     data-popup-placement="bottom-start"
                                     data-popup-trigger="click"
-                                    data-popup-offset="0,10">
+                                    data-popup-offset="0,10"
+                                    data-popup-unique="true">
                                 <img src="https://i.pravatar.cc/120?img=51"
                                      class="object-center object-cover w-full h-full" alt="Username">
                             </button>
@@ -582,16 +585,9 @@
 
     </div> <!-- /#header-wrap -->
 
-    <div id="popup-header-fullscreen"
-         class="px-2 py-1 text-sm max-w-sm tc-popup tc-style-content tu-border-radius tu-border-width tu-box-shadow"
-         role="tooltip">
-        Toggle fullscreen
-        <div data-popup-arrow></div>
-    </div>
-
-    <div id="popup-header-add"
-         class="w-[225px] text-sm tc-popup overflow-hidden tc-style-content tu-border-radius tu-border-width tu-box-shadow"
-         role="menu" tabindex="0">
+    <skin-popup id="popup-header-add"
+                data-type="menu"
+                class="w-[225px] text-sm overflow-hidden tc-style-content tu-border-radius tu-border-width tu-box-shadow">
 
         <h3 class="uppercase tracking-wide font-semibold text-center p-2 tu-text-light tu-bg-default border-b tu-border-default">
             Quick add</h3>
@@ -628,11 +624,11 @@
                 Invoice</a></li>
         </ul>
 
-    </div><!-- /#popup-header-add -->
+    </skin-popup><!-- /#popup-header-add -->
 
-    <div id="popup-header-notifications"
-         class="w-[280px] text-sm tc-popup overflow-hidden tc-style-content tu-border-radius tu-border-width tu-box-shadow"
-         role="menu" tabindex="0">
+    <skin-popup id="popup-header-notifications"
+                data-type="menu"
+                class="w-[280px] text-sm tc-popup overflow-hidden tc-style-content tu-border-radius tu-border-width tu-box-shadow">
 
         <h3 class="uppercase tracking-wide font-semibold text-center p-2 tu-text-light tu-bg-default border-b tu-border-default">
             Notifications</h3>
@@ -724,11 +720,11 @@
             </svg>
             View all</a>
 
-    </div><!-- /#popup-header-notifications -->
+    </skin-popup><!-- /#popup-header-notifications -->
 
-    <div id="popup-header-user"
-         class="w-[225px] text-sm tc-popup overflow-hidden tc-style-content tu-border-radius tu-border-width tu-box-shadow"
-         role="menu" tabindex="0">
+    <skin-popup id="popup-header-user"
+                data-type="menu"
+                class="w-[225px] text-sm tc-popup overflow-hidden tc-style-content tu-border-radius tu-border-width tu-box-shadow">
 
         <h3 class="uppercase tracking-wide font-semibold text-center p-2 tu-text-light tu-bg-default border-b tu-border-default">
             Your Name</h3>
@@ -774,7 +770,7 @@
                 Sign out</a></li>
         </ul>
 
-    </div><!-- /#popup-header-user -->
+    </skin-popup><!-- /#popup-header-user -->
 
     <div id="content-wrap" class="pt-14">
 
@@ -901,7 +897,8 @@
                                         data-popup="people-onsite-actions"
                                         data-popup-placement="bottom-end"
                                         data-popup-trigger="click"
-                                        data-popup-offset="0,10">
+                                        data-popup-offset="0,10"
+                                        data-popup-unique="true">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke-width="3"
@@ -925,10 +922,9 @@
                                     Add person
                                 </button>
 
-                                <div id="people-onsite-actions"
-                                     class="w-[225px] tc-popup tc-style-content tu-border-radius tu-border-width tu-box-shadow overflow-hidden"
-                                     role="menu"
-                                     tabindex="0">
+                                <skin-popup id="people-onsite-actions"
+                                            data-type="menu"
+                                            class="w-[225px] tc-style-content tu-border-radius tu-border-width tu-box-shadow overflow-hidden">
 
                                     <ul class="text-sm">
                                         <li><a href="#" title="First"
@@ -942,7 +938,7 @@
                                             Third</a></li>
                                     </ul>
 
-                                </div>
+                                </skin-popup>
 
                             </div>
 

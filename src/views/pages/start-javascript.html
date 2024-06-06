@@ -209,13 +209,13 @@
     </p>
 
     <p>
-        An optional <code>data-popup-unique</code> attribute will force all other popups to hide before showing
-        when value equals <code>true</code>.
+        An optional <code>data-popup-trigger</code> attribute allows the popup to show on <code>click</code>,
+        <code>hover</code>, or <code>always</code> (default).
     </p>
 
     <p>
-        An optional <code>data-popup-trigger</code> attribute allows the popup to show on <code>click</code>,
-        <code>hover</code>, or <code>always</code> (default).
+        An optional <code>data-popup-unique</code> attribute will force all other popups to hide before showing
+        when value equals <code>true</code>.
     </p>
 
     <p>
@@ -367,6 +367,26 @@
     <p>For more information on these configuration values, see
         <a href="https://floating-ui.com/docs/tutorial" title="Floating UI" target="_blank">Floating UI</a>.</p>
 
+    <p><strong>Event:</strong></p>
+
+    <p>When shown, the <code>floatingEl</code> element dispatches a <code>popupShow</code> event which contains
+    the following detail properties:</p>
+
+    <ul class="tc-list mb-6">
+        <li><code>referenceEl</code> - Reference element (trigger)</li>
+        <li><code>config = {}</code> - Configuration object</li>
+    </ul>
+
+    <p>Example:</p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+        <pre><code class="language-js">
+                {% filter escape %}
+                {% include "src/views/snippets/javascript-popup-show.js" %}
+                {% endfilter %}
+            </code></pre>
+    </div>
+
     <h3 id="skin.popup.isvisible">Skin.Popup.isVisible</h3>
 
     <p>Is popup visible? Returns <code>boolean</code> value (true/false).</p>
@@ -380,6 +400,20 @@
     <h3 id="skin.popup.hide">Skin.Popup.hide</h3>
 
     <p>Hide a <a href="skin-popup.html" title="popup component">popup component</a>.</p>
+
+    <p><strong>Event:</strong></p>
+
+    <p>When hidden, the <code>el</code> element dispatches a <code>popupHide</code> event.</p>
+
+    <p>Example:</p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+        <pre><code class="language-js">
+                {% filter escape %}
+                {% include "src/views/snippets/javascript-popup-hide.js" %}
+                {% endfilter %}
+            </code></pre>
+    </div>
 
     <h3 id="skin.popup.hideallvisible">Skin.Popup.hideAllVisible</h3>
 

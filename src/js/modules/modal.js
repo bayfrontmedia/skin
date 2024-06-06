@@ -1,5 +1,6 @@
 import {show as VisShow, hide as VisHide} from "./Visibility";
 import * as focusTrap from 'focus-trap';
+import {hideAllVisible} from "./popup";
 
 /**
  * Focus traps.
@@ -35,6 +36,8 @@ export function show(id, config = {}) {
         let body = document.querySelector('body')
         let modal = document.getElementById(id);
         let content = modal.querySelector(".tc-modal-content");
+
+        hideAllVisible();
 
         VisShow(modal, 250);
 

@@ -459,9 +459,9 @@ export function init(config = {}) {
 
                 if (trigger === "click") {
 
-                    ref.addEventListener("click", function() {
+                    ref.addEventListener("click", function () {
 
-                        if (Popup.isVisible(floatingEl)) { // TODO: Hide on document click?
+                        if (Popup.isVisible(floatingEl)) {
 
                             Popup.hide(floatingEl);
 
@@ -490,7 +490,7 @@ export function init(config = {}) {
 
                     showEvents.forEach((event) => {
 
-                        ref.addEventListener(event, function() {
+                        ref.addEventListener(event, function () {
 
                             Popup.show(ref, floatingEl, {
                                 unique: unique,
@@ -509,7 +509,7 @@ export function init(config = {}) {
                     });
 
                     hideEvents.forEach((event) => {
-                        ref.addEventListener(event, function() {
+                        ref.addEventListener(event, function () {
                             Popup.hide(floatingEl);
                         });
                     });
@@ -550,7 +550,7 @@ export function init(config = {}) {
 
                 // Show tab
 
-                tab.addEventListener("click", function() {
+                tab.addEventListener("click", function () {
 
                     const grandparent = tabList.parentNode;
 
@@ -657,7 +657,7 @@ export function init(config = {}) {
 
                         if (labelledBy !== null) {
 
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 document.getElementById(labelledBy).click();
                                 panel.blur();
                             }, 100); // Give time to load completely

@@ -106,7 +106,7 @@ function renderWithArrow(referenceEl, floatingEl, config) {
  *
  * If the floatingEl has an ID, the popup will be autoUpdated.
  */
-export function show(referenceEl, floatingEl, config = {}) {
+export function show(referenceEl, floatingEl, config = {}) { // TODO: Hide on document click
 
     const defaultConfig = {
         unique: false,
@@ -129,18 +129,26 @@ export function show(referenceEl, floatingEl, config = {}) {
         hideAllVisible();
     }
 
-    if (floatingEl.dataset.type === "menu") {
-        floatingEl.style.display = 'block';
-        renderWithoutArrow(referenceEl, floatingEl, config);
-    } else if (floatingEl.dataset.type === "tooltip") {
+    if (floatingEl.dataset.type === "tooltip") {
         floatingEl.style.display = 'block';
         renderWithArrow(referenceEl, floatingEl, config);
-    } else {
-        console.log('Unable to render popup: Unknown type'); // TODO: Check for debug
-        return;
+    } else { // "menu"/default
+        floatingEl.style.display = 'block';
+        renderWithoutArrow(referenceEl, floatingEl, config);
     }
 
     floatingEl.setAttribute("data-popup-visible", "true");
+
+    // Event
+
+    const popupShow = new CustomEvent("popupShow", {
+        detail: {
+            referenceEl: referenceEl,
+            config: config
+        }
+    });
+
+    floatingEl.dispatchEvent(popupShow);
 
 
     // TODO: How to cleanup
@@ -195,6 +203,12 @@ export function hide(el) {
         el.style.display = '';
 
     }, 200);
+
+    // Event
+
+    const popupHide = new CustomEvent("popupHide");
+
+    el.dispatchEvent(popupHide);
 
 }
 
