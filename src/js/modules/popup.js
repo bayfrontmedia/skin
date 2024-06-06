@@ -230,14 +230,6 @@ export function isVisible(el) {
  */
 export function hide(el) {
 
-    /*
-    if (el.hasAttribute('id') && typeof autoUpdated[el.getAttribute("id")] === "undefined") {
-        autoUpdated[el.getAttribute("id")]();
-        delete autoUpdated[el.getAttribute("id")];
-    }
-
-     */
-
     el.removeAttribute("data-popup-visible");
 
     window.setTimeout(() => { // Match CSS duration
