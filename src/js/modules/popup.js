@@ -1,9 +1,32 @@
 import {arrow, autoUpdate, computePosition, flip, offset, shift} from "@floating-ui/dom";
 
+/**
+ * Reference to all created autoupdated popups
+ * which will be needed to be called when they are hidden.
+ *
+ * @type {{}}
+ */
 let autoUpdated = {};
 
 /**
+ * Return unique ID for element.
+ *
+ * @param el
+ * @returns {number|*}
+ */
+function getUniqueId(el) {
+
+    if (el.hasAttribute('id')) {
+        return el.id;
+    }
+
+    return Date.now();
+
+}
+
+/**
  * Render popup without arrow (menu).
+ * Autoupdated by saving reference onto the autoUpdated object.
  *
  * @param referenceEl
  * @param floatingEl
@@ -11,21 +34,37 @@ let autoUpdated = {};
  */
 function renderWithoutArrow(referenceEl, floatingEl, config) {
 
-    computePosition(referenceEl, floatingEl, {
-        placement: config.placement,
-        middleware: [
-            shift(config.shift),
-            offset(config.offset),
-            flip(config.flip),
-        ]
-    }).then(({x, y}) => {
+    function updatePosition() {
 
-        Object.assign(floatingEl.style, {
-            left: `${x}px`,
-            top: `${y}px`,
+        computePosition(referenceEl, floatingEl, {
+            placement: config.placement,
+            middleware: [
+                shift(config.shift),
+                offset(config.offset),
+                flip(config.flip),
+            ]
+        }).then(({x, y}) => {
+
+            Object.assign(floatingEl.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            });
+
         });
 
-    });
+    }
+
+    // Save reference
+
+    const uniqueId = getUniqueId(floatingEl);
+
+    floatingEl.setAttribute("data-popup-autoupdate", uniqueId);
+
+    autoUpdated[uniqueId] = autoUpdate(
+        referenceEl,
+        floatingEl,
+        updatePosition
+    );
 
 }
 
@@ -39,6 +78,54 @@ function renderWithoutArrow(referenceEl, floatingEl, config) {
  */
 function renderWithArrow(referenceEl, floatingEl, config) {
 
+    function updatePosition() {
+
+        computePosition(referenceEl, floatingEl, {
+            placement: config.placement,
+            middleware: [
+                shift(config.shift),
+                offset(mainAxisOffset), // Only the main axis is offset when an arrow is used
+                flip(config.flip),
+                arrow({
+                    element: arrowEl,
+                    padding: 5
+                })
+            ]
+        }).then(({x, y, middlewareData, placement}) => {
+
+            Object.assign(floatingEl.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            });
+
+            if (middlewareData.arrow) {
+
+                const side = placement.split("-")[0];
+
+                const staticSide = {
+                    top: "bottom",
+                    right: "left",
+                    bottom: "top",
+                    left: "right"
+                }[side];
+
+                const {x, y} = middlewareData.arrow;
+
+                Object.assign(arrowEl.style, {
+                    left: x != null ? `${x}px` : "",
+                    top: y != null ? `${y}px` : "",
+                    // Ensure the static side gets unset when flipping to other placements' axes
+                    right: "",
+                    bottom: "",
+                    [staticSide]: `${-arrowLen / 2}px`
+                });
+
+            }
+
+        });
+
+    }
+
     const arrowEl = floatingEl.querySelector('skin-popup-arrow');
 
     if (!arrowEl) {
@@ -51,49 +138,17 @@ function renderWithArrow(referenceEl, floatingEl, config) {
     const floatingOffset = Math.sqrt(2 * arrowLen ** 2) / 2;
     const mainAxisOffset = parseInt(String(floatingOffset + config.offset.mainAxis));
 
-    computePosition(referenceEl, floatingEl, {
-        placement: config.placement,
-        middleware: [
-            shift(config.shift),
-            offset(mainAxisOffset), // Only the main axis is offset when an arrow is used
-            flip(config.flip),
-            arrow({
-                element: arrowEl,
-                padding: 5
-            })
-        ]
-    }).then(({x, y, middlewareData, placement}) => {
+    // Save reference
 
-        Object.assign(floatingEl.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-        });
+    const uniqueId = getUniqueId(floatingEl);
 
-        if (middlewareData.arrow) {
+    floatingEl.setAttribute("data-popup-autoupdate", uniqueId);
 
-            const side = placement.split("-")[0];
-
-            const staticSide = {
-                top: "bottom",
-                right: "left",
-                bottom: "top",
-                left: "right"
-            }[side];
-
-            const {x, y} = middlewareData.arrow;
-
-            Object.assign(arrowEl.style, {
-                left: x != null ? `${x}px` : "",
-                top: y != null ? `${y}px` : "",
-                // Ensure the static side gets unset when flipping to other placements' axes
-                right: "",
-                bottom: "",
-                [staticSide]: `${-arrowLen / 2}px`
-            });
-
-        }
-
-    });
+    autoUpdated[uniqueId] = autoUpdate(
+        referenceEl,
+        floatingEl,
+        updatePosition
+    );
 
 }
 
@@ -130,11 +185,17 @@ export function show(referenceEl, floatingEl, config = {}) { // TODO: Hide on do
     }
 
     if (floatingEl.dataset.type === "tooltip") {
+
         floatingEl.style.display = 'block';
+
         renderWithArrow(referenceEl, floatingEl, config);
+
     } else { // "menu"/default
+
         floatingEl.style.display = 'block';
+
         renderWithoutArrow(referenceEl, floatingEl, config);
+
     }
 
     floatingEl.setAttribute("data-popup-visible", "true");
@@ -149,25 +210,6 @@ export function show(referenceEl, floatingEl, config = {}) { // TODO: Hide on do
     });
 
     floatingEl.dispatchEvent(popupShow);
-
-
-    // TODO: How to cleanup
-    /*
-    if (floatingEl.hasAttribute('id')) {
-
-        autoUpdated[floatingEl.getAttribute("id")] = autoUpdate(referenceEl, floatingEl, () => {
-            renderPopup();
-        });
-
-    } else {
-        renderPopup();
-    }
-
-    const cleanup = autoUpdate(referenceEl, floatingEl, () => {
-
-    });
-
-     */
 
 }
 
@@ -201,6 +243,14 @@ export function hide(el) {
     window.setTimeout(() => { // Match CSS duration
 
         el.style.display = '';
+
+        // Remove auto update references
+
+        if (el.dataset.popupAutoupdate && autoUpdated.hasOwnProperty(el.dataset.popupAutoupdate)) {
+            autoUpdated[el.dataset.popupAutoupdate]();
+            delete autoUpdated[el.dataset.popupAutoupdate];
+            el.removeAttribute("data-popup-autoupdate");
+        }
 
     }, 200);
 
