@@ -30,10 +30,6 @@ const sidebarItems = [
                 href: 'start-installation.html'
             },
             {
-                title: 'Configuration',
-                href: 'start-configuration.html'
-            },
-            {
                 title: 'JavaScript',
                 href: 'start-javascript.html'
             },
@@ -234,12 +230,6 @@ const fileTemplates = {
                     import: 'src/views/pages/example-toggle.html',
                     data: {
                         title: "Toggle",
-                    },
-                },
-                'start-configuration': {
-                    import: 'src/views/pages/start-configuration.html',
-                    data: {
-                        title: "Configuration",
                     },
                 },
                 'start-installation': {

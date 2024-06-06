@@ -14,6 +14,8 @@
 
     </div>
 
+    <h2 id="tailwind-config">Tailwind config</h2>
+
     <p>Add Skin as a Tailwind plugin and add the required <code>theme-primary</code> and <code>theme-secondary</code>
         colors in the <code>tailwind.config.js</code> file. In addition, add Skin's JavaScript file to your <code>content</code> data to ensure any Tailwind classes used
         by Skin are not purged from your stylesheet.</p>
@@ -41,6 +43,22 @@
                 {% endfilter %}
             </code></pre>
     </div>
+
+    <p>Many Skin elements can be customized by adding the <code>skin</code> property
+        to your <code>tailwind.config.js</code> file. The default configuration is as follows:</p>
+
+    <div class="tc-code tc-code-terminal mb-6">
+        <pre><code class="language-js">
+                {% filter escape %}
+                {% include "src/views/snippets/installation-skin-default.js" %}
+                {% endfilter %}
+            </code></pre>
+    </div>
+
+    <p>These values are used to define the <a href="theme-utilities.html" title="utility classes">utility classes</a>
+        and <a href="theme-variables.html" title="CSS variables">CSS variables</a> used by Skin.</p>
+
+    <h2 id="javascript">JavaScript</h2>
 
     <p>To utilize the JavaScript features, include the <code>skin.min.js</code> file from your preferred source
         and initialize Skin before the closing <code>body</code> tag:</p>
