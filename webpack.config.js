@@ -37,6 +37,10 @@ const sidebarItems = [
                 title: 'JavaScript',
                 href: 'start-javascript.html'
             },
+            {
+                title: 'Application',
+                href: 'start-app.html'
+            },
         ]
     },
     {
@@ -248,6 +252,12 @@ const fileTemplates = {
                     import: 'src/views/pages/start-javascript.html',
                     data: {
                         title: "JavaScript",
+                    },
+                },
+                'start-app': {
+                    import: 'src/views/pages/start-app.html',
+                    data: {
+                        title: "Application",
                     },
                 },
                 'skin-alert': {
