@@ -161,7 +161,7 @@ function renderWithArrow(referenceEl, floatingEl, config) {
  *
  * If the floatingEl has an ID, the popup will be autoUpdated.
  */
-export function show(referenceEl, floatingEl, config = {}) { // TODO: Hide on document click
+export function show(referenceEl, floatingEl, config = {}) {
 
     const defaultConfig = {
         unique: false,

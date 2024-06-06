@@ -209,13 +209,13 @@
     </p>
 
     <p>
-        An optional <code>data-popup-trigger</code> attribute allows the popup to show on <code>click</code>,
-        <code>hover</code>, or <code>always</code> (default).
+        An optional <code>data-popup-unique</code> attribute will force all other popups to hide before showing
+        when value equals <code>true</code>.
     </p>
 
     <p>
-        An optional <code>data-popup-unique</code> attribute will force all other popups to hide before showing
-        when value equals <code>true</code>.
+        An optional <code>data-popup-trigger</code> attribute allows the popup to show on <code>click</code>,
+        <code>hover</code>, or <code>always</code> (default).
     </p>
 
     <p>
@@ -400,6 +400,12 @@
     <h3 id="skin.popup.hide">Skin.Popup.hide</h3>
 
     <p>Hide a <a href="skin-popup.html" title="popup component">popup component</a>.</p>
+
+    <p><strong>Parameters:</strong></p>
+
+    <ul class="tc-list mb-6">
+        <li><code>el</code> - Floating element (popup)</li>
+    </ul>
 
     <p><strong>Event:</strong></p>
 
