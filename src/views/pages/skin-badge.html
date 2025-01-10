@@ -3,22 +3,24 @@
 {% block content %}
 <div class="tu-typo">
 
-    <h1>{{ title }}</h1>
+    <h1 id="{{ title }}">{{ title }}</h1>
 
-    <p>
-        Icons are available as a web component using the <code>skin-icon</code> tag.
-        Icons exist for each <a href="https://heroicons.com/" title="Heroicon" target="_blank">Heroicon outline style</a>.
-    </p>
+    <p>Badges are available as a web component using the <code>skin-badge</code> tag.</p>
 
     <p>Attributes:</p>
 
     <ul class="tc-list mb-6">
-        <li><code>name</code>: Valid Heroicon name (required)</li>
-        <li><code>data-class</code>: Class(es) to add to svg (optional)</li>
-        <li><code>data-stroke-width</code>: Stroke width, 1.5 by default (optional)</li>
+        <li><code>data-icon</code>: Any valid <a href="icon.html" title="skin-icon">skin-icon</a> name (optional)</li>
+        <li><code>data-style</code>: Alternate style (optional)</li>
     </ul>
 
-    <h2>Examples</h2>
+    <p>Valid styles include:</p>
+
+    <ul class="tc-list mb-6">
+        <li><code>pill</code>: Rounded</li>
+    </ul>
+
+    <h2 id="examples">Examples</h2>
 
 </div>
 
@@ -30,44 +32,44 @@
 
         <button
                 class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
-                id="icon-tab-1"
+                id="web-component-tab-1"
                 role="tab"
                 aria-selected="true"
-                aria-controls="icon-panel-1"
+                aria-controls="web-component-panel-1"
                 tabindex="0">
             Example
         </button>
         <button
                 class="tc-btn border-0 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-75 aria-selected:tc-style-primary aria-selected:hover:backdrop-brightness-100"
-                id="icon-tab-2"
+                id="web-component-tab-2"
                 role="tab"
                 aria-selected="false"
-                aria-controls="icon-panel-2"
+                aria-controls="web-component-panel-2"
                 tabindex="-1">
             HTML
         </button>
 
     </div>
 
-    <div id="icon-panel-1" role="tabpanel" tabindex="0" aria-labelledby="icon-tab-1">
+    <div id="web-component-panel-1" role="tabpanel" tabindex="0" aria-labelledby="web-component-tab-1">
 
         <div class="p-4 border tu-border-default tu-border-radius">
-            {% include "src/views/snippets/skin-icon.html" %}
+            {% include "src/views/snippets/skin-badge.html" %}
         </div>
 
-    </div> <!-- /#icon-panel-1 -->
+    </div> <!-- /#web-component-panel-1 -->
 
-    <div id="icon-panel-2" role="tabpanel" tabindex="0" aria-labelledby="icon-tab-2" hidden>
+    <div id="web-component-panel-2" role="tabpanel" tabindex="0" aria-labelledby="web-component-tab-2" hidden>
 
         <div class="tc-code tc-code-terminal">
-            <pre><code class="language-html">
+             <pre><code class="language-html">
                 {% filter escape %}
-                {% include "src/views/snippets/skin-icon.html" %}
+                {% include "src/views/snippets/skin-badge.html" %}
                 {% endfilter %}
             </code></pre>
         </div>
 
-    </div> <!-- /#icon-panel-2 -->
+    </div> <!-- /#web-component-panel-2 -->
 
 </div> <!-- / tab container -->
 {% endblock %}

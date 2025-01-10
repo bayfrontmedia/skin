@@ -22,7 +22,7 @@
     modal: {
         enabled: true,
     },
-    popper: {
+    popup: {
         enabled: true
     },
     tabs: {

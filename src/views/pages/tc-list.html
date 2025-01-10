@@ -26,11 +26,6 @@
             <td>Horizontal list</td>
         </tr>
         <tr>
-            <td><code>tc-list-breadcrumb</code></td>
-            <td>Component</td>
-            <td>Horizontal list without <code>li</code> padding</td>
-        </tr>
-        <tr>
             <td><code>tc-list-ordered</code></td>
             <td>Component</td>
             <td>Ordered list</td>
@@ -91,6 +86,12 @@
                 {% endfilter %}
             </code></pre>
         </div>
+
+        <skin-code data-class-code="xlanguagex-html" data-style="terminal">
+            {% filter escape %}
+            {% include "src/views/snippets/tc-list.html" %}
+            {% endfilter %}
+        </skin-code>
 
     </div> <!-- /#tc-list-panel-2 -->
 

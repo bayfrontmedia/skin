@@ -1,0 +1,46 @@
+<!-- Tooltip -->
+
+<p class="tu-typo-apply">
+    Popups can be shown in the form of a
+    <span class="underline decoration-dotted cursor-pointer"
+          data-popup="popup-tooltip"
+          data-popup-placement="right"
+          data-popup-offset="5"
+          data-popup-trigger="hover"
+          data-popup-unique="true">
+        tooltip</span>.
+</p>
+
+<skin-popup
+        id="popup-tooltip"
+        data-type="tooltip"
+        class="tc-tooltip">
+    This is a tooltip example. It hides and shows automatically.
+</skin-popup>
+
+<p class="tu-typo-apply">Popups can also be shown in the form of a menu:</p>
+
+<!-- Menu -->
+
+<button id="test-popup-btn" type="button" class="tc-btn tc-style-default"
+        data-popup="popup-menu"
+        data-popup-placement="bottom-start"
+        data-popup-trigger="click">Open menu
+    <skin-icon class="ml-2 h-5 w-5" name="chevron-down"></skin-icon>
+</button>
+
+<skin-popup
+        id="popup-menu"
+        data-type="menu"
+        class="p-4 w-[225px] tc-popup tc-style-content tu-border-radius tu-border-width tu-box-shadow">
+
+    <h3 class="uppercase tracking-wide font-semibold text-sm mb-2 tu-text-light">Menu</h3>
+
+    <ul class="text-sm">
+        <li><a href="#" title="First item" class="flex items-center p-2 hover:text-theme-primary hover:tu-bg-default tu-border-radius">First item</a></li>
+        <li><a href="#" title="Second item" class="flex items-center p-2 hover:text-theme-primary hover:tu-bg-default tu-border-radius">Second item</a></li>
+        <li><a href="#" title="Third item" class="flex items-center p-2 hover:text-theme-primary hover:tu-bg-default tu-border-radius">Third item</a></li>
+        <li><a href="#" title="Fourth item" class="flex items-center p-2 hover:text-theme-primary hover:tu-bg-default tu-border-radius">Fourth item</a></li>
+    </ul>
+
+</skin-popup>

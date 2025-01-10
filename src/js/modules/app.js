@@ -1,8 +1,8 @@
 // noinspection JSUnusedGlobalSymbols
 
 import * as Modal from "./Modal";
+import * as Popup from "./Popup";
 import * as Visibility from "./Visibility";
-import {createPopper} from "@popperjs/core";
 
 export function init(config = {}) {
 
@@ -30,7 +30,7 @@ export function init(config = {}) {
         modal: {
             enabled: true,
         },
-        popper: {
+        popup: {
             enabled: true
         },
         tabs: {
@@ -400,163 +400,132 @@ export function init(config = {}) {
 
     };
 
-    // Popper
+    // Popup
 
-    if (config.popper.enabled === true) {
+    if (config.popup.enabled === true) {
 
-        function hideVisiblePopper(event) {
+        const popupReferences = document.querySelectorAll("[data-popup]");
 
-            const visiblePoppers = document.querySelectorAll("[data-popper-visible]");
+        popupReferences.forEach((ref) => {
 
-            const closestTrigger = event.target.closest("[data-popper]");
+            let floatingId = ref.getAttribute("data-popup");
 
-            let insideVisiblePopper = false;
+            let floatingEl = document.getElementById(floatingId);
 
-            if (event.target.closest("[data-popper-visible]") !== null) {
-                insideVisiblePopper = true;
+            if (!floatingEl) {
+                if (config.debug === true) {
+                    console.log("Popup ID does not exist (" + floatingId + ")");
+                }
+                return; // Continue to next iteration
             }
 
-            visiblePoppers.forEach(visiblePopper => {
+            // Set aria-describedby
 
-                /*
-                If click not from visible trigger (let Popper handle it)
-                and if click not from inside visible popper
-                 */
+            ref.setAttribute("aria-describedby", floatingId);
 
-                if ((closestTrigger === null
-                        || closestTrigger.getAttribute("data-popper") !== visiblePopper.id)
-                    && insideVisiblePopper === false) {
+            // Placement
 
-                    // Mimic hidePopper()
-                    visiblePopper.removeAttribute("data-popper-visible");
-                    visiblePopper.style.opacity = "0";
+            let placement = ref.getAttribute("data-popup-placement");
 
-                    window.setTimeout(() => {
-                        visiblePopper.style.display = "none";
-                    }, 150);
+            if (!placement) {
+                placement = "bottom";
+            }
 
-                    document.removeEventListener("click", hideVisiblePopper);
+            // Offset
 
+            let offset = ref.getAttribute("data-popup-offset");
+
+            if (!offset) {
+                offset = "0,0";
+            }
+
+            offset = offset.split(",", 2);
+
+            // Unique
+
+            let unique = false;
+
+            if (ref.hasAttribute("data-popup-unique")) {
+                if (ref.getAttribute("data-popup-unique") === "true") {
+                    unique = true;
                 }
+            }
 
-            });
+            // Trigger
 
-        }
+            if (ref.hasAttribute("data-popup-trigger")) {
 
-        const popperButtons = document.querySelectorAll("[data-popper]");
+                let trigger = ref.getAttribute("data-popup-trigger");
 
-        popperButtons.forEach((btn) => {
+                if (trigger === "click") {
 
-            const tooltip = document.getElementById(btn.getAttribute("data-popper"));
+                    ref.addEventListener("click", function () {
 
-            if (tooltip) {
+                        if (Popup.isVisible(floatingEl)) {
 
-                // See: https://popper.js.org/docs/v2/constructors/#placement
-
-                let placement = "top";
-
-                if (btn.hasAttribute("data-popper-placement")) {
-                    placement = btn.getAttribute("data-popper-placement");
-                }
-
-                // See: https://popper.js.org/docs/v2/modifiers/offset/
-
-                let offset = btn.getAttribute("data-popper-offset");
-
-                if (!offset) {
-                    offset = "0,0";
-                }
-
-                offset = offset.split(",");
-
-                offset = offset.map(function (x) {
-                    return parseInt(x, 10);
-                });
-
-                const popperInstance = createPopper(btn, tooltip, {
-                    placement: placement,
-                    modifiers: [
-                        {
-                            name: 'offset',
-                            options: {
-                                offset: offset,
-                            },
-                        },
-                        {
-                            name: "flip",
-                            options: {
-                                allowedAutoPlacements: ["right", "left", "top", "bottom"],
-                                rootBoundary: "viewport"
-                            }
-                        },
-
-                    ],
-                });
-
-                function showPopper() {
-
-                    tooltip.setAttribute("data-popper-visible", "true");
-                    tooltip.style.display = "block";
-
-                    window.setTimeout(async () => {
-                        tooltip.style.opacity = "1";
-                        //popperInstance.update();
-                        await popperInstance.update(); // This seems to be working fine
-
-
-                    }, 5);
-
-                }
-
-                function hidePopper() {
-
-                    tooltip.removeAttribute("data-popper-visible");
-                    tooltip.style.opacity = "0";
-
-                    window.setTimeout(() => {
-                        tooltip.style.display = "none";
-
-                    }, 150);
-
-                }
-
-                let trigger = btn.getAttribute("data-popper-trigger");
-
-                if (trigger === "click") { // Click
-
-                    btn.addEventListener("click", function() {
-
-                        if (tooltip.getAttribute("data-popper-visible") !== "true") {
-
-                            showPopper();
-
-                            window.setTimeout(() => {
-                                document.addEventListener("click", hideVisiblePopper);
-                            }, 5);
+                            Popup.hide(floatingEl);
 
                         } else {
 
-                            hidePopper();
-
-                            window.setTimeout(() => {
-                                document.removeEventListener("click", hideVisiblePopper);
-                            }, 5);
+                            Popup.show(ref, floatingEl, {
+                                unique: unique,
+                                placement: placement,
+                                offset: {
+                                    mainAxis: offset[0],
+                                    crossAxis: offset[1]
+                                },
+                                shift: {
+                                    padding: 5
+                                }
+                            });
 
                         }
 
                     });
 
-                } else { // Hover
+                } else if (trigger === "hover") {
 
                     const showEvents = ['mouseenter', 'focus'];
                     const hideEvents = ['mouseleave', 'blur'];
 
                     showEvents.forEach((event) => {
-                        btn.addEventListener(event, showPopper);
+
+                        ref.addEventListener(event, function () {
+
+                            Popup.show(ref, floatingEl, {
+                                unique: unique,
+                                placement: placement,
+                                offset: {
+                                    mainAxis: offset[0],
+                                    crossAxis: offset[1]
+                                },
+                                shift: {
+                                    padding: 5
+                                }
+                            });
+
+                        });
+
                     });
 
                     hideEvents.forEach((event) => {
-                        btn.addEventListener(event, hidePopper);
+                        ref.addEventListener(event, function () {
+                            Popup.hide(floatingEl);
+                        });
+                    });
+
+                } else { // Always
+
+                    Popup.show(ref, floatingEl, {
+                        unique: unique,
+                        placement: placement,
+                        offset: {
+                            mainAxis: offset[0],
+                            crossAxis: offset[1]
+                        },
+                        shift: {
+                            padding: 5
+                        }
                     });
 
                 }
@@ -581,7 +550,7 @@ export function init(config = {}) {
 
                 // Show tab
 
-                tab.addEventListener("click", function() {
+                tab.addEventListener("click", function () {
 
                     const grandparent = tabList.parentNode;
 
@@ -688,7 +657,7 @@ export function init(config = {}) {
 
                         if (labelledBy !== null) {
 
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 document.getElementById(labelledBy).click();
                                 panel.blur();
                             }, 100); // Give time to load completely

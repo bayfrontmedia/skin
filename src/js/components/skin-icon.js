@@ -6,7 +6,7 @@
  * Icon sources: https://heroicons.com/
  *
  * Required attributes:
- *   - Valid Heroicon "name"
+ *   - name (Valid Heroicon name)
  *
  * Optional attributes:
  *  - data-class (Classes to add to svg)

@@ -30,12 +30,12 @@ const sidebarItems = [
                 href: 'start-installation.html'
             },
             {
-                title: 'Configuration',
-                href: 'start-configuration.html'
-            },
-            {
                 title: 'JavaScript',
                 href: 'start-javascript.html'
+            },
+            {
+                title: 'Application',
+                href: 'start-app.html'
             },
         ]
     },
@@ -57,15 +57,11 @@ const sidebarItems = [
         items: [
             {
                 title: 'Alert',
-                href: 'tc-alert.html'
+                href: 'skin-alert.html'
             },
             {
                 title: 'Badge',
-                href: 'tc-badge.html'
-            },
-            {
-                title: 'Blockquote',
-                href: 'tc-blockquote.html'
+                href: 'skin-badge.html'
             },
             {
                 title: 'Button',
@@ -73,7 +69,7 @@ const sidebarItems = [
             },
             {
                 title: 'Code',
-                href: 'tc-code.html'
+                href: 'skin-code.html'
             },
             {
                 title: 'Form',
@@ -81,7 +77,7 @@ const sidebarItems = [
             },
             {
                 title: 'Icon',
-                href: 'icon.html'
+                href: 'skin-icon.html'
             },
             {
                 title: 'Line',
@@ -96,12 +92,16 @@ const sidebarItems = [
                 href: 'tc-modal.html'
             },
             {
-                title: 'Popper',
-                href: 'tc-popper.html'
+                title: 'Popup',
+                href: 'skin-popup.html'
             },
             {
                 title: 'Progress',
                 href: 'tc-progress.html'
+            },
+            {
+                title: 'Blockquote',
+                href: 'tc-blockquote.html'
             },
             {
                 title: 'Style',
@@ -113,7 +113,7 @@ const sidebarItems = [
             },
             {
                 title: 'Toast',
-                href: 'tc-toast.html'
+                href: 'skin-toast.html'
             },
         ]
     },
@@ -232,12 +232,6 @@ const fileTemplates = {
                         title: "Toggle",
                     },
                 },
-                'start-configuration': {
-                    import: 'src/views/pages/start-configuration.html',
-                    data: {
-                        title: "Configuration",
-                    },
-                },
                 'start-installation': {
                     import: 'src/views/pages/start-installation.html',
                     data: {
@@ -250,14 +244,20 @@ const fileTemplates = {
                         title: "JavaScript",
                     },
                 },
-                'tc-alert': {
-                    import: 'src/views/pages/tc-alert.html',
+                'start-app': {
+                    import: 'src/views/pages/start-app.html',
+                    data: {
+                        title: "Application",
+                    },
+                },
+                'skin-alert': {
+                    import: 'src/views/pages/skin-alert.html',
                     data: {
                         title: "Alert",
                     },
                 },
-                'tc-badge': {
-                    import: 'src/views/pages/tc-badge.html',
+                'skin-badge': {
+                    import: 'src/views/pages/skin-badge.html',
                     data: {
                         title: "Badge",
                     },
@@ -274,8 +274,8 @@ const fileTemplates = {
                         title: "Button",
                     },
                 },
-                'tc-code': {
-                    import: 'src/views/pages/tc-code.html',
+                'skin-code': {
+                    import: 'src/views/pages/skin-code.html',
                     data: {
                         title: "Code",
                     },
@@ -286,8 +286,8 @@ const fileTemplates = {
                         title: "Form",
                     },
                 },
-                'icon': {
-                    import: 'src/views/pages/icon.html',
+                'skin-icon': {
+                    import: 'src/views/pages/skin-icon.html',
                     data: {
                         title: "Icon",
                     },
@@ -310,10 +310,10 @@ const fileTemplates = {
                         title: "Modal",
                     },
                 },
-                'tc-popper': {
-                    import: 'src/views/pages/tc-popper.html',
+                'skin-popup': {
+                    import: 'src/views/pages/skin-popup.html',
                     data: {
-                        title: "Popper",
+                        title: "Popup",
                     },
                 },
                 'tc-progress': {
@@ -334,8 +334,8 @@ const fileTemplates = {
                         title: "Table",
                     },
                 },
-                'tc-toast': {
-                    import: 'src/views/pages/tc-toast.html',
+                'skin-toast': {
+                    import: 'src/views/pages/skin-toast.html',
                     data: {
                         title: "Toast",
                     },

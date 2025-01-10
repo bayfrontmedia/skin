@@ -8,8 +8,10 @@
  *   - id (If dismissible)
  *
  * Optional attributes:
- *   - data-icon (Any valid skin-icon name)
- *   - data-dismiss-duration (Minutes to keep alert hidden after dismissed)
+ *   - data-hide-duration: Duration (in minutes) to keep the alert hidden after dismissed
+ *   - data-hide-transition: Duration (in milliseconds) of the dismissal transition, 250 by default
+ *   - data-icon: Any valid skin-icon name
+ *   - data-style: Alternate style (bt, br, bb, bl)
  */
 export class SkinAlert extends HTMLElement {
     constructor() {
@@ -18,32 +20,38 @@ export class SkinAlert extends HTMLElement {
 
     connectedCallback() {
 
-        const alertContents = this.innerHTML;
+        const contents = this.innerHTML;
 
-        this.classList.add("tc-alert");
         this.setAttribute("role", "alert");
 
-        if (typeof this.dataset.dismissDuration != "undefined") {
+        // noinspection DuplicatedCode
+        if (typeof this.dataset.hideDuration != "undefined") {
             this.dataset.hidden = "true";
         }
 
-        let alertHtml = '<div class="w-full flex items-center gap-3">';
+        let innerHtml = '<div class="w-full flex items-center gap-3">';
 
         if (typeof this.dataset.icon != "undefined") {
-            alertHtml += '<div class="flex-none"><skin-icon name="' + this.dataset.icon + '" class="flex-none pt-0.5" data-class="w-6 h-6"></skin-icon></div>';
+            innerHtml += '<div class="flex-none"><skin-icon name="' + this.dataset.icon + '" data-class="w-6 h-6"></skin-icon></div>';
         }
 
-        alertHtml += '<div class="grow">' + alertContents + '</div>';
+        innerHtml += '<div class="grow">' + contents + '</div>';
 
-        if (typeof this.dataset.dismissDuration != "undefined") {
-            alertHtml += '<button class="flex-none p-0.5 rounded-full hover:backdrop-brightness-95 dark:hover:backdrop-brightness-50" data-hide="' + this.id + '" data-hide-transition="250" data-hide-duration="' + this.dataset.dismissDuration + '" aria-label="Close">';
-            alertHtml += '<skin-icon name="x-mark" class="inline" data-class="w-5 h-5"></skin-icon>';
-            alertHtml += '</button>';
+        if (typeof this.dataset.hideDuration != "undefined") {
+
+            let transition = '250';
+            if (typeof this.dataset.hideTransition != "undefined") {
+                transition = this.dataset.hideTransition;
+            }
+
+            innerHtml += '<button class="flex-none p-0.5 rounded-full hover:backdrop-brightness-95 dark:hover:backdrop-brightness-50" data-hide="' + this.id + '" data-hide-transition="' + transition + '" data-hide-duration="' + this.dataset.hideDuration + '" aria-label="Close">';
+            innerHtml += '<skin-icon name="x-mark" class="inline" data-class="w-5 h-5"></skin-icon>';
+            innerHtml += '</button>';
         }
 
-        alertHtml += '</div>';
+        innerHtml += '</div>';
 
-        this.innerHTML = alertHtml;
+        this.innerHTML = innerHtml;
 
     }
 }
