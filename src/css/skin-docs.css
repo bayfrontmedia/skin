@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "./skin.css";
+@import "../../node_modules/preline/variants.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../../resources/views";
+@source "../../src/js";
+
+@plugin "@tailwindcss/forms";
+@plugin "@iconify/tailwind4";
+
+@theme {
+    --color-primary: var(--color-violet-500);
+    --color-secondary: var(--color-orange-500);
+}
+
+@layer base {
+
+    :root {
+
+        --skin-text-primary: var(--color-white);
+        --skin-text-secondary: var(--color-white);
+        --skin-border-radius: .5rem;
+        --skin-border-width: 1px;
+        --skin-typo-radius: 0.25rem;
+
+        --skin-bg-default: var(--color-gray-100);
+        --skin-bg-content: var(--color-white);
+        --skin-border-default: var(--color-gray-300);
+        --skin-text-default: var(--color-gray-700);
+        --skin-text-light: var(--color-gray-500);
+        --skin-text-code: var(--color-red-600);
+
+    }
+
+    .dark {
+
+        --skin-bg-default: var(--color-gray-900);
+        --skin-bg-content: var(--color-gray-800);
+        --skin-border-default: var(--color-gray-700);
+        --skin-text-default: var(--color-gray-200);
+        --skin-text-light: var(--color-gray-400);
+        --skin-text-code: var(--color-red-400);
+
+    }
+
+}

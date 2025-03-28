@@ -1,6 +1,6 @@
 {
   "name": "@bayfrontmedia/skin",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A free open source library of Tailwind CSS components.",
   "author": "Bayfront Media",
   "license": "MIT",
@@ -22,29 +22,25 @@
     "skin",
     "css"
   ],
-  "main": "lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
-    "watch:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --watch",
-    "build:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css",
-    "build:styles:prod": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --minify",
+    "app:update": "npm update && cp node_modules/preline/dist/preline.js docs/assets/js/preline.js",
+    "watch:styles": "npx @tailwindcss/cli -i src/css/skin-docs.css -o docs/assets/css/skin-docs.css --watch",
+    "build:styles": "npx @tailwindcss/cli -i src/css/skin-docs.css -o docs/assets/css/skin-docs.css",
+    "build:styles:prod": "npx @tailwindcss/cli -i src/css/skin-docs.css -o docs/assets/css/skin-docs.css --minify",
     "watch:webpack": "webpack --mode development --watch",
     "build:webpack": "webpack --mode development",
     "build:webpack:prod": "webpack --mode production",
-    "build:prod": "npm run build:webpack:prod && npm run build:styles:prod"
+    "build:prod": "npm run build:webpack:prod && npm run build:styles:prod && cp src/css/skin.css dist/css/skin.css && cp docs/assets/js/skin.js dist/js/skin.js"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "html-bundler-webpack-plugin": "^3.12",
-    "nunjucks": "^3.2.4",
-    "tailwindcss": "^3.4",
+    "@iconify/json": "^2.2.320",
+    "@iconify/tailwind4": "^1.0.6",
+    "@tailwindcss/forms": "^0.5.10",
     "webpack": "^5.91",
     "webpack-cli": "^5.1"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.6.5",
-    "focus-trap": "^7.4.0"
+    "@tailwindcss/cli": "^4.0.15",
+    "preline": "^3.0.1"
   }
 }

@@ -1,0 +1,505 @@
+@import "tailwindcss" source(none);
+
+/*
+ * |--------------------------------------------------------------------------
+ * | Utilities
+ * |--------------------------------------------------------------------------
+ */
+
+@utility tu-text-primary {
+    color: var(--skin-text-primary);
+}
+
+@utility tu-text-secondary {
+    color: var(--skin-text-secondary);
+}
+
+@utility tu-border-radius {
+    border-radius: var(--skin-border-radius);
+}
+
+@utility tu-border-width {
+    border-width: var(--skin-border-width);
+}
+
+@utility tu-bg-default {
+    background-color: var(--skin-bg-default);
+}
+
+@utility tu-bg-content {
+    background-color: var(--skin-bg-content);
+}
+
+@utility tu-border-default {
+    border-color: var(--skin-border-default);
+}
+
+@utility tu-text-default {
+    color: var(--skin-text-default);
+}
+
+@utility tu-text-light {
+    color: var(--skin-text-light);
+}
+
+@utility tu-text-code {
+    color: var(--skin-text-code);
+}
+
+@utility tu-bg-inverse {
+    background-color: var(--skin-text-default);
+}
+
+@utility tu-text-inverse {
+    color: var(--skin-bg-content);
+}
+
+@utility tu-disabled {
+    @apply opacity-50 pointer-events-none;
+}
+
+
+/*
+ * |--------------------------------------------------------------------------
+ * | Statuses
+ * |--------------------------------------------------------------------------
+ */
+
+@utility tu-bg-info {
+    @apply bg-blue-500;
+}
+
+@utility tu-bg-info-light {
+    @apply bg-blue-100 dark:bg-blue-900/70;
+}
+
+@utility tu-border-info {
+    @apply border-blue-500;
+}
+
+@utility tu-border-info-light {
+    @apply border-blue-500 dark:border-blue-600;
+}
+
+@utility tu-text-info {
+    @apply text-blue-500;
+}
+
+@utility tu-text-info-content {
+    @apply text-white;
+}
+
+@utility tu-text-info-light-content {
+    @apply text-blue-800 dark:text-blue-200;
+}
+
+@utility tu-bg-warning {
+    @apply bg-yellow-300;
+}
+
+@utility tu-bg-warning-light {
+    @apply bg-yellow-100 dark:bg-yellow-700/60;
+}
+
+@utility tu-border-warning {
+    @apply border-yellow-300;
+}
+
+@utility tu-border-warning-light {
+    @apply border-yellow-500 dark:border-yellow-600;
+}
+
+@utility tu-text-warning {
+    @apply text-yellow-300;
+}
+
+@utility tu-text-warning-content {
+    @apply text-yellow-900;
+}
+
+@utility tu-text-warning-light-content {
+    @apply text-yellow-800 dark:text-yellow-200;
+}
+
+@utility tu-bg-error {
+    @apply text-red-500;
+}
+
+@utility tu-bg-error-light {
+    @apply bg-red-100 dark:bg-red-900/70;
+}
+
+@utility tu-border-error {
+    @apply border-red-500;
+}
+
+@utility tu-border-error-light {
+    @apply border-red-500 dark:border-red-600;
+}
+
+@utility tu-text-error {
+    @apply text-red-500;
+}
+
+@utility tu-text-error-content {
+    @apply text-white;
+}
+
+@utility tu-text-error-light-content {
+    @apply text-red-800 dark:text-red-200;
+}
+
+@utility tu-bg-success {
+    @apply bg-green-500;
+}
+
+@utility tu-bg-success-light {
+    @apply bg-green-100 dark:bg-green-900/70;
+}
+
+@utility tu-border-success {
+    @apply border-green-500;
+}
+
+@utility tu-border-success-light {
+    @apply border-green-500 dark:border-green-600;
+}
+
+@utility tu-text-success {
+    @apply text-green-500;
+}
+
+@utility tu-text-success-content {
+    @apply text-white;
+}
+
+@utility tu-text-success-light-content {
+    @apply text-green-800 dark:text-green-200;
+}
+
+/*
+ * |--------------------------------------------------------------------------
+ * | Styles
+ * |--------------------------------------------------------------------------
+ */
+
+@utility tu-style-content {
+    @apply tu-bg-content tu-border-default tu-text-default;
+}
+
+@utility tu-style-inverse {
+    @apply tu-bg-inverse tu-text-inverse;
+    border-color: var(--skin-text-default);
+}
+
+@utility tu-style-default {
+    @apply tu-bg-default tu-border-default tu-text-default;
+}
+
+@utility tu-style-default-o {
+    @apply hover:tu-bg-default tu-border-default;
+}
+
+@utility tu-style-primary {
+    @apply bg-primary border-primary tu-text-primary;
+}
+
+@utility tu-style-primary-o {
+    @apply hover:bg-primary border-primary text-primary hover:tu-text-primary;
+}
+
+@utility tu-style-secondary {
+    @apply bg-secondary border-secondary tu-text-secondary;
+}
+
+@utility tu-style-secondary-o {
+    @apply hover:bg-secondary border-secondary text-secondary hover:tu-text-secondary;
+}
+
+@utility tu-style-info {
+    @apply tu-bg-info tu-border-info tu-text-info-content;
+}
+
+@utility tu-style-info-o {
+    @apply hover:tu-bg-info tu-border-info text-blue-500 hover:tu-text-info-content;
+}
+
+@utility tu-style-info-light {
+    @apply tu-bg-info-light tu-border-info-light tu-text-info-light-content;
+}
+
+@utility tu-style-warning {
+    @apply tu-bg-warning tu-border-warning tu-text-warning-content;
+}
+
+@utility tu-style-warning-o {
+    @apply hover:tu-bg-warning tu-border-warning tu-text-warning-content dark:text-yellow-300 hover:tu-text-warning-content dark:hover:tu-text-warning-content;
+}
+
+@utility tu-style-warning-light {
+    @apply tu-bg-warning-light tu-border-warning-light tu-text-warning-light-content;
+}
+
+@utility tu-style-error {
+    @apply tu-bg-error tu-border-error tu-text-error-content;
+}
+
+@utility tu-style-error-o {
+    @apply hover:tu-bg-error tu-border-error text-red-500 hover:tu-text-error-content;
+}
+
+@utility tu-style-error-light {
+    @apply tu-bg-error-light tu-border-error-light tu-text-error-light-content;
+}
+
+@utility tu-style-success {
+    @apply tu-bg-success tu-border-success tu-text-success-content;
+}
+
+@utility tu-style-success-o {
+    @apply hover:tu-bg-success tu-border-success text-green-500 hover:tu-text-success-content;
+}
+
+@utility tu-style-success-light {
+    @apply tu-bg-success-light tu-border-success-light tu-text-success-light-content;
+}
+
+@utility tu-style-glass {
+    @apply bg-white/40 border-white/80 backdrop-blur-lg text-gray-900;
+}
+
+@layer base {
+
+    /*
+     * |--------------------------------------------------------------------------
+     * | Typography
+     * |--------------------------------------------------------------------------
+     */
+
+    .tb-typo h1:not(.tb-typo-omit),.tb-typo h2:not(.tb-typo-omit),.tb-typo h3:not(.tb-typo-omit),.tb-typo h4:not(.tb-typo-omit),.tb-typo h5:not(.tb-typo-omit),.tb-typo h6:not(.tb-typo-omit),h1.tb-typo-apply,h2.tb-typo-apply,h3.tb-typo-apply,h4.tb-typo-apply,h5.tb-typo-apply,h6.tb-typo-apply {
+        @apply font-semibold;
+    }
+
+    .tb-typo h1:not(.tb-typo-omit),.tb-typo h2:not(.tb-typo-omit),.tb-typo h3:not(.tb-typo-omit),h1.tb-typo-apply,h2.tb-typo-apply,h3.tb-typo-apply {
+        @apply mt-8 mb-6;
+    }
+
+    .tb-typo h4:not(.tb-typo-omit),.tb-typo h5:not(.tb-typo-omit),.tb-typo h6:not(.tb-typo-omit),h4.tb-typo-apply,h5.tb-typo-apply,h6.tb-typo-apply {
+        @apply mt-6 mb-4;
+    }
+
+    .tb-typo h1:not(.tb-typo-omit),h1.tb-typo-apply {
+        @apply mt-0 text-5xl;
+    }
+
+    .tb-typo h2:not(.tb-typo-omit),h2.tb-typo-apply {
+        @apply text-4xl;
+    }
+
+    .tb-typo h3:not(.tb-typo-omit),h3.tb-typo-apply {
+        @apply text-3xl;
+    }
+
+    .tb-typo h4:not(.tb-typo-omit),h4.tb-typo-apply {
+        @apply text-2xl;
+    }
+
+    .tb-typo h5:not(.tb-typo-omit),h5.tb-typo-apply {
+        @apply text-xl;
+    }
+
+    .tb-typo a:not(.tb-typo-omit),a.tb-typo-apply {
+        @apply decoration-2 hover:underline focus:underline focus:outline-none text-primary underline-offset-2;
+    }
+
+    .tb-typo-p, .tb-typo p:not(.tb-typo-omit),p.tb-typo-apply {
+        @apply mb-6 text-lg print:text-base leading-relaxed print:leading-normal;
+    }
+
+    .tb-typo code:not(.tb-typo-omit),code.tb-typo-apply,.tb-typo kbd:not(.tb-typo-omit),kbd.tb-typo-apply,.tb-typo samp:not(.tb-typo-omit),samp.tb-typo-apply {
+        @apply text-sm font-mono;
+    }
+
+    .tb-typo code:not(pre *):not(.tb-typo-omit),code:not(pre *).tb-typo-apply,.tb-typo kbd:not(.tb-typo-omit),kbd.tb-typo-apply,.tb-typo samp:not(.tb-typo-omit),samp.tb-typo-apply,.tb-typo mark:not(.tb-typo-omit),mark.tb-typo-apply {
+        @apply px-1 py-0 rounded-(--skin-typo-radius);
+    }
+
+    .tb-typo pre:not(.tb-typo-omit),pre.tb-typo-apply {
+        @apply whitespace-pre-line;
+    }
+
+    .tb-typo code:not(pre *):not(.tb-typo-omit),code.tb-typo-apply:not(pre *) {
+        @apply tu-text-code tu-bg-default;
+    }
+
+    .tb-typo kbd:not(.tb-typo-omit),kbd.tb-typo-apply {
+        @apply tu-style-default tu-border-width;
+    }
+
+    .tb-typo samp:not(.tb-typo-omit),samp.tb-typo-apply {
+        @apply tu-style-inverse;
+    }
+
+    .tb-typo mark:not(.tb-typo-omit),mark.tb-typo-apply {
+        @apply bg-yellow-300;
+    }
+
+    .tb-typo figcaption:not(.tb-typo-omit),figcaption.tb-typo-apply {
+        @apply tu-text-light;
+    }
+
+    .tb-typo q:not(.tb-typo-omit),q.tb-typo-apply {
+        @apply italic;
+    }
+
+}
+
+/*
+ * |--------------------------------------------------------------------------
+ * | Components
+ * |--------------------------------------------------------------------------
+ */
+
+@layer components {
+
+    .tc-alert {
+        @apply py-3 px-4 flex items-center gap-x-2 font-medium tu-border-radius tu-style-content;
+    }
+
+    .tc-badge {
+        @apply py-1 px-2 inline-flex items-center gap-x-1 rounded-full text-xs font-medium disabled:opacity-50 disabled:cursor-default disabled:hover:bg-inherit tu-border-width tu-style-content;
+    }
+
+    .tc-btn {
+        @apply py-3 px-4 inline-flex justify-center items-center gap-x-2 cursor-pointer text-sm font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
+    }
+
+    .tc-btn-row {
+        @apply flex;
+    }
+
+    .tc-btn-row * {
+        @apply inline-flex;
+    }
+
+    .tc-btn-row .tc-btn:not(:last-child) {
+        @apply border-r-0 rounded-r-none;
+    }
+
+    .tc-btn-row .tc-btn:not(:first-child):not(:last-child) {
+        @apply rounded-none;
+    }
+
+    .tc-btn-row .tc-btn:last-child {
+        @apply rounded-l-none;
+    }
+
+    .tc-list {
+        @apply list-disc;
+    }
+
+    .tc-list-horizontal {
+        @apply flex items-center list-none space-x-2;
+    }
+
+    .tc-list-ordered {
+        @apply list-decimal;
+    }
+
+    .tc-list li,.tc-list-ordered li,.tc-list-outline li {
+        @apply ml-6 mb-2 pl-1;
+    }
+
+    .tc-list-horizontal li,.tc-list-horizontal li a {
+        @apply inline-flex items-center;
+    }
+
+    .tc-list ol,.tc-list ul {
+        @apply list-[circle];
+    }
+
+    .tc-list ol ol,.tc-list ul ul {
+        @apply list-[square];
+    }
+
+    .tc-list-ordered ol,.tc-list-ordered ul {
+        @apply list-decimal;
+    }
+
+    .tc-list-outline {
+        list-style: 'upper-roman';
+    }
+
+    .tc-list-outline li ul {
+        list-style: 'upper-alpha';
+    }
+
+    .tc-list-outline li ul li ul {
+        @apply list-decimal;
+    }
+
+    .tc-list-outline li ul li ul li ul {
+        list-style: 'lower-roman';
+    }
+
+    .tc-list-outline li ul li ul li ul li ul {
+        list-style: 'lower-alpha';
+    }
+
+    /* Form elements */
+
+    .tc-form-label {
+        @apply block mb-2 text-sm tu-text-light;
+    }
+    .tc-form-label-msg {
+        @apply block mt-1 text-xs font-medium;
+    }
+    .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select,.tc-form-checkbox,.tc-form-radio {
+        @apply text-sm border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
+    }
+    .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select {
+        @apply block w-full py-3 px-4 tu-border-radius;
+    }
+    .tc-form-checkbox,.tc-form-radio {
+        @apply h-5 w-5 text-primary checked:bg-primary checked:border-primary focus:ring-offset-0;
+    }
+    .tc-form-checkbox {
+        @apply shrink-0 rounded-sm;
+    }
+    .tc-form-radio {
+        @apply rounded-full;
+    }
+    .tc-form-switch {
+        @apply w-[3.25rem] h-7 before:size-6 relative p-px before:inline-block tu-border-default text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-offset-[--skin-border-default] focus:ring-primary checked:bg-none checked:text-primary checked:border-primary focus:checked:border-primary disabled:tu-disabled before:tu-bg-content before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow-sm before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-[--skin-border-default] tu-bg-default;
+    }
+    .tc-form-switch-sm { /* Modifier */
+        @apply w-11 h-6 before:size-5;
+    }
+    .tc-form-status-info {
+        @apply tu-border-info focus:tu-border-info focus:ring-blue-500;
+    }
+    .tc-form-status-warning {
+        @apply tu-border-warning focus:tu-border-warning focus:ring-yellow-300;
+    }
+    .tc-form-status-error {
+        @apply tu-border-error focus:tu-border-error focus:ring-red-500;
+    }
+    .tc-form-status-success {
+        @apply tu-border-success focus:tu-border-success focus:ring-green-500;
+    }
+
+    /* Preline */
+
+    .tc-dropdown {
+        @apply transition-[opacity,margin] duration-150 hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 shadow mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full border tu-border-radius tu-bg-content tu-border-default;
+    }
+
+    .tc-offcanvas {
+        @apply translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full max-w-xs sm:max-w-sm w-full z-[80] border-s tu-bg-content tu-border-default;
+    }
+
+    .tc-tooltip {
+        @apply opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 text-xs font-medium rounded shadow-sm tu-style-inverse;
+    }
+
+}
