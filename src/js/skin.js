@@ -4,17 +4,16 @@ import * as Helpers from "./modules/helpers";
 import * as Http from "./modules/http";
 import * as Theme from "./modules/theme";
 
-export function init() {
+exports.init = function() {
 
     Theme.detect();
 
-}
+    window.Skin = {
+        Avow,
+        Console,
+        Helpers,
+        Http,
+        Theme
+    }
 
-window.Skin = {
-    init,
-    Avow,
-    Console,
-    Helpers,
-    Http,
-    Theme
 }
