@@ -488,6 +488,18 @@
         @apply tu-border-success focus:tu-border-success focus:ring-green-500;
     }
 
+    .tc-toast {
+        @apply opacity-0 fixed z-[90] transition-all duration-300 border shadow-sm py-3 px-4 flex items-center gap-x-2 text-sm font-medium tu-border-radius tu-border-width shadow-lg w-80;
+    }
+    .tc-toast-bl {
+        @apply -bottom-[150px] left-[20px];
+    }
+    .tc-toast-br {
+        @apply -bottom-[150px] right-[20px];
+    }
+
+
+
     /* Preline */
 
     .tc-dropdown {
