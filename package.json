@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.15",
-    "preline": "^3.0.1"
+    "preline": "^3.0.1",
+    "toastify-js": "^1.12.0"
   }
 }

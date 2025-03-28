@@ -4,6 +4,7 @@ import Form from "./modules/form";
 import * as Helpers from "./modules/helpers";
 import * as Http from "./modules/http";
 import * as Theme from "./modules/theme";
+import * as Toast from "./modules/toast";
 
 Theme.detect();
 
@@ -13,5 +14,6 @@ window.Skin = {
     Form,
     Helpers,
     Http,
-    Theme
+    Theme,
+    Toast
 }
