@@ -5,6 +5,10 @@ import * as Http from "./modules/http";
 import * as Theme from "./modules/theme";
 
 exports.init = function() {
+    init();
+}
+
+export function init() {
 
     Theme.detect();
 
