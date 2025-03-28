@@ -1,12 +1,11 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 @import "./skin.css";
 @import "./_theme.css";
 @import "../../node_modules/preline/variants.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@source "../../resources/views";
-@source "../../src/js";
+@source "../../docs";
 
 @plugin "@tailwindcss/forms";
 @plugin "@iconify/tailwind4";
