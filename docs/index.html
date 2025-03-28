@@ -5,7 +5,7 @@
     <meta http-equiv="content-language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Skin Documentation</title>
+    <title>Skin documentation</title>
 
     <link rel="icon" href="./assets/img/favicon.ico">
 
@@ -14,7 +14,65 @@
 </head>
 <body>
 
-<div class="tu-style-default p-4">Skin Documentation</div>
+<div class="container lg:max-w-screen-lg mx-auto p-4">
+
+    <div class="tb-typo">
+
+        <h1>Skin documentation</h1>
+
+        <h2>Installation</h2>
+
+        <p>Install package: <code>npm install -D @bayfrontmedia/skin</code></p>
+
+        <p>Add to the main stylesheet (modify path as needed): <code>@import "./node_modules/@bayfrontmedia/skin/dist/css/skin.css";</code></p>
+
+        <p>Define the following variables in the main stylesheet (modify as needed:</p>
+
+        <pre>
+            <code>
+
+@theme {
+    --color-primary: var(--color-violet-500);
+    --color-secondary: var(--color-orange-500);
+}
+
+@layer base {
+
+    :root {
+
+        --skin-text-primary: var(--color-white);
+        --skin-text-secondary: var(--color-white);
+        --skin-border-radius: .5rem;
+        --skin-border-width: 1px;
+        --skin-typo-radius: 0.25rem;
+
+        --skin-bg-default: var(--color-gray-100);
+        --skin-bg-content: var(--color-white);
+        --skin-border-default: var(--color-gray-300);
+        --skin-text-default: var(--color-gray-700);
+        --skin-text-light: var(--color-gray-500);
+        --skin-text-code: var(--color-red-600);
+
+    }
+
+    .dark {
+
+        --skin-bg-default: var(--color-gray-900);
+        --skin-bg-content: var(--color-gray-800);
+        --skin-border-default: var(--color-gray-700);
+        --skin-text-default: var(--color-gray-200);
+        --skin-text-light: var(--color-gray-400);
+        --skin-text-code: var(--color-red-400);
+
+    }
+
+}
+            </code>
+        </pre>
+
+    </div>
+
+</div>
 
 <script src="./assets/js/preline.js"></script>
 <script src="./assets/js/skin.js"></script>
