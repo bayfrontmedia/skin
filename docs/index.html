@@ -26,7 +26,7 @@
 
         <p>Add to the main stylesheet (modify path as needed): <code>@import "./node_modules/@bayfrontmedia/skin/dist/css/skin.css";</code></p>
 
-        <p>Define the following variables in the main stylesheet (modify as needed:</p>
+        <p>Define the following variables in the main stylesheet (modify as needed):</p>
 
         <pre>
             <code>
@@ -70,12 +70,22 @@
             </code>
         </pre>
 
+        <p>Add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script src="path/to/assets/js/skin.js"&gt;&lt;/script&gt;</code></p>
+
+        <p>(Public CDN can also be used)</p>
+
+        <p>Initialize Skin: <code>Skin.init();</code></p>
+
     </div>
 
 </div>
 
 <script src="./assets/js/preline.js"></script>
 <script src="./assets/js/skin.js"></script>
+
+<script>
+    Skin.init();
+</script>
 
 </body>
 </html>
