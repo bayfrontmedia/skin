@@ -9,7 +9,7 @@
 
     <link rel="icon" href="./assets/img/favicon.ico">
 
-    <link href="./assets/css/skin-docs.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
 
 </head>
 <body>
@@ -70,22 +70,22 @@
             </code>
         </pre>
 
-        <p>Add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script src="path/to/assets/js/skin.js"&gt;&lt;/script&gt;</code></p>
+        <p>Add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></p>
 
         <p>(Public CDN can also be used)</p>
 
-        <p>Initialize Skin: <code>Skin.init();</code></p>
+        <p>Alternatively, Skin can be imported as a module using <code>import * as Skin from "@bayfrontmedia/skin"</code></p>
+
+        <p>Then, initialize Skin: <code>Skin.init();</code></p>
+
+        <p>In either case, <code>Skin</code> is attached to the <code>window</code> object.</p>
 
     </div>
 
 </div>
 
 <script src="./assets/js/preline.js"></script>
-<script src="./assets/js/skin.js"></script>
-
-<script>
-    Skin.init();
-</script>
+<script src="./assets/js/skin-lib.js"></script>
 
 </body>
 </html>
