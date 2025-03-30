@@ -492,12 +492,27 @@
         @apply py-3 px-4 w-80 flex justify-start items-center gap-x-2 fixed z-[90] text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content hs-toastify-on:opacity-100 [&>.toast-close]:hidden;
     }
 
-    .tc-toast-bl {
-        @apply -bottom-[150px] left-[20px];
+    .toastify-left {
+        @apply left-0 sm:left-[15px] right-0 sm:right-auto;
+    }
+    .toastify-right {
+        @apply left-0 sm:left-auto right-0 sm:right-[15px];
+    }
+    .toastify-left, .toastify-right {
+        @apply ml-auto sm:ml-0 mr-auto sm:mr-0 max-w-80;
+    }
+    .toastify-top {
+        @apply -top-[150px];
+    }
+    .toastify-bottom {
+        @apply -bottom-[150px];
+    }
+    .toastify-center {
+        @apply ml-auto mr-auto left-0 right-0 max-w-80;
     }
 
-    .tc-toast-br {
-        @apply -bottom-[150px] right-[20px];
+    .tc-toast-close {
+        @apply inline-flex justify-center items-center gap-x-2 ms-auto rounded-full cursor-pointer focus:outline-none;
     }
 
     /* Preline */

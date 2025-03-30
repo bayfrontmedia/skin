@@ -80,7 +80,8 @@
 
         <p>In either case, <code>Skin</code> is attached to the <code>window</code> object.</p>
 
-        <p>NOTE: If Skin JavaScript utilizes Tailwind classes, it needs to be added as a <code>@source</code>.</p>
+        <p>Ensure the JavaScript file is added to Tailwind as a source. When using Skin as a module, your JavaScript
+        file may already be added. When using as a library, you can use <code>@source "/path/to/dist/js/skin-lib.js";</code></p>
 
     </div>
 
@@ -89,15 +90,14 @@
 <script src="./assets/js/preline.js"></script>
 <script src="./assets/js/skin-lib.js"></script>
 
-<div id="toast-test" class="tc-toast tu-style-info-light">
-    abc
-</div>
-
 <script>
-    Skin.Toast.show({
-        duration: 5000999,
+    Skin.Toast.queue({
+        duration: 5000,
         text: "Changes updated",
-        className: "tc-toast tc-toast-br tu-style-success-light",
+        className: "tu-style-success-light",
+        close: true,
+        gravity: "top",
+        position: "right"
     }, {
         close: "Close"
     });
