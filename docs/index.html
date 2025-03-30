@@ -89,5 +89,19 @@
 <script src="./assets/js/preline.js"></script>
 <script src="./assets/js/skin-lib.js"></script>
 
+<div id="toast-test" class="tc-toast tu-style-info-light">
+    abc
+</div>
+
+<script>
+    Skin.Toast.show({
+        duration: 5000999,
+        text: "Changes updated",
+        className: "tc-toast tc-toast-br tu-style-success-light",
+    }, {
+        close: "Close"
+    });
+</script>
+
 </body>
 </html>

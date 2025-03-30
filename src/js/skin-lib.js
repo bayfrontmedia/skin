@@ -5,10 +5,13 @@ import * as Functions from "./modules/functions";
 import * as Helpers from "./modules/helpers";
 import * as Http from "./modules/http";
 import * as Theme from "./modules/theme";
+import * as Toast from "./modules/toast";
 
 Theme.detect();
 
 Functions.handleCurrentClass();
+
+Toast.showQueue();
 
 window.Skin = {
     Avow,
@@ -16,5 +19,6 @@ window.Skin = {
     Form,
     Helpers,
     Http,
-    Theme
+    Theme,
+    Toast
 }
