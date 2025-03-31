@@ -91,7 +91,7 @@
 <script src="./assets/js/skin-lib.js"></script>
 
 <script>
-    Skin.Toast.queue({
+    Skin.Toast.show({
         duration: 5000,
         text: "Changes updated",
         className: "tu-style-success-light",
@@ -101,6 +101,8 @@
     }, {
         close: "Close"
     });
+
+    Skin.Console.logInfo('Skin log');
 </script>
 
 </body>

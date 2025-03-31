@@ -7,18 +7,25 @@ import * as Http from "./modules/http";
 import * as Theme from "./modules/theme";
 import * as Toast from "./modules/toast";
 
-Theme.detect();
+(function() {
 
-Functions.handleCurrentClass();
+    Theme.detect();
 
-Toast.showQueue();
+    Functions.handleCurrentClass();
 
-window.Skin = {
-    Avow,
-    Console,
-    Form,
-    Helpers,
-    Http,
-    Theme,
-    Toast
-}
+    Toast.showQueue();
+
+    window.Skin = {
+        Avow,
+        Console,
+        Form,
+        Helpers,
+        Http,
+        Theme,
+        Toast
+    }
+
+})();
+
+
+
