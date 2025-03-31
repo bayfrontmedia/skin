@@ -9,12 +9,6 @@ import * as Toast from "./modules/toast";
 
 (function() {
 
-    Theme.detect();
-
-    Functions.handleCurrentClass();
-
-    Toast.showQueue();
-
     window.Skin = {
         Avow,
         Console,
@@ -24,6 +18,16 @@ import * as Toast from "./modules/toast";
         Theme,
         Toast
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        Theme.detect();
+
+        Functions.handleCurrentClass();
+
+        Toast.showQueue();
+
+    });
 
 })();
 
