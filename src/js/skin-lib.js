@@ -30,6 +30,3 @@ import * as Toast from "./modules/toast";
     });
 
 })();
-
-
-

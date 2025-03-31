@@ -9,12 +9,6 @@ import * as Toast from "./modules/toast";
 
 exports.init = function() {
 
-    Theme.detect();
-
-    Functions.handleCurrentClass();
-
-    Toast.showQueue();
-
     window.Skin = {
         Avow,
         Console,
@@ -24,5 +18,11 @@ exports.init = function() {
         Theme,
         Toast
     }
+
+    Theme.detect();
+
+    Functions.handleCurrentClass();
+
+    Toast.showQueue();
 
 }
