@@ -179,6 +179,28 @@
 
 /*
  * |--------------------------------------------------------------------------
+ * | Statuses (forms)
+ * |--------------------------------------------------------------------------
+ */
+
+@utility tu-status-info {
+    @apply tu-border-info focus:tu-border-info focus:ring-blue-500;
+}
+
+@utility tu-status-warning {
+    @apply tu-border-warning focus:tu-border-warning focus:ring-yellow-300;
+}
+
+@utility tu-status-error {
+    @apply tu-border-error focus:tu-border-error focus:ring-red-500;
+}
+
+@utility tu-status-success {
+    @apply tu-border-success focus:tu-border-success focus:ring-green-500;
+}
+
+/*
+ * |--------------------------------------------------------------------------
  * | Styles
  * |--------------------------------------------------------------------------
  */
@@ -474,18 +496,6 @@
     }
     .tc-form-switch-sm { /* Modifier */
         @apply w-11 h-6 before:size-5;
-    }
-    .tc-form-status-info {
-        @apply tu-border-info focus:tu-border-info focus:ring-blue-500;
-    }
-    .tc-form-status-warning {
-        @apply tu-border-warning focus:tu-border-warning focus:ring-yellow-300;
-    }
-    .tc-form-status-error {
-        @apply tu-border-error focus:tu-border-error focus:ring-red-500;
-    }
-    .tc-form-status-success {
-        @apply tu-border-success focus:tu-border-success focus:ring-green-500;
     }
 
     .tc-toast {
