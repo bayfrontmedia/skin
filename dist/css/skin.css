@@ -498,6 +498,10 @@
         @apply w-11 h-6 before:size-5;
     }
 
+    .tc-spinner {
+        @apply animate-spin inline-block size-5 border-2 border-current border-t-transparent text-current rounded-full;
+    }
+
     .tc-toast {
         @apply py-3 px-4 w-80 flex justify-start items-center gap-x-2 fixed z-[90] text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content hs-toastify-on:opacity-100 [&>.toast-close]:hidden;
     }
