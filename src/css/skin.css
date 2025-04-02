@@ -58,6 +58,10 @@
     @apply opacity-50 pointer-events-none;
 }
 
+/* For anything with a default py-3 px-4 */
+@utility tu-tight {
+    @apply py-2 px-3 gap-x-1;
+}
 
 /*
  * |--------------------------------------------------------------------------
