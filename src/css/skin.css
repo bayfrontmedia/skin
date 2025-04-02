@@ -506,6 +506,41 @@
         @apply animate-spin inline-block size-5 border-2 border-current border-t-transparent text-current rounded-full;
     }
 
+    /* Table */
+    .tc-table {
+        @apply border-spacing-0 border-separate overflow-hidden tu-border-radius tu-border-default;
+    }
+    .tc-table tr {
+        @apply text-left;
+    }
+    .tc-table th {
+        @apply font-semibold tu-bg-default;
+    }
+    .tc-table th,.tc-table td {
+        @apply p-2;
+    }
+    .tc-table-row th,.tc-table-row tr:not(:last-of-type) td {
+        @apply border-b tu-border-default;
+    }
+    .tc-table-border {
+        @apply border;
+    }
+    .tc-table-border th,.tc-table-border td {
+        @apply border-l tu-border-default;
+    }
+    .tc-table-border th:first-of-type,.tc-table-border td:first-of-type {
+        @apply border-l-0;
+    }
+    .tc-table-border td {
+        @apply border-t tu-border-default;
+    }
+    .tc-table-zebra tr:nth-child(even) {
+        @apply tu-bg-default;
+    }
+    .tc-table-hover tr:hover {
+        @apply tu-bg-default;
+    }
+
     .tc-toast {
         @apply py-3 px-4 w-80 flex justify-start items-center gap-x-2 fixed z-[90] text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content hs-toastify-on:opacity-100 [&>.toast-close]:hidden;
     }
