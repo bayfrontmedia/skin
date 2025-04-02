@@ -126,7 +126,7 @@
 }
 
 @utility tu-bg-error {
-    @apply text-red-500;
+    @apply bg-red-500;
 }
 
 @utility tu-bg-error-light {
