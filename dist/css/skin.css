@@ -2,6 +2,20 @@
 
 /*
  * |--------------------------------------------------------------------------
+ * | Variables
+ * |--------------------------------------------------------------------------
+ */
+
+/*noinspection CssUnresolvedCustomProperty*/
+@theme {
+    --skin-color-info: var(--color-blue-500);
+    --skin-color-warning: var(--color-yellow-300);
+    --skin-color-error: var(--color-red-500);
+    --skin-color-success: var(--color-green-500);
+}
+
+/*
+ * |--------------------------------------------------------------------------
  * | Utilities
  * |--------------------------------------------------------------------------
  */
@@ -481,7 +495,7 @@
         @apply block mt-1 text-xs font-medium;
     }
     .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select,.tc-form-checkbox,.tc-form-radio {
-        @apply border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
+        @apply text-base border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
     }
     .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select {
         @apply block w-full py-3 px-4 tu-border-radius;
