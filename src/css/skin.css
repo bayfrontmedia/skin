@@ -397,7 +397,7 @@
     }
 
     .tc-btn {
-        @apply py-3 px-4 inline-flex justify-center items-center gap-x-2 cursor-pointer text-sm font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
+        @apply py-3 px-4 inline-flex justify-center items-center gap-x-2 cursor-pointer font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
     }
 
     .tc-btn-row {
@@ -481,7 +481,7 @@
         @apply block mt-1 text-xs font-medium;
     }
     .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select,.tc-form-checkbox,.tc-form-radio {
-        @apply text-sm border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
+        @apply border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
     }
     .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select {
         @apply block w-full py-3 px-4 tu-border-radius;
