@@ -20,7 +20,7 @@ export function strToInt(str) {
 }
 
 /**
- * Get object property or default value if not existing.
+ * Get object property in dot notation or default value if not existing.
  *
  * @param obj {Object}
  * @param key {string}
@@ -28,13 +28,7 @@ export function strToInt(str) {
  * @returns {*|null}
  */
 export function getProp(obj, key, defaultValue = null) {
-
-    if (key in obj) {
-        return obj[key];
-    }
-
-    return defaultValue;
-
+    return key.split('.').reduce((acc, key) => acc?.[key], obj) ?? defaultValue;
 }
 
 /**
