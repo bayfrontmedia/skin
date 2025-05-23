@@ -517,7 +517,7 @@
         @apply rounded-full;
     }
     .tc-form-color {
-        @apply h-12 w-12 p-1 cursor-pointer;
+        @apply h-12 w-12 p-1 cursor-pointer tu-border-radius;
     }
     .tc-form-switch {
         @apply w-[3.25rem] h-7 before:size-6 relative p-px before:inline-block tu-border-default text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-offset-[--skin-border-default] focus:ring-primary checked:bg-none checked:text-primary checked:border-primary focus:checked:border-primary disabled:tu-disabled before:tu-bg-content before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow-sm before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-[--skin-border-default] tu-bg-default;
