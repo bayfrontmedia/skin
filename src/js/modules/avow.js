@@ -260,7 +260,11 @@ export default class Avow {
 
     #validateNumber(el) {
 
-        if ((typeof el.value !== "number" && isNaN(el.value)) || el.value === "") {
+        if (el.value === "") {
+            return;
+        }
+
+        if ((typeof el.value !== "number" && isNaN(el.value))) {
             this.#setFieldInvalid(el, this.#getMsg(Avow.#TYPE_NUMBER, el.dataset.avowNumberMsg));
         }
 
