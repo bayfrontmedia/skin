@@ -153,7 +153,13 @@ export default class Avow {
 
         let toRemove = [];
 
-        for (let sibling of el.parentNode.children) {
+        let parent = el.parentNode;
+
+        if ('avowErrorContainer' in el.dataset) {
+            parent = document.getElementById(el.dataset.avowErrorContainer).parentNode;
+        }
+
+        for (let sibling of parent.children) {
 
             if (sibling.classList.contains("avow-error")) {
                 toRemove.push(sibling);
@@ -188,7 +194,12 @@ export default class Avow {
 
         //el.after(msgContainer);
 
-        const parent = el.parentNode;
+        let parent = el.parentNode;
+
+        if ('avowErrorContainer' in el.dataset) {
+            parent = document.getElementById(el.dataset.avowErrorContainer).parentNode;
+        }
+
         parent.appendChild(msgContainer);
 
     }
