@@ -20,7 +20,7 @@ export async function request(url, method, body = null, headers = {}, includeCre
         }
 
         if (includeCredentials === true) {
-            init.credentials = true;
+            init.credentials = 'include';
         }
 
         const response = await fetch(url, init);
