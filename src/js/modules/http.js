@@ -7,16 +7,23 @@ import {logError} from "./console";
  * @param method {string}
  * @param body {object|null}
  * @param headers {object}
+ * @param includeCredentials {boolean}
  */
-export async function request(url, method, body = null, headers = {}) {
+export async function request(url, method, body = null, headers = {}, includeCredentials = false) {
 
     try {
 
-        const response = await fetch(url, {
+        const init = {
             method: method,
             body: body,
             headers: headers
-        });
+        }
+
+        if (includeCredentials === true) {
+            init.credentials = true;
+        }
+
+        const response = await fetch(url, init);
 
         const json = await response.json();
 
