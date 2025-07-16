@@ -429,15 +429,15 @@
         @apply inline-flex;
     }
 
-    .tc-btn-row .tc-btn:not(:last-child) {
+    .tc-btn-row .tc-btn:not(:only-child):not(:last-child) {
         @apply border-r-0 rounded-r-none;
     }
 
-    .tc-btn-row .tc-btn:not(:first-child):not(:last-child) {
+    .tc-btn-row .tc-btn:not(:only-child):not(:first-child):not(:last-child) {
         @apply rounded-none;
     }
 
-    .tc-btn-row .tc-btn:last-child {
+    .tc-btn-row .tc-btn:not(:only-child):last-child {
         @apply rounded-l-none;
     }
 
