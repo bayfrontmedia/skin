@@ -410,11 +410,11 @@
 @layer components {
 
     .tc-alert {
-        @apply py-3 px-4 flex items-center gap-x-2 break-all overflow-auto font-medium tu-border-radius tu-style-content;
+        @apply py-3 px-4 flex items-center gap-x-2 font-medium tu-border-radius tu-style-content;
     }
 
     .tc-badge {
-        @apply py-1 px-2 inline-flex items-center gap-x-1 rounded-full text-xs overflow-auto font-medium disabled:opacity-50 disabled:cursor-default disabled:hover:bg-inherit tu-border-width tu-style-content;
+        @apply py-1 px-2 inline-flex items-center gap-x-1 rounded-full text-xs font-medium disabled:opacity-50 disabled:cursor-default disabled:hover:bg-inherit tu-border-width tu-style-content;
     }
 
     .tc-btn {
