@@ -410,11 +410,11 @@
 @layer components {
 
     .tc-alert {
-        @apply py-3 px-4 flex items-center gap-x-2 font-medium tu-border-radius tu-style-content;
+        @apply py-3 px-4 flex items-center gap-x-2 break-all overflow-auto font-medium tu-border-radius tu-style-content;
     }
 
     .tc-badge {
-        @apply py-1 px-2 inline-flex items-center gap-x-1 rounded-full text-xs font-medium disabled:opacity-50 disabled:cursor-default disabled:hover:bg-inherit tu-border-width tu-style-content;
+        @apply py-1 px-2 inline-flex items-center gap-x-1 rounded-full text-xs overflow-auto font-medium disabled:opacity-50 disabled:cursor-default disabled:hover:bg-inherit tu-border-width tu-style-content;
     }
 
     .tc-btn {
@@ -566,7 +566,7 @@
     }
 
     .tc-toast {
-        @apply py-3 px-4 w-80 flex justify-start items-center gap-x-2 fixed z-[90] text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content hs-toastify-on:opacity-100 [&>.toast-close]:hidden;
+        @apply py-3 px-4 w-80 flex justify-start items-center gap-x-2 fixed z-[90] break-all overflow-auto text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content hs-toastify-on:opacity-100 [&>.toast-close]:hidden;
     }
 
     .toastify-left {
