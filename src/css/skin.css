@@ -566,7 +566,7 @@
     }
 
     .tc-toast {
-        @apply py-3 px-4 w-80 flex justify-start items-center gap-x-2 fixed z-[90] break-all overflow-auto text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content hs-toastify-on:opacity-100 [&>.toast-close]:hidden;
+        @apply py-3 px-4 w-80 flex justify-start items-center gap-x-2 fixed z-[90] overflow-auto text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content hs-toastify-on:opacity-100 [&>.toast-close]:hidden;
     }
 
     .toastify-left {
