@@ -532,7 +532,7 @@
 
     /* Table */
     .tc-table {
-        @apply border-spacing-0 border-separate overflow-hidden tu-border-radius tu-border-default;
+        @apply border-spacing-0 border-separate overflow-hidden break-normal tu-border-radius tu-border-default;
     }
     .tc-table tr {
         @apply text-left;
