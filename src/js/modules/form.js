@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import {dot, undot, getFormData, getChanges, objIsEmpty} from "./helpers";
 
 export default class Form {

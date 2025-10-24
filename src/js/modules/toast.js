@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import Toastify from 'toastify-js';
 
 /*
@@ -29,6 +31,10 @@ export function queue(config = {}, lang = {}) {
 
 /**
  * Show queued toasts from localStorage.
+ *
+ * @typedef {Object} ToastItem
+ * @property {Object} config
+ * @property {Object} lang
  */
 export function showQueue() {
 
@@ -36,14 +42,15 @@ export function showQueue() {
 
         if (Array.isArray(JSON.parse(localStorage.toasts))) {
 
+            /** @type {ToastItem[]} */
             const toasts = JSON.parse(localStorage.toasts);
 
             for (const toast of toasts) {
 
                 if (typeof toast === "object" && typeof toast.config === "object" && typeof toast.lang === "object") {
                     show(toast.config, toast.lang);
-
                 }
+
             }
 
         }

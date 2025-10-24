@@ -34,15 +34,15 @@
     "build:prod": "npm run app:update && npm run build:webpack:prod && npm run build:styles:prod && cp src/css/skin.css dist/css/skin.css && cp docs/assets/js/skin-lib.js dist/js/skin-lib.js"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.320",
-    "@iconify/tailwind4": "^1.0.6",
-    "@tailwindcss/forms": "^0.5.10",
-    "webpack": "^5.91",
-    "webpack-cli": "^5.1"
+    "@iconify/json": "^2.2",
+    "@iconify/tailwind4": "^1.0",
+    "@tailwindcss/forms": "^0.5",
+    "webpack": "^5.102",
+    "webpack-cli": "^6.0"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.0.15",
-    "preline": "^3.0.1",
+    "@tailwindcss/cli": "^4.1",
+    "preline": "^3.2",
     "toastify-js": "^1.12.0"
   }
 }

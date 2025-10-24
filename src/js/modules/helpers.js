@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  *
  * @param str {String}
@@ -116,14 +118,20 @@ export function merge(obj1, obj2) {
 /**
  * Get difference between two objects.
  *
- * TODO:
- * May need to dot/undot objects
+ * If differences exist, the returned object will contain the changed properties
+ * in dot notation as an object with the following properties:
+ * - newValue
+ * - oldValue
+ * - status (One of: added, modified, removed)
  *
  * @param obj1 {Object} (Original object)
  * @param obj2 {Object} (Updated object)
  * @returns {Object}
  */
 export function getDiff(obj1, obj2) {
+
+    obj1 = dot(obj1);
+    obj2 = dot(obj2);
 
     let diff = {};
 
