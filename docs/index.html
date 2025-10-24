@@ -32,7 +32,7 @@
             All class names used by Skin use the following prefixes:
         </p>
 
-        <ul>
+        <ul class="mb-6">
             <li><code>tb-</code>: Tailwind base</li>
             <li><code>tc-</code>: Tailwind component</li>
             <li><code>tu-</code>: Tailwind utility</li>
@@ -100,6 +100,139 @@
 
         <p>Ensure the JavaScript file is added to Tailwind as a source. When using Skin as a module, your JavaScript
         file may already be added. When using as a library, you can use <code>@source "/path/to/dist/js/skin-lib.js";</code></p>
+
+        <h2>Styles</h2>
+
+        <h3>CSS variables</h3>
+
+        <ul class="mb-6">
+            <li><code>--skin-color-info</code></li>
+            <li><code>--skin-color-warning</code></li>
+            <li><code>--skin-color-error</code></li>
+            <li><code>--skin-color-success</code></li>
+        </ul>
+
+        <h3>Base classes</h3>
+
+        <ul class="mb-6">
+            <li><code>tb-typo</code></li>
+        </ul>
+
+        <h3>Component classes</h3>
+
+        <ul class="mb-6">
+            <li><code>tc-alert</code></li>
+            <li><code>tc-badge</code></li>
+            <li><code>tc-btn</code></li>
+            <li><code>tc-btn-row</code></li>
+            <li><code>tc-list</code></li>
+            <li><code>tc-list-horizontal</code></li>
+            <li><code>tc-list-ordered</code></li>
+            <li><code>tc-list-outline</code></li>
+            <li><code>tc-form-label</code></li>
+            <li><code>tc-form-label-msg</code></li>
+            <li><code>tc-form-input</code></li>
+            <li><code>tc-form-file</code></li>
+            <li><code>tc-form-textarea</code></li>
+            <li><code>tc-form-select</code></li>
+            <li><code>tc-form-checkbox</code></li>
+            <li><code>tc-form-radio</code></li>
+            <li><code>tc-form-color</code></li>
+            <li><code>tc-form-switch</code></li>
+            <li><code>tc-form-switch-sm</code></li>
+            <li><code>tc-spinner</code></li>
+            <li><code>tc-table</code></li>
+            <li><code>tc-table-row</code></li>
+            <li><code>tc-table-border</code></li>
+            <li><code>tc-table-zebra</code></li>
+            <li><code>tc-table-hover</code></li>
+            <li><code>tc-toast</code></li>
+            <li><code>tc-toast-close</code></li>
+            <li><code>tc-dropdown</code></li>
+            <li><code>tc-offcanvas</code></li>
+            <li><code>tc-tooltip</code></li>
+        </ul>
+
+        <p>Third party plugin component classes</p>
+
+        <ul class="mb-6">
+            <li><code>toastify-left</code></li>
+            <li><code>toastify-right</code></li>
+            <li><code>toastify-top</code></li>
+            <li><code>toastify-bottom</code></li>
+            <li><code>toastify-center</code></li>
+        </ul>
+
+        <h3>Utility classes</h3>
+
+        <ul class="mb-6">
+            <li><code>tu-text-primary</code></li>
+            <li><code>tu-text-secondary</code></li>
+            <li><code>tu-border-radius</code></li>
+            <li><code>tu-border-width</code></li>
+            <li><code>tu-bg-default</code></li>
+            <li><code>tu-bg-content</code></li>
+            <li><code>tu-border-default</code></li>
+            <li><code>tu-text-default</code></li>
+            <li><code>tu-text-light</code></li>
+            <li><code>tu-text-code</code></li>
+            <li><code>tu-bg-inverse</code></li>
+            <li><code>tu-text-inverse</code></li>
+            <li><code>tu-disabled</code></li>
+            <li><code>tu-tight</code></li>
+            <li><code>tu-bg-info</code></li>
+            <li><code>tu-bg-info-light</code></li>
+            <li><code>tu-border-info</code></li>
+            <li><code>tu-border-info-light</code></li>
+            <li><code>tu-text-info</code></li>
+            <li><code>tu-text-info-content</code></li>
+            <li><code>tu-text-info-light-content</code></li>
+            <li><code>tu-bg-warning</code></li>
+            <li><code>tu-bg-warning-light</code></li>
+            <li><code>tu-border-warning</code></li>
+            <li><code>tu-border-warning-light</code></li>
+            <li><code>tu-text-warning</code></li>
+            <li><code>tu-text-warning-content</code></li>
+            <li><code>tu-text-warning-light-content</code></li>
+            <li><code>tu-bg-error</code></li>
+            <li><code>tu-bg-error-light</code></li>
+            <li><code>tu-border-error</code></li>
+            <li><code>tu-border-error-light</code></li>
+            <li><code>tu-text-error</code></li>
+            <li><code>tu-text-error-content</code></li>
+            <li><code>tu-text-error-light-content</code></li>
+            <li><code>tu-bg-success</code></li>
+            <li><code>tu-bg-success-light</code></li>
+            <li><code>tu-border-success</code></li>
+            <li><code>tu-border-success-light</code></li>
+            <li><code>tu-text-success</code></li>
+            <li><code>tu-text-success-content</code></li>
+            <li><code>tu-text-success-light-content</code></li>
+            <li><code>tu-status-info</code></li>
+            <li><code>tu-status-warning</code></li>
+            <li><code>tu-status-error</code></li>
+            <li><code>tu-status-success</code></li>
+            <li><code>tu-style-content</code></li>
+            <li><code>tu-style-inverse</code></li>
+            <li><code>tu-style-default</code></li>
+            <li><code>tu-style-default-o</code></li>
+            <li><code>tu-style-primary</code></li>
+            <li><code>tu-style-primary-o</code></li>
+            <li><code>tu-style-secondary</code></li>
+            <li><code>tu-style-secondary-o</code></li>
+            <li><code>tu-style-info</code></li>
+            <li><code>tu-style-info-o</code></li>
+            <li><code>tu-style-warning</code></li>
+            <li><code>tu-style-warning-o</code></li>
+            <li><code>tu-style-warning-light</code></li>
+            <li><code>tu-style-error</code></li>
+            <li><code>tu-style-error-o</code></li>
+            <li><code>tu-style-error-light</code></li>
+            <li><code>tu-style-success</code></li>
+            <li><code>tu-style-success-o</code></li>
+            <li><code>tu-style-success-light</code></li>
+            <li><code>tu-style-glass</code></li>
+        </ul>
 
     </div>
 

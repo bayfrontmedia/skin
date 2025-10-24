@@ -290,11 +290,13 @@
 
 /* Skin */
 
+/*noinspection CssUnresolvedCustomProperty*/
 @theme {
     --color-primary: var(--color-violet-500);
     --color-secondary: var(--color-orange-500);
 }
 
+/*noinspection CssUnresolvedCustomProperty*/
 @layer base {
 
     :root {
