@@ -22,6 +22,15 @@
 
         <h1 class="mt-0">Skin documentation</h1>
 
+        <ul class="mb-6">
+            <li><a href="#introduction" title="Introduction">Introduction</a></li>
+            <li><a href="#installation" title="Installation">Installation</a></li>
+            <li><a href="#styles" title="Styles">Styles</a></li>
+            <li><a href="#javascript" title="JavaScript">JavaScript</a></li>
+        </ul>
+
+        <h2 id="introduction">Introduction</h2>
+
         <p>
             Skin is a free open source library of Tailwind CSS components.
             The optional JavaScript functionality is written in vanilla JavaScript,
@@ -38,7 +47,7 @@
             <li><code>tu-</code>: Tailwind utility</li>
         </ul>
 
-        <h2>Installation</h2>
+        <h2 id="installation">Installation</h2>
 
         <p>Install package: <code>npm install -D @bayfrontmedia/skin</code></p>
 
@@ -90,7 +99,12 @@
 
         <p>Add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></p>
 
-        <p>(Public CDN can also be used)</p>
+        <p>Either of the following CDN links can also be used:</p>
+
+        <ul class="mb-6">
+            <li><code>&lt;script src="https://www.unpkg.com/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code></li>
+            <li><code>&lt;script src="https://cdn.jsdelivr.net/npm/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code></li>
+        </ul>
 
         <p>Alternatively, Skin can be imported as a module using <code>import * as Skin from "@bayfrontmedia/skin"</code></p>
 
@@ -101,7 +115,7 @@
         <p>Ensure the JavaScript file is added to Tailwind as a source. When using Skin as a module, your JavaScript
         file may already be added. When using as a library, you can use <code>@source "/path/to/dist/js/skin-lib.js";</code></p>
 
-        <h2>Styles</h2>
+        <h2 id="styles">Styles</h2>
 
         <h3>CSS variables</h3>
 
@@ -233,6 +247,10 @@
             <li><code>tu-style-success-light</code></li>
             <li><code>tu-style-glass</code></li>
         </ul>
+
+        <h2 id="javascript">JavaScript</h2>
+
+        <p>Documentation coming soon...</p>
 
     </div>
 
