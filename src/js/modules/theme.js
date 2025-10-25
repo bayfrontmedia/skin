@@ -1,3 +1,4 @@
+import {getConfig} from "../skin";
 import {logError} from "./console";
 
 /**
@@ -5,16 +6,20 @@ import {logError} from "./console";
  */
 export function detect() {
 
-    if ("theme" in localStorage) {
+    if ("skin-theme" in localStorage) {
 
         try {
 
-            let theme = JSON.parse(localStorage.theme);
+            let theme = JSON.parse(localStorage.getItem("skin-theme"));
             set(theme.name);
 
         } catch (e) {
-            localStorage.removeItem("theme");
-            logError("Unable to detect theme: Invalid localStorage format");
+            localStorage.removeItem("skin-theme");
+
+            if (getConfig('debug', false) === true) {
+                logError("Unable to detect theme: Invalid localStorage format");
+            }
+
         }
 
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -23,13 +28,13 @@ export function detect() {
         set("light");
     }
 
-    const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+    const themeToggles = document.querySelectorAll("[data-skin-theme-toggle]");
 
     themeToggles.forEach(toggle => {
 
         toggle.addEventListener("click", () => {
 
-            let theme = toggle.getAttribute("data-theme-toggle");
+            let theme = toggle.getAttribute("data-skin-theme-toggle");
             set(theme);
 
         });
@@ -53,8 +58,8 @@ export function set(value) {
         document.documentElement.classList.remove("light");
     }
 
-    localStorage.theme = JSON.stringify({
+    localStorage.setItem("skin-theme", JSON.stringify({
         name: value
-    });
+    }));
 
 }

@@ -3,7 +3,6 @@
 export default class Avow {
 
     /**
-     *
      * @param formEl
      * @param config {Object} (errorClass, errorTextClass)
      */

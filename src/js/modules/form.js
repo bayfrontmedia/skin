@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import {dot, undot, getFormData, getChanges, objIsEmpty} from "./helpers";
+import {dot, undot, getChanges, isEmpty} from "./object";
 
 export default class Form {
 
@@ -13,13 +13,39 @@ export default class Form {
     #formData = {};
 
     /**
+     * Get form data as object.
+     *
+     * @param el {Element} (Form element)
+     * @returns {Object}
+     */
+    #getFormData(el) {
+
+        const formData = new FormData(el);
+        const data = {};
+
+        formData.forEach((value, key) => {
+
+            if (key.endsWith("[]")) { // Handle arrays
+                const newKey = key.slice(0, -2);
+                data[newKey] = formData.getAll(key);
+            } else {
+                data[key] = value;
+            }
+
+        });
+
+        return data;
+
+    }
+
+    /**
      * Get submitted form data.
      * This must be called before evaluating changed data.
      *
      * @returns {Object}
      */
     getData() {
-        this.#formData = undot(getFormData(this.formEl));
+        this.#formData = undot(this.#getFormData(this.formEl));
         return this.#formData;
     }
 
@@ -54,7 +80,7 @@ export default class Form {
      * @returns {Boolean}
      */
     hasChangedData() {
-        return !objIsEmpty(this.getChangedData());
+        return !isEmpty(this.getChangedData());
     }
 
 }

@@ -8,12 +8,12 @@ const skinJs = {
     }
 }
 
-const skinLibJs = {
-    entry: path.resolve(__dirname, 'src/js/skin-lib.js'),
+const skinDocsJs = {
+    entry: path.resolve(__dirname, 'src/js/skin.js'),
     output: {
         path: path.resolve(__dirname, 'docs/assets/js'),
-        filename: 'skin-lib.js'
+        filename: 'skin.js'
     }
 }
 
-module.exports = [skinJs, skinLibJs];
+module.exports = [skinJs, skinDocsJs];

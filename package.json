@@ -31,7 +31,7 @@
     "watch:webpack": "webpack --mode development --watch",
     "build:webpack": "webpack --mode development",
     "build:webpack:prod": "webpack --mode production",
-    "build:prod": "npm run app:update && npm run build:webpack:prod && npm run build:styles:prod && cp src/css/skin.css dist/css/skin.css && cp docs/assets/js/skin-lib.js dist/js/skin-lib.js"
+    "build:prod": "npm run app:update && npm run build:webpack:prod && npm run build:styles:prod && cp src/css/skin.css dist/css/skin.css"
   },
   "devDependencies": {
     "@iconify/json": "^2.2",

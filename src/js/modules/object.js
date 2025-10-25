@@ -1,27 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
 /**
- *
- * @param str {String}
- * @returns {boolean}
- */
-export function strToBool(str) {
-    return str === "true";
-}
-
-/**
- *
- * @param str
- * @returns {number}
- */
-export function strToInt(str) {
-    if (str === "") {
-        return 0;
-    }
-    return parseInt(str);
-}
-
-/**
  * Get object property in dot notation or default value if not existing.
  *
  * @param obj {Object}
@@ -39,7 +18,7 @@ export function getProp(obj, key, defaultValue = null) {
  * @param obj {Object}
  * @returns {Boolean}
  */
-export function objIsEmpty(obj) {
+export function isEmpty(obj) {
     return JSON.stringify(obj) === "{}";
 }
 
@@ -191,31 +170,5 @@ export function getChanges(obj1, obj2) {
     }
 
     return undot(diff);
-
-}
-
-/**
- * Get form data as object.
- *
- * @param el {Element} (Form element)
- * @returns {Object}
- */
-export function getFormData(el) {
-
-    const formData = new FormData(el);
-    const data = {};
-
-    formData.forEach((value, key) => {
-
-        if (key.endsWith("[]")) { // Handle arrays
-            const newKey = key.slice(0, -2);
-            data[newKey] = formData.getAll(key);
-        } else {
-            data[key] = value;
-        }
-
-    });
-
-    return data;
 
 }
