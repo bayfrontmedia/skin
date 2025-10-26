@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import {getConfig} from "../skin";
-import {hideThenRemove} from "./visibility";
+import {show, hideThenRemove} from "./visibility";
 
 /**
  * Add classes to all hyperlinks as defined in the data-skin-current-class attribute
@@ -30,7 +30,7 @@ export function handleCurrentClass() {
  */
 export function handleDataAttributes() {
 
-    // Visibility
+    // Hide elements
 
     const dataHide = document.querySelectorAll("[data-skin-hide]");
 
@@ -115,6 +115,45 @@ export function handleDataAttributes() {
                 }
 
                 hideThenRemove(target, transition);
+
+            });
+
+        }
+
+        el.hasClickListener = true;
+
+    });
+
+    // Show elements which are hidden via data-skin-hidden=true attribute
+
+    const dataShow = document.querySelectorAll("[data-skin-show]");
+
+    dataShow.forEach(el => {
+
+        let toShow = document.getElementById(el.getAttribute("data-skin-show"));
+
+        if (toShow === null) {
+            if (getConfig('debug', true) === true) {
+                Skin.Console.logWarning("data-skin-show element does not exist: " + el.getAttribute("data-skin-show"));
+            }
+            return;
+        }
+
+        // Listen for click
+
+        if (!el.hasClickListener) { // Keep from being processed twice
+
+            el.addEventListener('click', () => {
+
+                // Show target element
+
+                let transition = 0;
+
+                if (el.getAttribute("data-skin-show-transition")) {
+                    transition = parseInt(el.getAttribute("data-skin-show-transition"));
+                }
+
+                show(toShow, transition);
 
             });
 

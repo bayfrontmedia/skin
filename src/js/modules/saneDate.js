@@ -13,13 +13,48 @@ export default class SaneDate {
     }
 
     /**
-     * Convert date to UTC time.
+     * Get Date instance.
+     *
+     * @returns {Date}
+     */
+    getDate() {
+        return this.#date;
+    }
+
+    /**
+     * Convert local date to UTC date.
      *
      * @returns {SaneDate}
      */
     toUTC() {
         this.#date = new Date(this.#date.getTime() + (this.#date.getTimezoneOffset() * 60 * 1000));
         return this;
+    }
+
+    /**
+     * Convert UTC date to local date.
+     *
+     * @returns {SaneDate}
+     */
+    toLocal() {
+
+        const offset = this.#date.getTimezoneOffset();
+
+        if (offset > 0) {
+
+            this.minus({
+                minutes: offset
+            });
+
+            return this;
+        }
+
+        this.plus({
+            minutes: Math.abs(offset)
+        });
+
+        return this;
+
     }
 
     /**
@@ -240,15 +275,6 @@ export default class SaneDate {
     }
 
     /**
-     * Get Date instance.
-     *
-     * @returns {Date}
-     */
-    getDate() {
-        return this.#date;
-    }
-
-    /**
      * Get date in ISO string format.
      *
      * @param includeMilliseconds {boolean}
@@ -351,6 +377,19 @@ export default class SaneDate {
     }
 
     /**
+     * Return numeric day of year (1-365/366 in leap years).
+     *
+     * @returns {number}
+     */
+    getDayOfYear() {
+
+        const start = new Date(this.getDate().getFullYear(), 0, 1); // Jan 1st of same year
+        const diff = this.getDate() - start; // ms since Jan 1
+        const oneDay = 1000 * 60 * 60 * 24; // ms per day
+        return Math.floor(diff / oneDay) + 1;
+    }
+
+    /**
      * Get date name of day.
      *
      * @param days {Array}
@@ -411,6 +450,21 @@ export default class SaneDate {
         const givenDate = date.setHours(0, 0, 0, 0);
 
         return thisDate === givenDate;
+
+    }
+
+    /**
+     * Get current age rounded to a number of decimals.
+     *
+     * @param decimals
+     * @returns {string}
+     */
+    getAge(decimals = 0) {
+
+        const now = new Date();
+        const diff = now.getTime() - this.#date.getTime();
+        const age = diff / (1000 * 60 * 60 * 24 * 365.2425);
+        return age.toFixed(decimals);
 
     }
 
