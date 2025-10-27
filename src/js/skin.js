@@ -69,6 +69,14 @@ export function init(config = {}) {
  */
 function handleDataAttributes() {
 
+    // Lazy load
+
+    const dataSrc = document.querySelectorAll("[data-skin-src]");
+
+    dataSrc.forEach(el => {
+        el.src = el.getAttribute("data-skin-src");
+    });
+
     // Add classes to hyperlinks for current URL
 
     const currentEls = document.querySelectorAll("a[data-skin-current-class]");

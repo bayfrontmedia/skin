@@ -441,6 +441,47 @@
         @apply rounded-l-none;
     }
 
+    .tc-blockquote {
+        @apply p-6 my-12 text-xl border-l-4 tu-border-default;
+    }
+
+    .tc-blockquote-l,.tc-blockquote-r,.tc-blockquote-quote-l {
+        @apply mr-4 my-12 md:my-6 md:float-left md:max-w-xs xl:max-w-md;
+    }
+
+    .tc-blockquote-c,.tc-blockquote-quote-c {
+        @apply md:text-center;
+    }
+
+    .tc-blockquote-r {
+        @apply md:ml-4 md:mr-0 md:float-right text-right border-l-0 border-r-4;
+    }
+
+    .tc-blockquote-quote {
+        @apply relative border-0 px-16 my-12;
+    }
+
+    .tc-blockquote-quote:before {
+        @apply absolute top-2 left-0 mr-4 text-8xl text-inherit font-serif content-['“'];
+    }
+
+    .tc-blockquote-quote-r:before {
+        @apply left-6;
+    }
+
+    .tc-blockquote-quote-r {
+        @apply ml-4 my-6 md:float-right md:max-w-xs xl:max-w-md text-right;
+    }
+
+    .tc-blockquote figcaption, .tc-blockquote-quote figcaption {
+        @apply text-base tu-text-light;
+    }
+
+    .tc-blockquote cite {
+        @apply italic;
+    }
+
+
     .tc-list {
         @apply list-disc;
     }
