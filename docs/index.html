@@ -27,6 +27,7 @@
             <li><a href="#installation" title="Installation">Installation</a></li>
             <li><a href="#styles" title="Styles">Styles</a></li>
             <li><a href="#javascript" title="JavaScript">JavaScript</a></li>
+            <li><a href="#examples" title="Examples">Examples</a></li>
         </ul>
 
         <h2 id="introduction" data-skin-hidden="true">Introduction</h2>
@@ -49,7 +50,9 @@
 
         <h2 id="installation">Installation</h2>
 
-        <p>Install package: <code>npm install -D @bayfrontmedia/skin</code></p>
+        <p>Install Skin via npm: <code>npm install -D @bayfrontmedia/skin</code></p>
+
+        <h3>Tailwind configuration</h3>
 
         <p>Add to the main stylesheet (modify path as needed): <code>@import "./node_modules/@bayfrontmedia/skin/dist/css/skin.css";</code></p>
 
@@ -97,6 +100,12 @@
             </code>
         </pre>
 
+        <p>To support dark mode via class names, add to the main stylesheet:</p>
+
+        <code>@custom-variant dark (&:where(.dark, .dark *));</code>
+
+        <h3>JavaScript</h3>
+
         <p>Optionally add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></p>
 
         <p>Either of the following CDN links can also be used:</p>
@@ -108,7 +117,7 @@
 
         <p>Alternatively, Skin can be imported as a module using <code>import * as Skin from "@bayfrontmedia/skin"</code></p>
 
-        <p>Then, initialize Skin: <code>Skin.init();</code></p>
+        <p>Then, initialize Skin: <code>Skin.init({debug:false});</code></p>
 
         <p>In either case, <code>Skin</code> is attached to the <code>window</code> object.</p>
 
@@ -246,6 +255,370 @@
         <h2 id="javascript">JavaScript</h2>
 
         <p>Documentation coming soon...</p>
+
+        <h2 id="examples">Examples</h2>
+
+        <h3>Typography</h3>
+
+        <p>The <code>tb-typo</code> utility class is used to give default typography styling to some base elements.</p>
+
+        <p>Any child elements inside <code>tb-typo</code> will inherit these styles.
+            To prevent a specific element from inheriting the typography styling,
+            assign it the <code>tb-typo-omit</code> class.
+            To apply the typography styling to a specific element not inside a <code>tb-typo</code> element,
+            assign it the <code>tb-typo-apply</code> class.</p>
+
+        <p>Here are some examples. <small>This is small</small> and also <sup>this is sup</sup>
+            and finally <sub>this is sub</sub> for reference.</p>
+
+        <p>Other typography include <a href="#" title="Hyperlink">hyperlinks</a> and <mark>marked text</mark>,
+            along with <strong>bold text</strong> and <em>italic text</em>.</p>
+
+        <p>Inline quotations <q>look like this</q>, and inline code <code>looks like this</code>.</p>
+
+        <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy to the clipboard.</p>
+
+        <p>When I tried to open the file, I received the message: <samp>File not found!</samp></p>
+
+        <h3>Styles</h3>
+
+        <p>Styles utilize a combination of background, border and text colors.</p>
+
+        <p><strong>NOTE:</strong> Due to their opacity, <code>tu-style-*-light</code> styles do not work well for
+            elements which may overlay others (have a higher <code>z-index</code>), such as toasts.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+
+            <div class="p-4 tu-style-default border">tu-style-default</div>
+            <div class="p-4 tu-style-default-o border">tu-style-default-o</div>
+            <div class="p-4 tu-style-content border">tu-style-content</div>
+            <div class="p-4 tu-style-inverse border">tu-style-inverse</div>
+            <div class="p-4 tu-style-primary border">tu-style-primary</div>
+            <div class="p-4 tu-style-primary-o border">tu-style-primary-o</div>
+            <div class="p-4 tu-style-secondary border">tu-style-secondary</div>
+            <div class="p-4 tu-style-secondary-o border">tu-style-secondary-o</div>
+            <div class="p-4 tu-style-info border">tu-style-info</div>
+            <div class="p-4 tu-style-info-o border">tu-style-info-o</div>
+            <div class="p-4 tu-style-info-light border">tu-style-info-light</div>
+            <div class="p-4 tu-style-warning border">tu-style-warning</div>
+            <div class="p-4 tu-style-warning-o border">tu-style-warning-o</div>
+            <div class="p-4 tu-style-warning-light border">tu-style-warning-light</div>
+            <div class="p-4 tu-style-error border">tu-style-error</div>
+            <div class="p-4 tu-style-error-o border">tu-style-error-o</div>
+            <div class="p-4 tu-style-error-light border">tu-style-error-light</div>
+            <div class="p-4 tu-style-success border">tu-style-success</div>
+            <div class="p-4 tu-style-success-o border">tu-style-success-o</div>
+            <div class="p-4 tu-style-success-light border">tu-style-success-light</div>
+            <div class="p-4 tu-style-inverse dark:tu-style-default border">
+                <div class="p-4 text-white tu-style-glass border">tu-style-glass</div>
+            </div>
+
+        </div>
+
+        <h3>Alert</h3>
+
+        <div class="grid grid-cols-1 gap-4 mb-6">
+
+            <div id="alert-dismissable" class="tc-alert border tu-border-default" role="alert">
+                <span class="icon-[heroicons--megaphone] shrink-0 text-xl"></span>
+                <div class="grow">This is an unstyled dismissible alert</div>
+                <div class="flex items-center justify-center p-1 rounded-full hover:backdrop-brightness-90 cursor-pointer" data-skin-hide="alert-dismissable" data-skin-hide-transition="250">
+                    <span class="icon-[heroicons--x-mark]"></span>
+                </div>
+            </div>
+
+            <div class="tc-alert tu-bg-default border border-l-4 border-primary" role="alert">
+                <span class="icon-[heroicons--megaphone] shrink-0 text-xl"></span>
+                This is a custom styled alert
+            </div>
+
+            <div class="tc-alert tu-style-info-light" role="alert">
+                <span class="icon-[heroicons--information-circle] shrink-0 text-xl"></span>
+                This is an info light alert
+            </div>
+
+            <div class="tc-alert tu-style-warning-light" role="alert">
+                <span class="icon-[heroicons--exclamation-triangle] shrink-0 text-xl"></span>
+                This is a warning light alert
+            </div>
+
+            <div class="tc-alert tu-style-error-light" role="alert">
+                <span class="icon-[heroicons--exclamation-triangle] shrink-0 text-xl"></span>
+                This is an error light alert
+            </div>
+
+            <div class="tc-alert tu-style-success-light" role="alert">
+                <span class="icon-[heroicons--check-circle] shrink-0 text-xl"></span>
+                This is success light alert
+            </div>
+
+        </div>
+
+        <h3>Badge</h3>
+
+        <div class="flex gap-2 mb-6">
+
+            <span class="tc-badge tu-style-default">Default</span>
+            <span class="tc-badge tu-style-default"><span class="icon-[heroicons--tag] text-base"></span> Default with tag</span>
+            <span class="tc-badge tu-style-info-light">Info light</span>
+            <span class="tc-badge tu-style-inverse"><span class="icon-[heroicons--clock] text-base"></span> 2 minutes ago</span>
+            <span class="tc-badge tu-style-success-light">5</span>
+
+        </div>
+
+        <h3>Button</h3>
+
+        <div class="flex gap-2 mb-6">
+
+            <button type="button" class="tc-btn tu-style-default">Default</button>
+            <button type="button" class="tc-btn tu-style-default">Select <span class="icon-[heroicons--chevron-down] text-base"></span></button>
+            <button type="button" class="tc-btn tu-style-default">Notifications <span class="tc-badge tu-style-primary">5</span></button>
+
+        </div>
+
+        <div class="tc-btn-row mb-6">
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">First</button>
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Second</button>
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Third</button>
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Fourth</button>
+        </div>
+
+        <div class="tc-btn-col">
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">First</button>
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Second</button>
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Third</button>
+            <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Fourth</button>
+        </div>
+
+        <h3>Blockquote</h3>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote">
+
+            <blockquote>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote tc-blockquote-l">
+
+            <blockquote>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote tc-blockquote-c">
+
+            <blockquote>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote tc-blockquote-r border-primary">
+
+            <blockquote>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <h3>List</h3>
+
+        <h4>tc-list</h4>
+
+        <ul class="tc-list mb-6">
+            <li>First</li>
+            <li>Second
+                <ul>
+                    <li>2.1</li>
+                    <li>2.2
+                        <ul>
+                            <li>2.2.1</li>
+                            <li>2.2.2</li>
+                        </ul>
+                    </li>
+                    <li>2.3</li>
+                </ul>
+            </li>
+            <li>Third</li>
+        </ul>
+
+        <h4>tc-list-horizontal</h4>
+
+        <ul class="tc-list-horizontal mb-6">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ul>
+
+        <nav class="flex mb-6" aria-label="Breadcrumb">
+
+            <ol class="tc-list-horizontal space-x-1">
+
+                <li>
+                    <a href="#" title="Home" class="hover:text-theme-primary">
+                        <span class="icon-[heroicons--home] mr-1"></span>
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <span class="icon-[heroicons--chevron-right] mr-1"></span>
+                    <a href="#" title="Articles" class="hover:text-theme-primary">
+                        Articles
+                    </a>
+                </li>
+
+                <li class="font-semibold" aria-current="page">
+                    <span class="icon-[heroicons--chevron-right] mr-1"></span>
+                    Article title
+                </li>
+
+            </ol>
+
+        </nav>
+
+        <h4>tc-list-ordered</h4>
+
+        <ol class="tc-list-ordered mb-6">
+            <li>First</li>
+            <li>Second
+                <ol>
+                    <li>2.1</li>
+                    <li>2.2
+                        <ol>
+                            <li>2.2.1</li>
+                            <li>2.2.2</li>
+                        </ol>
+                    </li>
+                    <li>2.3</li>
+                </ol>
+            </li>
+            <li>Third</li>
+        </ol>
+
+        <h4>tc-list-outline</h4>
+
+        <ul class="tc-list-outline">
+            <li>Major Topic 1
+                <ul>
+                    <li>Topic 1-1
+                        <ul>
+                            <li>Topic 1-1-1
+                                <ul>
+                                    <li>Topic 1-1-1-1</li>
+                                    <li>Topic 1-1-1-2
+                                        <ul>
+                                            <li>Topic 1-1-1-2-1</li>
+                                            <li>Topic 1-1-1-2-2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Topic 1-1-2</li>
+                        </ul>
+                    </li>
+                    <li>Topic 1-2</li>
+                    <li>Topic 1-3</li>
+                </ul>
+            </li>
+            <li>Major Topic 2</li>
+            <li>Major Topic 3</li>
+        </ul>
 
     </div>
 

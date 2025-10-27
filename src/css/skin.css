@@ -359,7 +359,7 @@
         @apply decoration-2 hover:underline focus:underline focus:outline-none text-primary underline-offset-2;
     }
 
-    .tb-typo-p, .tb-typo p:not(.tb-typo-omit),p.tb-typo-apply {
+    .tb-typo p:not(.tb-typo-omit),p.tb-typo-apply, .tb-typo p:not(.tc-blockquote *) {
         @apply mb-6 text-lg print:text-base leading-relaxed print:leading-normal;
     }
 
@@ -418,7 +418,7 @@
     }
 
     .tc-btn {
-        @apply py-3 px-4 inline-flex justify-center items-center gap-x-2 cursor-pointer font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
+        @apply py-3 px-4 inline-flex items-center gap-x-2 cursor-pointer font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
     }
 
     .tc-btn-row {
@@ -440,6 +440,31 @@
     .tc-btn-row .tc-btn:not(:only-child):last-child {
         @apply rounded-l-none;
     }
+
+    .tc-btn-col {
+        @apply inline-flex flex-col;
+    }
+
+    .tc-btn-col * {
+        @apply flex-1;
+    }
+
+    .tc-btn-col *:not(:last-child) {
+        @apply border-b-0;
+    }
+
+    .tc-btn-col *:not(:first-child):not(:last-child) {
+        @apply rounded-none;
+    }
+
+    .tc-btn-col *:first-child {
+        @apply rounded-b-none;
+    }
+
+    .tc-btn-col *:last-child {
+        @apply rounded-t-none;
+    }
+
 
     .tc-blockquote {
         @apply p-6 my-12 text-xl border-l-4 tu-border-default;
@@ -481,6 +506,9 @@
         @apply italic;
     }
 
+    .tc-blockquote p {
+        @apply mb-6 text-xl;
+    }
 
     .tc-list {
         @apply list-disc;
@@ -515,11 +543,11 @@
     }
 
     .tc-list-outline {
-        list-style: 'upper-roman';
+        @apply list-[upper-roman];
     }
 
     .tc-list-outline li ul {
-        list-style: 'upper-alpha';
+        @apply list-[upper-alpha];
     }
 
     .tc-list-outline li ul li ul {
@@ -527,11 +555,11 @@
     }
 
     .tc-list-outline li ul li ul li ul {
-        list-style: 'lower-roman';
+        @apply list-[lower-roman];
     }
 
     .tc-list-outline li ul li ul li ul li ul {
-        list-style: 'lower-alpha';
+        @apply list-[lower-alpha];
     }
 
     /* Form elements */
