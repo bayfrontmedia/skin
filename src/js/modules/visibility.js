@@ -1,5 +1,8 @@
 // noinspection JSUnusedGlobalSymbols
 
+import {getConfig} from "../skin";
+import {logError} from "./console";
+
 /**
  * Hide element with a given animation duration.
  *
@@ -8,6 +11,16 @@
  */
 
 export function hide(el, duration = 250) {
+
+    if (el === null) {
+
+        if (getConfig('debug', true) === true) {
+            logError('Unable to hide: Element does not exist');
+        }
+
+        return;
+
+    }
 
     el.style.transition = duration + 'ms';
     el.style.opacity = '1';
@@ -31,6 +44,16 @@ export function hide(el, duration = 250) {
 
 export function show(el, duration = 250) {
 
+    if (el === null) {
+
+        if (getConfig('debug', true) === true) {
+            logError('Unable to show: Element does not exist');
+        }
+
+        return;
+
+    }
+
     el.style.transition = duration + 'ms';
     el.style.opacity = '0';
     el.removeAttribute("data-skin-hidden");
@@ -50,6 +73,16 @@ export function show(el, duration = 250) {
 
 export function showThenHide(el, hideAfter = 3000, duration = 250) {
 
+    if (el === null) {
+
+        if (getConfig('debug', true) === true) {
+            logError('Unable to showThenHide: Element does not exist');
+        }
+
+        return;
+
+    }
+
     show(el, duration);
 
     window.setTimeout(() => {
@@ -67,6 +100,16 @@ export function showThenHide(el, hideAfter = 3000, duration = 250) {
  * @param duration
  */
 export function hideThenRemove(el, duration = 250) {
+
+    if (el === null) {
+
+        if (getConfig('debug', true) === true) {
+            logError('Unable to hideThenRemove: Element does not exist');
+        }
+
+        return;
+
+    }
 
     hide(el, duration);
 
