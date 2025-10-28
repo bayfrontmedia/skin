@@ -228,8 +228,7 @@
 }
 
 @utility tu-style-inverse {
-    @apply tu-bg-inverse tu-text-inverse;
-    border-color: var(--skin-text-default);
+    @apply tu-bg-inverse tu-text-inverse border-[var(--skin-text-default)];
 }
 
 @utility tu-style-default {
@@ -510,6 +509,116 @@
         @apply mb-6 text-xl;
     }
 
+    .tc-code {
+        @apply p-4 text-sm tu-style-default tu-border-radius tu-border-width overflow-x-scroll;
+    }
+
+    .tc-code pre,.tc-code code {
+        @apply whitespace-pre-wrap;
+    }
+
+    .tc-code-terminal {
+        @apply tu-style-inverse dark:tu-style-default;
+    }
+
+    .tc-code-circles,.tc-code-circles:before,.tc-code-circles:after {
+        @apply block h-3 w-3 rounded-full;
+    }
+
+    .tc-code-circles:before,.tc-code-circles:after {
+        @apply absolute content-[''];
+    }
+
+    .tc-code-circles:before {
+        @apply -translate-x-5 bg-red-500;
+    }
+
+    .tc-code-circles {
+        @apply ml-5 mb-6 bg-yellow-500;
+    }
+
+    .tc-code-circles:after {
+        @apply translate-x-5 bg-green-500;
+    }
+
+    /* Form elements */
+
+    .tc-form-group {
+        @apply flex;
+    }
+
+    .tc-form-group-text {
+        @apply inline-flex items-center px-3 py-2 tu-style-default border tu-border-radius;
+    }
+
+    .tc-form-group input {
+        @apply z-0;
+    }
+
+    .tc-form-group *:first-child {
+        @apply border-r-0 rounded-r-none;
+    }
+
+    .tc-form-group *:nth-child(2) {
+        @apply rounded-l-none;
+    }
+
+    .tc-form-group *:nth-child(2):not(:last-child) {
+        @apply rounded-r-none;
+    }
+
+    .tc-form-group *:nth-child(3) {
+        @apply border-l-0 rounded-l-none;
+    }
+
+    .tc-form-label {
+        @apply block mb-1 text-sm tu-text-light;
+    }
+
+    .tc-form-label-msg {
+        @apply block mt-1 text-xs font-medium;
+    }
+
+    .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select,.tc-form-checkbox,.tc-form-switch,.tc-form-radio,.tc-form-color {
+        @apply text-base border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
+    }
+
+    .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select {
+        @apply block w-full py-3 px-4 tu-border-radius;
+    }
+
+    .tc-form-select[multiple] option {
+        @apply py-1 px-2;
+    }
+
+    .tc-form-file {
+        @apply focus:outline-none file:mr-4 file:-ml-1 file:-my-2 file:p-2 file:border-0 file:cursor-pointer file:tu-style-default file:text-sm file:font-medium;
+    }
+
+    .tc-form-checkbox,.tc-form-switch,.tc-form-radio {
+        @apply h-5 w-5 text-primary checked:bg-primary checked:border-primary focus:ring-offset-0;
+    }
+
+    .tc-form-checkbox,.tc-form-switch {
+        @apply shrink-0 rounded-sm;
+    }
+
+    .tc-form-switch {
+        @apply w-[3.25rem] h-7 before:size-6 relative p-px before:inline-block tu-border-default text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-offset-[--skin-border-default] focus:ring-primary checked:bg-none checked:text-primary checked:border-primary focus:checked:border-primary disabled:tu-disabled before:tu-bg-content before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow-sm before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-[--skin-border-default] tu-bg-default;
+    }
+
+    .tc-form-switch-sm { /* Modifier */
+        @apply w-11 h-6 before:size-5;
+    }
+
+    .tc-form-radio {
+        @apply rounded-full;
+    }
+
+    .tc-form-color {
+        @apply h-12 w-12 p-1 cursor-pointer tu-border-radius;
+    }
+
     .tc-list {
         @apply list-disc;
     }
@@ -531,15 +640,15 @@
     }
 
     .tc-list ol,.tc-list ul {
-        @apply list-[circle];
+        @apply list-[circle] mt-2;
     }
 
     .tc-list ol ol,.tc-list ul ul {
-        @apply list-[square];
+        @apply list-[square] mt-2;
     }
 
     .tc-list-ordered ol,.tc-list-ordered ul {
-        @apply list-decimal;
+        @apply list-decimal mt-2;
     }
 
     .tc-list-outline {
@@ -547,52 +656,23 @@
     }
 
     .tc-list-outline li ul {
-        @apply list-[upper-alpha];
+        @apply list-[upper-alpha] mt-2;
     }
 
     .tc-list-outline li ul li ul {
-        @apply list-decimal;
+        @apply list-decimal mt-2;
     }
 
     .tc-list-outline li ul li ul li ul {
-        @apply list-[lower-roman];
+        @apply list-[lower-roman] mt-2;
     }
 
     .tc-list-outline li ul li ul li ul li ul {
-        @apply list-[lower-alpha];
+        @apply list-[lower-alpha] mt-2;
     }
 
-    /* Form elements */
-
-    .tc-form-label {
-        @apply block mb-2 text-sm tu-text-light;
-    }
-    .tc-form-label-msg {
-        @apply block mt-1 text-xs font-medium;
-    }
-    .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select,.tc-form-checkbox,.tc-form-radio,.tc-form-color {
-        @apply text-base border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
-    }
-    .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select {
-        @apply block w-full py-3 px-4 tu-border-radius;
-    }
-    .tc-form-checkbox,.tc-form-radio {
-        @apply h-5 w-5 text-primary checked:bg-primary checked:border-primary focus:ring-offset-0;
-    }
-    .tc-form-checkbox {
-        @apply shrink-0 rounded-sm;
-    }
-    .tc-form-radio {
-        @apply rounded-full;
-    }
-    .tc-form-color {
-        @apply h-12 w-12 p-1 cursor-pointer tu-border-radius;
-    }
-    .tc-form-switch {
-        @apply w-[3.25rem] h-7 before:size-6 relative p-px before:inline-block tu-border-default text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-offset-[--skin-border-default] focus:ring-primary checked:bg-none checked:text-primary checked:border-primary focus:checked:border-primary disabled:tu-disabled before:tu-bg-content before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow-sm before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-[--skin-border-default] tu-bg-default;
-    }
-    .tc-form-switch-sm { /* Modifier */
-        @apply w-11 h-6 before:size-5;
+    .tc-line {
+        @apply my-6 h-0.5 bg-[var(--skin-border-default)];
     }
 
     .tc-spinner {
@@ -600,36 +680,47 @@
     }
 
     /* Table */
+
     .tc-table {
         @apply border-spacing-0 border-separate overflow-hidden break-normal tu-border-radius tu-border-default;
     }
+
     .tc-table tr {
         @apply text-left;
     }
+
     .tc-table th {
         @apply font-semibold tu-bg-default;
     }
+
     .tc-table th,.tc-table td {
         @apply p-2;
     }
+
     .tc-table-row th,.tc-table-row tr:not(:last-of-type) td {
         @apply border-b tu-border-default;
     }
+
     .tc-table-border {
         @apply border;
     }
+
     .tc-table-border th,.tc-table-border td {
         @apply border-l tu-border-default;
     }
+
     .tc-table-border th:first-of-type,.tc-table-border td:first-of-type {
         @apply border-l-0;
     }
+
     .tc-table-border td {
         @apply border-t tu-border-default;
     }
+
     .tc-table-zebra tr:nth-child(even) {
         @apply tu-bg-default;
     }
+
     .tc-table-hover tr:hover {
         @apply tu-bg-default;
     }
@@ -645,27 +736,35 @@
     .tc-toast {
         @apply py-3 px-4 w-80 flex justify-start items-center h-auto gap-x-2 fixed z-[90] overflow-auto text-sm font-medium shadow-lg opacity-0 transition-all duration-300 tu-border-radius tu-border-width tu-style-content [&>.toast-close]:hidden;
     }
+
     .tc-toast.on {
         @apply opacity-100;
     }
+
     .tc-toast-close {
         @apply inline-flex justify-center items-center gap-x-2 ms-auto rounded-full cursor-pointer focus:outline-none;
     }
+
     .toastify-left {
         @apply left-0 sm:left-[15px] right-0 sm:right-auto;
     }
+
     .toastify-right {
         @apply left-0 sm:left-auto right-0 sm:right-[15px];
     }
+
     .toastify-left, .toastify-right {
         @apply ml-auto sm:ml-0 mr-auto sm:mr-0 max-w-80;
     }
+
     .toastify-top {
         @apply -top-[150px];
     }
+
     .toastify-bottom {
         @apply -bottom-[150px];
     }
+
     .toastify-center {
         @apply ml-auto mr-auto left-0 right-0 max-w-80;
     }
@@ -675,9 +774,11 @@
     .tc-dropdown {
         @apply transition-[opacity,margin] duration-150 hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 shadow mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full border tu-border-radius tu-bg-content tu-border-default;
     }
+
     .tc-offcanvas {
         @apply translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full max-w-xs sm:max-w-sm w-full z-[80] border-s tu-bg-content tu-border-default;
     }
+
     .tc-tooltip {
         @apply opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 text-xs font-medium rounded shadow-sm tu-style-inverse;
     }

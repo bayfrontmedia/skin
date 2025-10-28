@@ -14,7 +14,7 @@ export function hide(el, duration = 250) {
 
     if (el === null) {
 
-        if (getConfig('debug', true) === true) {
+        if (getConfig('debug', false) === true) {
             logError('Unable to hide: Element does not exist');
         }
 
@@ -46,7 +46,7 @@ export function show(el, duration = 250) {
 
     if (el === null) {
 
-        if (getConfig('debug', true) === true) {
+        if (getConfig('debug', false) === true) {
             logError('Unable to show: Element does not exist');
         }
 
@@ -60,7 +60,7 @@ export function show(el, duration = 250) {
 
     window.setTimeout(() => {
         el.style.opacity = '1';
-    }, 5);
+    }, duration + 5);
 
 }
 
@@ -75,7 +75,7 @@ export function showThenHide(el, hideAfter = 3000, duration = 250) {
 
     if (el === null) {
 
-        if (getConfig('debug', true) === true) {
+        if (getConfig('debug', false) === true) {
             logError('Unable to showThenHide: Element does not exist');
         }
 
@@ -103,7 +103,7 @@ export function hideThenRemove(el, duration = 250) {
 
     if (el === null) {
 
-        if (getConfig('debug', true) === true) {
+        if (getConfig('debug', false) === true) {
             logError('Unable to hideThenRemove: Element does not exist');
         }
 

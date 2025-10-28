@@ -47,7 +47,11 @@ export function getConfig(key, defaultValue) {
 export function init(config = {}) {
 
     skinConfig = Object.merge({
-        debug: false
+        debug: false,
+        themeParam: {
+            enabled: true,
+            name: "theme"
+        }
     }, config);
 
     window.addEventListener('load', () => {
@@ -104,7 +108,7 @@ function handleDataAttributes() {
         let toHide = document.getElementById(el.getAttribute("data-skin-hide"));
 
         if (toHide === null) {
-            if (getConfig('debug', true) === true) {
+            if (getConfig('debug', false) === true) {
                 Skin.Console.logWarning("data-skin-hide element does not exist: " + el.getAttribute("data-skin-hide"));
             }
             return;
@@ -189,7 +193,7 @@ function handleDataAttributes() {
         let toShow = document.getElementById(el.getAttribute("data-skin-show"));
 
         if (toShow === null) {
-            if (getConfig('debug', true) === true) {
+            if (getConfig('debug', false) === true) {
                 Skin.Console.logWarning("data-skin-show element does not exist: " + el.getAttribute("data-skin-show"));
             }
             return;
@@ -210,6 +214,45 @@ function handleDataAttributes() {
                 }
 
                 Visibility.show(toShow, transition);
+
+            });
+
+        }
+
+        el.hasClickListener = true;
+
+    });
+
+    // Toggle element visibility
+
+    const dataToggle = document.querySelectorAll("[data-skin-toggle]");
+
+    dataToggle.forEach(el => {
+
+        let toToggle = document.getElementById(el.getAttribute("data-skin-toggle"));
+
+        if (toToggle === null) {
+            if (getConfig('debug', false) === true) {
+                Skin.Console.logWarning("data-skin-toggle element does not exist: " + el.getAttribute("data-skin-toggle"));
+            }
+            return;
+        }
+
+        // Listen for click
+
+        if (!el.hasClickListener) { // Keep from being processed twice
+
+            el.addEventListener('click', () => {
+
+                // Toggle target element
+
+                let transition = 0;
+
+                if (el.getAttribute("data-skin-toggle-transition")) {
+                    transition = parseInt(el.getAttribute("data-skin-toggle-transition"));
+                }
+
+                Visibility.toggle(toToggle, transition);
 
             });
 

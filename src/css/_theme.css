@@ -292,8 +292,8 @@
 
 /*noinspection CssUnresolvedCustomProperty*/
 @theme {
-    --color-primary: var(--color-violet-500);
-    --color-secondary: var(--color-orange-500);
+    --color-primary: var(--color-blue-500);
+    --color-secondary: var(--color-green-500);
 }
 
 /*noinspection CssUnresolvedCustomProperty*/

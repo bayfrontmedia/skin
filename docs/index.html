@@ -22,15 +22,39 @@
 
         <h1 class="mt-0">Skin documentation</h1>
 
-        <ul class="mb-6">
+        <ul class="tc-list mb-6">
             <li><a href="#introduction" title="Introduction">Introduction</a></li>
-            <li><a href="#installation" title="Installation">Installation</a></li>
-            <li><a href="#styles" title="Styles">Styles</a></li>
+            <li><a href="#installation" title="Installation">Installation</a>
+            <ul>
+                <li><a href="#installation-tailwind-configuration" title="Tailwind configuration">Tailwind configuration</a></li>
+                <li><a href="#installation-javascript" title="JavaScript">JavaScript</a></li>
+            </ul></li>
+            <li><a href="#styles" title="Styles">Styles</a>
+            <ul>
+                <li><a href="#styles-css-variables" title="CSS variables">CSS variables</a></li>
+                <li><a href="#styles-base-classes" title="Base classes">Base classes</a></li>
+                <li><a href="#styles-component-classes" title="Component classes">Component classes</a></li>
+                <li><a href="#styles-utility-classes" title="Utility classes">Utility classes</a></li>
+            </ul></li>
             <li><a href="#javascript" title="JavaScript">JavaScript</a></li>
-            <li><a href="#examples" title="Examples">Examples</a></li>
+            <li><a href="#examples" title="Examples">Examples</a>
+            <ul>
+                <li><a href="#examples-typography" title="Typography">Typography</a></li>
+                <li><a href="#examples-styles" title="Styles">Styles</a></li>
+                <li><a href="#examples-alert" title="Alert">Alert</a></li>
+                <li><a href="#examples-badge" title="Badge">Badge</a></li>
+                <li><a href="#examples-button" title="Button">Button</a></li>
+                <li><a href="#examples-blockquote" title="Blockquote">Blockquote</a></li>
+                <li><a href="#examples-code" title="Code">Code</a></li>
+                <li><a href="#examples-form" title="Form">Form</a></li>
+                <li><a href="#examples-list" title="List">List</a></li>
+                <li><a href="#examples-line" title="Line">Line</a></li>
+                <li><a href="#examples-spinner" title="Spinner">Spinner</a></li>
+                <li><a href="#examples-table" title="Table">Table</a></li>
+            </ul></li>
         </ul>
 
-        <h2 id="introduction" data-skin-hidden="true">Introduction</h2>
+        <h2 id="introduction">Introduction</h2>
 
         <p>
             Skin is a free open source library of Tailwind CSS components.
@@ -52,13 +76,14 @@
 
         <p>Install Skin via npm: <code>npm install -D @bayfrontmedia/skin</code></p>
 
-        <h3>Tailwind configuration</h3>
+        <h3 id="installation-tailwind-configuration">Tailwind configuration</h3>
 
-        <p>Add to the main stylesheet (modify path as needed): <code>@import "./node_modules/@bayfrontmedia/skin/dist/css/skin.css";</code></p>
+        <p>Add to the main stylesheet (modify path as needed): <code>@import
+            "./node_modules/@bayfrontmedia/skin/dist/css/skin.css";</code></p>
 
         <p>Define the following variables in the main stylesheet (modify as needed):</p>
 
-        <pre>
+        <pre class="tc-code mb-6">
             <code>
 
 @theme {
@@ -104,29 +129,46 @@
 
         <code>@custom-variant dark (&:where(.dark, .dark *));</code>
 
-        <h3>JavaScript</h3>
+        <h3 id="installation-javascript">JavaScript</h3>
 
-        <p>Optionally add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></p>
+        <p>Optionally add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script
+            src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></p>
 
         <p>Either of the following CDN links can also be used:</p>
 
         <ul class="mb-6">
-            <li><code>&lt;script src="https://www.unpkg.com/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code></li>
-            <li><code>&lt;script src="https://cdn.jsdelivr.net/npm/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code></li>
+            <li><code>&lt;script src="https://www.unpkg.com/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code>
+            </li>
+            <li><code>&lt;script src="https://cdn.jsdelivr.net/npm/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code>
+            </li>
         </ul>
 
-        <p>Alternatively, Skin can be imported as a module using <code>import * as Skin from "@bayfrontmedia/skin"</code></p>
+        <p>Alternatively, Skin can be imported as a module using <code>import * as Skin from
+            "@bayfrontmedia/skin"</code></p>
 
-        <p>Then, initialize Skin: <code>Skin.init({debug:false});</code></p>
+        <p>Then, initialize Skin:</p>
+
+        <pre class="tc-code mb-6">
+            <code>
+                Skin.init({
+        debug: false,
+        themeParam: {
+            enabled: true,
+            name: "theme"
+        }
+    });
+            </code>
+        </pre>
 
         <p>In either case, <code>Skin</code> is attached to the <code>window</code> object.</p>
 
         <p>Ensure the JavaScript file is added to Tailwind as a source. When using Skin as a module, your JavaScript
-        file may already be added. When using as a library, you can use <code>@source "/path/to/dist/js/skin-lib.js";</code></p>
+            file may already be added. When using as a library, you can use <code>@source
+                "/path/to/dist/js/skin-lib.js";</code></p>
 
         <h2 id="styles">Styles</h2>
 
-        <h3>CSS variables</h3>
+        <h3 id="styles-css-variables">CSS variables</h3>
 
         <ul class="mb-6">
             <li><code>--skin-color-info</code></li>
@@ -135,23 +177,36 @@
             <li><code>--skin-color-success</code></li>
         </ul>
 
-        <h3>Base classes</h3>
+        <h3 id="styles-base-classes">Base classes</h3>
 
         <ul class="mb-6">
             <li><code>tb-typo</code></li>
         </ul>
 
-        <h3>Component classes</h3>
+        <h3 id="styles-component-classes">Component classes</h3>
 
         <ul class="mb-6">
             <li><code>tc-alert</code></li>
             <li><code>tc-badge</code></li>
             <li><code>tc-btn</code></li>
             <li><code>tc-btn-row</code></li>
+            <li><code>tc-btn-col</code></li>
+            <li><code>tc-blockquote</code></li>
+            <li><code>tc-blockquote-l</code></li>
+            <li><code>tc-blockquote-c</code></li>
+            <li><code>tc-blockquote-r</code></li>
+            <li><code>tc-blockquote-quote</code></li>
+            <li><code>tc-blockquote-quote-l</code></li>
+            <li><code>tc-blockquote-quote-c</code></li>
+            <li><code>tc-blockquote-quote-r</code></li>
+            <li><code>tc-code</code></li>
+            <li><code>tc-code-terminal</code></li>
+            <li><code>tc-code-circles</code></li>
             <li><code>tc-list</code></li>
             <li><code>tc-list-horizontal</code></li>
             <li><code>tc-list-ordered</code></li>
             <li><code>tc-list-outline</code></li>
+            <li><code>tc-form-group</code></li>
             <li><code>tc-form-label</code></li>
             <li><code>tc-form-label-msg</code></li>
             <li><code>tc-form-input</code></li>
@@ -159,10 +214,11 @@
             <li><code>tc-form-textarea</code></li>
             <li><code>tc-form-select</code></li>
             <li><code>tc-form-checkbox</code></li>
-            <li><code>tc-form-radio</code></li>
-            <li><code>tc-form-color</code></li>
             <li><code>tc-form-switch</code></li>
             <li><code>tc-form-switch-sm</code></li>
+            <li><code>tc-form-radio</code></li>
+            <li><code>tc-form-color</code></li>
+            <li><code>tc-line</code></li>
             <li><code>tc-spinner</code></li>
             <li><code>tc-table</code></li>
             <li><code>tc-table-row</code></li>
@@ -181,7 +237,7 @@
             <li><code>tc-tooltip</code></li>
         </ul>
 
-        <h3>Utility classes</h3>
+        <h3 id="styles-utility-classes">Utility classes</h3>
 
         <ul class="mb-6">
             <li><code>tu-text-primary</code></li>
@@ -240,6 +296,7 @@
             <li><code>tu-style-secondary-o</code></li>
             <li><code>tu-style-info</code></li>
             <li><code>tu-style-info-o</code></li>
+            <li><code>tu-style-info-light</code></li>
             <li><code>tu-style-warning</code></li>
             <li><code>tu-style-warning-o</code></li>
             <li><code>tu-style-warning-light</code></li>
@@ -258,7 +315,7 @@
 
         <h2 id="examples">Examples</h2>
 
-        <h3>Typography</h3>
+        <h3 id="examples-typography">Typography</h3>
 
         <p>The <code>tb-typo</code> utility class is used to give default typography styling to some base elements.</p>
 
@@ -271,8 +328,11 @@
         <p>Here are some examples. <small>This is small</small> and also <sup>this is sup</sup>
             and finally <sub>this is sub</sub> for reference.</p>
 
-        <p>Other typography include <a href="#" title="Hyperlink">hyperlinks</a> and <mark>marked text</mark>,
-            along with <strong>bold text</strong> and <em>italic text</em>.</p>
+        <p>Other typography include <a href="#" title="Hyperlink">hyperlinks</a> and
+            <mark>marked text</mark>
+            ,
+            along with <strong>bold text</strong> and <em>italic text</em>.
+        </p>
 
         <p>Inline quotations <q>look like this</q>, and inline code <code>looks like this</code>.</p>
 
@@ -280,7 +340,7 @@
 
         <p>When I tried to open the file, I received the message: <samp>File not found!</samp></p>
 
-        <h3>Styles</h3>
+        <h3 id="examples-styles">Styles</h3>
 
         <p>Styles utilize a combination of background, border and text colors.</p>
 
@@ -315,14 +375,15 @@
 
         </div>
 
-        <h3>Alert</h3>
+        <h3 id="examples-alert">Alert</h3>
 
         <div class="grid grid-cols-1 gap-4 mb-6">
 
             <div id="alert-dismissable" class="tc-alert border tu-border-default" role="alert">
                 <span class="icon-[heroicons--megaphone] shrink-0 text-xl"></span>
                 <div class="grow">This is an unstyled dismissible alert</div>
-                <div class="flex items-center justify-center p-1 rounded-full hover:backdrop-brightness-90 cursor-pointer" data-skin-hide="alert-dismissable" data-skin-hide-transition="250">
+                <div class="flex items-center justify-center p-1 rounded-full hover:backdrop-brightness-90 cursor-pointer"
+                     data-skin-hide="alert-dismissable" data-skin-hide-transition="250">
                     <span class="icon-[heroicons--x-mark]"></span>
                 </div>
             </div>
@@ -354,7 +415,7 @@
 
         </div>
 
-        <h3>Badge</h3>
+        <h3 id="examples-badge">Badge</h3>
 
         <div class="flex gap-2 mb-6">
 
@@ -366,13 +427,25 @@
 
         </div>
 
-        <h3>Button</h3>
+        <h3 id="examples-button">Button</h3>
 
         <div class="flex gap-2 mb-6">
 
             <button type="button" class="tc-btn tu-style-default">Default</button>
-            <button type="button" class="tc-btn tu-style-default">Select <span class="icon-[heroicons--chevron-down] text-base"></span></button>
-            <button type="button" class="tc-btn tu-style-default">Notifications <span class="tc-badge tu-style-primary">5</span></button>
+            <button type="button" class="tc-btn tu-style-default">Select <span
+                    class="icon-[heroicons--chevron-down] text-base"></span></button>
+            <button type="button" class="tc-btn tu-style-default">Notifications <span class="tc-badge tu-style-primary">5</span>
+            </button>
+
+        </div>
+
+        <div class="flex gap-2 mb-6">
+
+            <button type="button" class="tc-btn tu-tight tu-style-default">Default</button>
+            <button type="button" class="tc-btn tu-tight tu-style-default">Select <span
+                    class="icon-[heroicons--chevron-down] text-base"></span></button>
+            <button type="button" class="tc-btn tu-tight tu-style-default">Notifications <span class="tc-badge tu-style-primary">5</span>
+            </button>
 
         </div>
 
@@ -390,7 +463,7 @@
             <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Fourth</button>
         </div>
 
-        <h3>Blockquote</h3>
+        <h3 id="examples-blockquote">Blockquote</h3>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -516,7 +589,548 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.</p>
 
-        <h3>List</h3>
+        <h4>Blockquote-quote</h4>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote-quote">
+
+            <blockquote>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote-quote tc-blockquote-quote-l">
+
+            <blockquote>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote-quote tc-blockquote-quote-c">
+
+            <blockquote>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <figure class="tc-blockquote-quote tc-blockquote-quote-r text-primary">
+
+            <blockquote class="tu-text-default">
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </blockquote>
+
+            <figcaption>
+                - Someone awesome at <cite>Bayfront Media</cite>
+            </figcaption>
+
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        <h3 id="examples-code">Code</h3>
+
+        <pre class="tc-code mb-6">
+            <code>This is code inside a pre block</code>
+        </pre>
+
+        <pre class="tc-code tc-code-terminal"><span class="tc-code-circles"></span><code>This is code inside a pre block with a terminal style and circles</code>
+        </pre>
+
+        <h3 id="examples-form">Form</h3>
+
+        <h4>Input types</h4>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+            <div>
+                <!-- text -->
+
+                <label class="tc-form-label" for="input-text">Input (text)</label>
+                <input type="text" id="input-text" name="input-text" class="tc-form-input mb-6" placeholder="Input (text)">
+            </div>
+
+            <div>
+                <!-- email -->
+
+                <label class="tc-form-label" for="input-email">Input (email)</label>
+                <input type="email" id="input-email" name="input-email" class="tc-form-input mb-6"
+                       placeholder="Input (email)">
+            </div>
+
+            <div>
+                <!-- url -->
+
+                <label class="tc-form-label" for="input-url">Input (url)</label>
+                <input type="url" id="input-url" name="input-url" class="tc-form-input mb-6" placeholder="Input (url)">
+            </div>
+
+            <div>
+                <!-- password -->
+
+                <label class="tc-form-label" for="input-password">Input (password)</label>
+                <input type="password" id="input-password" name="input-password" class="tc-form-input mb-6"
+                       placeholder="Input (password)">
+            </div>
+
+            <div>
+                <!-- tel -->
+
+                <label class="tc-form-label" for="input-tel">Input (tel)</label>
+                <input type="tel" id="input-tel" name="input-tel" class="tc-form-input mb-6" placeholder="Input (tel)">
+            </div>
+
+            <div>
+                <!-- date -->
+
+                <label class="tc-form-label" for="input-date">Input (date)</label>
+                <input type="date" id="input-date" name="input-date" class="tc-form-input mb-6">
+            </div>
+
+            <div>
+                <!-- time -->
+
+                <label class="tc-form-label" for="input-time">Input (time)</label>
+                <input type="time" id="input-time" name="input-time" class="tc-form-input mb-6">
+            </div>
+
+            <div>
+                <!-- datetime-local -->
+
+                <label class="tc-form-label" for="input-datetime-local">Input (datetime-local)</label>
+                <input type="datetime-local" id="input-datetime-local" name="input-datetime-local"
+                       class="tc-form-input mb-6">
+            </div>
+
+            <div>
+                <!-- number -->
+
+                <label class="tc-form-label" for="input-number">Input (number)</label>
+                <input type="number" id="input-number" name="input-number" class="tc-form-input mb-6" min="0" max="10">
+            </div>
+
+            <div>
+                <!-- file -->
+
+                <label class="tc-form-label" for="input-file">Input (file)</label>
+                <input type="file" id="input-file" name="input-file" class="tc-form-file mb-6"
+                       accept="image/png, image/jpeg">
+            </div>
+
+            <div>
+                <!-- textarea -->
+
+                <label class="tc-form-label" for="textarea1">Textarea</label>
+                <textarea id="textarea1" name="textarea1" class="tc-form-textarea" rows="6"
+                          placeholder="Leave a comment..."></textarea>
+            </div>
+
+            <div>
+                <!-- color -->
+                <label class="tc-form-label" for="input-color">Color</label>
+                <input type="color" id="input-color" name="color" value="#0e6b99" class="tc-form-color">
+            </div>
+
+        </div>
+
+        <h4>Input group</h4>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+            <div>
+                <!-- Group (left) -->
+
+                <label class="tc-form-label" for="form-group-l">Group (left)</label>
+
+                <div class="tc-form-group mb-6">
+
+                    <span class="tc-form-group-text">https://</span>
+                    <input type="text" id="form-group-l" name="form-group-l" class="tc-form-input" placeholder="Group (left)">
+
+                </div>
+            </div>
+
+            <div>
+                <!-- Group (right) -->
+
+                <label class="tc-form-label" for="form-group-r">Group (right)</label>
+
+                <div class="tc-form-group mb-6">
+
+                    <input type="text" id="form-group-r" name="form-group-r" class="tc-form-input" placeholder="Group (right)">
+                    <span class="tc-form-group-text">.00</span>
+
+                </div>
+            </div>
+
+            <div>
+                <!-- Group (left+right) -->
+
+                <label class="tc-form-label " for="form-group-lr">Group (left+right)</label>
+
+                <div class="tc-form-group">
+
+                    <span class="tc-form-group-text">$</span>
+                    <input type="text" id="form-group-lr" name="form-group-lr" class="tc-form-input" placeholder="Group (left+right)">
+                    <span class="tc-form-group-text">.00</span>
+
+                </div>
+            </div>
+
+        </div>
+
+        <h4>Input variations</h4>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+            <div>
+                <!-- disabled -->
+
+                <label class="tc-form-label" for="input-disabled">Input (disabled)</label>
+                <input type="text" id="input-disabled" name="input-disabled" class="tc-form-input mb-6" placeholder="Input (disabled)" disabled>
+            </div>
+
+            <div>
+                <!-- text-inside-l -->
+
+                <label class="tc-form-label" for="input-text-inside-l">Input (text inside left)</label>
+
+                <div class="relative mb-6">
+
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none tu-text-light">https://</div>
+                    <input type="text" id="input-text-inside-l" name="input-text-inside-l" class="tc-form-input pl-[4.5rem]" placeholder="Input (text inside left)">
+
+                </div>
+            </div>
+
+            <div>
+                <!-- icon-inside-l -->
+
+                <label class="tc-form-label" for="input-icon-inside-l2">Input (icon inside left )</label>
+
+                <div class="relative mb-6">
+
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none tu-text-light">
+                        <span class="icon-[heroicons--envelope] text-xl"></span>
+                    </div>
+
+                    <input type="text" id="input-icon-inside-l2" name="input-icon-inside-l" class="tc-form-input pl-10" placeholder="Input (icon inside left)">
+
+                </div>
+            </div>
+
+            <div>
+                <!-- icon-inside-r -->
+
+                <label class="tc-form-label" for="input-icon-inside-r2">Input (icon inside right)</label>
+
+                <div class="relative mb-6">
+
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none tu-text-light">
+                        <span class="icon-[heroicons--envelope] text-xl"></span>
+                    </div>
+
+                    <input type="text" id="input-icon-inside-r2" name="input-icon-inside-l" class="tc-form-input pr-10" placeholder="Input (icon inside right)">
+
+                </div>
+            </div>
+
+            <div>
+                <!-- button-inside-r -->
+
+                <label class="tc-form-label" for="input-button-inside-r">Input (button inside right)</label>
+
+                <div class="flex mb-6">
+
+                    <input type="text" id="input-button-inside-r" name="input-button-inside-r" class="tc-form-input rounded-r-none z-0" placeholder="Input (button inside right)">
+
+                    <div>
+                        <input type="submit" class="tc-btn tu-style-default focus:tu-ring-info rounded-l-none border-l-0" value="Submit">
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <!-- status-info -->
+
+                <label class="tc-form-label tu-text-info-light-content" for="input-info">Input (info-light)</label>
+                <input type="text" id="input-info" name="input-info" class="tc-form-input tu-style-info-light mb-6" placeholder="Input (status-info)">
+            </div>
+
+            <div>
+                <!-- status-warning -->
+
+                <label class="tc-form-label tu-text-warning-light-content" for="input-warning">Input (warning-light)</label>
+                <input type="text" id="input-warning" name="input-warning" class="tc-form-input tu-style-warning-light mb-6" placeholder="Input (status-warning)">
+            </div>
+
+            <div>
+                <!-- status-error -->
+
+                <label class="tc-form-label tu-text-error-light-content" for="input-error">Input (error-light)</label>
+                <input type="text" id="input-error" name="input-error" class="tc-form-input tu-style-error-light mb-6" placeholder="Input (status-error)">
+            </div>
+
+            <div>
+                <!-- status-success -->
+
+                <label class="tc-form-label tu-text-success-light-content" for="input-success">Input (success-light)</label>
+                <input type="text" id="input-success" name="input-success" class="tc-form-input tu-style-success-light" placeholder="Input (status-success)">
+            </div>
+
+        </div>
+
+        <h4>Select</h4>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+            <div>
+                <!-- select -->
+
+                <label class="tc-form-label" for="select1">Select</label>
+                <select id="select1" name="select1" class="tc-form-select mb-6">
+                    <option value="">Choose one...</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+            </div>
+
+            <div>
+                <!-- select-optgroup -->
+
+                <label class="tc-form-label" for="select-optgroup">Select (optgroup)</label>
+                <select id="select-optgroup" name="select-optgroup" class="tc-form-select mb-6">
+                    <optgroup label="Theropods">
+                        <option>Tyrannosaurus</option>
+                        <option>Velociraptor</option>
+                        <option>Deinonychus</option>
+                    </optgroup>
+                    <optgroup label="Sauropods">
+                        <option>Diplodocus</option>
+                        <option>Saltasaurus</option>
+                        <option>Apatosaurus</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div>
+                <!-- select-multiple -->
+
+                <label class="tc-form-label" for="select-multiple">Select Multiple</label>
+                <select id="select-multiple" name="select-multiple" class="tc-form-select" multiple>
+                    <option value="">Choose multiple...</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+            </div>
+
+        </div>
+
+        <h4>Checkbox</h4>
+
+        <h5>Switch</h5>
+
+        <div class="mb-6">
+            <label for="switch-example" class="tc-form-label">Enabled</label>
+            <input type="checkbox" id="switch-example" name="switch-example" value="true" class="tc-form-switch">
+        </div>
+
+        <div class="mb-6">
+            <label for="switch-example-sm" class="tc-form-label">Enabled (small)</label>
+            <input type="checkbox" id="switch-example-sm" name="switch-example-sm" value="true" class="tc-form-switch tc-form-switch-sm">
+        </div>
+
+        <h5>Vertical</h5>
+
+        <!-- Vertical -->
+        <div class="mb-6">
+
+            <div class="flex items-center gap-2 mb-6">
+                <input type="checkbox" id="checkbox-1" name="checkbox-vertical" class="tc-form-checkbox">
+                <label class="tc-form-label mb-0" for="checkbox-1">Checkbox 1</label>
+            </div>
+
+            <div class="flex items-center gap-2 mb-6">
+                <input type="checkbox" id="checkbox-2" name="checkbox-vertical" class="tc-form-checkbox">
+                <label class="tc-form-label mb-0" for="checkbox-2">Checkbox 2</label>
+            </div>
+
+            <div class="flex items-center gap-2 mb-6">
+                <input type="checkbox" id="checkbox-3" name="checkbox-vertical" class="tc-form-checkbox">
+                <label class="tc-form-label mb-0" for="checkbox-3">Checkbox 3</label>
+            </div>
+
+        </div>
+
+        <h5>Horizontal</h5>
+
+        <!-- Horizontal -->
+        <div class="flex flex-wrap items-center gap-6">
+
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="checkbox-4" name="checkbox-horizontal" class="tc-form-checkbox">
+                <label class="tc-form-label mb-0" for="checkbox-4">Checkbox 4</label>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="checkbox-5" name="checkbox-horizontal" class="tc-form-checkbox">
+                <label class="tc-form-label mb-0" for="checkbox-5">Checkbox 5</label>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="checkbox-6" name="checkbox-horizontal" class="tc-form-checkbox">
+                <label class="tc-form-label mb-0" for="checkbox-6">Checkbox 6</label>
+            </div>
+
+        </div>
+
+        <h4>Radio</h4>
+
+        <h5>Vertical</h5>
+
+        <!-- Vertical -->
+        <div class="mb-6">
+
+            <div class="flex items-center gap-2 mb-6">
+                <input type="radio" id="radio-1" name="radio-vertical" class="tc-form-radio" value="input-radio-1">
+                <label class="tc-form-label mb-0" for="radio-1">Radio 1</label>
+            </div>
+
+            <div class="flex items-center gap-2 mb-6">
+                <input type="radio" id="radio-2" name="radio-vertical" class="tc-form-radio" value="input-radio-2">
+                <label class="tc-form-label mb-0" for="radio-2">Radio 1</label>
+            </div>
+
+            <div class="flex items-center gap-2 mb-6">
+                <input type="radio" id="radio-3" name="radio-vertical" class="tc-form-radio" value="input-radio-3">
+                <label class="tc-form-label mb-0" for="radio-3">Radio 1</label>
+            </div>
+
+        </div>
+
+        <h5>Horizontal</h5>
+
+        <!-- Horizontal -->
+        <div class="mb-6">
+
+            <div class="flex flex-wrap items-center gap-6">
+
+                <div class="flex items-center gap-2">
+                    <input type="radio" id="radio-4" name="radio-horizontal" class="tc-form-radio" value="input-radio-4">
+                    <label class="tc-form-label mb-0" for="radio-4">Radio 4</label>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="radio" id="radio-5" name="radio-horizontal" class="tc-form-radio" value="input-radio-5">
+                    <label class="tc-form-label mb-0" for="radio-5">Radio 5</label>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="radio" id="radio-6" name="radio-horizontal" class="tc-form-radio" value="input-radio-6">
+                    <label class="tc-form-label mb-0" for="radio-6">Radio 6</label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <h3 id="examples-list">List</h3>
 
         <h4>tc-list</h4>
 
@@ -620,6 +1234,255 @@
             <li>Major Topic 3</li>
         </ul>
 
+        <h3 id="examples-line">Line</h3>
+
+        <div class="tc-line"></div>
+        <div class="tc-line bg-primary"></div>
+
+        <h3 id="examples-spinner">Spinner</h3>
+
+        <div class="tc-spinner tu-text-success" role="status" aria-label="Loading..."></div>
+
+        <h3 id="examples-table">Table</h3>
+
+        <h4>tc-table</h4>
+
+        <table class="tc-table mb-6 w-full overflow-x-auto">
+            <thead>
+            <tr class="text-left">
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Bob</td>
+                <td>Male</td>
+                <td>30</td>
+            </tr>
+
+            <tr>
+                <td>Mary</td>
+                <td>Female</td>
+                <td>35</td>
+            </tr>
+
+            <tr>
+                <td>Joe</td>
+                <td>Male</td>
+                <td>40</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>tc-table-row</h4>
+
+        <table class="tc-table tc-table-row mb-6 w-full overflow-x-auto">
+            <thead>
+            <tr class="text-left">
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Bob</td>
+                <td>Male</td>
+                <td>30</td>
+            </tr>
+
+            <tr>
+                <td>Mary</td>
+                <td>Female</td>
+                <td>35</td>
+            </tr>
+
+            <tr>
+                <td>Joe</td>
+                <td>Male</td>
+                <td>40</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>tc-table-border</h4>
+
+        <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+            <thead>
+            <tr class="text-left">
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Bob</td>
+                <td>Male</td>
+                <td>30</td>
+            </tr>
+
+            <tr>
+                <td>Mary</td>
+                <td>Female</td>
+                <td>35</td>
+            </tr>
+
+            <tr>
+                <td>Joe</td>
+                <td>Male</td>
+                <td>40</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>tc-table-zebra</h4>
+
+        <table class="tc-table tc-table-border tc-table-zebra mb-6 w-full overflow-x-auto">
+            <thead>
+            <tr class="text-left">
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Bob</td>
+                <td>Male</td>
+                <td>30</td>
+            </tr>
+
+            <tr>
+                <td>Mary</td>
+                <td>Female</td>
+                <td>35</td>
+            </tr>
+
+            <tr>
+                <td>Joe</td>
+                <td>Male</td>
+                <td>40</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>tc-table-hover</h4>
+
+        <table class="tc-table tc-table-border tc-table-hover mb-6 w-full overflow-x-auto">
+            <thead>
+            <tr class="text-left">
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Bob</td>
+                <td>Male</td>
+                <td>30</td>
+            </tr>
+
+            <tr>
+                <td>Mary</td>
+                <td>Female</td>
+                <td>35</td>
+            </tr>
+
+            <tr>
+                <td>Joe</td>
+                <td>Male</td>
+                <td>40</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Responsive table</h4>
+
+        <div class="w-2/4 overflow-x-auto">
+
+            <table class="tc-table tc-table-border w-full">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading A</th>
+                    <th scope="col">Heading B</th>
+                    <th scope="col">Heading C</th>
+                    <th scope="col">Heading D</th>
+                    <th scope="col">Heading E</th>
+                    <th scope="col">Heading F</th>
+                    <th scope="col">Heading G</th>
+                    <th scope="col">Heading H</th>
+                    <th scope="col">Heading I</th>
+                    <th scope="col">Heading J</th>
+                    <th scope="col">Heading K</th>
+                    <th scope="col">Heading L</th>
+                    <th scope="col">Heading M</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Cell A1</td>
+                    <td>Cell B1</td>
+                    <td>Cell C1</td>
+                    <td>Cell D1</td>
+                    <td>Cell E1</td>
+                    <td>Cell F1</td>
+                    <td>Cell G1</td>
+                    <td>Cell H1</td>
+                    <td>Cell I1</td>
+                    <td>Cell J1</td>
+                    <td>Cell K1</td>
+                    <td>Cell L1</td>
+                    <td>Cell M1</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Cell A2</td>
+                    <td>Cell B2</td>
+                    <td>Cell C2</td>
+                    <td>Cell D2</td>
+                    <td>Cell E2</td>
+                    <td>Cell F2</td>
+                    <td>Cell G2</td>
+                    <td>Cell H2</td>
+                    <td>Cell I2</td>
+                    <td>Cell J2</td>
+                    <td>Cell K2</td>
+                    <td>Cell L2</td>
+                    <td>Cell M2</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Cell A3</td>
+                    <td>Cell B3</td>
+                    <td>Cell C3</td>
+                    <td>Cell D3</td>
+                    <td>Cell E3</td>
+                    <td>Cell F3</td>
+                    <td>Cell G3</td>
+                    <td>Cell H3</td>
+                    <td>Cell I3</td>
+                    <td>Cell J3</td>
+                    <td>Cell K3</td>
+                    <td>Cell L3</td>
+                    <td>Cell M3</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
     </div>
 
 </div>
@@ -629,7 +1492,11 @@
 <script>
 
     Skin.init({
-        debug: true
+        debug: true,
+        themeParam: {
+            enabled: true,
+            name: "theme"
+        }
     });
 
 </script>

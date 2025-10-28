@@ -6,12 +6,28 @@ import {logError} from "./console";
  */
 export function detect() {
 
-    if ("skin-theme" in localStorage) {
+    let detected = false;
+
+    if (getConfig('themeParam.enabled', false) === true) {
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const themeName = urlParams.get(getConfig('themeParam.name', 'theme'));
+
+        if (themeName !== null) {
+            set(themeName);
+            detected = true;
+        }
+
+    }
+
+    if (detected === false && "skin-theme" in localStorage) {
 
         try {
 
             let theme = JSON.parse(localStorage.getItem("skin-theme"));
             set(theme.name);
+            detected = true;
 
         } catch (e) {
             localStorage.removeItem("skin-theme");
@@ -22,10 +38,16 @@ export function detect() {
 
         }
 
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        set("dark");
-    } else {
-        set("light");
+    }
+
+    if (detected === false) {
+
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            set("dark");
+        } else {
+            set("light");
+        }
+
     }
 
     const themeToggles = document.querySelectorAll("[data-skin-theme-toggle]");
