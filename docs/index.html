@@ -72,6 +72,10 @@
             <li><code>tu-</code>: Tailwind utility</li>
         </ul>
 
+        <p>
+            Component modifiers utilize two dashes (<code>--</code>) in their names.
+        </p>
+
         <h2 id="installation">Installation</h2>
 
         <p>Install Skin via npm: <code>npm install -D @bayfrontmedia/skin</code></p>
@@ -192,15 +196,14 @@
             <li><code>tc-btn-row</code></li>
             <li><code>tc-btn-col</code></li>
             <li><code>tc-blockquote</code></li>
-            <li><code>tc-blockquote-l</code></li>
-            <li><code>tc-blockquote-c</code></li>
-            <li><code>tc-blockquote-r</code></li>
+            <li><code>tc-blockquote--l</code></li>
+            <li><code>tc-blockquote--c</code></li>
+            <li><code>tc-blockquote--r</code></li>
             <li><code>tc-blockquote-quote</code></li>
-            <li><code>tc-blockquote-quote-l</code></li>
-            <li><code>tc-blockquote-quote-c</code></li>
-            <li><code>tc-blockquote-quote-r</code></li>
+            <li><code>tc-blockquote-quote--l</code></li>
+            <li><code>tc-blockquote-quote--c</code></li>
+            <li><code>tc-blockquote-quote--r</code></li>
             <li><code>tc-code</code></li>
-            <li><code>tc-code-terminal</code></li>
             <li><code>tc-code-circles</code></li>
             <li><code>tc-list</code></li>
             <li><code>tc-list-horizontal</code></li>
@@ -215,16 +218,16 @@
             <li><code>tc-form-select</code></li>
             <li><code>tc-form-checkbox</code></li>
             <li><code>tc-form-switch</code></li>
-            <li><code>tc-form-switch-sm</code></li>
+            <li><code>tc-form-switch--sm</code></li>
             <li><code>tc-form-radio</code></li>
             <li><code>tc-form-color</code></li>
             <li><code>tc-line</code></li>
             <li><code>tc-spinner</code></li>
             <li><code>tc-table</code></li>
-            <li><code>tc-table-row</code></li>
-            <li><code>tc-table-border</code></li>
-            <li><code>tc-table-zebra</code></li>
-            <li><code>tc-table-hover</code></li>
+            <li><code>tc-table--row</code></li>
+            <li><code>tc-table--border</code></li>
+            <li><code>tc-table--zebra</code></li>
+            <li><code>tc-table--hover</code></li>
         </ul>
 
         <p>Third party plugin component classes</p>
@@ -240,6 +243,7 @@
         <h3 id="styles-utility-classes">Utility classes</h3>
 
         <ul class="mb-6">
+            <li><code>tu-tight</code></li>
             <li><code>tu-text-primary</code></li>
             <li><code>tu-text-secondary</code></li>
             <li><code>tu-border-radius</code></li>
@@ -253,7 +257,6 @@
             <li><code>tu-bg-inverse</code></li>
             <li><code>tu-text-inverse</code></li>
             <li><code>tu-disabled</code></li>
-            <li><code>tu-tight</code></li>
             <li><code>tu-bg-info</code></li>
             <li><code>tu-bg-info-light</code></li>
             <li><code>tu-border-info</code></li>
@@ -496,7 +499,7 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.</p>
 
-        <figure class="tc-blockquote tc-blockquote-l">
+        <figure class="tc-blockquote tc-blockquote--l">
 
             <blockquote>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -527,7 +530,7 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.</p>
 
-        <figure class="tc-blockquote tc-blockquote-c">
+        <figure class="tc-blockquote tc-blockquote--c">
 
             <blockquote>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -558,7 +561,7 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.</p>
 
-        <figure class="tc-blockquote tc-blockquote-r border-primary">
+        <figure class="tc-blockquote tc-blockquote--r border-primary">
 
             <blockquote>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -622,7 +625,7 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.</p>
 
-        <figure class="tc-blockquote-quote tc-blockquote-quote-l">
+        <figure class="tc-blockquote-quote tc-blockquote-quote--l">
 
             <blockquote>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -653,7 +656,7 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.</p>
 
-        <figure class="tc-blockquote-quote tc-blockquote-quote-c">
+        <figure class="tc-blockquote-quote tc-blockquote-quote--c">
 
             <blockquote>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -684,7 +687,7 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.</p>
 
-        <figure class="tc-blockquote-quote tc-blockquote-quote-r text-primary">
+        <figure class="tc-blockquote-quote tc-blockquote-quote--r text-primary">
 
             <blockquote class="tu-text-default">
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -721,7 +724,7 @@
             <code>This is code inside a pre block</code>
         </pre>
 
-        <pre class="tc-code tc-code-terminal"><span class="tc-code-circles"></span><code>This is code inside a pre block with a terminal style and circles</code>
+        <pre class="tc-code tu-style-inverse dark:tu-style-default"><span class="tc-code-circles"></span><code>This is code inside a pre block with circles</code>
         </pre>
 
         <h3 id="examples-form">Form</h3>
@@ -1033,7 +1036,7 @@
 
         <div class="mb-6">
             <label for="switch-example-sm" class="tc-form-label">Enabled (small)</label>
-            <input type="checkbox" id="switch-example-sm" name="switch-example-sm" value="true" class="tc-form-switch tc-form-switch-sm">
+            <input type="checkbox" id="switch-example-sm" name="switch-example-sm" value="true" class="tc-form-switch tc-form-switch--sm">
         </div>
 
         <h5>Vertical</h5>
@@ -1277,9 +1280,9 @@
             </tbody>
         </table>
 
-        <h4>tc-table-row</h4>
+        <h4>tc-table--row</h4>
 
-        <table class="tc-table tc-table-row mb-6 w-full overflow-x-auto">
+        <table class="tc-table tc-table--row mb-6 w-full overflow-x-auto">
             <thead>
             <tr class="text-left">
                 <th>Name</th>
@@ -1309,9 +1312,9 @@
             </tbody>
         </table>
 
-        <h4>tc-table-border</h4>
+        <h4>tc-table--border</h4>
 
-        <table class="tc-table tc-table-border mb-6 w-full overflow-x-auto">
+        <table class="tc-table tc-table--border mb-6 w-full overflow-x-auto">
             <thead>
             <tr class="text-left">
                 <th>Name</th>
@@ -1341,9 +1344,9 @@
             </tbody>
         </table>
 
-        <h4>tc-table-zebra</h4>
+        <h4>tc-table--zebra</h4>
 
-        <table class="tc-table tc-table-border tc-table-zebra mb-6 w-full overflow-x-auto">
+        <table class="tc-table tc-table--border tc-table--zebra mb-6 w-full overflow-x-auto">
             <thead>
             <tr class="text-left">
                 <th>Name</th>
@@ -1373,9 +1376,9 @@
             </tbody>
         </table>
 
-        <h4>tc-table-hover</h4>
+        <h4>tc-table--hover</h4>
 
-        <table class="tc-table tc-table-border tc-table-hover mb-6 w-full overflow-x-auto">
+        <table class="tc-table tc-table--border tc-table--hover mb-6 w-full overflow-x-auto">
             <thead>
             <tr class="text-left">
                 <th>Name</th>
@@ -1409,7 +1412,7 @@
 
         <div class="w-2/4 overflow-x-auto">
 
-            <table class="tc-table tc-table-border w-full">
+            <table class="tc-table tc-table--border w-full">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
