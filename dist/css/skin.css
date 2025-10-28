@@ -20,6 +20,11 @@
  * |--------------------------------------------------------------------------
  */
 
+/* For anything with a default py-3 px-4 */
+@utility tu-tight {
+    @apply py-2 px-3 gap-x-1;
+}
+
 @utility tu-text-primary {
     color: var(--skin-text-primary);
 }
@@ -72,16 +77,7 @@
     @apply opacity-50 pointer-events-none;
 }
 
-/* For anything with a default py-3 px-4 */
-@utility tu-tight {
-    @apply py-2 px-3 gap-x-1;
-}
-
-/*
- * |--------------------------------------------------------------------------
- * | Statuses
- * |--------------------------------------------------------------------------
- */
+/* ------------------------- Statuses ------------------------- */
 
 @utility tu-bg-info {
     @apply bg-blue-500;
@@ -195,11 +191,7 @@
     @apply text-green-800 dark:text-green-200;
 }
 
-/*
- * |--------------------------------------------------------------------------
- * | Statuses (forms)
- * |--------------------------------------------------------------------------
- */
+/* Forms */
 
 @utility tu-status-info {
     @apply tu-border-info focus:tu-border-info focus:ring-blue-500;
@@ -217,11 +209,7 @@
     @apply tu-border-success focus:tu-border-success focus:ring-green-500;
 }
 
-/*
- * |--------------------------------------------------------------------------
- * | Styles
- * |--------------------------------------------------------------------------
- */
+/* Styles */
 
 @utility tu-style-content {
     @apply tu-bg-content tu-border-default tu-text-default;
@@ -307,6 +295,12 @@
     @apply bg-white/40 border-white/80 backdrop-blur-lg text-gray-900;
 }
 
+/*
+ * |--------------------------------------------------------------------------
+ * | Base
+ * |--------------------------------------------------------------------------
+ */
+
 @layer base {
 
     /* Remove border from color picker input */
@@ -316,11 +310,7 @@
         border-radius: var(--skin-border-radius);
     }
 
-    /*
-     * |--------------------------------------------------------------------------
-     * | Typography
-     * |--------------------------------------------------------------------------
-     */
+    /* -------------------------Typography ------------------------- */
 
     .tb-typo h1:not(.tb-typo-omit),.tb-typo h2:not(.tb-typo-omit),.tb-typo h3:not(.tb-typo-omit),.tb-typo h4:not(.tb-typo-omit),.tb-typo h5:not(.tb-typo-omit),.tb-typo h6:not(.tb-typo-omit),h1.tb-typo-apply,h2.tb-typo-apply,h3.tb-typo-apply,h4.tb-typo-apply,h5.tb-typo-apply,h6.tb-typo-apply {
         @apply font-semibold;
@@ -464,20 +454,19 @@
         @apply rounded-t-none;
     }
 
-
     .tc-blockquote {
         @apply p-6 my-12 text-xl border-l-4 tu-border-default;
     }
 
-    .tc-blockquote-l,.tc-blockquote-r,.tc-blockquote-quote-l {
+    .tc-blockquote--l,.tc-blockquote--r,.tc-blockquote-quote--l {
         @apply mr-4 my-12 md:my-6 md:float-left md:max-w-xs xl:max-w-md;
     }
 
-    .tc-blockquote-c,.tc-blockquote-quote-c {
+    .tc-blockquote--c,.tc-blockquote-quote--c {
         @apply md:text-center;
     }
 
-    .tc-blockquote-r {
+    .tc-blockquote--r {
         @apply md:ml-4 md:mr-0 md:float-right text-right border-l-0 border-r-4;
     }
 
@@ -489,11 +478,11 @@
         @apply absolute top-2 left-0 mr-4 text-8xl text-inherit font-serif content-['“'];
     }
 
-    .tc-blockquote-quote-r:before {
+    .tc-blockquote-quote--r:before {
         @apply left-6;
     }
 
-    .tc-blockquote-quote-r {
+    .tc-blockquote-quote--r {
         @apply ml-4 my-6 md:float-right md:max-w-xs xl:max-w-md text-right;
     }
 
@@ -517,10 +506,6 @@
         @apply whitespace-pre-wrap;
     }
 
-    .tc-code-terminal {
-        @apply tu-style-inverse dark:tu-style-default;
-    }
-
     .tc-code-circles,.tc-code-circles:before,.tc-code-circles:after {
         @apply block h-3 w-3 rounded-full;
     }
@@ -540,8 +525,6 @@
     .tc-code-circles:after {
         @apply translate-x-5 bg-green-500;
     }
-
-    /* Form elements */
 
     .tc-form-group {
         @apply flex;
@@ -607,7 +590,7 @@
         @apply w-[3.25rem] h-7 before:size-6 relative p-px before:inline-block tu-border-default text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-offset-[--skin-border-default] focus:ring-primary checked:bg-none checked:text-primary checked:border-primary focus:checked:border-primary disabled:tu-disabled before:tu-bg-content before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow-sm before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-[--skin-border-default] tu-bg-default;
     }
 
-    .tc-form-switch-sm { /* Modifier */
+    .tc-form-switch--sm {
         @apply w-11 h-6 before:size-5;
     }
 
@@ -679,8 +662,6 @@
         @apply animate-spin inline-block size-5 border-2 border-current border-t-transparent text-current rounded-full;
     }
 
-    /* Table */
-
     .tc-table {
         @apply border-spacing-0 border-separate overflow-hidden break-normal tu-border-radius tu-border-default;
     }
@@ -697,31 +678,31 @@
         @apply p-2;
     }
 
-    .tc-table-row th,.tc-table-row tr:not(:last-of-type) td {
+    .tc-table--row th,.tc-table--row tr:not(:last-of-type) td {
         @apply border-b tu-border-default;
     }
 
-    .tc-table-border {
+    .tc-table--border {
         @apply border;
     }
 
-    .tc-table-border th,.tc-table-border td {
+    .tc-table--border th,.tc-table--border td {
         @apply border-l tu-border-default;
     }
 
-    .tc-table-border th:first-of-type,.tc-table-border td:first-of-type {
+    .tc-table--border th:first-of-type,.tc-table--border td:first-of-type {
         @apply border-l-0;
     }
 
-    .tc-table-border td {
+    .tc-table--border td {
         @apply border-t tu-border-default;
     }
 
-    .tc-table-zebra tr:nth-child(even) {
+    .tc-table--zebra tr:nth-child(even) {
         @apply tu-bg-default;
     }
 
-    .tc-table-hover tr:hover {
+    .tc-table--hover tr:hover {
         @apply tu-bg-default;
     }
 
@@ -730,6 +711,8 @@
     [data-skin-hidden="true"] {
         @apply hidden invisible;
     }
+
+    /* -------------------------Third-party ------------------------- */
 
     /* Toastify */
 

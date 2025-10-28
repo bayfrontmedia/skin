@@ -9,3 +9,13 @@
 
 @plugin "@tailwindcss/forms";
 @plugin "@iconify/tailwind4";
+
+/* Project-specific */
+
+#sidebar-nav a.active {
+    @apply tu-bg-default text-primary;
+}
+
+pre[class*="language-"], code[class*="language-"] {
+    @apply mb-6 text-sm border-0 tu-bg-inverse dark:tu-bg-default;
+}
