@@ -1,6 +1,6 @@
 {
   "name": "@bayfrontmedia/skin",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A free open source library of Tailwind CSS components.",
   "author": "Bayfront Media",
   "license": "MIT",
@@ -22,29 +22,27 @@
     "skin",
     "css"
   ],
-  "main": "lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "dist/js/skin.js",
   "scripts": {
-    "watch:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --watch",
-    "build:styles": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css",
-    "build:styles:prod": "npx tailwindcss -i src/css/styles.css -o docs/assets/css/styles.css --minify",
+    "app:update": "npm update && cp node_modules/preline/dist/preline.js docs/assets/js/preline.js",
+    "watch:styles": "npx @tailwindcss/cli -i src/css/styles.css -o docs/assets/css/styles.css --watch",
+    "build:styles": "npx @tailwindcss/cli -i src/css/styles.css -o docs/assets/css/styles.css",
+    "build:styles:prod": "npx @tailwindcss/cli -i src/css/styles.css -o docs/assets/css/styles.css --minify",
     "watch:webpack": "webpack --mode development --watch",
     "build:webpack": "webpack --mode development",
     "build:webpack:prod": "webpack --mode production",
-    "build:prod": "npm run build:webpack:prod && npm run build:styles:prod"
+    "build:prod": "npm run app:update && npm run build:webpack:prod && npm run build:styles:prod && cp src/css/skin.css dist/css/skin.css"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "html-bundler-webpack-plugin": "^3.12",
-    "nunjucks": "^3.2.4",
-    "tailwindcss": "^3.4",
-    "webpack": "^5.91",
-    "webpack-cli": "^5.1"
+    "@iconify/json": "^2.2",
+    "@iconify/tailwind4": "^1.0",
+    "@tailwindcss/forms": "^0.5",
+    "preline": "^3.2",
+    "webpack": "^5.102",
+    "webpack-cli": "^6.0"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.6.5",
-    "focus-trap": "^7.4.0"
+    "@tailwindcss/cli": "^4.1",
+    "toastify-js": "^1.12.0"
   }
 }

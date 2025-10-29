@@ -1,1 +1,1795 @@
-<!doctype html><html lang="en" class="scroll-pt-[65px] scroll-smooth tu-bg-content"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="./assets/css/styles.css" rel="stylesheet"><link rel="icon" href="./assets/img/favicon/favicon.ico" type="image/x-icon" sizes="any"><link rel="icon" href="./assets/img/favicon/favicon.svg" type="image/svg+xml"><title>Skin :: Introduction</title><script>if("theme"in localStorage)try{"dark"===JSON.parse(localStorage.theme).name&&document.documentElement.classList.add("dark")}catch(e){console.error("Unable to set theme (head): invalid localStorage format")}else window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark")</script></head><body class="tu-text-default"><div id="body-wrap"><div id="header-wrap" class="fixed z-20 w-full h-14 overflow-hidden tc-style-content border-b tu-border-default tu-box-shadow print:hidden"><header class="flex flex-row items-center h-full"><div class="md:basis-[280px] grow-0 shrink-0 px-4"><div class="flex items-center"><div class="md:hidden mr-4"><button id="sidebar-trigger" class="inline-flex justify-center items-center hover:tu-bg-default w-10 h-10 rounded-full cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg></button></div><div><a href="index.html" title="Skin" class="flex items-center"><div class="text-3xl font-bold text-theme-primary uppercase">Skin</div></a></div></div></div><div class="w-full h-full"><div class="flex items-center justify-end h-full"><div class="flex items-center h-full px-4"><div><a href="https://github.com/bayfrontmedia/skin" title="GitHub" class="hover:tu-bg-default w-10 h-10 inline-flex justify-center items-center rounded-full" target="_blank"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></div><div><button class="hidden dark:inline-flex justify-center items-center hover:tu-bg-default w-10 h-10 rounded-full cursor-pointer" data-theme-toggle="light"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-300"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg></button> <button class="inline-flex dark:hidden justify-center items-center hover:tu-bg-default w-10 h-10 rounded-full cursor-pointer" data-theme-toggle="dark"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg></button></div><div class="hidden md:block px-2 py-3 h-full"><div class="border-r tu-border-default w-1 h-full"></div></div><div class="hidden md:block pl-2 text-sm"><span>v2.1.0</span></div></div></div></div></header></div><div id="content-wrap" class="pt-14"><main id="content" class="md:pl-[280px] tc-style-content"><div class="p-4 md:container lg:max-w-screen-lg md:mx-auto"><div class="tu-typo"><h1 id="introduction">Introduction</h1><p>Skin is a free open source library of Tailwind CSS components. The optional <a href="start-javascript.html" title="JavaScript functionality">JavaScript functionality</a> is written in vanilla JavaScript, so it all works out-of-the-box!</p><p>All class names used by Skin use the following prefixes:</p><ul class="tc-list mb-6"><li><code>tc-</code> - Tailwind component</li><li><code>tu-</code> - Tailwind utility</li></ul><p>In addition to class names, some components exist as standalone web components.</p></div><footer class="text-center text-sm pt-6 tu-text-light tu-typo"><div class="text-sm"><p>&copy; <a href="https://www.bayfrontmedia.com" title="Bayfront Media" target="_blank">Bayfront Media</a> &middot; Icons by <a href="https://heroicons.com/" title="heroicons" target="_blank">heroicons</a> &middot; Syntax highlighting by <a href="https://prismjs.com/" title="Prism" target="_blank">Prism</a></p></div></footer></div></main><aside id="sidebar" class="text-sm z-10 fixed top-14 pb-14 left-0 w-[280px] h-screen transition-transform -translate-x-full md:translate-x-0 tc-style-content border-r overflow-y-scroll print:hidden"><div class="p-4"><h2 class="uppercase tracking-wide mb-2 font-semibold">Getting started</h2><ul class="mb-6 border-l-2 tu-border-default"><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block font-semibold text-theme-primary tu-bg-default" href="index.html" title="Introduction">Introduction</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="start-installation.html" title="Installation">Installation</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="start-javascript.html" title="JavaScript">JavaScript</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="start-app.html" title="Application">Application</a></li></ul><h2 class="uppercase tracking-wide mb-2 font-semibold">Theme</h2><ul class="mb-6 border-l-2 tu-border-default"><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="theme-utilities.html" title="Utilities">Utilities</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="theme-variables.html" title="Variables">Variables</a></li></ul><h2 class="uppercase tracking-wide mb-2 font-semibold">Components</h2><ul class="mb-6 border-l-2 tu-border-default"><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="skin-alert.html" title="Alert">Alert</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="skin-badge.html" title="Badge">Badge</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-btn.html" title="Button">Button</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="skin-code.html" title="Code">Code</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-form.html" title="Form">Form</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="skin-icon.html" title="Icon">Icon</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-line.html" title="Line">Line</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-list.html" title="List">List</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-modal.html" title="Modal">Modal</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="skin-popup.html" title="Popup">Popup</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-progress.html" title="Progress">Progress</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-blockquote.html" title="Blockquote">Blockquote</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-style.html" title="Style">Style</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="tc-table.html" title="Table">Table</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="skin-toast.html" title="Toast">Toast</a></li></ul><h2 class="uppercase tracking-wide mb-2 font-semibold">Examples</h2><ul class="mb-6 border-l-2 tu-border-default"><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="example-card.html" title="Card">Card</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="example-dark-mode.html" title="Dark mode">Dark mode</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="example-forms.html" title="Forms">Forms</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="example-images.html" title="Images">Images</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="example-tabs.html" title="Tabs">Tabs</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="example-toggle.html" title="Toggle">Toggle</a></li></ul><h2 class="uppercase tracking-wide mb-2 font-semibold">Templates</h2><ul class="mb-6 border-l-2 tu-border-default"><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="templates/template-container.html" title="Container">Container</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="templates/template-full.html" title="Full width">Full width</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="templates/template-2col.html" title="Two column">Two column</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="templates/template-3col.html" title="Three column">Three column</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="templates/template-login.html" title="Login">Login</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="templates/template-login-alt.html" title="Login alt">Login alt</a></li><li class="pl-2 py-0.5"><a class="p-2 tu-border-radius hover:tu-bg-default hover:text-theme-primary cursor-pointer block" href="templates/template-dashboard.html" title="Dashboard">Dashboard</a></li></ul></div></aside></div></div><script src="./assets/js/scripts.js"></script><script>function toggleSidebarFromKeydown(e){if("true"===document.querySelector("body").dataset.sidebarVisible){let t=!1;!("key"in e)||"Escape"!==e.key&&"Esc"!==e.key||(t=!0),t&&toggleSidebar()}}function toggleSidebar(){const e=document.querySelector("body"),t=document.getElementById("content"),d=document.getElementById("sidebar");"true"!==e.dataset.sidebarVisible?(e.dataset.sidebarVisible="true",t.classList.add("blur-sm","brightness-90"),d.classList.remove("-translate-x-full"),document.addEventListener("keydown",toggleSidebarFromKeydown),t.addEventListener("click",toggleSidebar)):(e.dataset.sidebarVisible="false",t.classList.remove("blur-sm","brightness-90"),d.classList.add("-translate-x-full"),document.removeEventListener("keydown",toggleSidebarFromKeydown),t.removeEventListener("click",toggleSidebar))}window.addEventListener("load",(()=>{Skin.App.init({debug:!0})})),document.getElementById("sidebar-trigger").addEventListener("click",toggleSidebar)</script><script src="./assets/prism/prism.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Skin documentation</title>
+
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" sizes="any">
+
+    <link href="./assets/prism/prism.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+
+    <script src="./assets/js/skin.js"></script>
+
+</head>
+<body class="tu-bg-content tu-text-default print:bg-white">
+
+<header class="sticky top-0 inset-x-0 z-[48] lg:ps-[260px] print:hidden">
+
+    <div class="flex flex-wrap md:justify-start md:flex-nowrap w-full border-b text-sm py-2.5 tu-bg-content tu-border-default">
+
+        <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
+            <div class="me-3 lg:me-0 lg:hidden">
+
+                <!-- Start hamburger button -->
+                <button type="button"
+                        class="size-[38px] relative inline-flex justify-center items-center rounded-full cursor-pointer hover:tu-bg-default"
+                        aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar"
+                        aria-label="Toggle navigation" data-hs-overlay="#sidebar">
+                    <span class="icon-[heroicons--bars-3] text-2xl"></span>
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <!-- End hamburger button -->
+
+            </div>
+
+            <div class="h-full lg:hidden">
+
+                <span class="text-3xl font-bold text-primary uppercase">Skin</span>
+
+            </div>
+
+            <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
+
+                <!-- Start left side -->
+
+                <div class="hidden md:block">
+
+
+
+                </div>
+
+                <!-- End left side -->
+
+                <!-- Start right side -->
+
+                <div class="flex flex-row items-center justify-end gap-1">
+
+                    <!-- GitHub -->
+
+                    <div class="hs-tooltip [--placement:bottom] inline-block">
+
+                        <div class="gap-x-2 size-[38px] relative inline-flex justify-center items-center">
+
+                            <a href="https://github.com/bayfrontmedia/skin"
+                               title="GitHub"
+                               target="_blank"
+                               class="inline-flex justify-center items-center w-full h-full cursor-pointer rounded-full hover:tu-bg-default">
+                                <span class="icon-[mdi--github] text-2xl"></span>
+                                <span class="sr-only">GitHub</span>
+                            </a>
+
+                        </div>
+
+                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible tc-tooltip"
+                              role="tooltip">
+                                GitHub
+                            </span>
+
+                    </div>
+
+                    <!-- Theme toggle -->
+
+                    <div class="hs-tooltip [--placement:bottom] inline-block">
+
+                        <div class="gap-x-2 size-[38px] relative inline-flex justify-center items-center">
+
+                            <button type="button"
+                                    class="hidden dark:inline-flex justify-center items-center w-full h-full cursor-pointer rounded-full hover:tu-bg-default"
+                                    data-skin-theme-toggle="light">
+                                <span class="icon-[heroicons--sun] text-2xl"></span>
+                                <span class="sr-only">Light mode</span>
+                            </button>
+
+                            <button type="button"
+                                    class="inline-flex justify-center items-center dark:hidden w-full h-full cursor-pointer rounded-full hover:tu-bg-default"
+                                    data-skin-theme-toggle="dark">
+                                <span class="icon-[heroicons--moon] text-2xl"></span>
+                                <span class="sr-only">Dark mode</span>
+                            </button>
+
+                        </div>
+
+                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible tc-tooltip"
+                              role="tooltip">
+                                Theme
+                            </span>
+
+                    </div>
+
+                    <div class="border-l tu-border-default h-[38px] flex items-center pl-4">
+                        v3.0.0
+                    </div>
+
+                </div>
+
+                <!-- End right side -->
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<aside id="sidebar" class="hs-overlay [--auto-close:lg]
+  hs-overlay-open:translate-x-0
+  -translate-x-full transition-all duration-300 transform
+  w-[260px] h-full
+  hidden print:hidden
+  fixed inset-y-0 start-0 z-[60] lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 border-r tu-style-content"
+     tabindex="-1" aria-label="Sidebar">
+    <div class="relative flex flex-col h-full max-h-full">
+        <div class="px-6 py-2.5 flex items-center">
+
+            <span class="text-3xl font-bold text-primary uppercase">Skin</span>
+
+            <div class="hidden lg:block ms-2"></div>
+
+        </div>
+
+        <!-- Content -->
+        <div class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
+
+            <nav id="sidebar-nav" class="px-6 py-3 w-full flex flex-col flex-wrap text-sm">
+
+                <div class="[--scrollspy-offset:80]" data-hs-scrollspy="#main">
+
+                    <h3 class="uppercase mb-2 font-semibold">Getting started</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#getting-started-introduction"
+                               title="Introduction">Introduction</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#getting-started-installation"
+                               title="Installation">Installation</a>
+                        </li>
+
+                    </ul>
+
+                    <h3 class="uppercase mb-2 font-semibold">Styles</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-css-variables"
+                               title="CSS variables">CSS variables</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-base-classes"
+                               title="Base classes">Base classes</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-component-classes"
+                               title="Component classes">Component classes</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-utility-classes"
+                               title="Utility classes">Utility classes</a>
+                        </li>
+
+                    </ul>
+
+                    <h3 class="uppercase mb-2 font-semibold">JavaScript</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#javascript"
+                               title="Coming soon...">Coming soon...</a>
+                        </li>
+
+                    </ul>
+
+                    <h3 class="uppercase mb-2 font-semibold">Examples</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-typography"
+                               title="Typography">Typography</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-styles"
+                               title="Styles">Styles</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-alert"
+                               title="Alert">Alert</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-badge"
+                               title="Badge">Badge</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-button"
+                               title="Button">Button</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-blockquote"
+                               title="Blockquote">Blockquote</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-code"
+                               title="Code">Code</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-form"
+                               title="Form">Form</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-list"
+                               title="List">List</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-line"
+                               title="Line">Line</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-spinner"
+                               title="Spinner">Spinner</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-table"
+                               title="Table">Table</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <h3 class="uppercase mb-2 font-semibold">Templates</h3>
+
+                <ul class="mb-6 border-l-2 tu-border-default">
+
+                    <li class="pl-2 py-0.5">
+                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                           href="./templates/container.html" target="_blank"
+                           title="Container">Container</a>
+                    </li>
+
+                    <li class="pl-2 py-0.5">
+                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                           href="./templates/full-width.html" target="_blank"
+                           title="Full width">Full width</a>
+                    </li>
+
+                    <li class="pl-2 py-0.5">
+                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                           href="./templates/two-column.html" target="_blank"
+                           title="Two column">Two column</a>
+                    </li>
+
+                    <li class="pl-2 py-0.5">
+                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                           href="./templates/three-column.html" target="_blank"
+                           title="Three column">Three column</a>
+                    </li>
+
+                    <li class="pl-2 py-0.5">
+                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                           href="./templates/login.html" target="_blank"
+                           title="Login">Login</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <!-- End Content -->
+    </div>
+</aside>
+
+<main id="main" class="w-full lg:ps-[260px] print:max-w-full print:ps-0">
+    <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+
+        <div class="tb-typo">
+
+            <h1 class="mt-0">Skin documentation</h1>
+
+            <p>
+                Skin is a free open source library of Tailwind CSS components.
+                The optional JavaScript functionality is written in vanilla JavaScript,
+                so it all works out-of-the-box!
+            </p>
+
+            <h2 id="getting-started">Getting started</h2>
+
+            <h3 id="getting-started-introduction">Introduction</h3>
+
+            <p>
+                All class names used by Skin use the following prefixes:
+            </p>
+
+            <ul class="mb-6">
+                <li><code>tb-</code>: Tailwind base</li>
+                <li><code>tc-</code>: Tailwind component</li>
+                <li><code>tu-</code>: Tailwind utility</li>
+            </ul>
+
+            <p>
+                Component modifiers utilize two dashes (<code>--</code>) in their names.
+            </p>
+
+            <h3 id="getting-started-installation">Installation</h3>
+
+            <p>Install Skin via npm: <code>npm install -D @bayfrontmedia/skin</code></p>
+
+            <h4>Tailwind configuration</h4>
+
+            <p>Add to the main stylesheet (modify path as needed): <code>@import
+                "./node_modules/@bayfrontmedia/skin/dist/css/skin.css";</code></p>
+
+            <p>Define the following variables in the main stylesheet (modify as needed):</p>
+
+            <pre class="tc-code mb-6"><code class="language-css">@theme {
+    --color-primary: var(--color-violet-500);
+    --color-secondary: var(--color-orange-500);
+}
+
+@layer base {
+
+    :root {
+
+        --skin-text-primary: var(--color-white);
+        --skin-text-secondary: var(--color-white);
+        --skin-border-radius: .5rem;
+        --skin-border-width: 1px;
+        --skin-typo-radius: 0.25rem;
+
+        --skin-bg-default: var(--color-gray-100);
+        --skin-bg-content: var(--color-white);
+        --skin-border-default: var(--color-gray-300);
+        --skin-text-default: var(--color-gray-700);
+        --skin-text-light: var(--color-gray-500);
+        --skin-text-code: var(--color-red-600);
+
+    }
+
+    .dark {
+
+        --skin-bg-default: var(--color-gray-900);
+        --skin-bg-content: var(--color-gray-800);
+        --skin-border-default: var(--color-gray-700);
+        --skin-text-default: var(--color-gray-200);
+        --skin-text-light: var(--color-gray-400);
+        --skin-text-code: var(--color-red-400);
+
+    }
+
+}</code></pre>
+
+            <p>To support dark mode via class names, add to the main stylesheet:</p>
+
+            <pre class="tc-code mb-6"><code class="language-css">@custom-variant dark (&:where(.dark, .dark *));</code></pre>
+
+            <h4>JavaScript</h4>
+
+            <p>Optionally add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag:</p>
+
+            <pre class="tc-code mb-6"><code class="language-html">&lt;script src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></pre>
+
+            <p>Either of the following CDN links can also be used:</p>
+
+            <ul class="mb-6">
+                <li><code>&lt;script src="https://www.unpkg.com/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li><code>&lt;script src="https://cdn.jsdelivr.net/npm/@bayfrontmedia/skin@3.0.0/dist/skin.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+            </ul>
+
+            <p>Alternatively, Skin can be imported as a module using <code>import * as Skin from
+                "@bayfrontmedia/skin"</code></p>
+
+            <p>Then, initialize Skin:</p>
+
+            <pre class="tc-code mb-6"><code class="language-javascript">document.addEventListener('DOMContentLoaded', () => {
+
+        Skin.init({
+            debug: true,
+            themeParam: {
+                enabled: true,
+                name: "theme"
+            }
+        });
+
+    });</code></pre>
+
+            <p>In either case, <code>Skin</code> is attached to the <code>window</code> object.</p>
+
+            <p>Ensure the JavaScript file is added to Tailwind as a source. When using Skin as a module, your JavaScript
+                file may already be added. When using as a library, you can use <code>@source
+                    "/path/to/dist/js/skin.js";</code></p>
+
+            <h2 id="styles">Styles</h2>
+
+            <h3 id="styles-css-variables">CSS variables</h3>
+
+            <ul class="mb-6">
+                <li><code>--skin-color-info</code></li>
+                <li><code>--skin-color-warning</code></li>
+                <li><code>--skin-color-error</code></li>
+                <li><code>--skin-color-success</code></li>
+            </ul>
+
+            <h3 id="styles-base-classes">Base classes</h3>
+
+            <ul class="mb-6">
+                <li><code>tb-typo</code></li>
+            </ul>
+
+            <h3 id="styles-component-classes">Component classes</h3>
+
+            <ul class="mb-6">
+                <li><code>tc-alert</code></li>
+                <li><code>tc-badge</code></li>
+                <li><code>tc-btn</code></li>
+                <li><code>tc-btn-row</code></li>
+                <li><code>tc-btn-col</code></li>
+                <li><code>tc-blockquote</code></li>
+                <li><code>tc-blockquote--l</code></li>
+                <li><code>tc-blockquote--c</code></li>
+                <li><code>tc-blockquote--r</code></li>
+                <li><code>tc-blockquote-quote</code></li>
+                <li><code>tc-blockquote-quote--l</code></li>
+                <li><code>tc-blockquote-quote--c</code></li>
+                <li><code>tc-blockquote-quote--r</code></li>
+                <li><code>tc-code</code></li>
+                <li><code>tc-code-circles</code></li>
+                <li><code>tc-list</code></li>
+                <li><code>tc-list-horizontal</code></li>
+                <li><code>tc-list-ordered</code></li>
+                <li><code>tc-list-outline</code></li>
+                <li><code>tc-form-group</code></li>
+                <li><code>tc-form-label</code></li>
+                <li><code>tc-form-label-msg</code></li>
+                <li><code>tc-form-input</code></li>
+                <li><code>tc-form-file</code></li>
+                <li><code>tc-form-textarea</code></li>
+                <li><code>tc-form-select</code></li>
+                <li><code>tc-form-checkbox</code></li>
+                <li><code>tc-form-switch</code></li>
+                <li><code>tc-form-switch--sm</code></li>
+                <li><code>tc-form-radio</code></li>
+                <li><code>tc-form-color</code></li>
+                <li><code>tc-line</code></li>
+                <li><code>tc-spinner</code></li>
+                <li><code>tc-table</code></li>
+                <li><code>tc-table--row</code></li>
+                <li><code>tc-table--border</code></li>
+                <li><code>tc-table--zebra</code></li>
+                <li><code>tc-table--hover</code></li>
+            </ul>
+
+            <p>Third party plugin component classes</p>
+
+            <ul class="mb-6">
+                <li><code>tc-toast</code></li>
+                <li><code>tc-toast-close</code></li>
+                <li><code>tc-dropdown</code></li>
+                <li><code>tc-offcanvas</code></li>
+                <li><code>tc-tooltip</code></li>
+            </ul>
+
+            <h3 id="styles-utility-classes">Utility classes</h3>
+
+            <ul class="mb-6">
+                <li><code>tu-tight</code></li>
+                <li><code>tu-text-primary</code></li>
+                <li><code>tu-text-secondary</code></li>
+                <li><code>tu-border-radius</code></li>
+                <li><code>tu-border-width</code></li>
+                <li><code>tu-bg-default</code></li>
+                <li><code>tu-bg-content</code></li>
+                <li><code>tu-border-default</code></li>
+                <li><code>tu-text-default</code></li>
+                <li><code>tu-text-light</code></li>
+                <li><code>tu-text-code</code></li>
+                <li><code>tu-bg-inverse</code></li>
+                <li><code>tu-text-inverse</code></li>
+                <li><code>tu-disabled</code></li>
+                <li><code>tu-bg-info</code></li>
+                <li><code>tu-bg-info-light</code></li>
+                <li><code>tu-border-info</code></li>
+                <li><code>tu-border-info-light</code></li>
+                <li><code>tu-text-info</code></li>
+                <li><code>tu-text-info-content</code></li>
+                <li><code>tu-text-info-light-content</code></li>
+                <li><code>tu-bg-warning</code></li>
+                <li><code>tu-bg-warning-light</code></li>
+                <li><code>tu-border-warning</code></li>
+                <li><code>tu-border-warning-light</code></li>
+                <li><code>tu-text-warning</code></li>
+                <li><code>tu-text-warning-content</code></li>
+                <li><code>tu-text-warning-light-content</code></li>
+                <li><code>tu-bg-error</code></li>
+                <li><code>tu-bg-error-light</code></li>
+                <li><code>tu-border-error</code></li>
+                <li><code>tu-border-error-light</code></li>
+                <li><code>tu-text-error</code></li>
+                <li><code>tu-text-error-content</code></li>
+                <li><code>tu-text-error-light-content</code></li>
+                <li><code>tu-bg-success</code></li>
+                <li><code>tu-bg-success-light</code></li>
+                <li><code>tu-border-success</code></li>
+                <li><code>tu-border-success-light</code></li>
+                <li><code>tu-text-success</code></li>
+                <li><code>tu-text-success-content</code></li>
+                <li><code>tu-text-success-light-content</code></li>
+                <li><code>tu-status-info</code></li>
+                <li><code>tu-status-warning</code></li>
+                <li><code>tu-status-error</code></li>
+                <li><code>tu-status-success</code></li>
+                <li><code>tu-style-content</code></li>
+                <li><code>tu-style-inverse</code></li>
+                <li><code>tu-style-default</code></li>
+                <li><code>tu-style-default-o</code></li>
+                <li><code>tu-style-primary</code></li>
+                <li><code>tu-style-primary-o</code></li>
+                <li><code>tu-style-secondary</code></li>
+                <li><code>tu-style-secondary-o</code></li>
+                <li><code>tu-style-info</code></li>
+                <li><code>tu-style-info-o</code></li>
+                <li><code>tu-style-info-light</code></li>
+                <li><code>tu-style-warning</code></li>
+                <li><code>tu-style-warning-o</code></li>
+                <li><code>tu-style-warning-light</code></li>
+                <li><code>tu-style-error</code></li>
+                <li><code>tu-style-error-o</code></li>
+                <li><code>tu-style-error-light</code></li>
+                <li><code>tu-style-success</code></li>
+                <li><code>tu-style-success-o</code></li>
+                <li><code>tu-style-success-light</code></li>
+                <li><code>tu-style-glass</code></li>
+            </ul>
+
+            <h2 id="javascript">JavaScript</h2>
+
+            <p>Documentation coming soon...</p>
+
+            <h2 id="examples">Examples</h2>
+
+            <h3 id="examples-typography">Typography</h3>
+
+            <p>The <code>tb-typo</code> utility class is used to give default typography styling to some base elements.</p>
+
+            <p>Any child elements inside <code>tb-typo</code> will inherit these styles.
+                To prevent a specific element from inheriting the typography styling,
+                assign it the <code>tb-typo-omit</code> class.
+                To apply the typography styling to a specific element not inside a <code>tb-typo</code> element,
+                assign it the <code>tb-typo-apply</code> class.</p>
+
+            <p>Here are some examples. <small>This is small</small> and also <sup>this is sup</sup>
+                and finally <sub>this is sub</sub> for reference.</p>
+
+            <p>Other typography include <a href="#" title="Hyperlink">hyperlinks</a> and
+                <mark>marked text</mark>
+                ,
+                along with <strong>bold text</strong> and <em>italic text</em>.
+            </p>
+
+            <p>Inline quotations <q>look like this</q>, and inline code <code>looks like this</code>.</p>
+
+            <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy to the clipboard.</p>
+
+            <p>When I tried to open the file, I received the message: <samp>File not found!</samp></p>
+
+            <h3 id="examples-styles">Styles</h3>
+
+            <p>Styles utilize a combination of background, border and text colors.</p>
+
+            <p><strong>NOTE:</strong> Due to their opacity, <code>tu-style-*-light</code> styles do not work well for
+                elements which may overlay others (have a higher <code>z-index</code>), such as toasts.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+
+                <div class="p-4 tu-style-default border">tu-style-default</div>
+                <div class="p-4 tu-style-default-o border">tu-style-default-o</div>
+                <div class="p-4 tu-style-content border">tu-style-content</div>
+                <div class="p-4 tu-style-inverse border">tu-style-inverse</div>
+                <div class="p-4 tu-style-primary border">tu-style-primary</div>
+                <div class="p-4 tu-style-primary-o border">tu-style-primary-o</div>
+                <div class="p-4 tu-style-secondary border">tu-style-secondary</div>
+                <div class="p-4 tu-style-secondary-o border">tu-style-secondary-o</div>
+                <div class="p-4 tu-style-info border">tu-style-info</div>
+                <div class="p-4 tu-style-info-o border">tu-style-info-o</div>
+                <div class="p-4 tu-style-info-light border">tu-style-info-light</div>
+                <div class="p-4 tu-style-warning border">tu-style-warning</div>
+                <div class="p-4 tu-style-warning-o border">tu-style-warning-o</div>
+                <div class="p-4 tu-style-warning-light border">tu-style-warning-light</div>
+                <div class="p-4 tu-style-error border">tu-style-error</div>
+                <div class="p-4 tu-style-error-o border">tu-style-error-o</div>
+                <div class="p-4 tu-style-error-light border">tu-style-error-light</div>
+                <div class="p-4 tu-style-success border">tu-style-success</div>
+                <div class="p-4 tu-style-success-o border">tu-style-success-o</div>
+                <div class="p-4 tu-style-success-light border">tu-style-success-light</div>
+                <div class="p-4 tu-style-inverse dark:tu-style-default border">
+                    <div class="p-4 text-white tu-style-glass border">tu-style-glass</div>
+                </div>
+
+            </div>
+
+            <h3 id="examples-alert">Alert</h3>
+
+            <div class="grid grid-cols-1 gap-4 mb-6">
+
+                <div id="alert-dismissable" class="tc-alert border tu-border-default" role="alert">
+                    <span class="icon-[heroicons--megaphone] shrink-0 text-xl"></span>
+                    <div class="grow">This is an unstyled dismissible alert</div>
+                    <div class="flex items-center justify-center p-1 rounded-full hover:backdrop-brightness-90 cursor-pointer"
+                         data-skin-hide="alert-dismissable" data-skin-hide-transition="250">
+                        <span class="icon-[heroicons--x-mark]"></span>
+                    </div>
+                </div>
+
+                <div class="tc-alert tu-bg-default border border-l-4 border-primary" role="alert">
+                    <span class="icon-[heroicons--megaphone] shrink-0 text-xl"></span>
+                    This is a custom styled alert
+                </div>
+
+                <div class="tc-alert tu-style-info-light" role="alert">
+                    <span class="icon-[heroicons--information-circle] shrink-0 text-xl"></span>
+                    This is an info light alert
+                </div>
+
+                <div class="tc-alert tu-style-warning-light" role="alert">
+                    <span class="icon-[heroicons--exclamation-triangle] shrink-0 text-xl"></span>
+                    This is a warning light alert
+                </div>
+
+                <div class="tc-alert tu-style-error-light" role="alert">
+                    <span class="icon-[heroicons--exclamation-triangle] shrink-0 text-xl"></span>
+                    This is an error light alert
+                </div>
+
+                <div class="tc-alert tu-style-success-light" role="alert">
+                    <span class="icon-[heroicons--check-circle] shrink-0 text-xl"></span>
+                    This is success light alert
+                </div>
+
+            </div>
+
+            <h3 id="examples-badge">Badge</h3>
+
+            <div class="flex gap-2 mb-6">
+
+                <span class="tc-badge tu-style-default">Default</span>
+                <span class="tc-badge tu-style-default"><span class="icon-[heroicons--tag] text-base"></span> Default with tag</span>
+                <span class="tc-badge tu-style-info-light">Info light</span>
+                <span class="tc-badge tu-style-inverse"><span class="icon-[heroicons--clock] text-base"></span> 2 minutes ago</span>
+                <span class="tc-badge tu-style-success-light">5</span>
+
+            </div>
+
+            <h3 id="examples-button">Button</h3>
+
+            <div class="flex gap-2 mb-6">
+
+                <button type="button" class="tc-btn tu-style-default">Default</button>
+                <button type="button" class="tc-btn tu-style-default">Select <span
+                        class="icon-[heroicons--chevron-down] text-base"></span></button>
+                <button type="button" class="tc-btn tu-style-default">Notifications <span class="tc-badge tu-style-primary">5</span>
+                </button>
+
+            </div>
+
+            <div class="flex gap-2 mb-6">
+
+                <button type="button" class="tc-btn tu-tight tu-style-default">Default</button>
+                <button type="button" class="tc-btn tu-tight tu-style-default">Select <span
+                        class="icon-[heroicons--chevron-down] text-base"></span></button>
+                <button type="button" class="tc-btn tu-tight tu-style-default">Notifications <span class="tc-badge tu-style-primary">5</span>
+                </button>
+
+            </div>
+
+            <div class="tc-btn-row mb-6">
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">First</button>
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Second</button>
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Third</button>
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Fourth</button>
+            </div>
+
+            <div class="tc-btn-col">
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">First</button>
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Second</button>
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Third</button>
+                <button type="button" class="tc-btn tu-style-content hover:tu-style-default">Fourth</button>
+            </div>
+
+            <h3 id="examples-blockquote">Blockquote</h3>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote">
+
+                <blockquote>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote tc-blockquote--l">
+
+                <blockquote>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote tc-blockquote--c">
+
+                <blockquote>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote tc-blockquote--r border-primary">
+
+                <blockquote>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <h4>Blockquote-quote</h4>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote-quote">
+
+                <blockquote>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote-quote tc-blockquote-quote--l">
+
+                <blockquote>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote-quote tc-blockquote-quote--c">
+
+                <blockquote>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <figure class="tc-blockquote-quote tc-blockquote-quote--r text-primary">
+
+                <blockquote class="tu-text-default">
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.</p>
+                </blockquote>
+
+                <figcaption>
+                    - Someone awesome at <cite>Bayfront Media</cite>
+                </figcaption>
+
+            </figure>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum.</p>
+
+            <h3 id="examples-code">Code</h3>
+
+            <pre class="tc-code mb-6">
+            <code>This is code inside a pre block</code>
+        </pre>
+
+            <pre class="tc-code tu-style-inverse dark:tu-style-default"><span class="tc-code-circles"></span><code>This is code inside a pre block with circles</code>
+        </pre>
+
+            <h3 id="examples-form">Form</h3>
+
+            <h4>Input types</h4>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+                <div>
+                    <!-- text -->
+
+                    <label class="tc-form-label" for="input-text">Input (text)</label>
+                    <input type="text" id="input-text" name="input-text" class="tc-form-input mb-6" placeholder="Input (text)">
+                </div>
+
+                <div>
+                    <!-- email -->
+
+                    <label class="tc-form-label" for="input-email">Input (email)</label>
+                    <input type="email" id="input-email" name="input-email" class="tc-form-input mb-6"
+                           placeholder="Input (email)">
+                </div>
+
+                <div>
+                    <!-- url -->
+
+                    <label class="tc-form-label" for="input-url">Input (url)</label>
+                    <input type="url" id="input-url" name="input-url" class="tc-form-input mb-6" placeholder="Input (url)">
+                </div>
+
+                <div>
+                    <!-- password -->
+
+                    <label class="tc-form-label" for="input-password">Input (password)</label>
+                    <input type="password" id="input-password" name="input-password" class="tc-form-input mb-6"
+                           placeholder="Input (password)">
+                </div>
+
+                <div>
+                    <!-- tel -->
+
+                    <label class="tc-form-label" for="input-tel">Input (tel)</label>
+                    <input type="tel" id="input-tel" name="input-tel" class="tc-form-input mb-6" placeholder="Input (tel)">
+                </div>
+
+                <div>
+                    <!-- date -->
+
+                    <label class="tc-form-label" for="input-date">Input (date)</label>
+                    <input type="date" id="input-date" name="input-date" class="tc-form-input mb-6">
+                </div>
+
+                <div>
+                    <!-- time -->
+
+                    <label class="tc-form-label" for="input-time">Input (time)</label>
+                    <input type="time" id="input-time" name="input-time" class="tc-form-input mb-6">
+                </div>
+
+                <div>
+                    <!-- datetime-local -->
+
+                    <label class="tc-form-label" for="input-datetime-local">Input (datetime-local)</label>
+                    <input type="datetime-local" id="input-datetime-local" name="input-datetime-local"
+                           class="tc-form-input mb-6">
+                </div>
+
+                <div>
+                    <!-- number -->
+
+                    <label class="tc-form-label" for="input-number">Input (number)</label>
+                    <input type="number" id="input-number" name="input-number" class="tc-form-input mb-6" min="0" max="10">
+                </div>
+
+                <div>
+                    <!-- file -->
+
+                    <label class="tc-form-label" for="input-file">Input (file)</label>
+                    <input type="file" id="input-file" name="input-file" class="tc-form-file mb-6"
+                           accept="image/png, image/jpeg">
+                </div>
+
+                <div>
+                    <!-- textarea -->
+
+                    <label class="tc-form-label" for="textarea1">Textarea</label>
+                    <textarea id="textarea1" name="textarea1" class="tc-form-textarea" rows="6"
+                              placeholder="Leave a comment..."></textarea>
+                </div>
+
+                <div>
+                    <!-- color -->
+                    <label class="tc-form-label" for="input-color">Color</label>
+                    <input type="color" id="input-color" name="color" value="#2a73f7" class="tc-form-color">
+                </div>
+
+            </div>
+
+            <h4>Input group</h4>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+                <div>
+                    <!-- Group (left) -->
+
+                    <label class="tc-form-label" for="form-group-l">Group (left)</label>
+
+                    <div class="tc-form-group mb-6">
+
+                        <span class="tc-form-group-text">https://</span>
+                        <input type="text" id="form-group-l" name="form-group-l" class="tc-form-input" placeholder="Group (left)">
+
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Group (right) -->
+
+                    <label class="tc-form-label" for="form-group-r">Group (right)</label>
+
+                    <div class="tc-form-group mb-6">
+
+                        <input type="text" id="form-group-r" name="form-group-r" class="tc-form-input" placeholder="Group (right)">
+                        <span class="tc-form-group-text">.00</span>
+
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Group (left+right) -->
+
+                    <label class="tc-form-label " for="form-group-lr">Group (left+right)</label>
+
+                    <div class="tc-form-group">
+
+                        <span class="tc-form-group-text">$</span>
+                        <input type="text" id="form-group-lr" name="form-group-lr" class="tc-form-input" placeholder="Group (left+right)">
+                        <span class="tc-form-group-text">.00</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <h4>Input variations</h4>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+                <div>
+                    <!-- disabled -->
+
+                    <label class="tc-form-label" for="input-disabled">Input (disabled)</label>
+                    <input type="text" id="input-disabled" name="input-disabled" class="tc-form-input mb-6" placeholder="Input (disabled)" disabled>
+                </div>
+
+                <div>
+                    <!-- text-inside-l -->
+
+                    <label class="tc-form-label" for="input-text-inside-l">Input (text inside left)</label>
+
+                    <div class="relative mb-6">
+
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">https://</div>
+                        <input type="text" id="input-text-inside-l" name="input-text-inside-l" class="tc-form-input pl-[4.5rem]" placeholder="Input (text inside left)">
+
+                    </div>
+                </div>
+
+                <div>
+                    <!-- icon-inside-l -->
+
+                    <label class="tc-form-label" for="input-icon-inside-l2">Input (icon inside left )</label>
+
+                    <div class="relative mb-6">
+
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none tu-text-light">
+                            <span class="icon-[heroicons--envelope] text-xl"></span>
+                        </div>
+
+                        <input type="text" id="input-icon-inside-l2" name="input-icon-inside-l" class="tc-form-input pl-10" placeholder="Input (icon inside left)">
+
+                    </div>
+                </div>
+
+                <div>
+                    <!-- icon-inside-r -->
+
+                    <label class="tc-form-label" for="input-icon-inside-r2">Input (icon inside right)</label>
+
+                    <div class="relative mb-6">
+
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none tu-text-light">
+                            <span class="icon-[heroicons--envelope] text-xl"></span>
+                        </div>
+
+                        <input type="text" id="input-icon-inside-r2" name="input-icon-inside-l" class="tc-form-input pr-10" placeholder="Input (icon inside right)">
+
+                    </div>
+                </div>
+
+                <div>
+                    <!-- button-inside-r -->
+
+                    <label class="tc-form-label" for="input-button-inside-r">Input (button inside right)</label>
+
+                    <div class="flex mb-6">
+
+                        <input type="text" id="input-button-inside-r" name="input-button-inside-r" class="tc-form-input rounded-r-none z-0" placeholder="Input (button inside right)">
+
+                        <div>
+                            <input type="submit" class="tc-btn tu-style-default focus:tu-ring-info rounded-l-none border-l-0" value="Submit">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <!-- status-info -->
+
+                    <label class="tc-form-label tu-text-info-light-content" for="input-info">Input (info-light)</label>
+                    <input type="text" id="input-info" name="input-info" class="tc-form-input tu-style-info-light mb-6" placeholder="Input (status-info)">
+                </div>
+
+                <div>
+                    <!-- status-warning -->
+
+                    <label class="tc-form-label tu-text-warning-light-content" for="input-warning">Input (warning-light)</label>
+                    <input type="text" id="input-warning" name="input-warning" class="tc-form-input tu-style-warning-light mb-6" placeholder="Input (status-warning)">
+                </div>
+
+                <div>
+                    <!-- status-error -->
+
+                    <label class="tc-form-label tu-text-error-light-content" for="input-error">Input (error-light)</label>
+                    <input type="text" id="input-error" name="input-error" class="tc-form-input tu-style-error-light mb-6" placeholder="Input (status-error)">
+                </div>
+
+                <div>
+                    <!-- status-success -->
+
+                    <label class="tc-form-label tu-text-success-light-content" for="input-success">Input (success-light)</label>
+                    <input type="text" id="input-success" name="input-success" class="tc-form-input tu-style-success-light" placeholder="Input (status-success)">
+                </div>
+
+            </div>
+
+            <h4>Select</h4>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+
+                <div>
+                    <!-- select -->
+
+                    <label class="tc-form-label" for="select1">Select</label>
+                    <select id="select1" name="select1" class="tc-form-select mb-6">
+                        <option value="">Choose one...</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="spider">Spider</option>
+                        <option value="goldfish">Goldfish</option>
+                    </select>
+                </div>
+
+                <div>
+                    <!-- select-optgroup -->
+
+                    <label class="tc-form-label" for="select-optgroup">Select (optgroup)</label>
+                    <select id="select-optgroup" name="select-optgroup" class="tc-form-select mb-6">
+                        <optgroup label="Theropods">
+                            <option>Tyrannosaurus</option>
+                            <option>Velociraptor</option>
+                            <option>Deinonychus</option>
+                        </optgroup>
+                        <optgroup label="Sauropods">
+                            <option>Diplodocus</option>
+                            <option>Saltasaurus</option>
+                            <option>Apatosaurus</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div>
+                    <!-- select-multiple -->
+
+                    <label class="tc-form-label" for="select-multiple">Select Multiple</label>
+                    <select id="select-multiple" name="select-multiple" class="tc-form-select" multiple>
+                        <option value="">Choose multiple...</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="spider">Spider</option>
+                        <option value="goldfish">Goldfish</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <h4>Checkbox</h4>
+
+            <h5>Switch</h5>
+
+            <div class="mb-6">
+                <label for="switch-example" class="tc-form-label">Enabled</label>
+                <input type="checkbox" id="switch-example" name="switch-example" value="true" class="tc-form-switch">
+            </div>
+
+            <div class="mb-6">
+                <label for="switch-example-sm" class="tc-form-label">Enabled (small)</label>
+                <input type="checkbox" id="switch-example-sm" name="switch-example-sm" value="true" class="tc-form-switch tc-form-switch--sm">
+            </div>
+
+            <h5>Vertical</h5>
+
+            <!-- Vertical -->
+            <div class="mb-6">
+
+                <div class="flex items-center gap-2 mb-6">
+                    <input type="checkbox" id="checkbox-1" name="checkbox-vertical" class="tc-form-checkbox">
+                    <label class="tc-form-label mb-0" for="checkbox-1">Checkbox 1</label>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6">
+                    <input type="checkbox" id="checkbox-2" name="checkbox-vertical" class="tc-form-checkbox">
+                    <label class="tc-form-label mb-0" for="checkbox-2">Checkbox 2</label>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6">
+                    <input type="checkbox" id="checkbox-3" name="checkbox-vertical" class="tc-form-checkbox">
+                    <label class="tc-form-label mb-0" for="checkbox-3">Checkbox 3</label>
+                </div>
+
+            </div>
+
+            <h5>Horizontal</h5>
+
+            <!-- Horizontal -->
+            <div class="flex flex-wrap items-center gap-6">
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="checkbox-4" name="checkbox-horizontal" class="tc-form-checkbox">
+                    <label class="tc-form-label mb-0" for="checkbox-4">Checkbox 4</label>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="checkbox-5" name="checkbox-horizontal" class="tc-form-checkbox">
+                    <label class="tc-form-label mb-0" for="checkbox-5">Checkbox 5</label>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="checkbox-6" name="checkbox-horizontal" class="tc-form-checkbox">
+                    <label class="tc-form-label mb-0" for="checkbox-6">Checkbox 6</label>
+                </div>
+
+            </div>
+
+            <h4>Radio</h4>
+
+            <h5>Vertical</h5>
+
+            <!-- Vertical -->
+            <div class="mb-6">
+
+                <div class="flex items-center gap-2 mb-6">
+                    <input type="radio" id="radio-1" name="radio-vertical" class="tc-form-radio" value="input-radio-1">
+                    <label class="tc-form-label mb-0" for="radio-1">Radio 1</label>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6">
+                    <input type="radio" id="radio-2" name="radio-vertical" class="tc-form-radio" value="input-radio-2">
+                    <label class="tc-form-label mb-0" for="radio-2">Radio 1</label>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6">
+                    <input type="radio" id="radio-3" name="radio-vertical" class="tc-form-radio" value="input-radio-3">
+                    <label class="tc-form-label mb-0" for="radio-3">Radio 1</label>
+                </div>
+
+            </div>
+
+            <h5>Horizontal</h5>
+
+            <!-- Horizontal -->
+            <div class="mb-6">
+
+                <div class="flex flex-wrap items-center gap-6">
+
+                    <div class="flex items-center gap-2">
+                        <input type="radio" id="radio-4" name="radio-horizontal" class="tc-form-radio" value="input-radio-4">
+                        <label class="tc-form-label mb-0" for="radio-4">Radio 4</label>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <input type="radio" id="radio-5" name="radio-horizontal" class="tc-form-radio" value="input-radio-5">
+                        <label class="tc-form-label mb-0" for="radio-5">Radio 5</label>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <input type="radio" id="radio-6" name="radio-horizontal" class="tc-form-radio" value="input-radio-6">
+                        <label class="tc-form-label mb-0" for="radio-6">Radio 6</label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <h3 id="examples-list">List</h3>
+
+            <h4>tc-list</h4>
+
+            <ul class="tc-list mb-6">
+                <li>First</li>
+                <li>Second
+                    <ul>
+                        <li>2.1</li>
+                        <li>2.2
+                            <ul>
+                                <li>2.2.1</li>
+                                <li>2.2.2</li>
+                            </ul>
+                        </li>
+                        <li>2.3</li>
+                    </ul>
+                </li>
+                <li>Third</li>
+            </ul>
+
+            <h4>tc-list-horizontal</h4>
+
+            <ul class="tc-list-horizontal mb-6">
+                <li>First</li>
+                <li>Second</li>
+                <li>Third</li>
+            </ul>
+
+            <nav class="flex mb-6" aria-label="Breadcrumb">
+
+                <ol class="tc-list-horizontal space-x-1">
+
+                    <li>
+                        <a href="#" title="Home" class="hover:text-theme-primary">
+                            <span class="icon-[heroicons--home] mr-1"></span>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <span class="icon-[heroicons--chevron-right] mr-1"></span>
+                        <a href="#" title="Articles" class="hover:text-theme-primary">
+                            Articles
+                        </a>
+                    </li>
+
+                    <li class="font-semibold" aria-current="page">
+                        <span class="icon-[heroicons--chevron-right] mr-1"></span>
+                        Article title
+                    </li>
+
+                </ol>
+
+            </nav>
+
+            <h4>tc-list-ordered</h4>
+
+            <ol class="tc-list-ordered mb-6">
+                <li>First</li>
+                <li>Second
+                    <ol>
+                        <li>2.1</li>
+                        <li>2.2
+                            <ol>
+                                <li>2.2.1</li>
+                                <li>2.2.2</li>
+                            </ol>
+                        </li>
+                        <li>2.3</li>
+                    </ol>
+                </li>
+                <li>Third</li>
+            </ol>
+
+            <h4>tc-list-outline</h4>
+
+            <ul class="tc-list-outline">
+                <li>Major Topic 1
+                    <ul>
+                        <li>Topic 1-1
+                            <ul>
+                                <li>Topic 1-1-1
+                                    <ul>
+                                        <li>Topic 1-1-1-1</li>
+                                        <li>Topic 1-1-1-2
+                                            <ul>
+                                                <li>Topic 1-1-1-2-1</li>
+                                                <li>Topic 1-1-1-2-2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Topic 1-1-2</li>
+                            </ul>
+                        </li>
+                        <li>Topic 1-2</li>
+                        <li>Topic 1-3</li>
+                    </ul>
+                </li>
+                <li>Major Topic 2</li>
+                <li>Major Topic 3</li>
+            </ul>
+
+            <h3 id="examples-line">Line</h3>
+
+            <div class="tc-line"></div>
+            <div class="tc-line bg-primary"></div>
+
+            <h3 id="examples-spinner">Spinner</h3>
+
+            <div class="tc-spinner tu-text-success" role="status" aria-label="Loading..."></div>
+
+            <h3 id="examples-table">Table</h3>
+
+            <h4>tc-table</h4>
+
+            <table class="tc-table mb-6 w-full overflow-x-auto">
+                <thead>
+                <tr class="text-left">
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Bob</td>
+                    <td>Male</td>
+                    <td>30</td>
+                </tr>
+
+                <tr>
+                    <td>Mary</td>
+                    <td>Female</td>
+                    <td>35</td>
+                </tr>
+
+                <tr>
+                    <td>Joe</td>
+                    <td>Male</td>
+                    <td>40</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>tc-table--row</h4>
+
+            <table class="tc-table tc-table--row mb-6 w-full overflow-x-auto">
+                <thead>
+                <tr class="text-left">
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Bob</td>
+                    <td>Male</td>
+                    <td>30</td>
+                </tr>
+
+                <tr>
+                    <td>Mary</td>
+                    <td>Female</td>
+                    <td>35</td>
+                </tr>
+
+                <tr>
+                    <td>Joe</td>
+                    <td>Male</td>
+                    <td>40</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>tc-table--border</h4>
+
+            <table class="tc-table tc-table--border mb-6 w-full overflow-x-auto">
+                <thead>
+                <tr class="text-left">
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Bob</td>
+                    <td>Male</td>
+                    <td>30</td>
+                </tr>
+
+                <tr>
+                    <td>Mary</td>
+                    <td>Female</td>
+                    <td>35</td>
+                </tr>
+
+                <tr>
+                    <td>Joe</td>
+                    <td>Male</td>
+                    <td>40</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>tc-table--zebra</h4>
+
+            <table class="tc-table tc-table--border tc-table--zebra mb-6 w-full overflow-x-auto">
+                <thead>
+                <tr class="text-left">
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Bob</td>
+                    <td>Male</td>
+                    <td>30</td>
+                </tr>
+
+                <tr>
+                    <td>Mary</td>
+                    <td>Female</td>
+                    <td>35</td>
+                </tr>
+
+                <tr>
+                    <td>Joe</td>
+                    <td>Male</td>
+                    <td>40</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>tc-table--hover</h4>
+
+            <table class="tc-table tc-table--border tc-table--hover mb-6 w-full overflow-x-auto">
+                <thead>
+                <tr class="text-left">
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Bob</td>
+                    <td>Male</td>
+                    <td>30</td>
+                </tr>
+
+                <tr>
+                    <td>Mary</td>
+                    <td>Female</td>
+                    <td>35</td>
+                </tr>
+
+                <tr>
+                    <td>Joe</td>
+                    <td>Male</td>
+                    <td>40</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Responsive table</h4>
+
+            <div class="w-2/4 overflow-x-auto">
+
+                <table class="tc-table tc-table--border w-full">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Heading A</th>
+                        <th scope="col">Heading B</th>
+                        <th scope="col">Heading C</th>
+                        <th scope="col">Heading D</th>
+                        <th scope="col">Heading E</th>
+                        <th scope="col">Heading F</th>
+                        <th scope="col">Heading G</th>
+                        <th scope="col">Heading H</th>
+                        <th scope="col">Heading I</th>
+                        <th scope="col">Heading J</th>
+                        <th scope="col">Heading K</th>
+                        <th scope="col">Heading L</th>
+                        <th scope="col">Heading M</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Cell A1</td>
+                        <td>Cell B1</td>
+                        <td>Cell C1</td>
+                        <td>Cell D1</td>
+                        <td>Cell E1</td>
+                        <td>Cell F1</td>
+                        <td>Cell G1</td>
+                        <td>Cell H1</td>
+                        <td>Cell I1</td>
+                        <td>Cell J1</td>
+                        <td>Cell K1</td>
+                        <td>Cell L1</td>
+                        <td>Cell M1</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Cell A2</td>
+                        <td>Cell B2</td>
+                        <td>Cell C2</td>
+                        <td>Cell D2</td>
+                        <td>Cell E2</td>
+                        <td>Cell F2</td>
+                        <td>Cell G2</td>
+                        <td>Cell H2</td>
+                        <td>Cell I2</td>
+                        <td>Cell J2</td>
+                        <td>Cell K2</td>
+                        <td>Cell L2</td>
+                        <td>Cell M2</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Cell A3</td>
+                        <td>Cell B3</td>
+                        <td>Cell C3</td>
+                        <td>Cell D3</td>
+                        <td>Cell E3</td>
+                        <td>Cell F3</td>
+                        <td>Cell G3</td>
+                        <td>Cell H3</td>
+                        <td>Cell I3</td>
+                        <td>Cell J3</td>
+                        <td>Cell K3</td>
+                        <td>Cell L3</td>
+                        <td>Cell M3</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+<script src="./assets/js/preline.js"></script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        Skin.init({
+            debug: true,
+            themeParam: {
+                enabled: true,
+                name: "theme"
+            }
+        });
+
+    });
+
+</script>
+
+<script src="./assets/prism/prism.js"></script>
+
+</body>
+</html>

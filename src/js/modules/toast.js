@@ -1,106 +1,117 @@
 // noinspection JSUnusedGlobalSymbols
 
-import {show, showThenHide} from "./Visibility";
+import Toastify from 'toastify-js';
 
-/**
- * Create and show a toast component.
- *
- * @param config
+/*
+See: https://github.com/apvarun/toastify-js/tree/master
  */
 
-export function create(config = {}) {
+/**
+ * Queue a toast to be shown with showQueue method by saving to localStorage.
+ *
+ * @param config {Object}
+ * @param lang {Object}
+ */
+export function queue(config = {}, lang = {}) {
 
-    const defaultConfig = {
-        containerId: "tc-toast-container", // ID of toast container (parent element)
-        removeExisting: false, // Remove any existing toasts which exist inside the container
-        toastId: "", // ID of toast (blank for none)
-        classes: "tc-style-default", // Class(es) to add in addition to "tc-toast"
-        duration: 250, // Animation duration in milliseconds
-        hideAfter: 3000, // Hide after duration in milliseconds (0 to not hide)
-        innerHTML: "", // Toast inner HTML
-        role: "alert", // ARIA alert role
-        aria: { // ARIA attributes : values
-            "atomic": "true",
-            "live": "assertive"
-        },
-        data: {} // data-* attributes
+    let toasts = [];
+
+    if ("toasts" in localStorage) {
+
+        if (Array.isArray(JSON.parse(localStorage.toasts))) {
+            toasts = JSON.parse(localStorage.toasts);
+        }
+
     }
 
-    // Overwrite default config with passed config object
+    toasts.push({config: config, lang: lang});
+    localStorage.toasts = JSON.stringify(toasts);
+
+}
+
+/**
+ * Show queued toasts from localStorage.
+ *
+ * @typedef {Object} ToastItem
+ * @property {Object} config
+ * @property {Object} lang
+ */
+export function showQueue() {
+
+    if ("toasts" in localStorage) {
+
+        if (Array.isArray(JSON.parse(localStorage.toasts))) {
+
+            /** @type {ToastItem[]} */
+            const toasts = JSON.parse(localStorage.toasts);
+
+            for (const toast of toasts) {
+
+                if (typeof toast === "object" && typeof toast.config === "object" && typeof toast.lang === "object") {
+                    show(toast.config, toast.lang);
+                }
+
+            }
+
+        }
+
+        localStorage.removeItem("toasts");
+
+    }
+
+}
+
+/**
+ * Show Toastify toast.
+ * See: https://github.com/apvarun/toastify-js/blob/master/README.md#api
+ *
+ * @param config {Object}
+ * @param lang {Object}
+ */
+export function show(config = {}, lang = {}) {
+
+    const defaultConfig = {
+        text: "",
+        className: "",
+        duration: 3000,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        offset: {
+            x: 0,
+            y: 0
+        },
+        escapeMarkup: false,
+        stopOnFocus: true,
+        oldestFirst: true
+    }
+
+    const defaultLang = {
+        close: "Close"
+    }
 
     config = {...defaultConfig, ...config};
 
-    if (config.containerId === "") {
+    lang = {...defaultLang, ...lang};
 
-        // ...logDebug
-        return;
-
+    if (config.close === true) {
+        config.text += '<button onclick="Skin.Toast.close(this)" type="button" class="tc-toast-close" aria-label="' + lang.close + '"><span class="sr-only">' + lang.close + '</span><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg></span></button>';
     }
 
-    let container = document.getElementById(config.containerId);
+    config.className = config.className + " tc-toast";
 
-    if (!container) {
+    Toastify(config).showToast();
 
-        // ...logDebug
-        return;
+}
 
-    }
-
-    let toast = document.createElement("div"); // Toast placeholder
-
-    toast.setAttribute("role", String(config.role));
-
-    toast.dataset.hidden = "true";
-
-    toast.classList.add("tc-toast");
-
-    toast.classList.add(...config.classes.split(" "));
-
-    // aria-
-
-    if (config.aria) {
-
-        Object.keys(config.aria).forEach(key => {
-
-            toast.setAttribute("aria-" + key, String(config.aria[key]));
-
-        });
-
-    }
-
-    // data-
-
-    if (config.data) {
-
-        Object.keys(config.data).forEach(key => {
-
-            toast.setAttribute("data-" + key, String(config.data[key]));
-
-        });
-
-    }
-
-    toast.innerHTML = config.innerHTML;
-
-    if (config.toastId !== "") {
-        toast.id = config.toastId;
-    }
-
-    if (config.removeExisting) {
-        container.innerHTML = "";
-    }
-
-    container.appendChild(toast);
-
-    if (config.hideAfter <= 0) {
-        show(toast, config.duration);
-    } else {
-        showThenHide(toast, config.hideAfter, config.duration);
-
-        window.setTimeout(() => { // Remove from DOM
-            toast.remove();
-        }, config.hideAfter + (config.hideAfter / 2)); // Needs extra time or else the fade out is buggy
-
-    }
-
+/**
+ * Close Toastify toast.
+ * See: https://preline.co/docs/toast-notifications.html
+ *
+ * @param el {Element}
+ */
+export function close(el) {
+    const parent = el.closest('.toastify');
+    const close = parent.querySelector('.toast-close');
+    close.click();
 }
