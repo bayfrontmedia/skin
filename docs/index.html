@@ -370,12 +370,13 @@
 
             <p>To support dark mode via class names, add to the main stylesheet:</p>
 
-            <code>@custom-variant dark (&:where(.dark, .dark *));</code>
+            <pre class="tc-code mb-6"><code class="language-css">@custom-variant dark (&:where(.dark, .dark *));</code></pre>
 
             <h4>JavaScript</h4>
 
-            <p>Optionally add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag: <code>&lt;script
-                src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></p>
+            <p>Optionally add Skin's JavaScript file before the closing <code>&lt;/body&gt;</code> tag:</p>
+
+            <pre class="tc-code mb-6"><code class="language-html">&lt;script src="path/to/dist/js/skin-lib.js"&gt;&lt;/script&gt;</code></pre>
 
             <p>Either of the following CDN links can also be used:</p>
 
@@ -403,7 +404,7 @@
 
             <p>Ensure the JavaScript file is added to Tailwind as a source. When using Skin as a module, your JavaScript
                 file may already be added. When using as a library, you can use <code>@source
-                    "/path/to/dist/js/skin-lib.js";</code></p>
+                    "/path/to/dist/js/skin.js";</code></p>
 
             <h2 id="styles">Styles</h2>
 
