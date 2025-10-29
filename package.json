@@ -37,12 +37,12 @@
     "@iconify/json": "^2.2",
     "@iconify/tailwind4": "^1.0",
     "@tailwindcss/forms": "^0.5",
+    "preline": "^3.2",
     "webpack": "^5.102",
     "webpack-cli": "^6.0"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1",
-    "preline": "^3.2",
     "toastify-js": "^1.12.0"
   }
 }

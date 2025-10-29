@@ -1,6 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import {getConfig} from "../skin";
+import {logWarning} from "./utils/console-utils";
 import * as Visibility from "./visibility";
 
 /**
@@ -44,7 +45,7 @@ export function handleDataAttributes() {
 
         if (toHide === null) {
             if (getConfig('debug', false) === true) {
-                Skin.Console.logWarning("data-skin-hide element does not exist: " + el.getAttribute("data-skin-hide"));
+                logWarning("data-skin-hide element does not exist: " + el.getAttribute("data-skin-hide"));
             }
             return;
         }
@@ -129,7 +130,7 @@ export function handleDataAttributes() {
 
         if (toShow === null) {
             if (getConfig('debug', false) === true) {
-                Skin.Console.logWarning("data-skin-show element does not exist: " + el.getAttribute("data-skin-show"));
+                logWarning("data-skin-show element does not exist: " + el.getAttribute("data-skin-show"));
             }
             return;
         }
@@ -168,7 +169,7 @@ export function handleDataAttributes() {
 
         if (toToggle === null) {
             if (getConfig('debug', false) === true) {
-                Skin.Console.logWarning("data-skin-toggle element does not exist: " + el.getAttribute("data-skin-toggle"));
+                logWarning("data-skin-toggle element does not exist: " + el.getAttribute("data-skin-toggle"));
             }
             return;
         }

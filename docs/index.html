@@ -392,13 +392,17 @@
 
             <p>Then, initialize Skin:</p>
 
-            <pre class="tc-code mb-6"><code class="language-javascript">Skin.init({
-    debug: false,
-    themeParam: {
-        enabled: true,
-        name: "theme"
-    }
-});</code></pre>
+            <pre class="tc-code mb-6"><code class="language-javascript">document.addEventListener('DOMContentLoaded', () => {
+
+        Skin.init({
+            debug: true,
+            themeParam: {
+                enabled: true,
+                name: "theme"
+            }
+        });
+
+    });</code></pre>
 
             <p>In either case, <code>Skin</code> is attached to the <code>window</code> object.</p>
 
@@ -1731,12 +1735,16 @@
 
 <script>
 
-    Skin.init({
-        debug: true,
-        themeParam: {
-            enabled: true,
-            name: "theme"
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+
+        Skin.init({
+            debug: true,
+            themeParam: {
+                enabled: true,
+                name: "theme"
+            }
+        });
+
     });
 
 </script>

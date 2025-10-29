@@ -15,7 +15,7 @@ export function toBool(str) {
  * Parse a string value as an integer.
  * Empty strings and strings which are not numbers return 0.
  *
- * @param str
+ * @param str {String}
  * @returns {number}
  */
 export function toInt(str) {

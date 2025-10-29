@@ -1,5 +1,5 @@
 import {getConfig} from "../skin";
-import {logError} from "./console";
+import {logError} from "./utils/console-utils";
 
 /**
  * Detect theme.

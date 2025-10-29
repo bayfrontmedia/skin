@@ -186,7 +186,7 @@ export default class SaneDate {
      * - minute
      * - second
      *
-     * @param option
+     * @param option {string}
      * @returns {SaneDate}
      */
     startOf(option) {
@@ -234,7 +234,7 @@ export default class SaneDate {
      * - minute
      * - second
      *
-     * @param option
+     * @param option {string}
      * @returns {SaneDate}
      */
     endOf(option) {

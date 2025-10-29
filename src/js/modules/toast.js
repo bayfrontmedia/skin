@@ -65,8 +65,8 @@ export function showQueue() {
  * Show Toastify toast.
  * See: https://github.com/apvarun/toastify-js/blob/master/README.md#api
  *
- * @param config
- * @param lang
+ * @param config {Object}
+ * @param lang {Object}
  */
 export function show(config = {}, lang = {}) {
 

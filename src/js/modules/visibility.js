@@ -1,13 +1,13 @@
 // noinspection JSUnusedGlobalSymbols
 
 import {getConfig} from "../skin";
-import {logError} from "./console";
+import {logError} from "./utils/console-utils";
 
 /**
  * Hide element with a given animation duration.
  *
- * @param el (Element to hide)
- * @param duration (Animation duration in milliseconds)
+ * @param el {HTMLElement}
+ * @param duration {number} (Animation duration in milliseconds)
  */
 
 export function hide(el, duration = 250) {
@@ -38,8 +38,8 @@ export function hide(el, duration = 250) {
 /**
  * Show element with a given animation duration.
  *
- * @param el (Element to show)
- * @param duration (Animation duration in milliseconds)
+ * @param el {HTMLElement}
+ * @param duration {number} (Animation duration in milliseconds)
  */
 
 export function show(el, duration = 250) {
@@ -66,9 +66,9 @@ export function show(el, duration = 250) {
 
 /**
  * Show element for an amount of time with a given animation duration.
- * @param el
- * @param hideAfter (Hide after duration in milliseconds)
- * @param duration (Animation duration in milliseconds)
+ * @param el {HTMLElement}
+ * @param hideAfter {number} (Hide after duration in milliseconds)
+ * @param duration {number} (Animation duration in milliseconds)
  */
 
 export function showThenHide(el, hideAfter = 3000, duration = 250) {
@@ -96,8 +96,8 @@ export function showThenHide(el, hideAfter = 3000, duration = 250) {
 /**
  * Hide element with a given animation duration, then remove from the DOM.
  *
- * @param el
- * @param duration
+ * @param el {HTMLElement}
+ * @param duration {number} (Animation duration in milliseconds)
  */
 export function hideThenRemove(el, duration = 250) {
 
@@ -122,8 +122,8 @@ export function hideThenRemove(el, duration = 250) {
 /**
  * Toggle element visibility with a given animation duration.
  *
- * @param el (Element to toggle)
- * @param duration (Animation duration in milliseconds)
+ * @param el {HTMLElement}
+ * @param duration {number} (Animation duration in milliseconds)
  */
 
 export function toggle(el, duration = 250) {

@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import {dot, undot, getChanges, isEmpty} from "./object";
+import {dot, undot, getChanges, isEmpty} from "../utils/object-utils";
 
 export default class Form {
 
@@ -56,7 +56,7 @@ export default class Form {
      */
     getChangedData() {
 
-        const changes =  dot(getChanges(this.existingData, this.#formData));
+        const changes = dot(getChanges(this.existingData, this.#formData));
 
         const existing = dot(this.existingData);
 

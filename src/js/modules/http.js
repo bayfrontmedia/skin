@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import {logError} from "./console";
+import {logError} from "./utils/console-utils";
 
 /**
  * Make HTTP request using fetch.

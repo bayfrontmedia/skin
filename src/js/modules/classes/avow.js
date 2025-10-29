@@ -3,7 +3,7 @@
 export default class Avow {
 
     /**
-     * @param formEl
+     * @param formEl {Element}
      * @param config {Object} (errorClass, errorTextClass)
      */
     constructor(formEl, config = {}) {
@@ -62,6 +62,11 @@ export default class Avow {
 
     #isValid = true;
 
+    /**
+     * Get elements object.
+     *
+     * @returns {Object}
+     */
     getElements() {
         return this.#elements;
     }
@@ -75,6 +80,9 @@ export default class Avow {
         return this.#isValid;
     }
 
+    /**
+     * Validate form.
+     */
     validate() {
 
         this.reset();
@@ -178,8 +186,8 @@ export default class Avow {
      *   - Update class
      *   - Add error
      *
-     * @param el
-     * @param msg
+     * @param el {HTMLElement}
+     * @param msg {string}
      */
     #setFieldInvalid(el, msg) {
 
@@ -208,8 +216,8 @@ export default class Avow {
     /**
      * Get field message.
      *
-     * @param type
-     * @param msg
+     * @param type {string}
+     * @param msg {string}
      * @returns {string}
      */
     #getMsg(type, msg) {
