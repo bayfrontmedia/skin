@@ -7,7 +7,7 @@
 
     <title>Skin documentation</title>
 
-    <link rel="icon" href="./assets/img/favicon.ico">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" sizes="any">
 
     <link href="./assets/prism/prism.css" rel="stylesheet">
     <link href="./assets/css/styles.css" rel="stylesheet">
@@ -145,138 +145,178 @@
         <!-- Content -->
         <div class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
 
-            <nav id="sidebar-nav" class="px-6 py-3 w-full flex flex-col flex-wrap text-sm [--scrollspy-offset:80]" data-hs-scrollspy="#main">
+            <nav id="sidebar-nav" class="px-6 py-3 w-full flex flex-col flex-wrap text-sm">
 
-                <h3 class="uppercase mb-2 font-semibold">Getting started</h3>
+                <div class="[--scrollspy-offset:80]" data-hs-scrollspy="#main">
+
+                    <h3 class="uppercase mb-2 font-semibold">Getting started</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#getting-started-introduction"
+                               title="Introduction">Introduction</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#getting-started-installation"
+                               title="Installation">Installation</a>
+                        </li>
+
+                    </ul>
+
+                    <h3 class="uppercase mb-2 font-semibold">Styles</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-css-variables"
+                               title="CSS variables">CSS variables</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-base-classes"
+                               title="Base classes">Base classes</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-component-classes"
+                               title="Component classes">Component classes</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#styles-utility-classes"
+                               title="Utility classes">Utility classes</a>
+                        </li>
+
+                    </ul>
+
+                    <h3 class="uppercase mb-2 font-semibold">JavaScript</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#javascript"
+                               title="Coming soon...">Coming soon...</a>
+                        </li>
+
+                    </ul>
+
+                    <h3 class="uppercase mb-2 font-semibold">Examples</h3>
+
+                    <ul class="mb-6 border-l-2 tu-border-default">
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-typography"
+                               title="Typography">Typography</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-styles"
+                               title="Styles">Styles</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-alert"
+                               title="Alert">Alert</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-badge"
+                               title="Badge">Badge</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-button"
+                               title="Button">Button</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-blockquote"
+                               title="Blockquote">Blockquote</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-code"
+                               title="Code">Code</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-form"
+                               title="Form">Form</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-list"
+                               title="List">List</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-line"
+                               title="Line">Line</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-spinner"
+                               title="Spinner">Spinner</a>
+                        </li>
+
+                        <li class="pl-2 py-0.5">
+                            <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
+                               href="#examples-table"
+                               title="Table">Table</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <h3 class="uppercase mb-2 font-semibold">Templates</h3>
 
                 <ul class="mb-6 border-l-2 tu-border-default">
+
                     <li class="pl-2 py-0.5">
                         <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#getting-started-introduction"
-                           title="Introduction">Introduction</a>
+                           href="./templates/container.html" target="_blank"
+                           title="Container">Container</a>
                     </li>
 
                     <li class="pl-2 py-0.5">
                         <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#getting-started-installation"
-                           title="Installation">Installation</a>
-                    </li>
-
-                </ul>
-
-                <h3 class="uppercase mb-2 font-semibold">Styles</h3>
-
-                <ul class="mb-6 border-l-2 tu-border-default">
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#styles-css-variables"
-                           title="CSS variables">CSS variables</a>
+                           href="./templates/full-width.html" target="_blank"
+                           title="Full width">Full width</a>
                     </li>
 
                     <li class="pl-2 py-0.5">
                         <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#styles-base-classes"
-                           title="Base classes">Base classes</a>
+                           href="./templates/two-column.html" target="_blank"
+                           title="Two column">Two column</a>
                     </li>
 
                     <li class="pl-2 py-0.5">
                         <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#styles-component-classes"
-                           title="Component classes">Component classes</a>
+                           href="./templates/three-column.html" target="_blank"
+                           title="Three column">Three column</a>
                     </li>
 
                     <li class="pl-2 py-0.5">
                         <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#styles-utility-classes"
-                           title="Utility classes">Utility classes</a>
-                    </li>
-
-                </ul>
-
-                <h3 class="uppercase mb-2 font-semibold">JavaScript</h3>
-
-                <ul class="mb-6 border-l-2 tu-border-default">
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#javascript"
-                           title="Coming soon...">Coming soon...</a>
-                    </li>
-
-                </ul>
-
-                <h3 class="uppercase mb-2 font-semibold">Examples</h3>
-
-                <ul class="mb-6 border-l-2 tu-border-default">
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-typography"
-                           title="Typography">Typography</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-styles"
-                           title="Styles">Styles</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-alert"
-                           title="Alert">Alert</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-badge"
-                           title="Badge">Badge</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-button"
-                           title="Button">Button</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-blockquote"
-                           title="Blockquote">Blockquote</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-code"
-                           title="Code">Code</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-form"
-                           title="Form">Form</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-list"
-                           title="List">List</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-line"
-                           title="Line">Line</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-spinner"
-                           title="Spinner">Spinner</a>
-                    </li>
-
-                    <li class="pl-2 py-0.5">
-                        <a class="block p-2 tu-border-radius hover:tu-bg-default hover:text-primary cursor-pointer"
-                           href="#examples-table"
-                           title="Table">Table</a>
+                           href="./templates/login.html" target="_blank"
+                           title="Login">Login</a>
                     </li>
 
                 </ul>
@@ -1058,7 +1098,7 @@
                 <div>
                     <!-- color -->
                     <label class="tc-form-label" for="input-color">Color</label>
-                    <input type="color" id="input-color" name="color" value="#0e6b99" class="tc-form-color">
+                    <input type="color" id="input-color" name="color" value="#2a73f7" class="tc-form-color">
                 </div>
 
             </div>
@@ -1127,7 +1167,7 @@
 
                     <div class="relative mb-6">
 
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none tu-text-light">https://</div>
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">https://</div>
                         <input type="text" id="input-text-inside-l" name="input-text-inside-l" class="tc-form-input pl-[4.5rem]" placeholder="Input (text inside left)">
 
                     </div>
