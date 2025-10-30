@@ -29,6 +29,8 @@ window.Skin = {
     init
 }
 
+Theme.defineFromSettings(); // Prevent dark mode flash waiting init() to be called
+
 /**
  * Default Skin config object.
  */
@@ -70,7 +72,7 @@ export function init(config = {}) {
     setConfig(config);
 
     if (getConfig('debug', false) === true) {
-        console.log('✅ Skin initialized (v3.0.0)');
+        console.log('✅ Skin initialized (v3.0.1)');
     }
 
     Helpers.handleDataAttributes();
