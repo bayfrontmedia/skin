@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [3.0.1] - 2025.10.30
+
+### Added
+
+- Added `Theme.defineFromSettings` method to prevent dark mode flash
+
+### Fixed
+
+- Bugfix in `tc-btn` to ensure text aligns in center when width is full
+
 ## [3.0.0] - 2025.10.29
 
 ### Changed

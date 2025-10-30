@@ -407,7 +407,7 @@
     }
 
     .tc-btn {
-        @apply py-3 px-4 inline-flex items-center gap-x-2 cursor-pointer font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
+        @apply py-3 px-4 inline-flex justify-center items-center gap-x-2 cursor-pointer font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
     }
 
     .tc-btn-row {

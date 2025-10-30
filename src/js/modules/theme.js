@@ -2,11 +2,33 @@ import {getConfig} from "../skin";
 import {logError} from "./utils/console-utils";
 
 /**
- * Detect theme.
+ * Define theme from local settings.
+ */
+export function defineFromSettings() {
+
+    if ('skin-theme' in localStorage) {
+        try {
+            let theme = JSON.parse(localStorage.getItem('skin-theme'));
+            set(theme.name);
+            return;
+        } catch (e) {
+            localStorage.removeItem("skin-theme");
+            // Do not check for debug mode- config may not have been set yet
+            logError("Unable to set theme: Invalid localStorage format");
+        }
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        set("dark");
+        return;
+    }
+
+    set("light");
+
+}
+
+/**
+ * Define theme from URL query parameter and add event listener to theme toggles.
  */
 export function detect() {
-
-    let detected = false;
 
     if (getConfig('themeParam.enabled', false) === true) {
 
@@ -16,36 +38,6 @@ export function detect() {
 
         if (themeName !== null) {
             set(themeName);
-            detected = true;
-        }
-
-    }
-
-    if (detected === false && "skin-theme" in localStorage) {
-
-        try {
-
-            let theme = JSON.parse(localStorage.getItem("skin-theme"));
-            set(theme.name);
-            detected = true;
-
-        } catch (e) {
-            localStorage.removeItem("skin-theme");
-
-            if (getConfig('debug', false) === true) {
-                logError("Unable to detect theme: Invalid localStorage format");
-            }
-
-        }
-
-    }
-
-    if (detected === false) {
-
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            set("dark");
-        } else {
-            set("light");
         }
 
     }
