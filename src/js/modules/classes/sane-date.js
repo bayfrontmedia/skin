@@ -454,18 +454,88 @@ export default class SaneDate {
     }
 
     /**
-     * Get current age rounded to a number of decimals.
+     * Get milliseconds between current and given date.
      *
-     * @param decimals
-     * @returns {string}
+     * @param date {Date}
+     * @returns {number}
      */
-    getAge(decimals = 0) {
+    getMillisecondsBetween(date = new Date()) {
+        return this.#date.getTime() - date.getTime();
+    }
 
-        const now = new Date();
-        const diff = now.getTime() - this.#date.getTime();
-        const age = diff / (1000 * 60 * 60 * 24 * 365.2425);
-        return age.toFixed(decimals);
+    /**
+     * Get seconds between current and given date.
+     *
+     * @param date {Date}
+     * @param decimals {number}
+     * @returns {number}
+     */
+    getSecondsBetween(date = new Date(), decimals = 0) {
+        const secs = this.getMillisecondsBetween(date) / 1000;
+        if (decimals === 0) {
+            return Math.floor(secs);
+        }
+        return Number(secs.toFixed(decimals));
+    }
 
+    /**
+     * Get minutes between current and given date.
+     *
+     * @param date {Date}
+     * @param decimals {number}
+     * @returns {number}
+     */
+    getMinutesBetween(date = new Date(), decimals = 0) {
+        const mins = this.getMillisecondsBetween(date) / (1000 * 60);
+        if (decimals === 0) {
+            return Math.floor(mins);
+        }
+        return Number(mins.toFixed(decimals));
+    }
+
+    /**
+     * Get hours between current and given date.
+     *
+     * @param date {Date}
+     * @param decimals {number}
+     * @returns {number}
+     */
+    getHoursBetween(date = new Date(), decimals = 0) {
+        const hrs = this.getMillisecondsBetween(date) / (1000 * 60 * 60);
+        if (decimals === 0) {
+            return Math.floor(hrs);
+        }
+        return Number(hrs.toFixed(decimals));
+    }
+
+    /**
+     * Get days between current and given date.
+     *
+     * @param date {Date}
+     * @param decimals {number}
+     * @returns {number}
+     */
+    getDaysBetween(date = new Date(), decimals = 0) {
+        const days = this.getMillisecondsBetween(date) / (1000 * 60 * 60 * 24);
+        if (decimals === 0) {
+            return Math.floor(days);
+        }
+        return Number(days.toFixed(decimals));
+    }
+
+    /**
+     * Get years between current and given date.
+     *
+     * @param date {Date}
+     * @param decimals {number}
+     * @returns {number}
+     */
+    getYearsBetween(date = new Date(), decimals = 0) {
+        const years = this.getMillisecondsBetween(date) / (1000 * 60 * 60 * 24 * 365.2425);
+        if (decimals === 0) {
+            return Math.floor(years);
+        }
+        return Number(years.toFixed(decimals));
     }
 
 }
