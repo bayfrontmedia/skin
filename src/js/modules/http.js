@@ -2,6 +2,8 @@
 
 import {logError} from "./utils/console-utils";
 
+let pageUnloading = false;
+
 /**
  * Make HTTP request using fetch.
  *
@@ -12,6 +14,10 @@ import {logError} from "./utils/console-utils";
  * @param includeCredentials {boolean}
  */
 export async function request(url, method, body = null, headers = {}, includeCredentials = false) {
+
+    window.addEventListener('beforeunload', () => {
+        pageUnloading = true;
+    });
 
     try {
 
@@ -30,13 +36,18 @@ export async function request(url, method, body = null, headers = {}, includeCre
         const json = await response.json();
 
         return {
-            status: response.status,
-            body: json
+            headers: response.headers,
+            body: json,
+            status: response.status
         }
 
     } catch (error) {
-        logError('Request error');
-        logError(error);
+
+        if (pageUnloading === false) {
+            logError('Request error');
+            logError(error);
+        }
+
     }
 
 }
