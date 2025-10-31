@@ -1,5 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
+import * as ArrayUtils from "./modules/utils/array-utils";
 import Avow from "./modules/classes/avow";
 import * as ConsoleUtils from "./modules/utils/console-utils";
 import Form from "./modules/classes/form";
@@ -13,6 +14,7 @@ import * as Toast from "./modules/toast";
 import * as Visibility from "./modules/visibility";
 
 window.Skin = {
+    ArrayUtils,
     Avow,
     ConsoleUtils,
     Form,
@@ -24,12 +26,24 @@ window.Skin = {
     Theme,
     Toast,
     Visibility,
+    getVersion,
     getConfig,
     setConfig,
     init
 }
 
 Theme.defineFromSettings(); // Prevent dark mode flash waiting init() to be called
+
+const version = '3.1.0';
+
+/**
+ * Get Skin version.
+ *
+ * @returns {string}
+ */
+export function getVersion() {
+    return version;
+}
 
 /**
  * Default Skin config object.
@@ -72,7 +86,7 @@ export function init(config = {}) {
     setConfig(config);
 
     if (getConfig('debug', false) === true) {
-        console.log('✅ Skin initialized (v3.0.1)');
+        console.log('✅ Skin initialized (v' + version + ')');
     }
 
     Helpers.handleDataAttributes();

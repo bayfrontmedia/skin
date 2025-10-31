@@ -13,6 +13,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [3.1.0] - Upcoming
+
+### Added
+
+- Added `Skin.getVersion()` function
+- Added `ArrayUtils` module
+- Added new methods to `SaneDate` class
+
+### Removed
+
+- Removed `getAge` method from `SaneDate` class
+
+### Fixed
+
+- Updated `Http.request` method to not return an error when page is refreshed
+
 ## [3.0.1] - 2025.10.30
 
 ### Added
