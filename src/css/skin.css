@@ -399,7 +399,7 @@
 @layer components {
 
     .tc-alert {
-        @apply py-3 px-4 flex items-center gap-x-2 font-medium tu-border-radius tu-style-content;
+        @apply py-3 px-4 flex items-center gap-x-2 font-medium tu-border-width tu-border-radius tu-style-content;
     }
 
     .tc-badge {
