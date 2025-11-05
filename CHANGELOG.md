@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [3.1.3] - 2025.11.05
+
+### Added
+
+- Added the `hs-dropdown-open` variant in case Preline is not installed
+
 ## [3.1.2] - 2025.11.05
 
 ### Changed
