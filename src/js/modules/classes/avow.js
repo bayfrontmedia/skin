@@ -3,7 +3,7 @@
 export default class Avow {
 
     /**
-     * @param formEl {Element}
+     * @param formEl {HTMLFormElement}
      * @param config {Object} (errorClass, errorTextClass)
      */
     constructor(formEl, config = {}) {

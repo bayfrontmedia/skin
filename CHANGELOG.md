@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [3.1.2] - 2025.11.05
+
+### Changed
+
+- Updated type hint for `formEl` in Avow class
+
 ## [3.1.1] - 2025.11.04
 
 ### Fixed
