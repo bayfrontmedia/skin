@@ -9,6 +9,15 @@ import * as Visibility from "./visibility";
  */
 export function handleDataAttributes() {
 
+    let currentUrl = window.location.origin + window.location.pathname;
+    currentUrl = currentUrl.replace(/\/+$/, ""); // Remove trailing slashes
+
+    let currentPath = window.location.pathname;
+
+    if (currentPath !== '/') {
+        currentPath = currentPath.replace(/\/+$/, ""); // Remove trailing slashes;
+    }
+
     // Lazy load
 
     const dataSrc = document.querySelectorAll("[data-skin-src]");
@@ -20,15 +29,71 @@ export function handleDataAttributes() {
     // Add classes to hyperlinks for current URL
 
     const currentEls = document.querySelectorAll("a[data-skin-current-class]");
-    const currentUrl = window.location.origin + window.location.pathname;
 
     currentEls.forEach((el) => {
 
-        const href = el.href.split('#')[0];
+        let href = el.href.split('#')[0];
+        href = href.split('?')[0];
 
-        if (currentUrl === href.split('?')[0]) {
+        if (href !== '/') {
+            href = href.replace(/\/+$/, ""); // Remove trailing slashes
+        }
+
+        let current = false;
+
+        if ((href.startsWith('http://') || href.startsWith('https://')) && href === currentUrl) {
+            current = true;
+        } else if (href === currentPath) {
+            current = true;
+        }
+
+        if (current === true) {
             const classList = el.getAttribute('data-skin-current-class').split(' ');
             el.classList.add(...classList);
+        }
+
+    });
+
+    // Open accordions which contain a link to the current URL
+
+    const accordionEls = document.querySelectorAll("a[data-skin-current-accordion]");
+
+    accordionEls.forEach(el => {
+
+        let href = el.href.split('#')[0];
+        href = href.split('?')[0];
+
+        if (href !== '/') {
+            href = href.replace(/\/+$/, ""); // Remove trailing slashes
+        }
+
+        let current = false;
+
+        if ((href.startsWith('http://') || href.startsWith('https://')) && href === currentUrl) {
+            current = true;
+        } else if (href === currentPath) {
+            current = true;
+        }
+
+        if (current === true) {
+
+            const elParent = el.closest("[aria-labelledby]");
+
+            if (elParent) {
+
+                const elLabel = document.getElementById(elParent.getAttribute("aria-labelledby"));
+                const elCtl = document.querySelector('[aria-controls="' + elParent.id + '"]');
+
+                if (elLabel && elCtl) {
+
+                    elLabel.classList.add("active");
+                    elCtl.setAttribute("aria-expanded", "true");
+                    elParent.style.display = "block";
+
+                }
+
+            }
+
         }
 
     });
