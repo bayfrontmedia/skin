@@ -53,6 +53,10 @@
     background-color: var(--skin-bg-default);
 }
 
+@utility tu-bg-dark {
+    background-color: var(--skin-border-default);
+}
+
 @utility tu-bg-content {
     background-color: var(--skin-bg-content);
 }

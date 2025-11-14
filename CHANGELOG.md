@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added support for `data-skin-current-accordion` attribute
 - Added support for relative URL's when using `data-skin-current-class`
+- Added `tu-bg-dark` class
 
 ## [3.1.3] - 2025.11.05
 
