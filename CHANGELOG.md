@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added support for relative URL's when using `data-skin-current-class`
 - Added `tu-bg-border` class
 
+### Fixed
+
+- Fixed bug in `SaneDate` class `getISOString` method not returning `Z` at end of string
+
 ## [3.1.3] - 2025.11.05
 
 ### Added
