@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added support for `data-skin-current-accordion` attribute
 - Added support for relative URL's when using `data-skin-current-class`
 - Added `tu-bg-border` class
+- Added support for `data-skin-youtube-id` and related attributes
 
 ### Fixed
 
