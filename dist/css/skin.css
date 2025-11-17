@@ -667,7 +667,7 @@
     }
 
     .tc-line {
-        @apply my-6 h-0.5 bg-[var(--skin-border-default)];
+        @apply my-6 h-0.5 tu-bg-border;
     }
 
     .tc-spinner {
