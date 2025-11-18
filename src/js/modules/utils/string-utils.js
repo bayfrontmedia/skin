@@ -49,3 +49,19 @@ export function escapeHTML(str) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
 }
+
+/**
+ * Create URL-friendly slug.
+ *
+ * @param str {String}
+ * @return {String}
+ */
+export function slug(str) {
+    return str
+        .normalize("NFD") // Separate accents from letters
+        .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-") // Non-alphanumeric → hyphen
+        .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
+}
