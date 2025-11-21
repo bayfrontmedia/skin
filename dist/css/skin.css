@@ -328,12 +328,16 @@
         @apply font-semibold;
     }
 
-    .tb-typo h1:not(.tb-typo-omit),.tb-typo h2:not(.tb-typo-omit),.tb-typo h3:not(.tb-typo-omit),h1.tb-typo-apply,h2.tb-typo-apply,h3.tb-typo-apply {
-        @apply mt-12 mb-6;
+    .tb-typo h1:not(.tb-typo-omit),h1.tb-typo-apply {
+        @apply mt-0 mb-6;
+    }
+
+    .tb-typo h2:not(.tb-typo-omit),.tb-typo h3:not(.tb-typo-omit),h2.tb-typo-apply,h3.tb-typo-apply {
+        @apply mt-8 mb-6;
     }
 
     .tb-typo h4:not(.tb-typo-omit),.tb-typo h5:not(.tb-typo-omit),.tb-typo h6:not(.tb-typo-omit),h4.tb-typo-apply,h5.tb-typo-apply,h6.tb-typo-apply {
-        @apply mt-8 mb-4;
+        @apply mt-6 mb-4;
     }
 
     .tb-typo h1:not(.tb-typo-omit),h1.tb-typo-apply {

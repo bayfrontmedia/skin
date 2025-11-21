@@ -23,6 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added support for `data-skin-youtube-id` and related attributes
 - Added `slug` method in `string-utils`
 
+### Changed
+
+- Updated the top and bottom margins of `tb-typo` headings
+
 ### Fixed
 
 - Fixed bug in `SaneDate` class `getISOString` method not returning `Z` at end of string
