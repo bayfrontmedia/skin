@@ -514,6 +514,10 @@
         @apply mb-6 text-xl;
     }
 
+    .tc-blockquote p:last-of-type {
+        @apply mb-0;
+    }
+
     .tc-code {
         @apply p-4 text-sm tu-style-default tu-border-radius tu-border-width overflow-x-scroll;
     }
