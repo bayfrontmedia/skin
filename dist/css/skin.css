@@ -418,6 +418,18 @@
         @apply py-3 px-4 flex items-center gap-x-2 font-medium tu-border-width tu-border-radius tu-style-content;
     }
 
+    .tc-aside {
+        @apply p-6 my-12 border-l-4 tu-border-default tu-bg-default;
+    }
+
+    .tc-aside p {
+        @apply mb-6;
+    }
+
+    .tc-aside p:last-of-type {
+        @apply mb-0;
+    }
+
     .tc-badge {
         @apply py-1 px-2 inline-flex items-center gap-x-1 rounded-full text-xs font-medium disabled:opacity-50 disabled:cursor-default disabled:hover:bg-inherit tu-border-width tu-style-content;
     }
