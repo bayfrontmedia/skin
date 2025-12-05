@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated the top and bottom margins of `tb-typo` headings
 - Updated style for `.tc-blockquote`
+- Updated style for `.tc-list-horizontal`
 
 ### Fixed
 
