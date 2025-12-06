@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `slug` method in `string-utils`
 - Added `aside` component
 - Added `getObjectByProperty` method in `array-utils`
+- Added `tu-tighter` class
 
 ### Changed
 
