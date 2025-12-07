@@ -37,6 +37,30 @@
     @apply py-1 px-2 gap-x-1;
 }
 
+@utility tu-focus-none {
+    @apply focus:outline-none focus:ring-0 focus:ring-transparent focus:ring-offset-0;
+}
+
+@utility tu-focus-primary {
+    @apply focus:outline-none focus:ring-1 focus:border-primary focus:ring-primary focus:ring-offset-0;
+}
+
+@utility tu-focus-secondary {
+    @apply focus:outline-none focus:ring-1 focus:border-secondary focus:ring-secondary focus:ring-offset-0;
+}
+
+@utility tu-focus-visible-none {
+    @apply focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0;
+}
+
+@utility tu-focus-visible-primary {
+    @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:border-primary focus-visible:ring-primary focus-visible:ring-offset-0;
+}
+
+@utility tu-focus-visible-secondary {
+    @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:border-secondary focus-visible:ring-secondary focus-visible:ring-offset-0;
+}
+
 @utility tu-text-primary {
     color: var(--skin-text-primary);
 }
@@ -111,6 +135,14 @@
     @apply border-blue-500 dark:border-blue-600;
 }
 
+@utility tu-ring-info {
+    @apply ring-blue-500;
+}
+
+@utility tu-ring-info-light {
+    @apply ring-blue-500;
+}
+
 @utility tu-text-info {
     @apply text-blue-500;
 }
@@ -137,6 +169,14 @@
 
 @utility tu-border-warning-light {
     @apply border-yellow-500 dark:border-yellow-600;
+}
+
+@utility tu-ring-warning {
+    @apply ring-yellow-300;
+}
+
+@utility tu-ring-warning-light {
+    @apply ring-yellow-500;
 }
 
 @utility tu-text-warning {
@@ -167,6 +207,14 @@
     @apply border-red-500 dark:border-red-600;
 }
 
+@utility tu-ring-error {
+    @apply ring-red-500;
+}
+
+@utility tu-ring-error-light {
+    @apply ring-red-500;
+}
+
 @utility tu-text-error {
     @apply text-red-500;
 }
@@ -194,6 +242,13 @@
 @utility tu-border-success-light {
     @apply border-green-500 dark:border-green-600;
 }
+@utility tu-ring-success {
+    @apply ring-green-500;
+}
+
+@utility tu-ring-success-light {
+    @apply ring-green-500;
+}
 
 @utility tu-text-success {
     @apply text-green-500;
@@ -210,105 +265,105 @@
 /* Forms */
 
 @utility tu-status-info {
-    @apply tu-border-info focus:tu-border-info focus:ring-blue-500;
+    @apply tu-border-info focus-visible:tu-border-info focus-visible:tu-ring-info;
 }
 
 @utility tu-status-warning {
-    @apply tu-border-warning focus:tu-border-warning focus:ring-yellow-300;
+    @apply tu-border-warning focus-visible:tu-border-warning focus-visible:tu-ring-warning;
 }
 
 @utility tu-status-error {
-    @apply tu-border-error focus:tu-border-error focus:ring-red-500;
+    @apply tu-border-error focus-visible:tu-border-error focus-visible:tu-ring-error;
 }
 
 @utility tu-status-success {
-    @apply tu-border-success focus:tu-border-success focus:ring-green-500;
+    @apply tu-border-success focus-visible:tu-border-success focus-visible:tu-ring-success;
 }
 
 /* Styles */
 
 @utility tu-style-content {
-    @apply tu-bg-content tu-border-default tu-text-default;
+    @apply tu-bg-content tu-border-default tu-text-default ring-primary;
 }
 
 @utility tu-style-inverse {
-    @apply tu-bg-inverse tu-text-inverse border-[var(--skin-text-default)];
+    @apply tu-bg-inverse tu-text-inverse border-[var(--skin-text-default)] ring-primary;
 }
 
 @utility tu-style-default {
-    @apply tu-bg-default tu-border-default tu-text-default;
+    @apply tu-bg-default tu-border-default tu-text-default ring-primary;
 }
 
 @utility tu-style-default-o {
-    @apply hover:tu-bg-default tu-border-default;
+    @apply hover:tu-bg-default tu-border-default ring-primary;
 }
 
 @utility tu-style-primary {
-    @apply bg-primary border-primary tu-text-primary;
+    @apply bg-primary border-primary tu-text-primary ring-primary;
 }
 
 @utility tu-style-primary-o {
-    @apply hover:bg-primary border-primary text-primary hover:tu-text-primary;
+    @apply hover:bg-primary border-primary text-primary hover:tu-text-primary ring-primary;
 }
 
 @utility tu-style-secondary {
-    @apply bg-secondary border-secondary tu-text-secondary;
+    @apply bg-secondary border-secondary tu-text-secondary ring-secondary;
 }
 
 @utility tu-style-secondary-o {
-    @apply hover:bg-secondary border-secondary text-secondary hover:tu-text-secondary;
+    @apply hover:bg-secondary border-secondary text-secondary hover:tu-text-secondary ring-secondary;
 }
 
 @utility tu-style-info {
-    @apply tu-bg-info tu-border-info tu-text-info-content;
+    @apply tu-bg-info tu-border-info tu-text-info-content tu-ring-info;
 }
 
 @utility tu-style-info-o {
-    @apply hover:tu-bg-info tu-border-info text-blue-500 hover:tu-text-info-content;
+    @apply hover:tu-bg-info tu-border-info text-blue-500 hover:tu-text-info-content tu-ring-info;
 }
 
 @utility tu-style-info-light {
-    @apply tu-bg-info-light tu-border-info-light tu-text-info-light-content;
+    @apply tu-bg-info-light tu-border-info-light tu-text-info-light-content tu-ring-info-light;
 }
 
 @utility tu-style-warning {
-    @apply tu-bg-warning tu-border-warning tu-text-warning-content;
+    @apply tu-bg-warning tu-border-warning tu-text-warning-content tu-ring-warning;
 }
 
 @utility tu-style-warning-o {
-    @apply hover:tu-bg-warning tu-border-warning tu-text-warning-content dark:text-yellow-300 hover:tu-text-warning-content dark:hover:tu-text-warning-content;
+    @apply hover:tu-bg-warning tu-border-warning tu-text-warning-content dark:text-yellow-300 hover:tu-text-warning-content dark:hover:tu-text-warning-content tu-ring-warning;
 }
 
 @utility tu-style-warning-light {
-    @apply tu-bg-warning-light tu-border-warning-light tu-text-warning-light-content;
+    @apply tu-bg-warning-light tu-border-warning-light tu-text-warning-light-content tu-ring-warning-light;
 }
 
 @utility tu-style-error {
-    @apply tu-bg-error tu-border-error tu-text-error-content;
+    @apply tu-bg-error tu-border-error tu-text-error-content tu-ring-error;
 }
 
 @utility tu-style-error-o {
-    @apply hover:tu-bg-error tu-border-error text-red-500 hover:tu-text-error-content;
+    @apply hover:tu-bg-error tu-border-error text-red-500 hover:tu-text-error-content tu-ring-error;
 }
 
 @utility tu-style-error-light {
-    @apply tu-bg-error-light tu-border-error-light tu-text-error-light-content;
+    @apply tu-bg-error-light tu-border-error-light tu-text-error-light-content tu-ring-error-light;
 }
 
 @utility tu-style-success {
-    @apply tu-bg-success tu-border-success tu-text-success-content;
+    @apply tu-bg-success tu-border-success tu-text-success-content tu-ring-success;
 }
 
 @utility tu-style-success-o {
-    @apply hover:tu-bg-success tu-border-success text-green-500 hover:tu-text-success-content;
+    @apply hover:tu-bg-success tu-border-success text-green-500 hover:tu-text-success-content tu-ring-success;
 }
 
 @utility tu-style-success-light {
-    @apply tu-bg-success-light tu-border-success-light tu-text-success-light-content;
+    @apply tu-bg-success-light tu-border-success-light tu-text-success-light-content tu-ring-success-light;
 }
 
 @utility tu-style-glass {
-    @apply bg-white/40 border-white/80 backdrop-blur-lg text-gray-900;
+    @apply bg-white/40 border-white/80 backdrop-blur-lg text-gray-900 ring-primary;
 }
 
 /*
@@ -324,6 +379,24 @@
     ::-moz-color-swatch {
         border-color: transparent;
         border-radius: var(--skin-border-radius);
+    }
+
+    /* Override default browser focus indicators */
+    button,
+    details,
+    iframe,
+    input:not([type="hidden"]),
+    option,
+    select,
+    summary,
+    textarea,
+    [contenteditable],
+    [tabindex] {
+        @apply tu-focus-primary;
+    }
+
+    .overflow-x-auto, .overflow-y-auto {
+        @apply tu-focus-none;
     }
 
     /* -------------------------Typography ------------------------- */
@@ -439,7 +512,7 @@
     }
 
     .tc-btn {
-        @apply py-3 px-4 inline-flex justify-center items-center gap-x-2 cursor-pointer font-medium focus:outline-none hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content disabled:tu-disabled;
+        @apply py-3 px-4 inline-flex justify-center items-center gap-x-2 cursor-pointer font-medium hover:backdrop-brightness-75 tu-border-width tu-border-radius tu-style-content tu-focus-primary disabled:tu-disabled;
     }
 
     .tc-btn-row {
@@ -599,7 +672,7 @@
     }
 
     .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select,.tc-form-checkbox,.tc-form-switch,.tc-form-radio,.tc-form-color {
-        @apply text-base border focus:ring-1 focus:border-primary focus:ring-primary tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default disabled:tu-disabled;
+        @apply text-base border tu-bg-content dark:tu-bg-default tu-text-default placeholder:tu-text-light tu-border-default tu-focus-primary disabled:tu-disabled;
     }
 
     .tc-form-input,.tc-form-file,.tc-form-textarea,.tc-form-select {
@@ -607,15 +680,15 @@
     }
 
     .tc-form-select[multiple] option {
-        @apply py-1 px-2;
+        @apply py-1 px-2 hover:tu-style-default focus:tu-style-default active:tu-style-default checked:tu-style-primary;
     }
 
     .tc-form-file {
-        @apply focus:outline-none file:mr-4 file:-ml-1 file:-my-2 file:p-2 file:border-0 file:cursor-pointer file:tu-style-default file:text-sm file:font-medium;
+        @apply file:mr-4 file:-ml-1 file:-my-2 file:p-2 file:border-0 file:cursor-pointer file:tu-style-default file:text-sm file:font-medium;
     }
 
     .tc-form-checkbox,.tc-form-switch,.tc-form-radio {
-        @apply h-5 w-5 text-primary checked:bg-primary checked:border-primary focus:ring-offset-0;
+        @apply h-5 w-5 text-primary checked:bg-primary checked:border-primary;
     }
 
     .tc-form-checkbox,.tc-form-switch {
@@ -761,7 +834,7 @@
     }
 
     .tc-toast-close {
-        @apply inline-flex justify-center items-center gap-x-2 ms-auto rounded-full cursor-pointer focus:outline-none;
+        @apply inline-flex justify-center items-center gap-x-2 ms-auto rounded-full cursor-pointer tu-focus-primary;
     }
 
     .toastify-left {
