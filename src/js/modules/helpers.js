@@ -9,6 +9,15 @@ import * as Visibility from "./visibility";
  */
 export function handleDataAttributes() {
 
+    let currentUrl = window.location.origin + window.location.pathname;
+    currentUrl = currentUrl.replace(/\/+$/, ""); // Remove trailing slashes
+
+    let currentPath = window.location.pathname;
+
+    if (currentPath !== '/') {
+        currentPath = currentPath.replace(/\/+$/, ""); // Remove trailing slashes;
+    }
+
     // Lazy load
 
     const dataSrc = document.querySelectorAll("[data-skin-src]");
@@ -20,15 +29,71 @@ export function handleDataAttributes() {
     // Add classes to hyperlinks for current URL
 
     const currentEls = document.querySelectorAll("a[data-skin-current-class]");
-    const currentUrl = window.location.origin + window.location.pathname;
 
     currentEls.forEach((el) => {
 
-        const href = el.href.split('#')[0];
+        let href = el.href.split('#')[0];
+        href = href.split('?')[0];
 
-        if (currentUrl === href.split('?')[0]) {
+        if (href !== '/') {
+            href = href.replace(/\/+$/, ""); // Remove trailing slashes
+        }
+
+        let current = false;
+
+        if ((href.startsWith('http://') || href.startsWith('https://')) && href === currentUrl) {
+            current = true;
+        } else if (href === currentPath) {
+            current = true;
+        }
+
+        if (current === true) {
             const classList = el.getAttribute('data-skin-current-class').split(' ');
             el.classList.add(...classList);
+        }
+
+    });
+
+    // Open accordions which contain a link to the current URL
+
+    const accordionEls = document.querySelectorAll("a[data-skin-current-accordion]");
+
+    accordionEls.forEach(el => {
+
+        let href = el.href.split('#')[0];
+        href = href.split('?')[0];
+
+        if (href !== '/') {
+            href = href.replace(/\/+$/, ""); // Remove trailing slashes
+        }
+
+        let current = false;
+
+        if ((href.startsWith('http://') || href.startsWith('https://')) && href === currentUrl) {
+            current = true;
+        } else if (href === currentPath) {
+            current = true;
+        }
+
+        if (current === true) {
+
+            const elParent = el.closest("[aria-labelledby]");
+
+            if (elParent) {
+
+                const elLabel = document.getElementById(elParent.getAttribute("aria-labelledby"));
+                const elCtl = document.querySelector('[aria-controls="' + elParent.id + '"]');
+
+                if (elLabel && elCtl) {
+
+                    elLabel.classList.add("active");
+                    elCtl.setAttribute("aria-expanded", "true");
+                    elParent.style.display = "block";
+
+                }
+
+            }
+
         }
 
     });
@@ -195,6 +260,34 @@ export function handleDataAttributes() {
         }
 
         el.hasClickListener = true;
+
+    });
+
+    // Lazy load YouTube embed
+
+    const ytIDs = document.querySelectorAll('[data-skin-youtube-id]');
+
+    ytIDs.forEach(yt => {
+
+        yt.addEventListener('click', () => {
+
+            const id = yt.getAttribute('data-skin-youtube-id');
+
+            let title = yt.getAttribute('data-skin-youtube-title');
+
+            if (title === null) {
+                title = 'YouTube';
+            }
+
+            let ytClass = yt.getAttribute('data-skin-youtube-class');
+
+            if (ytClass == null) {
+                ytClass = '';
+            }
+
+            yt.innerHTML = '<iframe class="' + ytClass + '" src="https://www.youtube.com/embed/' + id + '?autoplay=1&mute=0" title="' + title + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+
+        });
 
     });
 

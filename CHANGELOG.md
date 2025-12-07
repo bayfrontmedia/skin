@@ -13,6 +13,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [3.2.0] - 2025.12.06
+
+### Added
+
+- Added support for `data-skin-current-accordion` attribute
+- Added support for relative URL's when using `data-skin-current-class`
+- Added `tu-bg-border` class
+- Added support for `data-skin-youtube-id` and related attributes
+- Added `slug` method in `string-utils`
+- Added `aside` component
+- Added `getObjectByProperty` method in `array-utils`
+- Added `tu-tighter` class
+- Added utility classes for ring styles
+
+### Changed
+
+- Updated the top and bottom margins of `tb-typo` headings
+- Updated style for `.tc-blockquote`
+- Updated style for `.tc-list-horizontal`
+
+### Fixed
+
+- Fixed bug in `SaneDate` class `getISOString` method not returning `Z` at end of string
+
 ## [3.1.3] - 2025.11.05
 
 ### Added

@@ -275,7 +275,7 @@ export default class SaneDate {
     }
 
     /**
-     * Get date in ISO string format.
+     * Get date in ISO 8601 string format.
      *
      * @param includeMilliseconds {boolean}
      * @returns {string}
@@ -292,7 +292,7 @@ export default class SaneDate {
         const ms = pad(this.#date.getMilliseconds(), 3);
 
         if (includeMilliseconds === false) {
-            return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+            return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
         }
 
         return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${ms}Z`;

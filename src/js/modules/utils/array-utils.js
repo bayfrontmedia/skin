@@ -1,6 +1,28 @@
 // noinspection JSUnusedGlobalSymbols
 
 /**
+ * Get an object from an array of objects based on a unique nested property value.
+ *
+ * @param arr {Array}
+ * @param prop {String} (Property)
+ * @param value {*}
+ * @return {Object}
+ */
+export function getObjectByProperty(arr, prop, value) {
+
+    for (const item of arr) {
+
+        if (item && typeof item === "object" && prop in item && item[prop] === value) {
+            return item;
+        }
+
+    }
+
+    return {};
+
+}
+
+/**
  * Sort an array of objects by a nested property value.
  *
  * @param arr {Array}
