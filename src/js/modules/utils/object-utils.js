@@ -1,6 +1,17 @@
 // noinspection JSUnusedGlobalSymbols
 
 /**
+ * Does object property exist in dot notation?
+ *
+ * @param obj {Object}
+ * @param key {string}
+ * @return {boolean}
+ */
+export function hasProp(obj, key) {
+    return typeof key.split('.').reduce((acc, key) => acc?.[key], obj) !== 'undefined' ?? false;
+}
+
+/**
  * Get object property in dot notation or default value if not existing.
  *
  * @param obj {Object}
