@@ -1,3 +1,4 @@
+<!--suppress MarkdownUnresolvedLinkLabel -->
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -12,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Removed` for now removed features.
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
+
+## [3.4.0] - 2026.11.14
+
+### Added
+
+- Added `isUUID` method in `string-utils`
 
 ## [3.3.0] - 2026.02.02
 
