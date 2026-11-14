@@ -34,7 +34,7 @@ window.Skin = {
 
 Theme.defineFromSettings(); // Prevent dark mode flash waiting init() to be called
 
-const version = '3.2.0';
+const version = '3.4.0';
 
 /**
  * Get Skin version.
